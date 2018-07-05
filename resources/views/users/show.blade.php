@@ -10,6 +10,9 @@
     </div>
     <div class="container">
         {{ $user->password }}
+    @if(Auth::user()->id == $user->id)
+        <a href="{{ route('users.edit', Auth::user()->id) }}">プロフィール設定</a>
+    @endif
     </div>
 
 @endsection
