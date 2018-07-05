@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->text('content');
             $table->string('status')->index();
-            $table->string('return');
+            $table->string('reward');
             $table->string('photo',100)->nullable();
             $table->timestamps();
             
