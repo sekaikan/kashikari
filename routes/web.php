@@ -44,3 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
