@@ -16,9 +16,10 @@
                                 <a href="#" class="dropdown-toggler" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
-                                <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu">
                                     <li>
+                                        <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">マイページ</a>
+                                        <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">プロフィール設定</a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
