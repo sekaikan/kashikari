@@ -3,48 +3,55 @@
 
 Route::get('/', 'WelcomeController@index');
 
-//Home
+
 Route::group(['middleware' => ['auth']], function () {
-  Route::get('/home','HomeController@index');
-});
+//Home
+   Route::get('/home','HomeController@index')->name('home');
 
 //users
-Route::group(['middleware' => ['auth']], function () {
-    Route::resource('users', 'UsersController', ['only' => ['show','edit','update']]);
-});
+   Route::resource('users', 'UsersController', ['only' => ['show']]);
 
 //items
-Route::group(['middleware' => ['auth']], function () {
-   Route::resource('items', 'ItemsController');
-});
+   Route::resource('items', 'ItemsController', ['only' => ['index', 'create', 'store', 'show']] );
 
 //commnts
-Route::group(['middleware' => ['auth']], function () {
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
-});
 
 //posts
-Route::group(['middleware' => ['auth']], function () {
    Route::resource('posts', 'PostsController', ['only' =>['index','store','destroy']]);
-});
 
 //replies
-
-Route::group(['middleware' => ['auth']], function () {
    Route::resource('replies', 'RepliesController', ['only' =>['store','destroy']]);
-});
+
+//group home
+   Route::resource('/group/home', 'GroupController', ['only' =>['index']]);
 
 //chats
-Route::group(['middleware' => ['auth']], function () {
-   Route::resource('chats', 'ChatsController', ['only' =>['index','store','destroy']]);
-});
+   Route::resource('/group/chats', 'ChatsController', ['only' =>['index','store','destroy']]);
 
 //results
-Route::group(['middleware' => ['auth']], function () {
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
-});
+   
+//borrow
+   Route::get('/group/borrow', 'PostsController@index');
+
+//lend
+   Route::get('/group/lend', 'ItemsController@index');
+
+//user_prefix
+   Route::group(['prefix' => 'users/{id}'], function (){
+      
+      //items
+      Route::resource('items', 'ItemsController', ['only' => ['edit', 'update', 'destroy']]);
+      
+      //users
+      Route::get('edit', 'UsersController@edit') ->name('edit');
+      Route::patch('/', 'UsersController@update')->name('update');
+      
+      });
+   });
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
