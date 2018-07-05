@@ -3,7 +3,6 @@
 
 Route::get('/', 'WelcomeController@index');
 
-
 Route::group(['middleware' => ['auth']], function () {
 //Home
    Route::get('/home','HomeController@index')->name('home');
@@ -12,7 +11,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('users', 'UsersController', ['only' => ['show']]);
 
 //items
-   Route::resource('items', 'ItemsController', ['only' => ['index', 'create', 'store', 'show']] );
+   Route::resource('items', 'ItemsController', ['only' => ['index', 'create', 'store']] );
 
 //commnts
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
@@ -38,20 +37,18 @@ Route::group(['middleware' => ['auth']], function () {
 //lend
    Route::get('/group/lend', 'ItemsController@index');
 
+//items
+   Route::group(['prefix' => 'items/{id}'], function (){
+      Route::resource('/', 'ItemsController', ['only' => ['show', 'edit', 'update', 'destroy']]);
+   });
+   
 //user_prefix
    Route::group(['prefix' => 'users/{id}'], function (){
-      
-      //items
-      Route::resource('items', 'ItemsController', ['only' => ['edit', 'update', 'destroy']]);
-      
       //users
       Route::get('edit', 'UsersController@edit') ->name('edit');
       Route::patch('/', 'UsersController@update')->name('update');
       
-      });
    });
-
+});
 
 Auth::routes();
-
-
