@@ -8,7 +8,7 @@ class GroupController extends Controller
 {
     public function index()
     {
-        return view('group.index', [
+        return view('groups.home', [
             //'books' => $books,
             //'posts' => $posts,
         ]);
