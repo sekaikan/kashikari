@@ -12,12 +12,8 @@
                     {!! Form::text('name', $user->name, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('email', 'メールアドレス') !!}
-                    {!! Form::text('email', $user->mail, ['class' => 'form-control']) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::label('bio', '自己紹介') !!}
-                    {!! Form::text('bio', $user->bio, ['class' => 'form-control']) !!}
+                    {!! Form::label('content', '自己紹介') !!}
+                    {!! Form::text('content', $user->content, ['class' => 'form-control']) !!}
                 </div>
                 {!! Form::submit('更新', ['class' => 'btn btn-block btn-primary']) !!}
             

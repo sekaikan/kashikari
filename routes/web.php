@@ -45,8 +45,8 @@ Route::group(['middleware' => ['auth']], function () {
 //user_prefix
    Route::group(['prefix' => 'users/{id}'], function (){
       //users
-      Route::get('edit', 'UsersController@edit') ->name('edit');
-      Route::patch('/', 'UsersController@update')->name('update');
+      Route::get('edit', 'UsersController@edit') ->name('users.edit');
+      Route::put('update', 'UsersController@update')->name('users.update');
       
    });
 });
