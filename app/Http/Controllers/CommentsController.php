@@ -24,7 +24,7 @@ class CommentsController extends Controller
             
         ]);
         
-         return redirect('/items');
+        return redirect() -> back();
     }
     
     public function destroy($id)

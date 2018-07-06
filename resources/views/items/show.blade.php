@@ -43,13 +43,13 @@
                 {!! Form::open(['route' => 'comments.store']) !!}
                <div class="form-group">
                     {{ Form::hidden('item_id', $item->id)}}
-                   {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'content', 'rows' =>'3']) !!}
+                   {!! Form::textarea('comment', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'content', 'rows' =>'3']) !!}
                    {!! Form::submit('send', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
                </div>
                 {!! Form::close() !!}
         
             @if (count($comments) >0)
-               <?php $comments = $item->comments(); ?>
+            <?php $comments = $item->comments(); ?>
                   @include('comments.comments', ['comments' => $comments])
             @endif
         </div>    
