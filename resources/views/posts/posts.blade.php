@@ -1,4 +1,5 @@
 <ul class="media-list">
+    <a href="posts/create" class="btn btn-secondary btn-lg btn-block" role="button">Create！</a>
 @foreach ($posts as $post)
     <?php $user = $post->user; ?>
     <li class="media">

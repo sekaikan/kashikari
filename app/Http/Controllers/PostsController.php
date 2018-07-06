@@ -44,6 +44,17 @@ class PostsController extends Controller
         return redirect ("/posts");
     }
     
+      
+    public function create(Request $request)
+    {
+        $user = \Auth::user();
+        return view('posts.create', [
+        'user' => $user,
+        
+      ]);
+      return redirect('/');
+    }
+    
     public function destroy($id)
     {
         $post = \App\Post::find($id);
