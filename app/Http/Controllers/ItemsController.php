@@ -47,7 +47,7 @@ class ItemsController extends Controller
             'photo' => $request->photo,
         ]);
         
-         return redirect() ->back();
+          return view('items.show', ['item' => $item,]);
     }
     
      public function show($id)

@@ -1,5 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-    {{ $item->name }}
+<div class="row">
+            <div class= "col-lg-4 col-md-6 float-left">
+                    <img class="card-img" src="{{ $item->photo }} {{ secure_asset("images/home1.jpg") }}" alt="" class="colorfilter-image">
+            </div>
+
+        <div class="col-lg-8 col-md-6">
+            <div class="card-groups">
+                <div class="card">
+                    <div class="card-header text-center">
+                        {{ $item->name }}
+                    </div>
+                    <div class="card-body">
+                        {{ $item->content }}
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Reward</p>
+                        <p class="card-text">{{ $item->reward }}</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Status</p>
+                        <p class="card-text">{{ $item->status}}</p>
+                    </div>
+                </div>
+            </div>
+        
+          @if (Auth::check()) 
+            <div class="btn-group" role="group">
+           <a href="items/*/edit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+           <a href="items/*/destroy" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Delete</a>
+           </div>
+            @endif
+        </div>
+</div>
 @endsection
