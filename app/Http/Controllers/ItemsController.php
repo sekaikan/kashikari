@@ -27,7 +27,7 @@ class ItemsController extends Controller
     {
         $item = new Item;
         
-        return view('items.items', ['item' => $item,]);
+        return view('items.create', ['item' => $item,]);
     }
     
      public function store()
@@ -47,7 +47,7 @@ class ItemsController extends Controller
             'photo' => $request->photo,
         ]);
         
-         return redirect() ->back();
+          return view('items.show', ['item' => $item,]);
     }
     
      public function show($id)

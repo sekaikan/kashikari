@@ -3,7 +3,7 @@
         <div class="container">
             
             <div class="navbar-header">
-                <a class="navbar-brand navbar-left" href="/"><img src="{{ secure_asset("images/logo.png") }}" alt="Kashikari"></a>
+                <a class="navbar-brand navbar-left" href="/">Kashikari</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
