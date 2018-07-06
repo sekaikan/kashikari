@@ -4,10 +4,9 @@
 
 @section('content')
 
-    <h1>アイテム登録ページ</h1>
-    
+<h1>アイテム登録ページ</h1>
+     {!! Form::model($item, ['route' => 'items.store']) !!}
         <div class="row">
-            {!! Form::open(['route' => 'items.create', 'method' => 'get', 'class' => 'form']) !!}
             <div class="col-4" >
                 <div class="form-group">
                     <form method="post" enctype="multipart/form-data">
@@ -17,7 +16,9 @@
                     </form>
                 </div>
              </div>   
+             
              <div class="col-8">
+                  {!! Form::model($item, ['route' => 'items.store']) !!}
                  <div class="form-group">
                     {!! Form::label('name', 'アイテム名') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -30,13 +31,17 @@
                     {!! Form::label('reward', '報酬') !!}
                     {!! Form::text('reward', null, ['class' => 'form-control']) !!}
                 </div>
+                <div class="form-group">
+                    {!! Form::label('status', 'Status') !!}
+                    {!! Form::text('status', null, ['class' => 'form-control']) !!}
+                </div>
                 <button type="button" class="btn btn-success btn-lg">募集中</button>
                 <button type="button" class="btn btn-danger btn-lg">貸出中</button>
-
-                {!! Form::submit('upload', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
-                {!! Form::model($item, ['route' => 'items.store']) !!}
-                </div>
-                {!! Form::close() !!}
+                
+              </div>
+            {!! Form::submit('upload', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+              
+            {!! Form::close() !!}
             
         </div>
     

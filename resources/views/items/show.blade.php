@@ -31,13 +31,12 @@
                     </div>
                 </div>
             </div>
+                @if (Auth::check()) 
+                       {!! Form::open(['route' => ['items.destroy', $item->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                       {!! Form::close() !!}
+                @endif
         
-          @if (Auth::check()) 
-            <div class="btn-group" role="group">
-           <a href="items/*/edit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
-           <a href="items/*/destroy" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Delete</a>
-           </div>
-            @endif
         </div>
 </div>
 @endsection
