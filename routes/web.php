@@ -17,7 +17,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
 
 //posts
-   Route::resource('posts', 'PostsController', ['only' =>['index','store','destroy']]);
+   Route::resource('posts', 'PostsController', ['only' =>['index','create','store','destroy']]);
 
 //replies
    Route::resource('replies', 'RepliesController', ['only' =>['store','destroy']]);
