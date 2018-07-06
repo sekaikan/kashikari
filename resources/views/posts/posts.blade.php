@@ -21,6 +21,9 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+            <div>
+                {!! link_to_route('posts.show','返信する!', ['id' => $post->id]) !!}
+            </div>
         </div>
     </li>
 @endforeach
