@@ -5,11 +5,11 @@
 @section('content')
 
 <h1>アイテム編集ページ</h1>
-     {!! Form::model($item, ['route' => 'items.update']) !!}
+     {!! Form::model($item, ['route' => ['items.update', $item->id], 'method' => 'put']) !!}
         <div class="row">
             <div class="col-4" >
                 <div class="form-group">
-                    <form method="post" enctype="multipart/form-data">
+                    <form method="put" enctype="multipart/form-data">
                     画像ファイル<input type="file" name="pic">
                     <br>
                     <input type="submit" name="btn" value="send">
@@ -18,7 +18,6 @@
              </div>   
              
              <div class="col-8">
-                  {!! Form::model($item, ['route' => 'items.update']) !!}
                  <div class="form-group">
                     {!! Form::label('name', 'アイテム名') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}

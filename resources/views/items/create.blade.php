@@ -18,7 +18,6 @@
              </div>   
              
              <div class="col-8">
-                  {!! Form::model($item, ['route' => 'items.store']) !!}
                  <div class="form-group">
                     {!! Form::label('name', 'アイテム名') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
