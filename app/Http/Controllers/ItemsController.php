@@ -12,6 +12,12 @@ class ItemsController extends Controller
     {
          $items = Item::orderBy('updated_at', 'desc')->paginate(20);
         
+        foreach ($items as $item) {
+            $date = date_create($item->date);
+            $date = date_format($date , 'Y-m-d');
+            $item->date = $date;  //取得したtimestampのデータを、Y-m-dに変換
+        }
+        
         return view('items.index', [
             'items' => $items,
         ]);

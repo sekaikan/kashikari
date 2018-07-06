@@ -11,7 +11,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('users', 'UsersController', ['only' => ['show']]);
 
 //items
-   Route::resource('items', 'ItemsController', ['only' => ['index', 'create', 'store']] );
+   Route::resource('items', 'ItemsController', ['only' => ['index', 'create', 'store','show']] );
 
 //commnts
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 //items
    Route::group(['prefix' => 'items/{id}'], function (){
-      Route::resource('/', 'ItemsController', ['only' => ['show', 'edit', 'update', 'destroy']]);
+      Route::resource('/', 'ItemsController', ['only' => [ 'edit', 'update', 'destroy']]);
    });
    
 //user_prefix
