@@ -10,21 +10,23 @@ use App\User;
  
 use App\Post;
 
+use App\Reply;
 
 
-class PostsController extends Controller
+
+class RepliesController extends Controller
 {
     public function index() 
     {
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-            $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10);
+            $replies = $user->replies()->orderBy('created_at', 'desc')->paginate(10);
             $data = [
                 'user' => $user,
-                'posts' => $posts,
+                'replies' => $replies,
             ];
-            return view('posts.index', $data);
+            return view('replies.index', $data);
         }
     }
     
@@ -33,12 +35,14 @@ class PostsController extends Controller
         $this->validate($request, [
             'content' => 'required|max:191',
             'status' =>  'required|max:191',
+            'post_id'=> 'required|max:191',
             
         ]);
 
-        $request->user()->posts()->create([
+        $request->user()->replies()->create([
             'content' => $request->content,
             'status'  => $request->status,
+            'post_id' => $request->post_id,
         ]);
 
         return redirect ("/posts");
@@ -48,7 +52,7 @@ class PostsController extends Controller
     public function create(Request $request)
     {
         $user = \Auth::user();
-        return view('posts.create', [
+        return view('replies.create', [
         'user' => $user,
         
       ]);
@@ -57,20 +61,13 @@ class PostsController extends Controller
     
     public function destroy($id)
     {
-        $post = \App\Post::find($id);
+        $replies = \App\Reply::find($id);
 
-        if (\Auth::id() === $post->user_id) {
-            $post->delete();
+        if (\Auth::id() === $replies->user_id) {
+            $replies->delete();
         }
 
         return redirect()->back();
-    }
-    
-    public function show($id)
-    {
-        $post = Post::find($id);
-        
-        return view('posts.show', ['post' =>$post]);
     }
     
 }
