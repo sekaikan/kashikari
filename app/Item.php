@@ -17,6 +17,6 @@ class Item extends Model
     
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->paginate(20);
     }
 }

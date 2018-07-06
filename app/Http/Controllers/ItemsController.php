@@ -53,7 +53,7 @@ class ItemsController extends Controller
      public function show($id)
     {
       $item = Item::find($id);
-      $comments = $item->comments;
+      $comments = $item->comments();
         
         return view('items.show',[
             'item' => $item, 
