@@ -39,7 +39,7 @@ class User extends Authenticatable
     
     public function chats()
     {
-        return $this->hasMany(Chat::class)->paginate(100);
+        return $this->hasMany(Chat::class);
     }
     
     public function posts()

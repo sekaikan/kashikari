@@ -8,14 +8,18 @@ use App\Http\Controllers\UsersController;
 
 use App\Chat;
 
+use App\User;
+
 class ChatsController extends Controller
 {
     public function index()
     {
-        $chats = Chat::all();
-        
+        $chats = Chat::with('user')->orderBy('created_at', 'desc')->paginate(100);
+        //$chats = \DB::table('chats')->orderBy('created_at', 'desc')->paginate(100);
+        $users = User::all();
         return view('chats.index', [
             'chats' => $chats,
+            'users' => $users,
         ]);
     }
     
