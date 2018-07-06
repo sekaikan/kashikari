@@ -62,14 +62,14 @@ class ItemsController extends Controller
         ]);
     }
     
-     public function edit()
+     public function edit($id)
     {
         $item = Item::find($id);
         
         return view('items.show', ['item' => $item, ]); 
     }
     
-     public function update()
+     public function update(Request $request, $id)
     {
         $this->validate($request, [
            'content' => 'required|max:191',
