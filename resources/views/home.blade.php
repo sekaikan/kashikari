@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{--
 @section('cover')
 <div class="container-fluid">
     <div class="cover">
@@ -27,8 +27,10 @@
     </div>
 </div>
 @endsection
+--}}
+
 @section('content')
-    
+<div class="container">
     <div class="row">
         <div class="col-4">
             <button type="button" class="btn btn-primary btn-lg btn-block">グループを作る</button>
@@ -50,15 +52,13 @@
           </ul>
         </div>
     </div>
-    <div class="row">
-        <h3>グループ　ランキング</h3>
-    </div>
+    <h3>グループ　ランキング</h3>
     <div class="row">
         <div class="card col-3">
           <div class="card-header">
             １位
           </div>
-          <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">18th New Grads</p>
           </div>
@@ -67,16 +67,16 @@
           <div class="card-header">
             ２位
           </div>
-          <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Sekaikan</p>
           </div>
         </div>
         <div class="card col-3">
           <div class="card-header">
-            ３位
+            3rd
           </div>
-          <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Eco/Cafeteria comittee</p>
           </div>
@@ -85,7 +85,7 @@
           <div class="card-header">
             ４位
           </div>
-          <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Attendance comittee</p>
           </div>

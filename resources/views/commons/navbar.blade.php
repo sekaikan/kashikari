@@ -8,7 +8,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav navbar-right">
                     @if (Auth::check())
@@ -16,11 +15,11 @@
                                 <a href="#" class="dropdown-toggler" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-                                    <ul class="dropdown-menu">
+                                <ul class="dropdown-menu">
                                     <li>
                                         <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">マイページ</a>
                                         <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">プロフィール設定</a>
-                                        <a href="{{ route('logout') }}"
+                                        <a class ="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
@@ -37,6 +36,12 @@
                         <li class="nav-link"><a href="{{ route('login') }}">ログイン</a></li>
                     @endif
                 </ul>
+                <form class="form-inline" action="{{url('/results/')}}">
+                    <div class="form-group mr-2">
+                        <input type="text" name="keyword" value="{{$keyword}}" class="form-control" placeholder="入力してください">
+                    </div>
+                    <input type="submit" value="検索" class="btn btn-outline-success">
+                </form>
             </div>
         </div>
     </nav>
