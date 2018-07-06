@@ -10,7 +10,7 @@ class ItemsController extends Controller
 {
     public function index()
     {
-         $items = Item::all();
+         $items = Item::orderBy('updated_at', 'desc')->paginate(20);
         
         return view('items.index', [
             'items' => $items,
