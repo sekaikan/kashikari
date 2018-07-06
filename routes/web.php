@@ -47,7 +47,6 @@ Route::group(['middleware' => ['auth']], function () {
       //users
       Route::get('edit', 'UsersController@edit') ->name('users.edit');
       Route::put('update', 'UsersController@update')->name('users.update');
-      
    });
 });
 

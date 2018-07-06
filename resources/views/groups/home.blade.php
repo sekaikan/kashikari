@@ -13,7 +13,7 @@
 @section('content')
 <button type="button" class="btn btn-primary btn-lg btn-block"> <a href="/group/chat" class="btn btn-link text-info"><i class=""></i></a>chats</button>
 <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/group/lend" class="btn btn-link text-info"><i class=""></i></a>貸すよ～</button>
-<button type="button" class="btn btn-primary btn-lg btn-block"><a href="/group/borrow" class="btn btn-link text-info"><i class=""></i></a>借りたいよお～</button>
+<a href="{{ route ('posts.index') }}" class="btn btn-primary btn-block">貸して</a>
 <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/group/edit" class="btn btn-link text-info"><i class=""></i></a>Group EDIT</button>
 
 @endsection
