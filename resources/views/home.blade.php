@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('cover')
-
+<div class="container-fluid">
     <div class="cover">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -25,6 +25,7 @@
           </a>
         </div>
     </div>
+</div>
 @endsection
 @section('content')
     

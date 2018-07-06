@@ -21,7 +21,7 @@ class ItemsController extends Controller
     {
         $item = new Item;
         
-        return view('items.items', ['item' => $item,]);
+        return view('items.create', ['item' => $item,]);
     }
     
      public function store()
