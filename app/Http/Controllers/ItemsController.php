@@ -30,7 +30,7 @@ class ItemsController extends Controller
         return view('items.create', ['item' => $item,]);
     }
     
-     public function store()
+     public function store(Request $request)
     {
         $this->validate($request, [
             'content' => 'required|max:191',
@@ -47,7 +47,7 @@ class ItemsController extends Controller
             'photo' => $request->photo,
         ]);
         
-          return view('items.show', ['item' => $item,]);
+          return redirect('/items');
     }
     
      public function show($id)
@@ -83,11 +83,11 @@ class ItemsController extends Controller
          return view('items.show', ['item' => $item, ]); 
     }
     
-     public function destroy()
+    public function destroy($id)
     {
         $item = Item::find($id);
         $item -> delete();
         
-         return view('items.items', ['item' => $item, ]); 
+    return redirect('/items');
     }
 }
