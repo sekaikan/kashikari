@@ -3,7 +3,7 @@
         <div class="container">
             
             <div class="navbar-header">
-                <a class="navbar-brand navbar-left" href="/">Kashikari</a>
+                <a class="navbar-brand navbar-left" href="/home">Kashikari</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
