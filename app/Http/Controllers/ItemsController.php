@@ -10,7 +10,7 @@ class ItemsController extends Controller
 {
     public function index()
     {
-         $items = Item::orderBy('updated_at', 'desc')->paginate(20);
+        $items = Item::orderBy('updated_at', 'desc')->paginate(20);
         
         foreach ($items as $item) {
             $date = date_create($item->date);
@@ -53,18 +53,23 @@ class ItemsController extends Controller
      public function show($id)
     {
       $item = Item::find($id);
+      $comments = $item->comments();
         
-        return view('items.show', ['item' => $item, ]);
+        return view('items.show',[
+            'item' => $item, 
+            'comments' => $comments,
+        
+        ]);
     }
     
-     public function edit()
+     public function edit($id)
     {
         $item = Item::find($id);
         
-        return view('items.show', ['item' => $item, ]); 
+        return view('items.edit', ['item' => $item, ]); 
     }
     
-     public function update()
+     public function update(Request $request, $id)
     {
         $this->validate($request, [
            'content' => 'required|max:191',
@@ -80,7 +85,7 @@ class ItemsController extends Controller
         $item->status = $request->status;
         $item->photo = $request->photo;
         $item->save();
-         return view('items.show', ['item' => $item, ]); 
+        return view('items.show', ['item' => $item, ]); 
     }
     
     public function destroy($id)

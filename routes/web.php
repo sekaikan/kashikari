@@ -39,8 +39,9 @@ Route::group(['middleware' => ['auth']], function () {
 
 //items
    Route::group(['prefix' => 'items/{id}'], function (){
-      Route::resource('/', 'ItemsController', ['only' => [ 'edit', 'update']]);
       Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
+      Route::get('edit', 'ItemsController@edit')->name('items.edit');
+      Route::put('update', 'ItemsController@update')->name('items.update');
    });
    
 //user_prefix
