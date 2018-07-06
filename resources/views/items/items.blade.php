@@ -1,5 +1,8 @@
 @if ($items)
     <div class="row">
+        
+        <a href="items/create" class="btn btn-secondary btn-lg btn-block" role="button">Create！</a>
+    
 @foreach ($items as $item)
     <?php $user = $item->user; ?>
        <div class= "col-xl-3 col-md-4 col-6">
@@ -18,7 +21,6 @@
                   {!! link_to_route('items.show', "Detail", ['id' => $item->id]) !!}
                 </div>
            </div>    
-            
             
         </div>
     </li>
