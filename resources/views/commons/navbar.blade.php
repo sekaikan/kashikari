@@ -38,7 +38,7 @@
                 </ul>
                 <form class="form-inline" action="{{url('/results/')}}">
                     <div class="form-group mr-2">
-                        <input type="text" name="keyword" value="{{$keyword}}" class="form-control" placeholder="入力してください">
+                        <input type="text" name="keyword" value="" class="form-control" placeholder="アイテム、ユーザを検索">
                     </div>
                     <input type="submit" value="検索" class="btn btn-outline-success">
                 </form>
