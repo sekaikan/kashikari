@@ -36,14 +36,14 @@ class GroupsController extends Controller
          return view('groups.create', ['group' => $group,]);
     }
     
-    public function store()
+    public function store(request $request)
     {
           $this->validate($request, [
             'name' => 'required',
 
         ]);
        
-        $request->user()->items()->create([
+        $request->user()->groups()->create([
             'name' => $request->name,
         ]);
         
