@@ -30,6 +30,7 @@ class ItemsController extends Controller
         return view('items.create', ['item' => $item,]);
     }
     
+    
      public function store(Request $request)
     {
         $this->validate($request, [
@@ -37,6 +38,7 @@ class ItemsController extends Controller
             'name' => 'required',
             'reward' => 'required',
             'status' => 'required|max:10',
+
         ]);
         
         \Crew\Unsplash\HttpClient::init([
@@ -51,7 +53,6 @@ class ItemsController extends Controller
         $search = $request->name;
         $orientation = 'landscape';
         $photos = \Crew\Unsplash\Search::photos($search, $orientation);
-        
         $request->user()->items()->create([
             'content' => $request->content,
             'status' => $request->status,
@@ -108,4 +109,7 @@ class ItemsController extends Controller
         
     return redirect('/items');
     }
+    
+    
+
 }

@@ -20,8 +20,8 @@ class RepliesController extends Controller
     {
         $data = [];
         if (\Auth::check()) {
-            $user = \Auth::user();
-            $replies = $user->replies()->orderBy('created_at', 'desc')->paginate(10);
+            $users = User::all();
+            $replies =Reply::with('user')->orderBy('created_at', 'desc')->paginate(10);
             $data = [
                 'user' => $user,
                 'replies' => $replies,
@@ -45,7 +45,8 @@ class RepliesController extends Controller
             'post_id' => $request->post_id,
         ]);
 
-        return redirect ("/posts");
+
+       return redirect()->back();
     }
     
       

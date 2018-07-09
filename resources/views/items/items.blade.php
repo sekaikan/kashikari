@@ -1,3 +1,4 @@
+
 @if ($items)
     <div class="row">
         <a href="items/create" class="btn btn-secondary btn-lg btn-block" role="button">Create！</a>
@@ -19,10 +20,9 @@
                   {!! link_to_route('items.show', "Detail", ['id' => $item->id]) !!}
                 </div>
            </div>    
-            
         </div>
-    </li>
 @endforeach
+</div>
 {!! $items->render() !!}
 @endif
 

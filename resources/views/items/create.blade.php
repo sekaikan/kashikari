@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
      {!! Form::model($item, ['route' => 'items.store']) !!}
         <div class="row">
