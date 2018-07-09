@@ -19,6 +19,7 @@ class CreateRepliesTable extends Migration
             $table->integer('post_id')->unsigned()->index();
             $table->text('content');
             $table->string('status')->index()->nullable();
+           
             $table->timestamps();
             
             

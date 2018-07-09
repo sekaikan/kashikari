@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-        @if (Auth::id() == $post->user->id)
+        @if (\Auth::user())
         {!! Form::open(['route' => 'replies.store']) !!}
             <div class="form-group" id="review-form-group">
                 {{ Form::select('status', array('open' => 'Open', 'closed' => 'Closed'), 'open', ['class'=>'form-control']) }}
