@@ -7,22 +7,27 @@
 @endsection
 
 @section('content')
+
 <div class="btn-group">
-<a href="/group/chats" class="btn btn-primary btn-block">Chats</a>
-<a href="/group/edit" class="btn btn-primary btn-block">Edit Groups</a>
+    <a href="/groups/chats" class="btn btn-primary">Chats</a>
+    <a href="/group/edit" class="btn btn-primary">Edit Groups</a>
 </div>
 
 <div>
-<h2 class="text-center">Let's share!!</h2>
-@include('items.items', ['items' => $items])
-<a href="{{ route ('items.index') }}" class="">More...</a>
+    <h2 class="text-center">Let's share!!</h2>
+    
+    @include('items.items', ['items' => $items])
+    
+    <a href="{{ route ('items.index') }}" class="">More...</a>
 </div>
 
 <div>
-<h2 class="text-center">Please borrow</h2>
-@include('posts.posts', ['posts' => $posts])
-<a href="{{ route ('posts.index') }}" class="">More...</a>
-</div>
+    <h2 class="text-center">Please borrow</h2>
 
+    @include('posts.posts', ['posts' => $posts])
+
+    <a href="{{ route ('posts.index') }}" class="">More...</a>
+
+</div>
 
 @endsection
