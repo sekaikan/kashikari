@@ -47,7 +47,7 @@ class GroupsController extends Controller
             'name' => $request->name,
         ]);
         
-          return redirect('/group/home');
+          return redirect('/home');
     }
     
     public function edit()
