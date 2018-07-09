@@ -16,10 +16,10 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
 
 //posts
-   Route::resource('posts', 'PostsController', ['only' =>['index','create','store','destroy']]);
+   Route::resource('posts', 'PostsController', ['only' =>['index','create','store','show', 'destroy']]);
 
 //replies
-   Route::resource('replies', 'RepliesController', ['only' =>['store','destroy']]);
+   Route::resource('replies', 'RepliesController', ['only' =>['index','create','store','destroy']]);
 
 //group home
    Route::resource('/group/home', 'GroupController', ['only' =>['index']]);
