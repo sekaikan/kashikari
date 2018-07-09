@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('group', 'GroupsController');
 
 //chats
-   Route::resource('/group/chats', 'ChatsController', ['only' =>['index','store','destroy']]);
+   Route::resource('/groups/chats', 'ChatsController', ['only' =>['index','store','destroy']]);
 
 //results
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
