@@ -5,7 +5,7 @@
 @foreach ($items as $item)
     <?php $user = $item->user; ?>
        <div class= "col-xl-3 col-md-4 col-6">
-            <div class="card" style="width: 30rem;">
+            <div class="card" style="width: 25rem;">
                 <div class="card-header"> 
                     <img src="{{ Gravatar::src($user->email, 30) . '&d=mm' }}" alt="" class="rounded-circle" style=" margin-right:10px; margin-top:25px;  border-radius: 20px;">
                     {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">{{ $item->date }}</span>
