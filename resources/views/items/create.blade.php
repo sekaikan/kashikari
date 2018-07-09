@@ -1,23 +1,12 @@
 @extends('layouts.app')
 
-
-
 @section('content')
 
-<h1>アイテム登録ページ</h1>
-   
+<div class="container">
      {!! Form::model($item, ['route' => 'items.store']) !!}
         <div class="row">
-            <div class="col-4" >
-
-                <div class="form-group">
-                 {!! Form::label('photo', '写真', ['class' => 'control-label']) !!}
-                 {!! Form::file('file') !!}
-                </div>
-                
-             </div>   
-             
-             <div class="col-8">
+             <div class="col-md-6 offset-md-3">
+                 <h1>アイテム登録ページ</h1>
                  <div class="form-group">
                     {!! Form::label('name', 'アイテム名') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -43,5 +32,5 @@
             {!! Form::close() !!}
             
         </div>
-    
+</div>
 @endsection

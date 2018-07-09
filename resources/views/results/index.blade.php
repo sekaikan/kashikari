@@ -22,7 +22,7 @@
                     <p class="card-text">{{ $item->content }}</p>
                     <p class="card-text">{{ $item->status }}</p>
                     <p class="card-text">{{ $item->reward }}</p>
-                    <p class="card-text">{{ $item->created_at }}</p>        
+                    <p class="card-text">{{ $item->created_at }}</p>
                 </div>
             </div>
         @endforeach
