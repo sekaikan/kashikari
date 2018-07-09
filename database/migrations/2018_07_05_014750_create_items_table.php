@@ -20,7 +20,7 @@ class CreateItemsTable extends Migration
             $table->text('content');
             $table->string('status')->index();
             $table->string('reward');
-            $table->string('photo',100)->nullable();
+            $table->text('photo')->nullable();
             $table->timestamps();
             
            $table->foreign('user_id')->references('id')->on('users');
