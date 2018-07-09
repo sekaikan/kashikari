@@ -6,8 +6,11 @@
      {!! Form::model($item, ['route' => 'items.store']) !!}
         <div class="row">
              <div class="col-md-6 offset-md-3">
-                 <h1>アイテム登録ページ</h1>
-                 <div class="form-group">
+                <h1 class="text-center font-weight-light">アイテム登録ページ</h1>
+                <div class="text-center">
+                <img src="{{ $item->photo }}" class="">
+                </div>
+                <div class="form-group">
                     {!! Form::label('name', 'アイテム名') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>

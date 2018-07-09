@@ -92,12 +92,25 @@ class ItemsController extends Controller
             'status' => 'required|max:10',
         ]);
         
+        \Crew\Unsplash\HttpClient::init([
+            'applicationId'	=> env('UNSPLASH_KEY'),
+            'secret' => env('UNSPLASH_SECRET'),
+            'callbackUrl'	=> 'https://your-application.com/oauth/callback',
+            'utmSource' => 'kashikari'
+        ]);
+        
+        $scopes = ['public'];
+        \Crew\Unsplash\HttpClient::$connection->getConnectionUrl($scopes);
+        $search = $request->name;
+        $orientation = 'landscape';
+        $photos = \Crew\Unsplash\Search::photos($search, $orientation);
+
         $item = Item::find($id);
         $item->name = $request->name;
         $item->content = $request->content;
         $item->reward = $request->reward;
         $item->status = $request->status;
-        //$item->photo = $request->photo;
+        $item->photo = $photos[0]['urls']['small'];
         $item->save();
         return view('items.show', ['item' => $item, ]); 
     }
