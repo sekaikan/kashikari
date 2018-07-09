@@ -51,6 +51,8 @@
             @if (count($comments) >0)
                   @include('comments.comments', ['comments' => $comments])
             @endif
+            
+            <a href="/group" class="">back >></a>
         </div>    
 </div>
 @endsection

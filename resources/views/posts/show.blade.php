@@ -24,6 +24,8 @@
         
         <?php $replies = $post->replies()->paginate(100); ?>
        @include('replies.replies')
+       
+       <a href="/group" class="">back >></a>
 @endsection
 {!! $replies->render() !!}
 
