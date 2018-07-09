@@ -5,16 +5,16 @@
 @section('content')
 
 <h1>アイテム登録ページ</h1>
+   
      {!! Form::model($item, ['route' => 'items.store']) !!}
         <div class="row">
             <div class="col-4" >
+
                 <div class="form-group">
-                    <form method="post" enctype="multipart/form-data">
-                    画像ファイル<input type="file" name="pic">
-                    <br>
-                    <input type="submit" name="btn" value="send">
-                    </form>
+                 {!! Form::label('photo', '写真', ['class' => 'control-label']) !!}
+                 {!! Form::file('file') !!}
                 </div>
+                
              </div>   
              
              <div class="col-8">
