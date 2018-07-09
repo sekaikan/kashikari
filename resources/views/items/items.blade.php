@@ -5,6 +5,7 @@
 @foreach ($items as $item)
     <?php $user = $item->user; ?>
        <div class= "col-xl-3 col-md-4 col-6">
+
             <div>
                 {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">{{ $item->date }}</span>
             </div>
