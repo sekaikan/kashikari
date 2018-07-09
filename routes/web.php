@@ -22,7 +22,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('replies', 'RepliesController', ['only' =>['index','create','store','destroy']]);
 
 //group home
-   Route::resource('/group/home', 'GroupsController', ['only' =>['index']]);
+   Route::resource('group', 'GroupsController');
 
 //chats
    Route::resource('/group/chats', 'ChatsController', ['only' =>['index','store','destroy']]);
