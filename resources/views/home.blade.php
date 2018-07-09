@@ -43,7 +43,7 @@
             Group List
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="/group/home" >18th New Grads</a></li>
+            <li class="list-group-item"><a href="/group" >18th New Grads</a></li>
             <li class="list-group-item">Sekaikan</li>
             <li class="list-group-item">6A</li>
             <li class="list-group-item">8A</li>
