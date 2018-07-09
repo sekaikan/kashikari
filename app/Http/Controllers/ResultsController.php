@@ -13,18 +13,19 @@ class ResultsController extends Controller
       #キーワード受け取り
       $keyword = $request->input('keyword');
      
-      #クエリ生成
-      $query = Item::query();
+      $items = \DB::table('items');
      
       #もしキーワードがあったら
       if(!empty($keyword))
       {
-        $query->where('name','like','%'.$keyword.'%')->orWhere('content','like','%'.$keyword.'%');
+        $items->where('name','LIKE','%'.$keyword.'%')->orWhere('content','LIKE','%'.$keyword.'%');
       }
      
       #ページネーション
-      $data = $query->orderBy('created_at','desc')->paginate(100);
-      return view('results.index')->with('data',$data)
+      $items = $items->orderBy('created_at','desc')->get();
+    
+      //->paginate(100);
+      return view('results.index')->with('items',$items)
       ->with('keyword',$keyword)
       ->with('message','Results');
     }
