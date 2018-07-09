@@ -18,12 +18,13 @@ class PostsController extends Controller
     {
         $data = [];
         if (\Auth::check()) {
-            $user = \Auth::user();
-            $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10);
+            $users = User::all();
+            $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
             $data = [
-                'user' => $user,
+                'users' => $users,
                 'posts' => $posts,
             ];
+            
             return view('posts.index', $data);
         }
     }
