@@ -1,5 +1,4 @@
 <ul class="media-list">
-<a href="{{ route ('replies.create') }}" class="btn btn-secondary btn-lg btn-block" role="button">Create！</a>
 @foreach ($replies as $reply)
     <?php $user = $reply->user; ?>
  
@@ -21,6 +20,7 @@
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
+                {!! link_to_route('posts.show','返信する!', ['id' => $post->id]) !!}
             </div>
         </div>
     </li>

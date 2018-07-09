@@ -34,5 +34,12 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    
+    'unsplash' => [
+        'applicationId' => env('UNSPLASH_KEY'),
+        'secret' => env('UNSPLASH_SECRET'),
+        'callbackUrl' => '',
+        'utmSource' => 'kashikari'
+    ],
 
 ];
