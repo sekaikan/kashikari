@@ -16,10 +16,10 @@ class CreateRepliesTable extends Migration
         Schema::create('replies', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
-            $table->integer('post_id')->unsigned()->index();
+            $table->integer('post_id')->unsigned()->index()->nullable();
+            $table->integer('reply_id')->unsigned()->index()->nullable();
             $table->text('content');
             $table->string('status')->index()->nullable();
-           
             $table->timestamps();
             
             
@@ -27,6 +27,7 @@ class CreateRepliesTable extends Migration
             
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('reply_id')->references('id')->on('replies')->onDelete('cascade');
         });
     }
 

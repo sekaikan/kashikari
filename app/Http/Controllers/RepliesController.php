@@ -12,11 +12,9 @@ use App\Post;
 
 use App\Reply;
 
-
-
 class RepliesController extends Controller
 {
-    public function index() 
+    /*public function index() 
     {
         $data = [];
         if (\Auth::check()) {
@@ -28,33 +26,33 @@ class RepliesController extends Controller
             ];
             return view('replies.index', $data);
         }
-    }
+    }*/
     
     public function store(Request $request)
     {
         $this->validate($request, [
             'content' => 'required|max:191',
             'status' =>  'required|max:191',
-            'post_id'=> 'required|max:191',
-            
         ]);
-
+        
         $request->user()->replies()->create([
             'content' => $request->content,
             'status'  => $request->status,
             'post_id' => $request->post_id,
+            'reply_id' => $request->reply_id,
         ]);
 
-
-       return redirect()->back();
+       return redirect(route('posts.show', $request->post_id));;
     }
     
       
     public function create(Request $request)
     {
         $user = \Auth::user();
+        $reply = \App\Reply::find($request->reply_id);
         return view('replies.create', [
         'user' => $user,
+        'reply' => $reply,
         
       ]);
       return redirect('/');
