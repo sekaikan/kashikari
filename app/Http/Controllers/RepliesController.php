@@ -14,7 +14,7 @@ use App\Reply;
 
 class RepliesController extends Controller
 {
-    public function index() 
+    /*public function index() 
     {
         $data = [];
         if (\Auth::check()) {
@@ -26,7 +26,7 @@ class RepliesController extends Controller
             ];
             return view('replies.index', $data);
         }
-    }
+    }*/
     
     public function store(Request $request)
     {
@@ -34,7 +34,7 @@ class RepliesController extends Controller
             'content' => 'required|max:191',
             'status' =>  'required|max:191',
         ]);
-
+        
         $request->user()->replies()->create([
             'content' => $request->content,
             'status'  => $request->status,
@@ -42,14 +42,14 @@ class RepliesController extends Controller
             'reply_id' => $request->reply_id,
         ]);
 
-       return redirect()->back();
+       return redirect(route('posts.show', $request->post_id));;
     }
     
       
     public function create(Request $request)
     {
         $user = \Auth::user();
-        $reply = \App\Reply::find($request->parent_id);
+        $reply = \App\Reply::find($request->reply_id);
         return view('replies.create', [
         'user' => $user,
         'reply' => $reply,

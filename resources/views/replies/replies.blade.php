@@ -1,3 +1,27 @@
+<?php
+
+$stack = array();
+foreach($replies as $reply) {
+    array_push($stack,$reply);
+}
+
+while(count($stack)>0) {
+    $reply = array_pop ($stack);
+    echo $reply->id . '->' . $reply->reply_id . "<br>";
+    $ch_replies = $reply->where('reply_id', $reply->id)->get();
+    foreach($ch_replies as $r) {
+        array_push($stack,$r);
+    }
+}
+return;
+?>
+
+
+
+
+
+
+
 @foreach ($replies as $reply)
     <?php $user = $reply->user; ?>
     <div class="card">
@@ -20,16 +44,14 @@
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
-                {!! link_to_route('replies.create','返信する!', ['parent_id' => $reply->id]) !!}
+                {!! link_to_route('replies.create','返信する!', ['reply_id' => $reply->id]) !!}
             </div>
         </div>
     </div>
     <?php $ch_replies = $reply->where('reply_id', $reply->id)->get(); ?>
-    <?php var_dump($ch_replies = $reply->where('reply_id', $reply->id)); ?>
     @foreach ($ch_replies as $ch_reply)
         <?php $ch_user = $ch_reply->user; ?>
-        <? exit; ?>
-        <div class="col-md-8 offset-md-4">
+        <div class="col-md-10 offset-md-2">
             <div class="card">
                 <div class="col-md-2">
                    <img src="{{ Gravatar::src($ch_user->email, 30) . '&d=mm' }}" alt="" class="img-circle" style=" margin-right:10px; margin-top:25px;  border-radius: 20px;">
@@ -50,7 +72,7 @@
                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                             {!! Form::close() !!}
                         @endif
-                        {!! link_to_route('replies.create','返信する!', ['parent_id' => $ch_reply->id]) !!}
+                        {!! link_to_route('replies.create','返信する!', ['reply_id' => $ch_reply->id]) !!}
                     </div>
                 </div>
             </div>

@@ -26,6 +26,7 @@
     @include('replies.replies')
        
        <a href="/group" class="">back >></a>
-    </div>
+</div>
+
 @endsection
 
