@@ -42,9 +42,8 @@
     <div class="row">
         @foreach ($groups as $group)
         <div class="card col-3">
-          <div class="card-header"><a href="/group">
-            {!! $group->name !!}
-            </a>
+          <div class="card-header"> 
+          {!! link_to_route('group.show',  $group->name , ['id' => $group->id]) !!}
           </div>
           
           <?php $image_rand = array(
