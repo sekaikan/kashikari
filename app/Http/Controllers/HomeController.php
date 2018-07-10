@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
          $user = \Auth::user();
-         $groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(10);
+         $groups = Group::orderBy('updated_at', 'desc')->paginate(30);
         
         
         return view('home',[
