@@ -35,7 +35,7 @@ class ChatsController extends Controller
             
         ]);
         
-         return redirect('group/chats');
+         return redirect() -> back();
     }
     
     public function destroy($id)
