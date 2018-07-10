@@ -21,8 +21,10 @@ class GroupsController extends Controller
         $user = \Auth::user();
         $items = Item::orderBy('updated_at', 'desc')->paginate(4);
         $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
+        $group = Group::find(1);
         return view('groups.home', [
             'items' => $items,
+            'group' => $group,
             //'users' => $users,
             'posts' => $posts,
         ]);
