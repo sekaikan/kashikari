@@ -16,7 +16,7 @@
       </div>
       <div class="col-3"><a href="/groups/chats"><i class="fas fa-comments"></i></a><br><span class="icontitle">Chat</span>
       </div>
-      <div class="col-3"><a href="/users/show"><i class="fas fa-user-circle"></i></a><br><span class="icontitle">My Page</span>
+      <div class="col-3"><a href="{{ route('users.show', Auth::user()->id) }}"><i class="fas fa-user-circle"></i></a><br><span class="icontitle">My Page</span>
       </div>
     </div>
 </div>
