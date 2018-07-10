@@ -11,7 +11,7 @@
             <div class="form-group" id="review-form-group">
                 {{ Form::select('status', array('open' => 'Open', 'closed' => 'Closed'), 'open', ['class'=>'form-control']) }}
                 {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'貸してください']) !!}
-                {{ Form::hidden('post_id', $reply->post_id) }}
+                {{-- Form::hidden('post_id', $reply->post_id) --}}
                 {{ Form::hidden('parent_id', $reply->id) }}
                 {!! Form::submit('投稿する', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
             </div>
