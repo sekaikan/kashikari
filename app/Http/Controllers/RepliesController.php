@@ -12,8 +12,6 @@ use App\Post;
 
 use App\Reply;
 
-
-
 class RepliesController extends Controller
 {
     public function index() 
@@ -35,16 +33,14 @@ class RepliesController extends Controller
         $this->validate($request, [
             'content' => 'required|max:191',
             'status' =>  'required|max:191',
-            'post_id'=> 'required|max:191',
-            
         ]);
 
         $request->user()->replies()->create([
             'content' => $request->content,
             'status'  => $request->status,
             'post_id' => $request->post_id,
+            'parent_id' => $request->parent_id,
         ]);
-
 
        return redirect()->back();
     }
@@ -53,8 +49,10 @@ class RepliesController extends Controller
     public function create(Request $request)
     {
         $user = \Auth::user();
+        $reply = \App\Reply::find($request->parent_id);
         return view('replies.create', [
         'user' => $user,
+        'reply' => $reply,
         
       ]);
       return redirect('/');
