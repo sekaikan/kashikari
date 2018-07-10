@@ -58,3 +58,27 @@ a {
     color: #EFF2F1;
     background-color: #3D3F3E;
 }
+.btn-blue {
+    color:#EFF2F1;
+    background-color: #3CAFC1;
+}
+
+.btn-blue:hover{
+    color:#EFF2F1;
+    background-color: #3CAFC1;
+}
+
+/*home*/
+.mainmenu .col-3{
+    border-right: 1px solid #ddd;
+}
+
+.mainmenu i{
+    font-size: xx-large;
+    display: inline-block;
+    color: #3CAFC1;
+}
+
+.mainmenu i:hover{
+    font-weight: bolder;   
+}

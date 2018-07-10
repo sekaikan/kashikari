@@ -8,26 +8,32 @@
 
 @section('content')
 
-<div class="btn-group">
-    <a href="/groups/chats" class="btn btn-primary">Chats</a>
-    <a href="/group/edit" class="btn btn-primary">Edit Groups</a>
+<div class="mainmenu">
+    <div class="row text-center my-5">
+      <div class="col-3"><a href="/items/create"><i class="fas fa-smile-wink"></i></a><br><span class="icontitle">Lend</span>
+      </div>
+      <div class="col-3"><a href="/posts/create"><i class="fas fa-sad-tear"></i></a><br><span class="icontitle">Borrow</span>
+      </div>
+      <div class="col-3"><a href="/groups/chats"><i class="fas fa-comments"></i></a><br><span class="icontitle">Chat</span>
+      </div>
+      <div class="col-3"><a href="/users/show"><i class="fas fa-user-circle"></i></a><br><span class="icontitle">My Page</span>
+      </div>
+    </div>
 </div>
-
-<div>
+<div class="my-3">
     <h2 class="text-center">Let's share!!</h2>
-    
     @include('items.items', ['items' => $items])
-    
-    <a href="{{ route ('items.index') }}" class="">More...</a>
+    @if (count($items) >0)    
+        <a href="{{ route ('items.index') }}" class="">More...</a>
+    @endif
 </div>
 
-<div>
+<div class="my-3">
     <h2 class="text-center">Please borrow</h2>
-
     @include('posts.posts', ['posts' => $posts])
-
-    <a href="{{ route ('posts.index') }}" class="">More...</a>
-
+    @if (count($posts) >0)
+        <a href="{{ route ('posts.index') }}" class="">More...</a>
+    @endif
 </div>
 
 @endsection
