@@ -3,7 +3,7 @@
 @section('cover')
 <div class="container">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner" style="height:70vh;">
+          <div class="carousel-inner" style="height:75vh;">
             <div class="carousel-item active">
               <img class="d-block w-100" src="/images/home1.jpg" alt="First slide">
             </div>
@@ -30,67 +30,28 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-8 mt-5">
-            <a class="btn btn-primary btn-lg btn-block"  href="/group/create">グループを作る</a>
+        <div class="col-8 mt-5 mx-auto">
+            <a class="btn btn-primary btn-lg btn-block"  href="/group/create">Create Group</a>
         </div> 
-        <div class="card col-4 mt-5">
-          <div class="card-header">
-            Group List
-          </div>
-          
-            <ul class="list-group list-group-flush">
-            @foreach ($groups as $group)
-            <li class="list-group-item">
-              <a href="/group">
-                  {!! $group->name !!}
-              </a>
-              {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
-              {!! Form::button('<ion-icon name="log-out"></ion-icon>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
-              {!! Form::close() !!}
-            </li>
-            @endforeach
-            </ul>
-            
-        </div>
     </div>
-    <h3>グループ　ランキング</h3>
+    
+    <div class="mt-4">
+    <h3>Group List</h3>
     <div class="row">
+        @foreach ($groups as $group)
         <div class="card col-3">
           <div class="card-header">
+            {!! $group->name !!}
           </div>
-          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
+          <img class="card-img-top" src="/images/image1.jpg" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">18th New Grads</p>
+               {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+              {!! Form::button('Sign out <ion-icon name="log-out"></ion-icon>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
+              {!! Form::close() !!}
           </div>
         </div>
-        <div class="card col-3">
-          <div class="card-header">
-            ２位
-          </div>
-          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Sekaikan</p>
-          </div>
-        </div>
-        <div class="card col-3">
-          <div class="card-header">
-            3rd
-          </div>
-          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Eco/Cafeteria comittee</p>
-          </div>
-        </div>
-        <div class="card col-3">
-          <div class="card-header">
-            ４位
-          </div>
-          <img class="card-img-top" src="/images/img.png" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Attendance comittee</p>
-          </div>
-        </div>
-     </div>
+        @endforeach
+    </div>
 </div>
 
 @endsection
