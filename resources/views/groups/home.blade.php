@@ -21,7 +21,7 @@
     </div>
 </div>
 <div class="my-3">
-    <h2 class="text-center">Let's share!!</h2>
+    <h2 class="text-center">Share Your Items</h2>
     @include('items.items', ['items' => $items])
     @if (count($items) >0)    
         <a href="{{ route ('items.index') }}" class="">More...</a>
@@ -29,7 +29,7 @@
 </div>
 
 <div class="my-3">
-    <h2 class="text-center">Please borrow</h2>
+    <h2 class="text-center">Ask for what you need</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
         <a href="{{ route ('posts.index') }}" class="">More...</a>
