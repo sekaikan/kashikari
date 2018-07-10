@@ -1,10 +1,9 @@
 @extends('layouts.app')
-{{--
+
 @section('cover')
-<div class="container-fluid">
-    <div class="cover">
+<div class="container">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
+          <div class="carousel-inner" style="height:70vh;">
             <div class="carousel-item active">
               <img class="d-block w-100" src="/images/home1.jpg" alt="First slide">
             </div>
@@ -24,21 +23,17 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-    </div>
 </div>
 @endsection
---}}
+
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-4">
-            <a  class="btn btn-primary btn-lg btn-block"  href="/group/create">グループを作る</a>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-primary btn-lg btn-block">グループを探す</button>
-        </div>
-        <div class="card col-4">
+        <div class="col-8 mt-5">
+            <a class="btn btn-primary btn-lg btn-block"  href="/group/create">グループを作る</a>
+        </div> 
+        <div class="card col-4 mt-5">
           <div class="card-header">
             Group List
           </div>

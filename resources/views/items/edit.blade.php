@@ -23,11 +23,12 @@
                     {!! Form::text('reward', $item->reward, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('status', 'Status') !!}
-                    {!! Form::text('status', $item->status, ['class' => 'form-control']) !!}
+                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status</label>
+                      <select name="status" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <option value="open" selected>Open</option>
+                            <option value="closed">closed</option>
+                      </select>
                 </div>
-                <button type="button" class="btn btn-success btn-lg">募集中</button>
-                <button type="button" class="btn btn-danger btn-lg">貸出中</button>
                 
               </div>
             {!! Form::submit('upload', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
