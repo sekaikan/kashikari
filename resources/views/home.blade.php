@@ -57,7 +57,6 @@
     <div class="row">
         <div class="card col-3">
           <div class="card-header">
-            １位
           </div>
           <img class="card-img-top" src="/images/img.png" alt="Card image cap">
           <div class="card-body">
