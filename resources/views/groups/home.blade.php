@@ -2,7 +2,7 @@
 
 @section('cover')
     <div class="jumbotron jumbotron-fluid bg-dark">
-            <h1 class="text-center text-white">18 New Grads</h1>
+            <h1 class="text-center text-white">{!! $group->name !!}</h1>
     </div>
 @endsection
 
