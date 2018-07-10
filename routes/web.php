@@ -25,16 +25,16 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('group', 'GroupsController');
 
 //chats
-   Route::resource('/group/chats', 'ChatsController', ['only' =>['index','store','destroy']]);
+   Route::resource('/groups/chats', 'ChatsController', ['only' =>['index','store','destroy']]);
 
 //results
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
    
 //borrow
-   Route::get('/group/borrow', 'PostsController@index');
+  // Route::get('/group/borrow', 'PostsController@index');
 
 //lend
-   Route::get('/group/lend', 'ItemsController@index');
+  // Route::get('/group/lend', 'ItemsController@index');
 
 //items
    Route::group(['prefix' => 'items/{id}'], function (){
