@@ -5,7 +5,10 @@
                 <p class="text-muted">{{ $chat->user->name }}</p>
                 <p class="text-lead">{{ $chat->content }}</p>
                 <p class="small text-muted">Posted at {{ $chat->created_at }}</p>
-            </div>
+                {!! Form::open(['route' => ['chats.destroy', $chat->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                 {!! Form::close() !!}
+             </div>
         </div>
     @else
         <div class="card my-3">
