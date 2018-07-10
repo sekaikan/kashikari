@@ -4,7 +4,7 @@
 <div class="container">
     <div class ="row">
         <div class="col-md-6 offset-md-3">
-             <h2>Create new Group</h2>
+             <h2>Create New Group</h2>
              {!! Form::model($group, ['route' => 'group.store']) !!}
                  <div class="form-group">
                     {!! Form::label('name', 'Name') !!}
