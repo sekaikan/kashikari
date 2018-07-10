@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-extend">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand navbar-left" href="/home">Kashikari</a>
@@ -10,14 +10,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     @if (Auth::check())
+                                    <form class="form-inline" action="{{url('/results/')}}">
+                    <div class="form-group mr-2">
+                        <input type="text" name="keyword" value="" class="form-control" placeholder="Find Items">
+                    </div>
+                    <input type="submit" value="Search" class="btn btn-outline-success">
+                </form>
+
                          <li class="dropdown">
-                                <a href="#" class="dropdown-toggler" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                <a href="#" class="dropdown-toggler ml-3" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">マイページ</a>
-                                        <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">プロフィール設定</a>
+                                        <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">My Page</a>
+                                        <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">Profile Setting</a>
                                         <a class ="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -30,17 +37,12 @@
                                     </li>
                                 </ul>
                             </li>
+                            
                     @else
-                        <li class="nav-link"><a href="{{ route('register') }}">新規登録</a></li>
-                        <li class="nav-link"><a href="{{ route('login') }}">ログイン</a></li>
+                        <li class="nav-link"><a href="{{ route('register') }}">Sign Up</a></li>
+                        <li class="nav-link"><a href="{{ route('login') }}">Login</a></li>
                     @endif
                 </ul>
-                <form class="form-inline" action="{{url('/results/')}}">
-                    <div class="form-group mr-2">
-                        <input type="text" name="keyword" value="" class="form-control" placeholder="アイテム、ユーザを検索">
-                    </div>
-                    <input type="submit" value="検索" class="btn btn-outline-success">
-                </form>
             </div>
         </div>
     </nav>
