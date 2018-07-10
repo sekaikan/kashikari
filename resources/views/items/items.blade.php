@@ -1,7 +1,6 @@
 
 @if ($items)
-    <div class="row">
-        <a href="items/create" class="btn btn-secondary btn-lg btn-block" role="button">Create !</a>
+<div class="row">
 @foreach ($items as $item)
     <?php $user = $item->user; ?>
        <div class= "col-xl-3 col-md-4 col-6">
