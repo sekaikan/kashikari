@@ -22,7 +22,7 @@
         {!! Form::close() !!}
     @endif
 
-    <?php $replies = $post->replies()->paginate(100); ?>
+    <?php $replies = $post->replies()->where('reply_id', NULL)->paginate(100); ?>
     @include('replies.replies')
        
        <a href="/group" class="">back >></a>

@@ -39,7 +39,7 @@ class RepliesController extends Controller
             'content' => $request->content,
             'status'  => $request->status,
             'post_id' => $request->post_id,
-            'parent_id' => $request->parent_id,
+            'reply_id' => $request->reply_id,
         ]);
 
        return redirect()->back();
