@@ -25,9 +25,11 @@
         </div>
 </div>
 @endsection
-
-
+      
 @section('content')
+
+
+      
 <div class="container">
     <div class="row">
         <div class="col-8 mt-5 mx-auto">
@@ -40,15 +42,29 @@
     <div class="row">
         @foreach ($groups as $group)
         <div class="card col-3">
-          <div class="card-header">
+          <div class="card-header"><a href="/group">
             {!! $group->name !!}
+            </a>
           </div>
-          <img class="card-img-top" src="/images/image1.jpg" alt="Card image cap">
-          <div class="card-body">
+          
+          <?php $image_rand = array(
+                "images/image1.jpg",
+                "images/image2.jpg",
+                "images/image3.jpg", 
+                "images/home1.jpg", 
+              );
+ 
+            $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
+          ?>
+
+           <img class="card-img-top" src="{{ $image_rand }}">
+           
+           
+            <div class="card-body">
                {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
               {!! Form::button('Sign out <ion-icon name="log-out"></ion-icon>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
               {!! Form::close() !!}
-          </div>
+            </div>
         </div>
         @endforeach
     </div>
