@@ -42,14 +42,20 @@
           <div class="card-header">
             Group List
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><a href="/group" >18th New Grads</a></li>
-            <li class="list-group-item">Sekaikan</li>
-            <li class="list-group-item">6A</li>
-            <li class="list-group-item">8A</li>
-            <li class="list-group-item">Eco/Cafeteria comittee</li>
-            <li class="list-group-item">Attendance comittee</li>
-          </ul>
+          
+            <ul class="list-group list-group-flush">
+            @foreach ($groups as $group)
+            <li class="list-group-item">
+              <a href="/group">
+                  {!! $group->name !!}
+              </a>
+              {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+              {!! Form::button('<ion-icon name="log-out"></ion-icon>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
+              {!! Form::close() !!}
+            </li>
+            @endforeach
+            </ul>
+            
         </div>
     </div>
     <h3>グループ　ランキング</h3>

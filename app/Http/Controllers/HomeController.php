@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Group;
+
+use App\User;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +27,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+         $user = \Auth::user();
+         $groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(10);
+        
+        
+        return view('home',[
+            'groups'=> $groups,
+            'user' => $user,
+    
+            ]);
     }
+    
 }
