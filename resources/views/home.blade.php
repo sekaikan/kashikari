@@ -28,12 +28,10 @@
       
 @section('content')
 
-
-      
 <div class="container">
     <div class="row">
-        <div class="col-8 mt-5 mx-auto">
-            <a class="btn btn-primary btn-lg btn-block"  href="/group/create">Create Group</a>
+        <div class="col-12 mt-5 ">
+            <a class="btn btn-primary btn-lg btn-block col-8 mx-auto"  href="/group/create">Create Group</a>
         </div> 
     
     <div class="mt-4">
