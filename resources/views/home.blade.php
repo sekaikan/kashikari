@@ -35,12 +35,10 @@
         <div class="col-8 mt-5 mx-auto">
             <a class="btn btn-primary btn-lg btn-block"  href="/group/create">Create Group</a>
         </div> 
-    </div>
     
     <div class="mt-4">
-    <h3>Group List</h3>
-    <div class="row">
-        @foreach ($groups as $group)
+    <h3>My Groups</h3>
+        @foreach ($follow_groups as $group)
         <div class="card col-3">
           <div class="card-header"> 
           {!! link_to_route('group.show',  $group->name , ['id' => $group->id]) !!}
@@ -60,13 +58,47 @@
            
            
             <div class="card-body">
+               @include('group_user.follow_button', ['user' => $user])
                {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
-              {!! Form::button('Sign out <ion-icon name="log-out"></ion-icon>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
+              {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-warning btn-lg']) !!}
               {!! Form::close() !!}
             </div>
         </div>
         @endforeach
     </div>
+    
+    <div class="mt-4">
+    <h3>Groups List</h3>
+        @foreach ($unfollow_groups as $group)
+        <div class="card col-3">
+          <div class="card-header"> 
+          {!! link_to_route('group.show',  $group->name , ['id' => $group->id]) !!}
+          </div>
+          
+          <?php $image_rand = array(
+                "images/image1.jpg",
+                "images/image2.jpg",
+                "images/image3.jpg", 
+                "images/home1.jpg", 
+              );
+ 
+            $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
+          ?>
+
+           <img class="card-img-top" src="{{ $image_rand }}">
+           
+           
+            <div class="card-body">
+               @include('group_user.follow_button', ['user' => $user])
+               {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+              {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-warning btn-lg']) !!}
+              {!! Form::close() !!}
+            </div>
+        </div>
+        @endforeach
+    </div>
+    
+  </div>
 </div>
 
 @endsection
