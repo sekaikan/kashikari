@@ -48,7 +48,7 @@ class GroupsController extends Controller
             'name' => $request->name,
         ]);
         
-          return redirect('/home');
+        return redirect('/home');
     }
     
     public function edit()
@@ -59,7 +59,7 @@ class GroupsController extends Controller
     public function show($id)
     {
         $user = \Auth::user();
-        $items = Item::orderBy('updated_at', 'desc')->paginate(4);
+        $items = Item::orderBy('updated_at', 'desc')->paginate(8);
         $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
         $group = Group::find($id);
         return view('groups.home', [

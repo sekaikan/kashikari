@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
+<div class="container">
+    <div class="row">
             <div class= "col-lg-4 col-md-6 float-left">
                     <img class="card-img" src="{{ $item->photo }} {{ secure_asset("images/home1.jpg") }}" alt="" class="colorfilter-image">
               @if (Auth::check()) 
@@ -41,10 +42,10 @@
                 </div>
              </div>
                 {!! Form::open(['route' => 'comments.store']) !!}
-               <div class="form-group">
+               <div class="form-group mt-5">
                    {{ Form::hidden('item_id', $item->id)}}
-                   {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'comment', 'rows' =>'3']) !!}
-                   {!! Form::submit('send', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                   {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'Message...', 'rows' =>'3']) !!}
+                   {!! Form::submit('Request to rent!', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
                </div>
                 {!! Form::close() !!}
             <?php $comments = $item->comments(); ?>
@@ -53,6 +54,7 @@
             @endif
             
             <a href="/group" class="">back >></a>
-        </div>    
+        </div>
+    </div>
 </div>
 @endsection

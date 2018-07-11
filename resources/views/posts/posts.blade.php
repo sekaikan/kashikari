@@ -1,27 +1,32 @@
 @foreach ($posts as $post)
-    <?php $user = $post->user; ?>
-    <li class="media">
-        <div class="media-left">
-           <img src="{{ Gravatar::src($user->email, 30) . '&d=mm' }}" alt="" class="img-circle" style=" margin-right:10px; margin-top:25px;  border-radius: 20px;">
+    @if(Auth::id() == $post->user_id)
+        <div class="card my-3 border-primary bg-light">
+            <div class="card-body">
+                <p class="text-muted">{{ $post->user->name }}</p>
+                <p class="text-lead">{{ $post->content }}</p>
+                <p class="small text-muted">Posted at {{ $post->created_at }}</p>
+                {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                 {!! Form::close() !!}
+             </div>
         </div>
-        <div class="media-body">
-            <div>
-                {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $post->created_at }}</span>
+    @else
+        <div class="card my-3">
+            <div class="card-body">
+                <p class="text-muted">{{ $post->user->name }}</p>
+                <p class="text-lead">{{ $post->content }}</p>
+                <p class="small text-muted">Posted at {{ $post->created_at }}</p>
+                 {!! link_to_route('posts.create','Reply', ['post_id' => $post->id], ['class'=>'btn btn-success']) !!}
+            
             </div>
-            <div>
-                <p>{!! nl2br(e($post->content)) !!}</p>
-                <p>{!! nl2br(e($post->status)) !!}</p>
-            </div>
-            <div>
-                @if (Auth::id() == $post->user_id)
-                    {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                    {!! Form::close() !!}
-                @endif
-            </div>
-            <div>
-                {!! link_to_route('posts.show','返信する!', ['id' => $post->id]) !!}
-            </div>
+            
+            
+                
         </div>
-    </li>
+    @endif
 @endforeach
+
+{!! $posts->render() !!}
+
+
+

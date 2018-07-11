@@ -89,9 +89,11 @@
            
            
             <div class="card-body">
+
                @include('group_user.follow_button', ['user' => $user])
                {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
               {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-warning btn-lg']) !!}
+
               {!! Form::close() !!}
             </div>
         </div>
