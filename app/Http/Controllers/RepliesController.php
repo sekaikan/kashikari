@@ -32,7 +32,6 @@ class RepliesController extends Controller
     {
         $this->validate($request, [
             'content' => 'required|max:191',
-            'status' =>  'required|max:191',
         ]);
         
         $request->user()->replies()->create([

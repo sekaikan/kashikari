@@ -9,10 +9,10 @@
         @if (Auth::id() == $user->id)
         {!! Form::open(['route' => 'replies.store']) !!}
             <div class="form-group" id="review-form-group">
-                {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'貸してください']) !!}
+                {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Reply...']) !!}
                 {{ Form::hidden('post_id', $reply->post_id) }}
                 {{ Form::hidden('reply_id', $reply->id) }}
-                {!! Form::submit('投稿する', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
             </div>
             {!! Form::close() !!}
         @endif
