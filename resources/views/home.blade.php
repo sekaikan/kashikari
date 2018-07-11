@@ -38,6 +38,7 @@
     
     <div class="mt-4">
     <h3>My Groups</h3>
+    <div class="row">
         @foreach ($follow_groups as $group)
         <div class="card col-3">
           <div class="card-header"> 
@@ -65,10 +66,12 @@
             </div>
         </div>
         @endforeach
+        </div>
     </div>
     
     <div class="mt-4">
     <h3>Groups List</h3>
+    <div class="row">
         @foreach ($unfollow_groups as $group)
         <div class="card col-3">
           <div class="card-header"> 
@@ -98,6 +101,7 @@
             </div>
         </div>
         @endforeach
+        </div>
     </div>
     
   </div>
