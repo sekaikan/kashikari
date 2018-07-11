@@ -28,7 +28,7 @@
     @endif
 </div>
 
-<div class="my-3">
+<div class="container my-3">
     <h2 class="text-center">Ask for what you need</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
