@@ -1,39 +1,9 @@
 <?php
-/*
-$stack = array();
-foreach($replies as $reply) {
-    array_push($stack,array($reply,0));
-}
-
-while(count($stack)>0) {
-    $replyinfo = array_pop($stack);
-    $reply = $replyinfo[0];
-    $depth = $replyinfo[1];
-    
-    for($i=0;$i<$depth;$i++){
-        echo "__";
-    }
-    echo $reply->id . '->' . $reply->reply_id . "<br>";
-    
-    $ch_replies = $reply->where('reply_id', $reply->id)->get();
-    foreach($ch_replies as $r) {
-        array_push($stack,array($r,$depth+1));
-    }
-}
-*/
-?>
-
-
-
-
-
-<?php
 $stack = array();
 foreach($replies as $reply) {
     array_push($stack,array($reply,0));
 }
 ?>
-
 
 @while(count($stack)>0)
     <?php

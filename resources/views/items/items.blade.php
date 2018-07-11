@@ -1,32 +1,29 @@
-
 @if ($items)
 <div class="row">
+    <div class="card-columns">
 @foreach ($items as $item)
     <?php $user = $item->user; ?>
-       <div class= "col-xl-3 col-md-4 col-6">
-
-            <div>
-                {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">{{ $item->date }}</span>
+        <div class="card shadow">
+            <img class="card-img-top" src="{!! $item->photo !!}" alt="items photo">
+            <div class="card-body">
+                    <h5 class="card-title">{!! $item->name !!}
+                        @if($item->status == 'open')
+                            <span class="badge badge-pill badge-success">{{ $item->status }}</span>
+                        @else
+                            <span class="badge badge-pill badge-danger">{{ $item->status }}</span>
+                        @endif
+                    </h5>
+                    <p class="">
+                        <span class="text-muted">by {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}</span>
+                    </p>
+                    <p class="card-text text-justify">{!! nl2br(e($item->content)) !!}</p>
+                <hr>
+                <p class="card-text"><i class="fas fa-gift text-secondary"></i>  {{ $item->reward }}</p>
+                {!! link_to_route('items.show', "Borrow it!", ['id' => $item->id], ['class'=>'btn btn-primary btn-block']) !!}
             </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{!! $item->photo !!}" alt="items photo">
-                <div class="card-body">
-                    <h5 class="card-title">{!! $item->name !!}</h5>
-                    <p class="card-text">{!! nl2br(e($item->content)) !!}</p>
-                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Reward: {!! nl2br(e($item->reward)) !!}</li>
-                    <li class="list-group-item">{!! $item->status !!}</li>
-                 </ul>
-                  {!! link_to_route('items.show', "Detail", ['id' => $item->id]) !!}
-                </div>
-           </div>    
-        </div>
+       </div>    
 @endforeach
+    </div>
 </div>
 {!! $items->render() !!}
 @endif
-
-   
-              
-            
-    

@@ -20,11 +20,11 @@
       </div>
     </div>
 </div>
-<div class="my-3">
+<div class="container my-3">
     <h2 class="text-center">Share Your Items</h2>
     @include('items.items', ['items' => $items])
     @if (count($items) >0)    
-        <a href="{{ route ('items.index') }}" class="">More...</a>
+        <a href="{{ route ('items.index') }}" class="btn btn-link">More...</a>
     @endif
 </div>
 
