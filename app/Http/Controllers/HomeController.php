@@ -20,8 +20,8 @@ class HomeController extends Controller
     public function index()
     {
          $user = \Auth::user();
-         $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
-         $unfollow_groups = Group::orderBy('updated_at', 'desc')->paginate(20);
+         $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(8);
+         $unfollow_groups = Group::orderBy('updated_at', 'desc')->paginate(8);
         // \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id','!=', $user->id)->distinct()->paginate(20);
         
         
