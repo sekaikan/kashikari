@@ -28,13 +28,14 @@ class HomeController extends Controller
     public function index()
     {
          $user = \Auth::user();
-         $groups = Group::orderBy('updated_at', 'desc')->paginate(30);
+         $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
+         $unfollow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id','!=', $user->id)->distinct()->paginate(20);
         
         
         return view('home',[
-            'groups'=> $groups,
+            'unfollow_groups'=> $unfollow_groups,
             'user' => $user,
-    
+            'follow_groups' => $follow_groups,
             ]);
     }
     

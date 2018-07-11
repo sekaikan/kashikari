@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use app\Group;
+
 class UsersController extends Controller
 {
     public function show($id)
@@ -40,4 +42,20 @@ class UsersController extends Controller
 
         return redirect(route('users.show', \Auth::user()->id));
     }
+      public function follow_groups($id)
+    {
+        $user = User::find($id);
+        //$count_groups = $user->groups()->count();
+        $groups = $user->groups()->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'groups' => $groups,
+        ];
+
+       // $data += $this->counts($user);
+
+        return view('users.followings', $data);
+    }
+
 }

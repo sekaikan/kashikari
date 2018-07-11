@@ -9,20 +9,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name', 'password', 'content', 'photo',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -56,6 +46,35 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Group::class)->withTimestamps();
     }
+    
+     public function follow($groupId)
+{
+    $exist = $this->is_following($groupId);
+
+    if ($exist) {
+        return false;
+    } else {
+        $this->groups()->attach($groupId);
+        return true;
+    }
+}
+
+public function unfollow($groupId)
+{
+    $exist = $this->is_following($groupId);
+
+    if ($exist) {
+        $this->groups()->detach($groupId);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+public function is_following($groupId) {
+    return $this->groups()->where('group_id', $groupId)->exists();
+}
     
    
 }
