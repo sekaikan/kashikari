@@ -44,7 +44,7 @@ foreach($replies as $reply) {
                                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
                                 @endif
-                                {!! link_to_route('replies.create','返信する!', ['reply_id' => $reply->id], ['class'=>'btn btn-primary']) !!}
+                                {!! link_to_route('replies.create','Reply', ['reply_id' => $reply->id], ['class'=>'btn btn-primary']) !!}
                             </div>
                         </div>
                     </div>

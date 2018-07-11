@@ -9,7 +9,6 @@
         @if (Auth::id() == $user->id)
         {!! Form::open(['route' => 'replies.store']) !!}
             <div class="form-group" id="review-form-group">
-                {{ Form::select('status', array('open' => 'Open', 'closed' => 'Closed'), 'open', ['class'=>'form-control']) }}
                 {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'貸してください']) !!}
                 {{ Form::hidden('post_id', $reply->post_id) }}
                 {{ Form::hidden('reply_id', $reply->id) }}
