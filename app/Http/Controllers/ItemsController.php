@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Item;
+use App\Group;
+use App\Post;
 
 class ItemsController extends Controller
 {
     public function index()
     {
         $items = Item::orderBy('updated_at', 'desc')->paginate(20);
+        $group = Group::find(1);
         
         foreach ($items as $item) {
             $date = date_create($item->date);
@@ -19,15 +22,17 @@ class ItemsController extends Controller
         }
         
         return view('items.index', [
-            'items' => $items,
+            'items' => $items, 'group' => $group,
         ]);
     }
     
     public function create()
     {
         $item = new Item;
+        $group = Group::find(1);
+         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('items.create', ['item' => $item,]);
+        return view('items.create', ['item' => $item, 'group' => $group, 'posts' =>$posts]);
     }
     
     
