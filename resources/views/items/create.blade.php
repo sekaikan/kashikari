@@ -26,16 +26,17 @@
     </div>
 
 
+<div class= "container">
+<div class= "row">
+    
+    
 
-
-<div class="container">
+<div class=" col-8 mx-auto">
      {!! Form::model($item, ['route' => 'items.store']) !!}
         <div class="row item">
-             <div class="col-md-6 offset-md-3">
+             <div class="col-md-8 offset-md-2">
                 <h1 class="text-center font-weight-light">Register Items</h1>
-                <div class="text-center">
-                <img src="{{ $item->photo }}" class="">
-                </div>
+                
                 <div class="form-group">
                     {!! Form::label('name', 'Item name') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -57,18 +58,25 @@
                 </div>
                
               </div>
-            {!! Form::submit('upload', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+            {!! Form::submit('upload', ['class' => 'btn btn-primary  btn-block col-6  mx-auto']) !!}
               
             {!! Form::close() !!}
             
         </div>
+        </div>
         
-    <div class="container my-3">
+        
+        <div class=" my-3 col-4">
     <h2 class="text-center">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
         <a href="{{ route ('posts.index') }}" class="">More...</a>
     @endif
 </div>
+ 
+ 
+ </div>
+ </div>
+        
 
 @endsection

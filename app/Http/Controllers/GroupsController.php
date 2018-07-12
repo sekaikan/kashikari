@@ -66,7 +66,7 @@ class GroupsController extends Controller
             'items' => $items,
             'group' => $group,
             'posts' => $posts,
-            //'users' => $users,
+            'user' => $user,
         ]);
     }
     
