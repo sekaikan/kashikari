@@ -28,7 +28,7 @@
                       ?>
 
                        <img class="card-img-top" src="{{ $image_rand }}">
-           
+                       {!! link_to_route('group.show',  'Go!' , ['id' => $group->id],['class'=>'btn btn-outline-danger']) !!}
            
                 {{--  <div class="card-body">
                            @include('group_user.follow_button', ['user' => $user])
