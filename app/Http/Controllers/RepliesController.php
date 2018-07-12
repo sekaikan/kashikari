@@ -12,6 +12,8 @@ use App\Post;
 
 use App\Reply;
 
+use App\Notification;
+
 class RepliesController extends Controller
 {
     /*public function index() 
@@ -40,6 +42,27 @@ class RepliesController extends Controller
             'post_id' => $request->post_id,
             'reply_id' => $request->reply_id,
         ]);
+        
+        
+        if ($request->reply_id != NULL)
+        {
+            $recipient = User::find(Reply::find($request->reply_id)->user_id);
+            $request->user()->notifications()->create([
+            'content' => $request->content,
+            'user_id' => $recipient->id,
+            'post_id' => $request->post_id,
+            'sender_id' => \Auth::id(),
+            ]);
+        }else
+        {
+            $recipient = User::find(Reply::find($request->post_id)->user_id);
+            $request->user()->notifications()->create([
+            'content' => $request->content,
+            'user_id' => $recipient->id,
+            'post_id' => $request->post_id,
+            'sender_id' => \Auth::id(),
+            ]);
+        }
 
        return redirect(route('posts.show', $request->post_id));;
     }
@@ -48,7 +71,7 @@ class RepliesController extends Controller
     public function create(Request $request)
     {
         $user = \Auth::user();
-        $reply = \App\Reply::find($request->reply_id);
+        $reply = Reply::find($request->reply_id);
         return view('replies.create', [
         'user' => $user,
         'reply' => $reply,

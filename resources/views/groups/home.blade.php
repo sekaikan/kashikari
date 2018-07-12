@@ -7,8 +7,9 @@
 @endsection
 
 @section('content')
-     
-     
+      <div class="container">
+          @include('notifications.notifications')
+      </div>
      <div class="mainmenu status text-center">
        <ul class="nav nav-tabs justify-content-center">
           <li class="nav-item col-3">

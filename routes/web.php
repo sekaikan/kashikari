@@ -29,6 +29,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 //results
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
+
+// notifications
+   Route::delete('/', 'NotificationsController@destroy')->name('notifications.destroy');
+
    
 //borrow
   // Route::get('/group/borrow', 'PostsController@index');
