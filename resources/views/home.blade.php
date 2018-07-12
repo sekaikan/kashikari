@@ -85,7 +85,7 @@
     <h3>Create Group</h3>
   </div>
   <div class="card-body">
-      {!! Form::model($group, ['route' => 'group.store']) !!}
+      {!! Form::model($groups, ['route' => 'group.store']) !!}
                 <div class="form-group">
                     {!! Form::label('name', 'Name') !!}
                     {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
