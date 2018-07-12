@@ -12,7 +12,7 @@
                 <h3>My Groups</h3>
                 <div class="row">
                 @foreach ($follow_groups as $group)
-                    <div class="card col-3">
+                    <div class="card col-4">
                       <div class="card-header"> 
                       {!! link_to_route('group.show',  $group->name , ['id' => $group->id]) !!}
                       </div>
@@ -42,10 +42,10 @@
             </div>
     
             <div class="mt-4">
-                <h3>Groups List</h3>
+                <h3>Others</h3>
                 <div class="row">
                     @foreach ($unfollow_groups as $group)
-                        <div class="card col-3">
+                        <div class="card col-4">
                             <div class="card-header"> 
                             {!! link_to_route('group.show',  $group->name , ['id' => $group->id]) !!}
                              </div>

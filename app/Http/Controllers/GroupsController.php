@@ -58,16 +58,27 @@ class GroupsController extends Controller
     
     public function show($id)
     {
+    
         $user = \Auth::user();
+        $group = Group::find($id);
+        
+        if($user->is_following($id)){
         $items = Item::orderBy('updated_at', 'desc')->paginate(8);
         $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
-        $group = Group::find($id);
         return view('groups.home', [
             'items' => $items,
             'group' => $group,
             'posts' => $posts,
             //'users' => $users,
         ]);
+        }else{
+        $items = Item::orderBy('updated_at', 'desc')->paginate(8);
+        return view('groups.show', [
+            'items' => $items,
+            'group' => $group,
+            'user' => $user,
+        ]);
+        }
     }
     
     public function update()
