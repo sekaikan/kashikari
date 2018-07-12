@@ -44,4 +44,6 @@
 </div>
 </div>
 
+    @include('group_user.follow_button', ['user' => $user])
+
 @endsection

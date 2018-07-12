@@ -69,7 +69,7 @@ class GroupsController extends Controller
             'items' => $items,
             'group' => $group,
             'posts' => $posts,
-            //'users' => $users,
+            'user' => $user,
         ]);
         }else{
         $items = Item::orderBy('updated_at', 'desc')->paginate(8);
