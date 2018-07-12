@@ -7,7 +7,9 @@
 @endsection
 
 @section('content')
-
+<div class="container">
+    @include('notifications.notifications')
+</div>
 <div class="mainmenu">
     <div class="row text-center my-5">
       <div class="col-3"><a href="/items/create"><i class="fas fa-smile-wink"></i></a><br><span class="icontitle">Lend</span>
