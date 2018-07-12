@@ -16,15 +16,17 @@
                             <img src="/images/user1.jpg" class="img-fluid rounded-circle"></img>
                         </div>
                         <div class="col-10">
-                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->sender_id)->name }}</span> sent you a reply. <span class="badge badge-secondary">New</span></small>
+                            <?php $date = new DateTime($notification->created_at);?>
+                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->sender_id)->name }}</span> sent you a reply.</small>
                             <p class="card-text text-muted">
-                                {{ $notification->content }}
+                                <a href="{{url('posts/'.$notification->post_id)}}" class="text-muted">{{ $notification->content }}</a>
                             </p>
+                            <p class="card-text text-muted"><small>{{ $date->format("g:i a, F j, Y")}}</small></p>
                         </div>
                         <div class="col-1">
                             {!! Form::open(['route' => ['notifications.destroy', 'notification_id'=>$notification->id], 'method' => 'delete', 'class'=>'text-right']) !!}
                                 @if(Auth::id() == $notification->user_id)
-                                    {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                                    {!! Form::button('<i class="fas fa-times"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
                                 @endif
                             {!! Form::close() !!}
                         </div>
