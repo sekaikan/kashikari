@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Item;
 
+use App\User;
+
+use App\Group;
+
 class ItemsController extends Controller
 {
     public function index()
