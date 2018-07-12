@@ -7,7 +7,25 @@
 @endsection
 
 @section('content')
-
+<div class="container">
+        <div class="card">
+        <div class="card-header">
+            Notifications<span class="badge badge-secondary">New</span>
+        </div>
+        <div class="card-body">
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+            
+            </li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+</div>>
 <div class="mainmenu">
     <div class="row text-center my-5">
       <div class="col-3"><a href="/items/create"><i class="fas fa-smile-wink"></i></a><br><span class="icontitle">Lend</span>
