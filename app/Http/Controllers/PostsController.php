@@ -10,6 +10,10 @@ use App\User;
  
 use App\Post;
 
+use App\Group;
+
+use App\Item;
+
 
 
 class PostsController extends Controller
@@ -20,9 +24,11 @@ class PostsController extends Controller
         if (\Auth::check()) {
             $users = User::all();
             $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
+            $group = Group::find(1);
             $data = [
                 'users' => $users,
                 'posts' => $posts,
+                'group' => $group,
             ];
             
             return view('posts.index', $data);
@@ -49,8 +55,10 @@ class PostsController extends Controller
     public function create(Request $request)
     {
         $user = \Auth::user();
+        $group = Group::find(1);
+         $items = Item::orderBy('updated_at', 'desc')->paginate(20);
         return view('posts.create', [
-        'user' => $user,
+        'user' => $user, 'group' => $group, 'items' =>$items,
         
       ]);
       return redirect('/');
