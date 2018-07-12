@@ -2,7 +2,11 @@
     <nav class="navbar navbar-expand-lg navbar-extend">
         <div class="container">
             <div class="navbar-header">
+                @if (Auth::check())
                 <a class="navbar-brand navbar-left" href="/home">Kashikari</a>
+                @else
+                <a class="navbar-brand navbar-left" href="/">Kashikari</a>
+                @endif
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

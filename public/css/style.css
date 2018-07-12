@@ -1,10 +1,69 @@
-
+/*welcome */
+.jumbotron-extend {
+    height: 100vh;
+}
 
 .jumbotron-extend {
     background-color: transparent;
     position: relative;
     height: 80vh;
 }
+
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-fluid p {
+    margin-bottom: 0;
+}
+
+.colored {
+    background-color:#EFF2F1;
+}
+
+.uncolored {
+    background-color: white;
+}
+
+.title {
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.content p{
+    text-align: justify;
+    font-size: 22px;
+}
+
+.button1{
+     display:inline-block;
+     width: 250px;
+     height:70px;
+     line-height: 70px;
+     color: #FFF;
+     text-decoration: none;
+     text-align: center;
+     background-color: #3CAFC1; 
+     border-radius: 5px;
+     -webkit-transition: all 0.5s;
+     transition: all 0.5s;
+     font-size: larger;
+}
+.button1:hover{
+     background-color: #fff;
+     text-decoration: none;
+     color:#3CAFC1;
+     border: 2px solid #3CAFC1;
+} 
+
+.button1:active {
+     margin-top: 6px;
+     border-bottom: none;
+     -webkit-transform: translateY(6px);　/*下移動*/
+     transform: translateY(6px);
+}
+
 
 #logo {
     position: absolute;
@@ -15,6 +74,11 @@
 
 #logo h1 {
     line-height: 1em;
+    color: white;
+}
+
+#logo p {
+    color: white;
 }
 nav ul {
     right: 3%;
