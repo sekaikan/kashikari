@@ -44,6 +44,19 @@ $rand = mt_rand(0,3);
         color: #E2C73F;
     }
     
+    .box1 {
+    background: #e4fcff;/*背景色*/
+    border-top: solid 6px #1dc1d6;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    }
+    
+    .box2 {
+    background: #F7E8A0;/*背景色*/
+    border-top: solid 6px #F7D736;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+    }
+
+    
   </style>
 </head>
 <body>
@@ -173,12 +186,48 @@ $rand = mt_rand(0,3);
             </div>
         </div>
         <div class="uncolored content p-5">
-            <h2 class="display-2 text-secondary font-weight-bold mb-5">Voice</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
-                ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-                delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit
-                eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum
-                claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+            <h2 class="display-2 text-secondary font-weight-bold mb-5">VOICE</h2>
+                <div class="row my-3">
+                    <div class="col-4 box1">
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <p class="m-3">
+                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                        </p>    
+                    </div>
+                    <div class="col-4 box2">
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <p class="m-3">
+                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                        </p>    
+                    </div>
+                    <div class="col-4 box1">
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <p class="m-3">
+                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                        </p> 
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-4 box2">
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <p class="m-3">
+                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                        </p>    
+                    </div>
+                    <div class="col-4 box1">
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <p class="m-3">
+                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                        </p>    
+                    </div>
+                    <div class="col-4 box2">
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <p class="m-3">
+                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                        </p>    
+                    </div>
+                </div>
+            <p></p>
         <div class="text-center my-5">
             <a class="button1" href="{{ route('register') }}">Sign Up Now</a>
         </div>
@@ -187,17 +236,20 @@ $rand = mt_rand(0,3);
         
     </div>
     
+<footer class="bg-light p-5">
+    <div class="text-center text-muted">©2018 KASHIKARI</div>
+</footer> 
 
-              
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
 </body>
 
-<footer>
-    <div class="text-center text-muted">©2018 KASHIKARI</div>
-</footer>
+
 
 </html>
