@@ -16,5 +16,6 @@ class GroupUserController extends Controller
     {
         \Auth::user()->unfollow($id);
         return redirect("/home");
+
     }
 }
