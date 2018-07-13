@@ -14,12 +14,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     @if (Auth::check())
-                        <form class="form-inline" action="{{url('/results/')}}">
-                            <div class="form-group mr-2">
-                                <input type="text" name="keyword" value="" class="form-control" placeholder="Find Items">
-                            </div>
-                            <input type="submit" value="Search" class="btn btn-outline-success">
-                        </form>
+                    <?php $url = $_SERVER['REQUEST_URI'];?>
+                        @if(strstr($url,'groupsearch') || strstr($url,'home'))
+                            <form class="form-inline" action="{{url('/results/groupsearch')}}">
+                                <div class="form-group mr-2">
+                                    <input type="text" name="keyword" value="" class="form-control" placeholder="Find Groups">
+                                </div>
+                                <input type="submit" value="Search" class="btn btn-outline-success">
+                            </form>
+                        @else
+                            <form class="form-inline" action="{{url('/results/')}}">
+                                <div class="form-group mr-2">
+                                    <input type="text" name="keyword" value="" class="form-control" placeholder="Find Items">
+                                </div>
+                                <input type="submit" value="Search" class="btn btn-outline-success">
+                            </form>
+                        @endif
+                        
+                        
                          <li class="dropdown">
                                 <a href="#" class="dropdown-toggler ml-3" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
