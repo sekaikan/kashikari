@@ -3,10 +3,11 @@
 
       
 @section('content')
-
 <div class="container">
     <div class="row">
-        
+        <div class="col-12">
+         @include('notifications.notifications')
+         </div>
         <div class="col-9">
             <div class="mt-2">
                 <h3>My Groups</h3>

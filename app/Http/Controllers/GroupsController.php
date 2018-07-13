@@ -58,7 +58,6 @@ class GroupsController extends Controller
     
     public function show($id)
     {
-    
         $user = \Auth::user();
         $group = Group::find($id);
         
@@ -72,9 +71,7 @@ class GroupsController extends Controller
             //'users' => $users,
         ]);
         }else{
-        $items = Item::orderBy('updated_at', 'desc')->paginate(8);
         return view('groups.show', [
-            'items' => $items,
             'group' => $group,
             'user' => $user,
         ]);
@@ -93,22 +90,6 @@ class GroupsController extends Controller
         
     return redirect('/home');
     }
-    
-    public function followers($id)
-    {
-        $user = User::find($id);
-        //$count_users = $group->users()->count();
-        $users = $group->users()->paginate(10);
 
-        $data = [
-            'user' => $user,
-            'group' => $group,
-            
-        ];
-
-        //$data += $this->counts($user);
-
-        return view('users.followers', $data);
-    }
 }
 

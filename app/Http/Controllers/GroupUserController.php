@@ -15,6 +15,6 @@ class GroupUserController extends Controller
     public function destroy($id)
     {
         \Auth::user()->unfollow($id);
-        return redirect()->back();
+        return redirect('/home');
     }
 }
