@@ -25,10 +25,12 @@ class PostsController extends Controller
             $users = User::all();
             $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
             $group = Group::find(1);
+            $user = \Auth::user();
             $data = [
                 'users' => $users,
                 'posts' => $posts,
                 'group' => $group,
+                'user' => $user,
             ];
             
             return view('posts.index', $data);
