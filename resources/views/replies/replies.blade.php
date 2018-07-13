@@ -48,7 +48,6 @@ foreach($replies as $reply) {
                             <a data-toggle="collapse" href="#collapsePost{{$reply->id}}" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fas fa-reply"></i>
                             </a>
-
                         </div>
                         <div class="col-12">
                             <div class="collapse" id="collapsePost{{$reply->id}}">

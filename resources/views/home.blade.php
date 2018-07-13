@@ -3,13 +3,14 @@
 
       
 @section('content')
-
 <div class="container">
     <div class="row">
-        
+        <div class="col-12">
+         @include('notifications.notifications')
+         </div>
         <div class="col-9">
-            <div class="mt-2">
-                <h3>My Groups</h3>
+            <div class="mt-4">
+                <h2>My Groups</h2>
                 <div class="row">
                 @foreach ($follow_groups as $group)
                     <div class="card col-4">
@@ -40,9 +41,10 @@
                 @endforeach
                 </div>
             </div>
+
     
             <div class="mt-4">
-                <h3>Others</h3>
+                <h2>Others</h2>
                 <div class="row">
                     @foreach ($unfollow_groups as $group)
                         <div class="card col-4">

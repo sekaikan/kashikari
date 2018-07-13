@@ -2,11 +2,11 @@
 <div class="row">
     <div class="card-columns">
 @foreach ($items as $item)
-    <?php $user = $item->user; ?>
+    <?php $user = App\User::find($item->user_id) ?>
         <div class="card shadow">
             <img class="card-img-top" src="{!! $item->photo !!}" alt="items photo">
             <div class="card-body">
-                    <h5 class="card-title">{!! $item->name !!}
+                    <h5 class="card-title"><a href="/items/{{$item->id}}" class="text-dark">{!! $item->name !!}</a>
                         @if($item->status == 'open')
                             <span class="badge badge-pill badge-success">{{ $item->status }}</span>
                         @else

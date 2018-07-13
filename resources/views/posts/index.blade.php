@@ -32,8 +32,10 @@
             </div>
             {!! Form::close() !!}
         @endif
-        
-    @include('posts.posts')
+    </div>
+    <div class="container">
+      @include('posts.posts')
+    </div>
     <!--<a href="/group" class="">back >></a>-->
     </div>
     </div>

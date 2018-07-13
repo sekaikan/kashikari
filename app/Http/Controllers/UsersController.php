@@ -6,16 +6,20 @@ use Illuminate\Http\Request;
 
 use App\User;
 
-use app\Group;
+use App\Group;
+
+use App\Item;
 
 class UsersController extends Controller
 {
     public function show($id)
     {
         $user = User::find($id);
+        $items = Item::where('user_id', $id)->paginate(4);
 
         return view('users.show', [
             'user' => $user,
+            'items' => $items,
         ]);
     }
     

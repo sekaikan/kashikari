@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Item;
-use App\Group;
+
 use App\Post;
 
 use App\User;
+
+use App\Group;
 
 class ItemsController extends Controller
 {
@@ -24,7 +26,8 @@ class ItemsController extends Controller
         }
         
         return view('items.index', [
-            'items' => $items, 'group' => $group,
+            'items' => $items,
+            'group' => $group,
         ]);
     }
     
