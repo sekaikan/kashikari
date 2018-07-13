@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $fillable = [
-        'user_id', 'item_id', 'content',
+        'user_id', 'item_id', 'content','parent_id',
     ];
     
     public function user()
@@ -18,5 +18,10 @@ class Comment extends Model
     public function item()
     {
         return $this->belongsTo(Item::class);
+    }
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
