@@ -7,9 +7,6 @@
 @endsection
 
 @section('content')
-
-
-
      <div class="mainmenu status text-center">
        <ul class="nav nav-tabs justify-content-center">
           <li class="nav-item col-3">
@@ -24,9 +21,20 @@
        </ul>
     </div>
    
+   <div class="container my-3">
+        @if (Auth::id() == $user->id)
+        {!! Form::open(['route' => 'posts.store']) !!}
+            <div class="form-group" id="review-form-group">
+                {{ Form::select('status', array('open' => 'Open', 'closed' => 'Solved'), 'open', ['class'=>'form-control']) }}
+                {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Please borrow!!', 'rows'=>'3']) !!}
+                {!! Form::submit('submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+            </div>
+            {!! Form::close() !!}
+        @endif
+    </div>
 
     @include('posts.posts')
-    <a href="/group" class="">back >></a>
+    <!--<a href="/group" class="">back >></a>-->
 @endsection
 
 {!!$posts->render() !!}
