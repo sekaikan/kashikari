@@ -110,7 +110,7 @@
        Search Group
    </h3>
     <div class="card-body">
-        <form class="form-inline" action="{{url('/results/')}}">
+        <form class="form-inline" action="{{url('/results/groupsearch/')}}">
          <div class="form-group mr-2">
          <input type="text" name="keyword" value="" class="form-control" placeholder="Find Groups">
          </div>
