@@ -26,8 +26,8 @@
     </div>
 
 
-<div class= "container">
-<div class= "row">
+<div class= "container-fluid bg-light">
+<div class= "row offset-1 col-10">
     
     
 

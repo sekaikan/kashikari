@@ -1,5 +1,5 @@
 @foreach ($posts as $post)
-        <div class="card my-3 border-primary bg-light">
+        <div class="card my-3 border-primary bg-light shadow">
             <div class="card-body">
                 <p class="text-muted">{!! link_to_route('users.show', $post->user->name, ['id' => $post->user->id]) !!}</p>
                 <p class="text-lead">{{ $post->content }}</p>

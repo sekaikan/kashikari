@@ -28,25 +28,25 @@
        </ul>
     </div>
    
-    
-
-<div class="row">
-<div class="container my-3 col-7">
-    <h2 class="text-center">Shared Items</h2>
-    @include('items.items', ['items' => $items])
-    @if (count($items) >0)    
-        <a href="{{ route ('items.index') }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
-    @endif
-</div>
-
-<div class="container my-3 col-4">
-    <h2 class="text-center">Ask for what you need</h2>
-    @include('posts.posts', ['posts' => $posts])
-    @if (count($posts) >0)
-        <a href="{{ route ('posts.index') }}" class="float-right btn btn-outline-primary">More...</a>
-    @endif
-</div>
-</div>
+    <div class="container-fluid pt-5 bg-light">
+        <div class="row">
+            <div class="col-7 ml-5">
+        
+            <h2 class="text-center">Shared Items</h2>
+            @include('items.items', ['items' => $items])
+            @if (count($items) >0)    
+                <a href="{{ route ('items.index') }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
+            @endif
+            </div>
+            <div class="col-4 ml-5">
+                <h2 class="text-center">Ask for what you need</h2>
+                @include('posts.posts', ['posts' => $posts])
+                @if (count($posts) >0)
+                    <a href="{{ route ('posts.index') }}" class="float-right btn btn-outline-primary">More...</a>
+                @endif
+            </div>
+        </div>
+    </div>
   
    
  

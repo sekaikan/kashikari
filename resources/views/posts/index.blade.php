@@ -21,7 +21,8 @@
        </ul>
     </div>
    
-   <div class="container my-3">
+   <div class="container-fluid pt-5 bg-light">
+         <div class= "offset-2 col-8">
         @if (Auth::id() == $user->id)
         {!! Form::open(['route' => 'posts.store']) !!}
             <div class="form-group" id="review-form-group">
@@ -31,10 +32,11 @@
             </div>
             {!! Form::close() !!}
         @endif
-    </div>
-
+        
     @include('posts.posts')
     <!--<a href="/group" class="">back >></a>-->
+    </div>
+    </div>
 @endsection
 
 {!!$posts->render() !!}
