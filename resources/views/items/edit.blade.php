@@ -6,20 +6,20 @@
      {!! Form::model($item,['route' => ['items.update', $item->id], 'method' => 'put']) !!}
         <div class="row">
              <div class="col-md-6 offset-md-3">
-                 <h1 class="text-center font-weight-light">アイテム登録ページ</h1>
+                 <h1 class="text-center font-weight-light">Register Items</h1>
                  <div class="text-center">
                   <img src="{{ $item->photo }}" class="">
                  </div>
                  <div class="form-group">
-                    {!! Form::label('name', 'アイテム名') !!}
+                    {!! Form::label('name', 'Item name') !!}
                     {!! Form::text('name', $item->name, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('content', '説明文') !!}
-                    {!! Form::textarea('content', $item->content, ['class' => 'form-control']) !!}
+                    {!! Form::label('content', 'Description') !!}
+                    {!! Form::textarea('content', $item->content, ['class' => 'form-control', 'rows' => '5']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('reward', '報酬') !!}
+                    {!! Form::label('reward', 'Reward') !!}
                     {!! Form::text('reward', $item->reward, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">

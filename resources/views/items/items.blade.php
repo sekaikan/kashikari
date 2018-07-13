@@ -19,7 +19,7 @@
                     <p class="card-text text-justify">{!! nl2br(e($item->content)) !!}</p>
                 <hr>
                 <p class="card-text"><i class="fas fa-gift text-secondary"></i>  {{ $item->reward }}</p>
-                {!! link_to_route('items.show', "Borrow it!", ['id' => $item->id], ['class'=>'btn btn-primary btn-block']) !!}
+                {!! link_to_route('items.show', "Details", ['id' => $item->id], ['class'=>'btn btn-primary btn-block']) !!}
             </div>
        </div>    
 @endforeach
