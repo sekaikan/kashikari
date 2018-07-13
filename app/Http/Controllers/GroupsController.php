@@ -16,12 +16,12 @@ use \App\Group;
 
 class GroupsController extends Controller
 {
-    public function index()
+    public function index($id)
     {
         $user = \Auth::user();
         $items = Item::orderBy('updated_at', 'desc')->paginate(8);
         $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
-        $group = Group::find(1);
+        $group = Group::find($id);
         return view('groups.home', [
             'items' => $items,
             'group' => $group,
@@ -68,7 +68,7 @@ class GroupsController extends Controller
             'items' => $items,
             'group' => $group,
             'posts' => $posts,
-            //'users' => $users,
+            'user' => $user,
         ]);
         }else{
         return view('groups.show', [

@@ -26,49 +26,57 @@
     </div>
 
 
+<div class= "container">
+<div class= "row">
+    
+    
 
-
-<div class="container">
+<div class=" col-7 mx-auto">
      {!! Form::model($item, ['route' => 'items.store']) !!}
         <div class="row item">
-             <div class="col-md-6 offset-md-3">
-                <h1 class="text-center font-weight-light">Register Items</h1>
-                <div class="text-center">
-                <img src="{{ $item->photo }}" class="">
-                </div>
+             <div class="col-md-10 offset-1">
+                <h2 class="text-center">Register Items</h2>
+                
                 <div class="form-group">
                     {!! Form::label('name', 'Item name') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('content', 'Explanation') !!}
-                    {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
+                    {!! Form::label('content', 'Description') !!}
+                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('reward', 'Return') !!}
+                    {!! Form::label('reward', 'Reward') !!}
                     {!! Form::text('reward', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
                      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status</label>
                       <select name="status" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                             <option value="open" selected>Open</option>
-                            <option value="closed">closed</option>
+                            <!--<option value="closed">closed</option>-->
                       </select>
                 </div>
                
               </div>
-            {!! Form::submit('upload', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+            {!! Form::submit('upload', ['class' => 'btn btn-primary  btn-block col-6  mx-auto']) !!}
               
             {!! Form::close() !!}
             
         </div>
+        </div>
         
-    <div class="container my-3">
+        
+        <div class="my-4 offset-1 col-4">
     <h2 class="text-center">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
-        <a href="{{ route ('posts.index') }}" class="">More...</a>
+        <a href="{{ route ('posts.index') }}" class="float-right btn btn-outline-primary">More...</a>
     @endif
 </div>
+ 
+ 
+ </div>
+ </div>
+        
 
 @endsection

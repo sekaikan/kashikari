@@ -45,7 +45,7 @@
                <div class="form-group mt-5">
                    {{ Form::hidden('item_id', $item->id)}}
                    {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'Message...', 'rows' =>'3']) !!}
-                   {!! Form::submit('Request to rent!', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                   {!! Form::submit('Send', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
                </div>
                 {!! Form::close() !!}
             <?php $comments = $item->comments(); ?>

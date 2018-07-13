@@ -3,11 +3,15 @@
 @section('cover')
     <div class="jumbotron jumbotron-fluid bg-dark">
             <h1 class="text-center text-white mt-5">{!! $group->name !!}</h1>
+            <div class="float-right mr-5">
+                @include('group_user.follow_button', ['user' => $user])
+            </div>
+            
     </div>
 @endsection
 
 @section('content')
-      <div class="container">
+      <div class="container my-3">
           @include('notifications.notifications')
       </div>
      <div class="mainmenu status text-center">
@@ -28,10 +32,10 @@
 
 <div class="row">
 <div class="container my-3 col-7">
-    <h2 class="text-center">Share Your Items</h2>
+    <h2 class="text-center">Shared Items</h2>
     @include('items.items', ['items' => $items])
     @if (count($items) >0)    
-        <a href="{{ route ('items.index') }}" class="btn btn-link">More...</a>
+        <a href="{{ route ('items.index') }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
     @endif
 </div>
 
@@ -39,9 +43,11 @@
     <h2 class="text-center">Ask for what you need</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
-        <a href="{{ route ('posts.index') }}" class="">More...</a>
+        <a href="{{ route ('posts.index') }}" class="float-right btn btn-outline-primary">More...</a>
     @endif
 </div>
 </div>
-
+  
+   
+ 
 @endsection

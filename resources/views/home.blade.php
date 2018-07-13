@@ -10,7 +10,8 @@
          </div>
         <div class="col-9">
             <div class="mt-2">
-                <h3>My Groups</h3>
+                <h2>Your Group</h2>
+                <h3>My groups</h3>
                 <div class="row">
                 @foreach ($follow_groups as $group)
                     <div class="card col-4">
@@ -41,6 +42,7 @@
                 @endforeach
                 </div>
             </div>
+
     
             <div class="mt-4">
                 <h3>Others</h3>

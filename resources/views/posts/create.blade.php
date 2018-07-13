@@ -28,8 +28,8 @@
         @if (Auth::id() == $user->id)
         {!! Form::open(['route' => 'posts.store']) !!}
             <div class="form-group" id="review-form-group">
-                {{ Form::select('status', array('open' => 'Open', 'closed' => 'Closed'), 'open', ['class'=>'form-control']) }}
-                {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Please borrow!!']) !!}
+                {{ Form::select('status', array('open' => 'Open', 'closed' => 'Solved'), 'open', ['class'=>'form-control']) }}
+                {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Please borrow!!', 'rows'=>'3']) !!}
                 {!! Form::submit('submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
             </div>
             {!! Form::close() !!}
@@ -41,7 +41,7 @@
     <h2 class="text-center">Shared Items</h2>
     @include('items.items', ['items' => $items])
     @if (count($items) >0)    
-        <a href="{{ route ('items.index') }}" class="btn btn-link">More...</a>
+        <a href="{{ route ('items.index') }}" class="float-right btn btn-outline-primary">More...</a>
     @endif
 </div>
 </div>
