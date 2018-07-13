@@ -30,9 +30,9 @@ class HomeController extends Controller
          }
 //         var_dump($follow_group_ids);
 //         return;
-         $unfollow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')
+         $unfollow_groups = \DB::table('groups')
 //         ->where('group_user.user_id','!=', $user->id)
-         ->whereNotIn('group_user.group_id', $follow_group_ids)
+         ->whereNotIn('groups.id', $follow_group_ids)
          ->distinct()->paginate(20);
          $groups = Group::orderBy('updated_at', 'desc')->paginate(20);
       
