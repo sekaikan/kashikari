@@ -12,9 +12,7 @@
         @endif
         found for "{{$keyword}}".</h1>
     <div class="row">
-        @foreach($groups as $group)
             @include('groups.groups')
-        @endforeach
     </div>
 </div>
 @endsection
