@@ -20,9 +20,7 @@
         @endif
         found for "{{$keyword}}".</h1>
     <div class="row">
-        @foreach($items as $item)
-            @include('items.items')
-        @endforeach
+        @include('items.items')
     </div>
 </div>
 @endsection
