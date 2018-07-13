@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-extend">
+    <nav class="navbar navbar-expand-lg navbar-extend fixed-top">
         <div class="container">
             <div class="navbar-header">
                 @if (Auth::check())
