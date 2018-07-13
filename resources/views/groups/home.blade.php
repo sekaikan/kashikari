@@ -47,6 +47,13 @@
             </div>
         </div>
     </div>
+    <div class="row fixed-bottom justify-content-end">
+        <div class="col-1">
+            <a href= "{{ route ('chats.index') }}">
+                <img src ="/images/chat.png" class="rounded  img-fluid">
+            </a>
+        </div>
+    </div>
   
    
  

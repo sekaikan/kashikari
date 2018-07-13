@@ -165,4 +165,17 @@ div.row.item{
 
 .my-orange {color: #fecb81}
 
+/*.chatbox{
+    position:fixed;
+　　z-index:2;
+　　float:right;
+}
+
+.chatbox img {
+    width:80px;
+　　height:80px;
+　　right: 0;
+　　
+}
+*/
 
