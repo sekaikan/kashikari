@@ -50,7 +50,7 @@
     <div class="row fixed-bottom justify-content-end">
         <div class="col-1">
             <a href= "{{ route ('chats.index') }}">
-                <img src ="/images/chat.png" class="rounded  img-fluid">
+                <img src ="/images/chat.png" class="rounded-circle img-fluid  fa-spin">
             </a>
         </div>
     </div>
