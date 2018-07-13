@@ -17,7 +17,7 @@ foreach($comments as $comment) {
             @for($i=0;$i<$depth;$i++)
                 <?php $spacer += 1 ?>
             @endfor
-            <div class="col-md-{{ 12 - $spacer}}">
+            <div class="col-md-{{12-($spacer % 12)}}">
                 <?php $user = $comment->user; ?>
                 <div class="card">
                     <div class="card-body">

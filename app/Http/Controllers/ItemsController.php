@@ -63,12 +63,21 @@ class ItemsController extends Controller
         $search = $request->name;
         $orientation = 'landscape';
         $photos = \Crew\Unsplash\Search::photos($search, $orientation);
+        if (isset($photos[0]['urls']['small'])==FALSE) {
+            $search = 'gift';
+            $orientation = 'landscape';
+            $photos = \Crew\Unsplash\Search::photos($search, $orientation);
+            $photo = $photo = $photos[0]['urls']['small'];
+        } else {
+            $photo = $photos[0]['urls']['small'];
+        }
+        
         $request->user()->items()->create([
             'content' => $request->content,
             'status' => $request->status,
             'name' => $request->name,
             'reward' => $request->reward,
-            'photo' => $photos[0]['urls']['small'],
+            'photo' => $photo,
         ]);
         
           return redirect('/items');

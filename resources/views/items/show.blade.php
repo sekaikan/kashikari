@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="row">
             <div class= "col-lg-4 col-md-6 float-left">
-                    <img class="card-img" src="{{ $item->photo }} {{ secure_asset("images/home1.jpg") }}" alt="" class="colorfilter-image">
+                    <img class="card-img" src="{{ $item->photo }}" alt="" class="colorfilter-image">
             </div>
             
 

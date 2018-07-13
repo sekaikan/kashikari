@@ -16,7 +16,7 @@ foreach($replies as $reply) {
         @for($i=0;$i<$depth;$i++)
             <?php $spacer += 1 ?>
         @endfor
-        <div class="col-md-{{ 12 - $spacer}}">
+        <div class="col-md-{{ 12-($spacer % 12)}}">
             <?php $user = $reply->user; ?>
             <div class="card p-4">
                 <div class="card-body">
