@@ -64,7 +64,10 @@ class ItemsController extends Controller
         $orientation = 'landscape';
         $photos = \Crew\Unsplash\Search::photos($search, $orientation);
         if (isset($photos[0]['urls']['small'])==FALSE) {
-            $photo = '/images/noimage.png';
+            $search = 'gift';
+            $orientation = 'landscape';
+            $photos = \Crew\Unsplash\Search::photos($search, $orientation);
+            $photo = $photo = $photos[0]['urls']['small'];
         } else {
             $photo = $photos[0]['urls']['small'];
         }
