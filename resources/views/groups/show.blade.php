@@ -20,7 +20,7 @@
      </div>
      
      <div class="col-8">
-      <h1 class="text-center text-black">{!! $group->name !!}</h1>
+      <h1 class="text-center text-yellow">{!! $group->name !!}</h1>
         @include('group_user.follow_button', ['user' => $user])
          
          
@@ -30,7 +30,7 @@
    <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text"></p>
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
   </div>
