@@ -44,7 +44,7 @@
                     @endforeach
                 @else
                     <div class="my-5 ml-5 text-left">
-                        <i class="far fa-plus-square fa-5x text-left text-muted"></i>
+                        <i class="far fa-plus-square fa-9x text-left text-muted"></i>
                     </div>
                 @endif
                 </div>
