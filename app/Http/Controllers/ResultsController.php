@@ -12,7 +12,7 @@ class ResultsController extends Controller
     {
       #キーワード受け取り
       $keyword = $request->input('keyword');
-     
+      
       $items = \DB::table('items');
      
       #もしキーワードがあったら
@@ -22,7 +22,7 @@ class ResultsController extends Controller
       }
      
       #ページネーション
-      $items = $items->orderBy('created_at','desc')->get();
+      $items = $items->orderBy('created_at','desc')->paginate(20);
     
       //->paginate(100);
       return view('results.index')->with('items',$items)
