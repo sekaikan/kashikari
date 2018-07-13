@@ -26,23 +26,24 @@
                        {!! Form::close() !!}
                 @endif
             </div>
-                 <div class="row">
-                <div class="col-12">
-                    {!! Form::open(['route' => 'comments.store']) !!}
-                   <div class="form-group mt-5">
-                       {{ Form::hidden('item_id', $item->id)}}
-                       {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'Message...', 'rows' =>'3']) !!}
-                       {!! Form::submit('Send', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+        </div>
+    </div>
+                <div class="row">
+                    <div class="col-12">
+                        {!! Form::open(['route' => 'comments.store']) !!}
+                       <div class="form-group mt-5">
+                           {{ Form::hidden('item_id', $item->id)}}
+                           {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'Message...', 'rows' =>'3']) !!}
+                           {!! Form::submit('Send', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                        </div>
+                        {!! Form::close() !!}
                     </div>
-                    {!! Form::close() !!}
-                </div>
                 </div>
                 <?php $comments = $item->comments()->where('parent_id', NULL); ?>
                     @if (count($comments) >0)
                           @include('comments.comments', ['comments' => $comments])
                     @endif
                 <a href="/group" class="">back >></a>
-    </div>
-    </div>
-    </div>
+        </div>
+
 @endsection
