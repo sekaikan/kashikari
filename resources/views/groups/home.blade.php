@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-      <div class="container">
+      <div class="container my-3">
           @include('notifications.notifications')
       </div>
      <div class="mainmenu status text-center">
@@ -43,7 +43,7 @@
     @endif
 </div>
 </div>
-
+ 
     @include('group_user.follow_button', ['user' => $user])
-
+ 
 @endsection
