@@ -148,12 +148,12 @@ a {
 }
 
 
-.navbar {
+/*.navbar {
     position: fixed;
     width: 100%;
     z-index: 1;
 
-}
+}*/
 
 div.row.item{
     margin-top: 20px;
@@ -162,4 +162,7 @@ div.row.item{
 .container.item{
     margin-top: 30px;
 }
+
+.my-orange {color: #fecb81}
+
 

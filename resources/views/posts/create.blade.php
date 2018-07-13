@@ -37,11 +37,13 @@
     </div>
 </div>
 
-  <div class="container my-3">
+  <div class="container-fluid bg-light">
     <h2 class="text-center">Shared Items</h2>
+     <div class ="row offset-2 col-8">
     @include('items.items', ['items' => $items])
+     </div>
     @if (count($items) >0)    
-        <a href="{{ route ('items.index') }}" class="float-right btn btn-outline-primary">More...</a>
+     <a href="{{ route ('items.index') }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
     @endif
 </div>
 </div>
