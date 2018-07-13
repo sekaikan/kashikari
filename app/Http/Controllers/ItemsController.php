@@ -24,7 +24,8 @@ class ItemsController extends Controller
         }
         
         return view('items.index', [
-            'items' => $items, 'group' => $group,
+            'items' => $items,
+            'group' => $group,
         ]);
     }
     
@@ -32,7 +33,7 @@ class ItemsController extends Controller
     {
         $item = new Item;
         $group = Group::find(1);
-         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
         
         return view('items.create', ['item' => $item, 'group' => $group, 'posts' =>$posts]);
     }
