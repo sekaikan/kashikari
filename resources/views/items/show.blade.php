@@ -13,39 +13,10 @@
             <p> {!! nl2br(e($item->content)) !!}</p>
             <hr>
               <p class="card-text h5"><i class="fas fa-gift mr-2"></i>{{ $item->reward }}</p>
-            <!--div class="card-groups">
-                <div class="card">
-                    
-                    <div class="card-header">
-                    @if($item->status == 'open')
-                            <span class="badge badge-pill badge-success float-right">{{ $item->status }}</span>
-                        @else
-                            <span class="badge badge-pill badge-danger float-right">{{ $item->status }}</span>
-                        @endif
-                        
-                    <div class="text-center">
-                        {{ $item->name }}
-                    </div>
-                    
-                    </div>
-                    
-                    
-                    <div class="card-body">
-                        <p class="card-title">Content<i class="fas fa-pencil-alt my-orange ml-2"></i></p>
-                        {!! nl2br(e($item->content)) !!}
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title">Reward</p>
-                        <p class="card-text">{{ $item->reward }}</p>
-                    </div>
-                </div-->
+            
                 
                
-             </div-->
-             <div class="row offset-9">
+            <div class="row offset-9">
               @if (Auth::check()) 
                        {!! Form::open(['route' => ['items.edit', $item->id], 'method' => 'get', 'class'=>'text-right']) !!}
                        {!! Form::button('<i class="fas fa-pen-fancy"></i><span style="margin-left:5px;">Edit</span>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
