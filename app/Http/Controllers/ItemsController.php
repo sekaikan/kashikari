@@ -10,8 +10,6 @@ use App\Post;
 
 use App\User;
 
-use App\Group;
-
 class ItemsController extends Controller
 {
     public function index()
