@@ -11,7 +11,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="{{route('about')}}">About Us</a>
                     @if (Auth::check())
                         <?php $url = $_SERVER['REQUEST_URI'];?>
                         @if(strstr($url,'groupsearch') || strstr($url,'home'))
