@@ -1,8 +1,11 @@
+<?php $notifications = Auth::user()->notifications()->paginate(5); ?>
 <div class="card">
     <div class="card-header">
-        Notifications <span class="badge badge-secondary">{{ Auth::user()->notifications()->count() }}</span>
+        Notifications 
+        @if($notifications->count()>0)
+        <span class="badge badge-pill badge-danger">{{ Auth::user()->notifications()->count() }}</span>
+        @endif
     </div>
-    <?php $notifications = Auth::user()->notifications()->paginate(5); ?>
     @if($notifications->count()==0)
     <div class="card-body">
         <p class="card-text text-muted"><i class="far fa-thumbs-up"></i> You have no new notifications.</p>
