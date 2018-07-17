@@ -37,20 +37,27 @@
                             <input type="submit" value="Search" class="btn btn-outline-success">
                         </form> --}}
                     @else
-                        <form class="form-inline" action="{{url('/results/')}}">
-                            <div class="form-group mr-2">
-                                <input type="text" name="keyword" value="" class="form-control" placeholder="Find Items">
-                            </div>
-                            <input type="submit" value="Search" class="btn btn-outline-success">
-                        </form>
+                        <div class="nav-link">
+                            <a data-toggle="collapse" href="#navbar-search" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </div>
+                        <div class="collapse width" id="navbar-search">
+                                <form class="form-inline" action="{{url('/results/')}}">
+                                    <div class="form-group mr-2">
+                                        <input type="text" name="keyword" value="" class="form-control bg-transparent" placeholder="Find Items">
+                                    </div>
+                                    <!--input type="submit" value="Search" class="btn btn-outline-success"-->
+                                </form>
+                        </div>
                     @endif
                        <?php $notifications = Auth::user()->notifications()->paginate(5); ?>
                        @if($notifications->count()==0)
-                       <a tabindex="0" class="navbar-item btn btn-link text-info" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Dismissible popover" data-content="
+                       <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
                        <i class='far fa-thumbs-up'></i> You have no new notifications.
-                       "><i class="far fa-bell"></i>{{ Auth::user()->notifications()->count() }}</a>
+                       "><i class="far fa-bell"></i></a>
                        @else
-                           <a tabindex="0" class="navbar-item btn btn-link text-info" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Dismissible popover" data-content="
+                           <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
                            @foreach($notifications as $notification)
                                <a class='text-muted' href='{{url('posts/'.$notification->post_id)}}'>
                                    <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a reply.<br>
@@ -58,7 +65,7 @@
                                </a>
                                <hr>
                            @endforeach
-                           "><i class="far fa-bell"></i>{{ Auth::user()->notifications()->count() }}</a>
+                           "><i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ Auth::user()->notifications()->count() }}</span></a>
                         @endif
 
                     <li class="nav-item dropdown">
