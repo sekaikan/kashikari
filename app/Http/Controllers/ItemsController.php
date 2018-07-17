@@ -37,7 +37,11 @@ class ItemsController extends Controller
         $group = Group::find($id);
         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('items.create', ['item' => $item, 'group' => $group, 'posts' =>$posts]);
+        return view('items.create',[
+            'item' => $item, 
+            'group' => $group, 
+            'posts' =>$posts
+            ]);
     }
     
     
@@ -48,6 +52,7 @@ class ItemsController extends Controller
             'name' => 'required',
             'reward' => 'required',
             'status' => 'required|max:10',
+            'group_id'=> 'required',
 
         ]);
         
@@ -78,9 +83,10 @@ class ItemsController extends Controller
             'name' => $request->name,
             'reward' => $request->reward,
             'photo' => $photo,
+            'group_id' => $request->group_id,
         ]);
         
-          return redirect('/items');
+          return redirect(route('items.index', $request->group_id));
     }
     
      public function show($id)
@@ -137,9 +143,10 @@ class ItemsController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
-        $item -> delete();
-        
-    return redirect('/items');
+        $item->delete();
+    
+
+     return redirect(route('items.index', $id->group_id));
     }
     
     

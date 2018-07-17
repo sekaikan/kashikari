@@ -13,9 +13,6 @@ Route::group(['middleware' => ['auth']], function () {
 //users
    Route::resource('users', 'UsersController', ['only' => ['show']]);
 
-//items
-   Route::resource('items', 'ItemsController', ['only' => ['index', 'create', 'store','show']] );
-  
 //commnts
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
 
@@ -46,12 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
 //lend
   // Route::get('/group/lend', 'ItemsController@index');
 
-//items
-   Route::group(['prefix' => 'items/{id}'], function (){
-      Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
-      Route::get('edit', 'ItemsController@edit')->name('items.edit');
-      Route::put('update', 'ItemsController@update')->name('items.update');
-   });
+
    
 //user_prefix
    Route::group(['prefix' => 'users/{id}'], function (){
@@ -66,7 +58,19 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('unfollow', 'GroupUserController@destroy')->name('user.unfollow');
     Route::get('borrow','PostsController@borrow')->name('posts.borrow');
     Route::get('lend','ItemsController@lend')->name('items.lend');
+    Route::post('lend/store','ItemsController@store')->name('items.store');
+    Route::get('items/index', 'ItemsController@index')->name('items.index');
+    
    });
+    Route::group(['prefix' => 'items/{id}'], function (){
+      Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
+      Route::get('edit', 'ItemsController@edit')->name('items.edit');
+      Route::put('update', 'ItemsController@update')->name('items.update');
+       Route::get('items/show','ItemsController@show')->name('items.show');
+      });
+
+   
 });
+
 
 Auth::routes();
