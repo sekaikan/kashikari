@@ -26,7 +26,7 @@
              @if (count($group->users()) > 0)
              <?php $users = $group->users()->get(); ?>
               @foreach($users as $user)
-               <h5><a href="{{ route('users.show', $user->id) }}" class="card-link">{{ $user->name }}</p></h5>
+               <h6><a href="{{ route('users.show', $user->id) }}" class="card-link">{{ $user->name }}</a></h6>
                @endforeach
              @endif
     </div>
