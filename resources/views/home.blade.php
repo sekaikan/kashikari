@@ -44,7 +44,9 @@
                     @endforeach
                 @else
                     <div class="my-5 ml-5 text-left">
-                        <i class="far fa-plus-square fa-9x text-left text-muted"></i>
+                         <a href="{{url('/group/create')}}">
+        
+                        <i class="far fa-plus-square fa-9x text-left text-muted"></i></a>
                     </div>
                 @endif
                 </div>

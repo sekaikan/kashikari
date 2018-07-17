@@ -179,3 +179,15 @@ div.row.item{
 }
 */
 
+.site-header_icons-wrapper {
+    display: inline-block;
+    margin-right: 100;
+    padding-left:100;
+    margin-left:100;
+}
+
+
+.site-header_icons {
+    position: relative;
+    white-space: nowrap;
+}
