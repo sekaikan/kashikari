@@ -3,11 +3,11 @@
         <div class="container">
             <div class="navbar-header">
                 @if (Auth::check())
-                <?php $url = $_SERVER['REQUEST_URI'];?>
                 <a class="navbar-brand navbar-left" href="/home">Kashikari</a>
                 @else
                 <a class="navbar-brand navbar-left" href="/">Kashikari</a>
                 @endif
+                <?php $url = $_SERVER['REQUEST_URI'];?>
                 @if(strstr($url,'group'))
                   <span class="navbar-brand">|</span>
                   <a class="navbar-brand navbar-left" href="{{route('group.show', ['id' => $group->id])}}">{!! $group->name !!}</a>
