@@ -6,6 +6,9 @@ Route::get('/', 'WelcomeController@index');
 Route::group(['middleware' => ['auth']], function () {
 //Home
    Route::get('/home','HomeController@index')->name('home');
+   
+//about
+   Route::get('/about', 'HomeController@about')->name('about');
 
 //users
    Route::resource('users', 'UsersController', ['only' => ['show']]);

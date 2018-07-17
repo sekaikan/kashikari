@@ -1,3 +1,3 @@
 <footer>
-    <div class="text-center text-muted">©2018 KASHIKARI</div>
+    <div class="text-center text-muted my-3">©2018 KASHIKARI</div>
 </footer>
