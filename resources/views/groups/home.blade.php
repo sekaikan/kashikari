@@ -16,13 +16,13 @@
       </div>
      <div class="mainmenu status text-center">
        <ul class="nav nav-tabs justify-content-center">
-          <li class="nav-item col-3">
+          <li class="nav-item col-4">
             <a class="nav-link active" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
           </li>
-          <li class="nav-item col-3">
+          <li class="nav-item col-4">
             <a class="nav-link" href="/posts/create"><i class="fas fa-sad-tear"></i><br>Borrow</a>
           </li>
-          <li class="nav-item col-3">
+          <li class="nav-item col-4">
             <a class="nav-link" href="/items/create"><i class="fas fa-smile-wink"></i><br>Lend</a>
           </li>
        </ul>

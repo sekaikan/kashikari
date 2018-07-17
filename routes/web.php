@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth']], function () {
 // notifications
    Route::delete('/', 'NotificationsController@destroy')->name('notifications.destroy');
 
-   
+  
 //borrow
   // Route::get('/group/borrow', 'PostsController@index');
 
@@ -46,8 +46,8 @@ Route::group(['middleware' => ['auth']], function () {
       Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
       Route::get('edit', 'ItemsController@edit')->name('items.edit');
       Route::put('update', 'ItemsController@update')->name('items.update');
+      Route::put('want', 'UserItemsController@update')->name('want');
    });
-   
 //user_prefix
    Route::group(['prefix' => 'users/{id}'], function (){
       //users
