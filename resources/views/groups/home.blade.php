@@ -23,8 +23,9 @@
            <li class="nav-item col-4">
             <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
           </li>
-          <li class="nav-item col-4">
-            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend<</a>
+
+          <li class="nav-item col-3">
+            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
 
           </li>
        </ul>
@@ -36,8 +37,8 @@
         
             <h2 class="text-center">Shared Items</h2>
             @include('items.items', ['items' => $items])
-            @if (count($items) >0)    
-                <a href="{{ route ('items.index') }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
+            @if (count($items) >0)  
+                <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
             @endif
             </div>
             <div class="col-4 ml-5">

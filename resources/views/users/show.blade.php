@@ -10,6 +10,8 @@
             @if(Auth::user()->id == $user->id)
             <div class="col-1 offset-4 text-right">
                 <a href="{{ route('users.edit', Auth::user()->id) }}"><i class="far fa-edit text-light"></i></a>
+                <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt text-light"></i></a>
             </div>
             @endif
         </div>
