@@ -1,12 +1,16 @@
 @foreach ($posts as $post)
+
+<?php $user = App\User::find($post->user_id)?>
     <div class="card shadow">
         <div class="card-body">
             <div class="row">
+
                 <div class="col-2">
-                   <img src="{{ Gravatar::src($post->user->email, 1000) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
+                   <img src="{{ Gravatar::src($user->email, 1000) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
                 </div>
                 <div class="col-8">
-                    {!! link_to_route('users.show', $post->user->name, ['id' => $post->user->id]) !!} <span class="text-muted">at {{ $post->created_at }}</span>
+                    {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">at {{ $post->created_at }}</span>
+
                 </div>
                 <div class="col-2">
                         @if (Auth::id() == $post->user_id)

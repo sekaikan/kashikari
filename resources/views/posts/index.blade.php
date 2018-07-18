@@ -31,10 +31,11 @@
    <div class="container-fluid pt-5 bg-light">
          <div class= "offset-2 col-8">
         @if (Auth::id() == $user->id)
-        {!! Form::open(['route' => 'posts.store']) !!}
+        {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
             <div class="form-group" id="review-form-group">
                 {{ Form::select('status', array('open' => 'Open', 'closed' => 'Solved'), 'open', ['class'=>'form-control']) }}
                 {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Please borrow!!', 'rows'=>'3']) !!}
+                {{ Form::hidden('group_id', $group->id)}}
                 {!! Form::submit('submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
             </div>
             {!! Form::close() !!}
