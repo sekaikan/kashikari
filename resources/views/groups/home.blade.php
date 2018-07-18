@@ -32,7 +32,7 @@
    
     <div class="container-fluid pt-5 bg-light">
         <div class="row">
-            <div class="col-7">
+            <div class="col-7 pl-5">
                 <h2 class="text-center">Shared Items</h2>
                 @include('items.items', ['items' => $items])
                 @if (count($items) >0)  
