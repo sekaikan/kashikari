@@ -7,12 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     protected $fillable = [
-        'user_id', 'name', 'content', 'status', 'reward', 'photo', 'want_user_id',
+
+        'user_id', 'name', 'content', 'status', 'reward', 'photo','group_id', 'want_user_id',
+
     ];
     
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    
+     public function group()
+    {
+        return $this->belongsTo(Group::class);
     }
     
     public function comments()

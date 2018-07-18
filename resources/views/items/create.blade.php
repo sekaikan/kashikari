@@ -20,7 +20,7 @@
             <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
           </li>
           <li class="nav-item col-3">
-            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-smile-wink"></i><br>Lend<</a>
+            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-smile-wink"></i><br>Lend</a>
           </li>
        </ul>
     </div>
@@ -29,11 +29,10 @@
 <div class= "container-fluid bg-light">
 <div class= "row offset-1 col-10">
     
-    
 
 <div class=" col-7 mx-auto">
-     {!! Form::model($item, ['route' => 'items.store']) !!}
-        <div class="row item">
+     {!! Form::model($item, array('route' => array('items.store', $group->id)))!!}
+    <div class="row item">
              <div class="col-md-10 offset-1">
                 <h2 class="text-center">Register Items</h2>
                 
@@ -58,6 +57,8 @@
                 </div>
                
               </div>
+        
+            {{ Form::hidden('group_id', $group->id)}}
             {!! Form::submit('upload', ['class' => 'btn btn-primary  btn-block col-6  mx-auto']) !!}
               
             {!! Form::close() !!}

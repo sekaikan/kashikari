@@ -33,9 +33,7 @@
                     @endforeach
                 @else
                     <div class="my-5 ml-5 text-left">
-                         <a href="{{url('/group/create')}}">
-        
-                        <i class="far fa-plus-square fa-9x text-left text-muted"></i></a>
+                        <i class="far fa-plus-square fa-9x text-left text-muted"></i>
                     </div>
                 @endif
                 </div>
@@ -69,10 +67,12 @@
     
     
      <div class="col-3 mt-4 ">
+
         <div class="card" style="width: 18rem;">
             <h3 class="card-title text-center my-3">Create Group</h3>
             <div class="card-body">
               {!! Form::model($groups, ['route' => 'group.store']) !!}
+
                 <div class="form-group">
                     {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
                     {!! Form::submit('Create', ['class' => 'btn btn-outline-success']) !!}
