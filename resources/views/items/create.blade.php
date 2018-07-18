@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('reward', 'Reward') !!}
-                    {!! Form::text('reward', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('reward', null, ['class' => 'form-control', 'placeholder' => 'ex: $100 or a cup of coffee']) !!}
                 </div>
                 <div class="form-group">
                      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status</label>
