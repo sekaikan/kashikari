@@ -21,9 +21,11 @@ class CreateItemsTable extends Migration
             $table->string('status')->index();
             $table->string('reward');
             $table->text('photo')->nullable();
+            $table->integer('want_user_id')->unsigned()->index()->nullable();
             $table->timestamps();
             
-           $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('want_user_id')->references('id')->on('users');
         });
     }
 

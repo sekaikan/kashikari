@@ -3,13 +3,14 @@
 
 Route::get('/', 'WelcomeController@index');
 
+//about
+Route::get('/about', 'HomeController@about')->name('about');
+
+
 Route::group(['middleware' => ['auth']], function () {
 //Home
    Route::get('/home','HomeController@index')->name('home');
    
-//about
-   Route::get('/about', 'HomeController@about')->name('about');
-
 //users
    Route::resource('users', 'UsersController', ['only' => ['show']]);
 
@@ -36,7 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
 // notifications
    Route::delete('/', 'NotificationsController@destroy')->name('notifications.destroy');
 
-   
+  
 //borrow
   // Route::get('/group/borrow', 'PostsController@index');
 
@@ -44,7 +45,14 @@ Route::group(['middleware' => ['auth']], function () {
   // Route::get('/group/lend', 'ItemsController@index');
 
 
-   
+//items
+   Route::group(['prefix' => 'items/{id}'], function (){
+      Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
+      Route::get('edit', 'ItemsController@edit')->name('items.edit');
+      Route::put('update', 'ItemsController@update')->name('items.update');
+      Route::put('want', 'UserItemsController@update')->name('want');
+   });
+
 //user_prefix
    Route::group(['prefix' => 'users/{id}'], function (){
       //users
