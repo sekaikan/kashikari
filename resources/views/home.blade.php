@@ -32,9 +32,9 @@
                         </div>   
                     @endforeach
                 @else
-                    <div class="my-5 ml-5 text-left">
+                    <a href="group/create" class="my-5 ml-5 text-left">
                         <i class="far fa-plus-square fa-9x text-left text-muted"></i>
-                    </div>
+                    </a>
                 @endif
                 </div>
             </div>
