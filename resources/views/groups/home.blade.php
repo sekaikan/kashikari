@@ -52,12 +52,14 @@
     </div>
     <div class="row fixed-bottom justify-content-end">
         <div class="col-1">
+            <div class="icon container">
             <a href= "{{ route ('chats.index') }}">
-                <img src ="/images/chat.png" class="rounded-circle img-fluid  fa-spin">
+                <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
             </a>
+           </div>
         </div>
     </div>
-  
+    
    
  
 @endsection
