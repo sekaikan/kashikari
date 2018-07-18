@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-
+<a href="/group/{{$item->group_id}}" class="">&laquo;back</a>
         @if(Auth::id() == $item->want_user_id)
          <div class="row">
                     <div class="col-12">
@@ -71,9 +71,10 @@
                     @if (count($comments) >0)
                           @include('comments.comments', ['comments' => $comments])
                     @endif
-                <a href="/group/{{$group->id}}" class="">back >></a>
+                
         </div>
         @endif
 
+        
 
 @endsection

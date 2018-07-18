@@ -48,6 +48,8 @@ Route::group(['middleware' => ['auth']], function () {
       Route::get('edit', 'ItemsController@edit')->name('items.edit');
       Route::put('update', 'ItemsController@update')->name('items.update');
       Route::put('want', 'UserItemsController@update')->name('want');
+      Route::get('want', 'ItemsController@show')->name('want');
+      Route::get('/','ItemsController@show')->name('items.show');
    });
 
 //user_prefix
@@ -71,15 +73,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('borrow/store','PostsController@store')->name('posts.store');
     Route::get('posts/index', 'PostsController@index')->name('posts.index');
    });
-   
-    Route::group(['prefix' => 'items/{id}'], function (){
-      Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
-      Route::get('edit', 'ItemsController@edit')->name('items.edit');
-      Route::put('update', 'ItemsController@update')->name('items.update');
-       Route::get('/','ItemsController@show')->name('items.show');
-      });
 
-   
 });
 
 

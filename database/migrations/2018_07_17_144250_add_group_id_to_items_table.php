@@ -28,8 +28,9 @@ class AddGroupIdToItemsTable extends Migration
     public function down()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->dropforeign(['group_id']);
-            $table->dropColumn('group_id');
+
+            $table->dropForeign(['group_id']);
+            $table->dropColmun('grpup_id');
         });
     }
 }

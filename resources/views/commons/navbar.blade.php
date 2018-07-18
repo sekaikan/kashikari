@@ -69,6 +69,10 @@
                                        <a class='text-muted' href='{{url('posts/'.$notification->post_id)}}'>
                                            <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a reply.<br>
                                            {{ $notification->content }}
+                                 @elseif(($notification->post_id == NULL && $notification->item_id != NULL) && ($notification->type == 'toItem' || $notification->type == 'toComment') )
+                                        <a class='text-muted' href='{{url('items/'.$notification->item_id)}}'>
+                                           <strong>{{ App\User::find($notification->sender_id)->name }}</strong> Commented.<br>
+                                           {{ $notification->content }}
                                 @elseif($notification->post_id == NULL && $notification->item_id != NULL)
                                         <a class='text-muted' href='{{url('items/'.$notification->item_id)}}'>
                                            <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a requset.<br>

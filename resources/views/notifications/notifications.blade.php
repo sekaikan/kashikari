@@ -1,4 +1,4 @@
-<?php $notifications = Auth::user()->notifications()->paginate(5); ?>
+<?php $notifications = Auth::user()->notifications()->orderBy('created_at', 'desc')->paginate(5); ?>
 <div class="card">
     <div class="card-header">
         Notifications 
@@ -25,7 +25,12 @@
                             <p class="card-text text-muted">
                                 <a href="{{url('posts/'.$notification->post_id)}}" class="text-muted">{{ $notification->content }}</a>
                             </p>
-                            @elseif($notification->post_id == NULL && $notification->item_id != NULL)
+                            @elseif(($notification->post_id == NULL && $notification->item_id != NULL) && ($notification->type == 'toItem' || $notification->type == 'toComment') )
+                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->sender_id)->name }}</span> commented.</small>
+                            <p class="card-text text-muted">
+                                <a href="{{url('items/'.$notification->item_id)}}" class="text-muted">{{ $notification->content }}</a>
+                            </p>
+                            @elseif($notification->post_id == NULL && $notification->item_id != NULL )
                             <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->sender_id)->name }}</span> sent you a request.</small>
                             <p class="card-text text-muted">
                                 <a href="{{url('items/'.$notification->item_id)}}" class="text-muted">{{ $notification->content }}</a>
