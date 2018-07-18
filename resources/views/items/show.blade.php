@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container my-5">
     @if(Auth::id() == $item->want_user_id)
-      <div class="alert alert-warning" role="alert">
+      <div class="alert alert-warning mt-5 pt-5" role="alert">
       <i class="fas fa-check mr-3"　style="color:red;"></i>Your request was completed! Let's chat now!!
       </div>
     @endif
