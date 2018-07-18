@@ -54,16 +54,19 @@ class PostsController extends Controller
     }
     
       
-    public function create(Request $request)
+    public function borrow($id)
     {
+        $group = Group::find($id);
         $user = \Auth::user();
-        $group = Group::find(1);
         $items = Item::orderBy('updated_at', 'desc')->paginate(20);
+        $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
         return view('posts.create', [
-        'user' => $user, 'group' => $group, 'items' =>$items,
+        'user' => $user, 
+        'group' => $group, 
+        'items' => $items,
+        'posts' => $posts,
         
       ]);
-      return redirect('/');
     }
     
     public function destroy($id)
@@ -79,6 +82,7 @@ class PostsController extends Controller
     
     public function show($id)
     {
+      
         $post = Post::find($id);
         
         return view('posts.show', ['post' =>$post]);

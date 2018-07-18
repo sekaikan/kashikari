@@ -3,20 +3,26 @@
 
 Route::get('/', 'WelcomeController@index');
 
+//about
+Route::get('/about', 'HomeController@about')->name('about');
+
+
 Route::group(['middleware' => ['auth']], function () {
 //Home
    Route::get('/home','HomeController@index')->name('home');
-
+   
 //users
    Route::resource('users', 'UsersController', ['only' => ['show']]);
 
 //items
    Route::resource('items', 'ItemsController', ['only' => ['index', 'create', 'store','show']] );
+  
 //commnts
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
 
 //posts
-   Route::resource('posts', 'PostsController', ['only' =>['index','create','store','show', 'destroy']]);
+   Route::resource('posts', 'PostsController', ['only' =>['index','store','show', 'destroy']]);
+   
 
 //replies
    Route::resource('replies', 'RepliesController', ['only' =>['index','create','store','destroy']]);
@@ -54,11 +60,13 @@ Route::group(['middleware' => ['auth']], function () {
       Route::get('edit', 'UsersController@edit') ->name('users.edit');
       Route::put('update', 'UsersController@update')->name('users.update');
    });
+   
+   
    Route::group(['prefix' => 'groups/{id}'], function (){
     Route::post('follow', 'GroupUserController@store')->name('user.follow');
     Route::delete('unfollow', 'GroupUserController@destroy')->name('user.unfollow');
-    Route::get('followings', 'UsersController@follow_groups')->name('users.groups');
-    Route::get('followers', 'GroupsController@followers')->name('groups.users');
+    Route::get('borrow','PostsController@borrow')->name('posts.borrow');
+    Route::get('lend','ItemsController@lend')->name('items.lend');
    });
 });
 
