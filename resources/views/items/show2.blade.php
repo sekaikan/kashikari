@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container mt-5">
     <div class="row">
         <div class= "col-6 float-left">
@@ -20,6 +21,7 @@
             <p class="conte-space"> {!! nl2br(e($item->content)) !!}</p>
             <hr>
               <p class="card-text h5"><i class="fas fa-gift mr-2"></i>{{ $item->reward }}</p>
+            
             <div class="row offset-8">
               @if (Auth::id() == $item->user->id) 
                        {!! Form::open(['route' => ['items.edit', $item->id], 'method' => 'get', 'class'=>'text-right']) !!}
@@ -31,22 +33,11 @@
               @endif
             </div>
             <div class="borrow-button">
-                @if(Auth::id() != $item->want_user_id )
-                {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
-                    {{ Form::hidden('want_user_id', \Auth::id()) }}
-                    {!! Form::submit('Please lend it', ['class' => 'btn btn-danger btn-block btn-lg', 'id' => 'form-button']) !!}
-                {!! Form::close() !!}
-               @else
-                {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
-                    {{ Form::hidden('want_user_id', \Auth::id()) }}
-                    {!! Form::submit('Request completed!!', ['class' => 'btn btn-success btn-block btn-lg', 'id' => 'form-button']) !!}
-                {!! Form::close() !!}
-                @endif
+                {!! Form::submit('Request completed!!', ['class' => 'btn btn-danger btn-block btn-lg', 'id' => 'form-button']) !!}
             </div>
         </div>
     </div>
     
-        @if(Auth::id() == $item->want_user_id)
          <div class="row">
                     <div class="col-12">
                         {!! Form::open(['route' => 'comments.store']) !!}
@@ -64,6 +55,5 @@
                     @endif
                 <a href="/group/{{$group->id}}" class="">back >></a>
         </div>
-        @endif
 
 @endsection
