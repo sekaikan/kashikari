@@ -19,9 +19,10 @@ class GroupsController extends Controller
     public function index($id)
     {
         $user = \Auth::user();
-        $items = Item::orderBy('updated_at', 'desc')->paginate(8);
-        $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
         $group = Group::find($id);
+       // $items = Item::orderBy('updated_at', 'desc')->paginate(8);
+        $items =\DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
+        $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
         return view('groups.home', [
             'items' => $items,
             'group' => $group,
@@ -62,7 +63,8 @@ class GroupsController extends Controller
         $group = Group::find($id);
         
         if($user->is_following($id)){
-        $items = Item::orderBy('updated_at', 'desc')->paginate(8);
+        $items =\DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
+        //$items = Item::orderBy('updated_at', 'desc')->paginate(8);
         $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
         return view('groups.home', [
             'items' => $items,
