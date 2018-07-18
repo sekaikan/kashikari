@@ -43,7 +43,7 @@
     @include('items.items', ['items' => $items])
      </div>
     @if (count($items) >0)    
-     <a href="{{ route ('items.index') }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
+     <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
     @endif
 </div>
 </div>
