@@ -3,8 +3,15 @@
         <div class="container">
             <div class="navbar-header">
                 @if (Auth::check())
-                <a class="navbar-brand navbar-left" href="/home">Kashikari</a> @else
-                <a class="navbar-brand navbar-left" href="/">Kashikari</a> @endif
+                <a class="navbar-brand navbar-left" href="/home">Kashikari</a>
+                @else
+                <a class="navbar-brand navbar-left" href="/">Kashikari</a>
+                @endif
+                <?php $url = $_SERVER['REQUEST_URI'];?>
+                @if(strstr($url,'group'))
+                  <span class="navbar-brand">|</span>
+                  <a class="navbar-brand navbar-left" href="{{route('group.show', ['id' => $group->id])}}">{!! $group->name !!}</a>
+                @endif
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -78,8 +85,7 @@
                                 <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">My Page</a>
                                 <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">Profile Setting</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
+                                                     document.getElementById('logout-form').submit();">Logout
                                         </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
