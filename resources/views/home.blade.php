@@ -66,9 +66,9 @@
     
     
     
-     <div class="col-3 mt-4 ">
+     <div class="col-3 mt-4 ml-2">
 
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <h3 class="card-title text-center my-3">Create Group</h3>
             <div class="card-body">
               {!! Form::model($groups, ['route' => 'group.store']) !!}
