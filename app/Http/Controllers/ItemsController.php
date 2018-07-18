@@ -125,13 +125,21 @@ class ItemsController extends Controller
         $search = $request->name;
         $orientation = 'landscape';
         $photos = \Crew\Unsplash\Search::photos($search, $orientation);
+        if (isset($photos[0]['urls']['small'])==FALSE) {
+            $search = 'gift';
+            $orientation = 'landscape';
+            $photos = \Crew\Unsplash\Search::photos($search, $orientation);
+            $photo = $photo = $photos[0]['urls']['small'];
+        } else {
+            $photo = $photos[0]['urls']['small'];
+        }
 
         $item = Item::find($id);
         $item->name = $request->name;
         $item->content = $request->content;
         $item->reward = $request->reward;
         $item->status = $request->status;
-        $item->photo = $photos[0]['urls']['small'];
+        $item->photo = $photo;
         $item->save();
         $group = Group::find(1);
         return view('items.show', ['item' => $item, 'group' => $group,]); 
