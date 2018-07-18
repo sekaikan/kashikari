@@ -28,6 +28,47 @@ $rand = mt_rand(0,3);
       height:100vh;
     }
     
+    /*scroll down button*/
+    a#scroll {
+      text-decoration: none;
+      
+    }
+    a#scroll span {
+      
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-animation: sdb 2s infinite;
+      animation: sdb 2s infinite;
+      box-sizing: border-box;
+    }
+    @-webkit-keyframes sdb {
+      0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+      }
+      20% {
+        -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+      }
+      40% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+      }
+    }
+    @keyframes sdb {
+      0% {
+        transform: rotate(-45deg) translate(0, 0);
+      }
+      20% {
+        transform: rotate(-45deg) translate(-10px, 10px);
+      }
+      40% {
+        transform: rotate(-45deg) translate(0, 0);
+      }
+    }
+    
     .fa-border {
         color: #D6D1CD;
     }
@@ -79,9 +120,12 @@ $rand = mt_rand(0,3);
             <p class="display-3 font-weight-bold text-left">You can Borrow</p>
             <p class="display-3 font-weight-bold text-left">Almost Everything!</p>
             <p class="lead text-left mt-3">'18 NEW GRADS CODING TRAINING</p>
+            <div class="text-center">
+                <a href="#top" id="scroll"><span></span></a>
+            </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" id="top">
         <div class="colored content p-5">
             <h2 class="display-2 text-secondary font-weight-bold mb-5">ABOUT</h2>
                 <div class="row">
