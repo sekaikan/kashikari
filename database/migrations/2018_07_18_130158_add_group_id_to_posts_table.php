@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddGroupIdToItemsTable extends Migration
+class AddGroupIdToPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddGroupIdToItemsTable extends Migration
      */
     public function up()
     {
-        Schema::table('items', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             $table->integer('group_id')->unsigned()->index();
             
              $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
@@ -27,10 +27,9 @@ class AddGroupIdToItemsTable extends Migration
      */
     public function down()
     {
-        Schema::table('items', function (Blueprint $table) {
-
-            $table->dropForeign(['group_id']);
-            $table->dropColmun('grpup_id');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropforeign(['group_id']);
+            $table->dropColumn('group_id');
         });
     }
 }

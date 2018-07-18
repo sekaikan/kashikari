@@ -18,19 +18,21 @@ use App\Item;
 
 class PostsController extends Controller
 {
-    public function index() 
+    public function index($id) 
     {
         $data = [];
         if (\Auth::check()) {
             $users = User::all();
-            $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
-            $group = Group::find(1);
+            $group = Group::find($id);
+            $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
+            //$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
             $user = \Auth::user();
             $data = [
                 'users' => $users,
                 'posts' => $posts,
                 'group' => $group,
                 'user' => $user,
+                
             ];
             
             return view('posts.index', $data);
@@ -42,30 +44,35 @@ class PostsController extends Controller
         $this->validate($request, [
             'content' => 'required|max:191',
             'status' =>  'required|max:191',
+            'group_id' => 'required',
             
         ]);
 
         $request->user()->posts()->create([
             'content' => $request->content,
             'status'  => $request->status,
+            'group_id' => $request->group_id,
         ]);
 
-        return redirect ("/posts");
+         return redirect(route('posts.index', $request->group_id));
     }
     
       
     public function borrow($id)
     {
+        $post = new Post;
         $group = Group::find($id);
         $user = \Auth::user();
         $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
         //$items = Item::orderBy('updated_at', 'desc')->paginate(20);
-        $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
+        // $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
+        //$posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
         return view('posts.create', [
         'user' => $user, 
         'group' => $group, 
         'items' => $items,
-        'posts' => $posts,
+        //'posts' => $posts,
+        'post' => $post,
         
       ]);
     }

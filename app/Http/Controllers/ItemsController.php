@@ -29,7 +29,8 @@ class ItemsController extends Controller
     {
         $item = new Item;
         $group = Group::find($id);
-        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
+        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
+        //$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
         
         return view('items.create',[
             'item' => $item, 
@@ -88,13 +89,11 @@ class ItemsController extends Controller
     {
       $item = Item::find($id);
       $comments = $item->comments();
-      $group = Group::find(1);
       
         
         return view('items.show',[
             'item' => $item, 
             'comments' => $comments,
-            'group' => $group,
         
         ]);
     }

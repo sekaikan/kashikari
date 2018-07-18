@@ -17,9 +17,6 @@ Route::group(['middleware' => ['auth']], function () {
 //commnts
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
 
-//posts
-   Route::resource('posts', 'PostsController', ['only' =>['index','store','show', 'destroy']]);
-   
 
 //replies
    Route::resource('replies', 'RepliesController', ['only' =>['index','create','store','destroy']]);
@@ -61,6 +58,9 @@ Route::group(['middleware' => ['auth']], function () {
       Route::get('edit', 'UsersController@edit') ->name('users.edit');
       Route::put('update', 'UsersController@update')->name('users.update');
    });
+
+//posts
+   Route::resource('posts', 'PostsController', ['only' =>['show', 'destroy']]);
    
    
    Route::group(['prefix' => 'group/{id}'], function (){
@@ -70,8 +70,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('lend','ItemsController@lend')->name('items.lend');
     Route::post('lend/store','ItemsController@store')->name('items.store');
     Route::get('items/index', 'ItemsController@index')->name('items.index');
-    
+    Route::post('borrow/store','PostsController@store')->name('posts.store');
+    Route::get('posts/index', 'PostsController@index')->name('posts.index');
    });
+
 });
 
 

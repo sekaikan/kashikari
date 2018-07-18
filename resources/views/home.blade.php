@@ -6,7 +6,7 @@
 
 <div class="container my-5">
     <div class="row">
-        <div class="col-12 pt-5 mt-5">
+        <div class="col-12 mt-5">
          @include('notifications.notifications')
         </div>
         <div class="col-9 mt-4" style="background-color:white; width:100%;">
@@ -66,9 +66,9 @@
     
     
     
-     <div class="col-3 mt-4 ">
+     <div class="col-3 mt-4 ml-2">
 
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <h3 class="card-title text-center my-3">Create Group</h3>
             <div class="card-body">
               {!! Form::model($groups, ['route' => 'group.store']) !!}
