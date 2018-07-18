@@ -7,8 +7,14 @@
 @endsection
 
 @section('content')
-
- <div class="mainmenu status text-center">
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
+         @include('notifications.notifications')
+        </div>
+    </div>
+    </div>
+ <div class="mainmenu status text-center mt-2">
        <ul class="nav nav-tabs justify-content-center">
           <li class="nav-item col-3">
             <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
