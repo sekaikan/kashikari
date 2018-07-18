@@ -14,16 +14,10 @@ use App\Group;
 
 class ItemsController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $items = Item::orderBy('updated_at', 'desc')->paginate(20);
-        $group = Group::find(1);
-        
-        foreach ($items as $item) {
-            $date = date_create($item->date);
-            $date = date_format($date , 'Y-m-d');
-            $item->date = $date;  //取得したtimestampのデータを、Y-m-dに変換
-        }
+        $group = Group::find($id);
+        $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
         
         return view('items.index', [
             'items' => $items,
@@ -31,10 +25,10 @@ class ItemsController extends Controller
         ]);
     }
     
-    public function create()
+    public function lend($id)
     {
         $item = new Item;
-        $group = Group::find(1);
+        $group = Group::find($id);
         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
         
         return view('items.create',[
@@ -108,8 +102,7 @@ class ItemsController extends Controller
      public function edit($id)
     {
         $item = Item::find($id);
-         $group = Group::find(1);
-        return view('items.edit', ['item' => $item, 'group' => $group,]); 
+        return view('items.edit', ['item' => $item]); 
     }
     
     public function update(Request $request, $id)

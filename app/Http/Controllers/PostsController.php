@@ -58,7 +58,8 @@ class PostsController extends Controller
     {
         $group = Group::find($id);
         $user = \Auth::user();
-        $items = Item::orderBy('updated_at', 'desc')->paginate(20);
+        $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
+        //$items = Item::orderBy('updated_at', 'desc')->paginate(20);
         $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
         return view('posts.create', [
         'user' => $user, 

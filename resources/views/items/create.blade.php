@@ -20,7 +20,7 @@
             <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
           </li>
           <li class="nav-item col-4">
-            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-smile-wink"></i><br>Lend<</a>
+            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-smile-wink"></i><br>Lend</a>
           </li>
        </ul>
     </div>
@@ -71,7 +71,7 @@
     <h2 class="text-center">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
-        <a href="{{ route ('posts.index') }}" class="float-right btn btn-outline-primary">More...</a>
+        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right btn btn-outline-primary">More...</a>
     @endif
 </div>
  
