@@ -2,8 +2,8 @@
 
 
 @section('content')
-<div class="container">
-    <div class="row">
+<div class="container my-5">
+    <div class="row py-5">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -28,7 +28,7 @@
     <?php $replies = $post->replies()->where('reply_id', NULL)->paginate(100); ?>
     @include('replies.replies')
        
-       <a href="/group" class="">back >></a>
+       <a href="/posts" class="">back >></a>
 </div>
 
 @endsection

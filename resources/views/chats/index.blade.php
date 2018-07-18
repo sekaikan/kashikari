@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row my-5">
+<div class="container my-5">
+    <h2 class="text-center pt-5">Group Chat</h2>
+    <div class="row">
         <div class="col-md-6 offset-md-3">
             {!! Form::open(['route' => 'chats.store']) !!}
                 <div class="form-group">

@@ -1,4 +1,3 @@
-<header>
     <nav class="navbar navbar-expand-lg navbar-extend fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -103,4 +102,3 @@
             </div>
         </div>
     </nav>
-</header>
