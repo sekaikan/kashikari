@@ -76,7 +76,7 @@ Route::group(['middleware' => ['auth']], function () {
       Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
       Route::get('edit', 'ItemsController@edit')->name('items.edit');
       Route::put('update', 'ItemsController@update')->name('items.update');
-       Route::get('items/show','ItemsController@show')->name('items.show');
+       Route::get('/','ItemsController@show')->name('items.show');
       });
 
    

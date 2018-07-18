@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row my-5">
+<div class="container my-5">
+    <div class="row py-5" >
         <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-header">Register</div>

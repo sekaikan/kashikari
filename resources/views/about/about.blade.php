@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="container-fluid">
+<div class="container-fluid my-5">
     <div class="colored content p-5">
         <h2 class="display-2 text-secondary font-weight-bold mb-5">ABOUT</h2>
         <div class="row">

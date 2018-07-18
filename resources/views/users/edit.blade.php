@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
+<div class="container my-5">
+    <div class="row py-5">
         <div class="col-md-6 offset-md-3">
-            <h2>Edit Profile</h2>
+            <h2 class="text-center">Edit Profile</h2>
             {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'put']) !!}
                 <div class="form-group">
                     {!! Form::label('name', 'Name') !!}

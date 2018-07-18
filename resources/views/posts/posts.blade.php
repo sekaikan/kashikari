@@ -4,13 +4,15 @@
     <div class="card shadow">
         <div class="card-body">
             <div class="row">
-                <div class="col-md-1 col-2">
+
+                <div class="col-2">
                    <img src="{{ Gravatar::src($user->email, 1000) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
                 </div>
-                <div class="col-md-10 col-8">
+                <div class="col-8">
                     {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">at {{ $post->created_at }}</span>
+
                 </div>
-                <div class="col-md-1 col-2">
+                <div class="col-2">
                         @if (Auth::id() == $post->user_id)
                             {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                                 {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}

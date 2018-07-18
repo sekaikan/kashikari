@@ -20,10 +20,18 @@
                         </div>
                         <div class="col-10">
                             <?php $date = new DateTime($notification->created_at);?>
+                            @if($notification->post_id != NULL && $notification->item_id == NULL)
                             <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->sender_id)->name }}</span> sent you a reply.</small>
                             <p class="card-text text-muted">
                                 <a href="{{url('posts/'.$notification->post_id)}}" class="text-muted">{{ $notification->content }}</a>
                             </p>
+                            @elseif($notification->post_id == NULL && $notification->item_id != NULL)
+                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->sender_id)->name }}</span> sent you a request.</small>
+                            <p class="card-text text-muted">
+                                <a href="{{url('items/'.$notification->item_id)}}" class="text-muted">{{ $notification->content }}</a>
+                            </p>
+                            @endif
+                            
                             <p class="card-text text-muted"><small>{{ $date->format("g:i a, F j, Y")}}</small></p>
                         </div>
                         <div class="col-1">

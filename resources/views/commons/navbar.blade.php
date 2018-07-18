@@ -1,4 +1,3 @@
-<header>
     <nav class="navbar navbar-expand-lg navbar-extend fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -64,15 +63,22 @@
                        <i class='far fa-thumbs-up'></i> You have no new notifications.
                        "><i class="far fa-bell"></i></a>
                        @else
-                           <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
-                           @foreach($notifications as $notification)
-                               <a class='text-muted' href='{{url('posts/'.$notification->post_id)}}'>
-                                   <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a reply.<br>
-                                   {{ $notification->content }}
-                               </a>
-                               <hr>
-                           @endforeach
-                           "><i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ Auth::user()->notifications()->count() }}</span></a>
+                               <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
+                                @foreach($notifications as $notification)
+                                   @if($notification->post_id != NULL && $notification->item_id == NULL)
+                                       <a class='text-muted' href='{{url('posts/'.$notification->post_id)}}'>
+                                           <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a reply.<br>
+                                           {{ $notification->content }}
+                                @elseif($notification->post_id == NULL && $notification->item_id != NULL)
+                                        <a class='text-muted' href='{{url('items/'.$notification->item_id)}}'>
+                                           <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a requset.<br>
+                                           {{ $notification->content }}
+                                @endif
+                                       </a>
+                                       <hr>
+                               @endforeach
+                               ">
+                        <i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ Auth::user()->notifications()->count() }}</span></a>
                         @endif
 
                     <li class="nav-item dropdown">
@@ -103,4 +109,3 @@
             </div>
         </div>
     </nav>
-</header>
