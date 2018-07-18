@@ -61,7 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
    });
    
    
-   Route::group(['prefix' => 'groups/{id}'], function (){
+   Route::group(['prefix' => 'group/{id}'], function (){
     Route::post('follow', 'GroupUserController@store')->name('user.follow');
     Route::delete('unfollow', 'GroupUserController@destroy')->name('user.unfollow');
     Route::get('borrow','PostsController@borrow')->name('posts.borrow');

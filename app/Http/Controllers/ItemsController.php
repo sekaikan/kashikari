@@ -148,12 +148,8 @@ class ItemsController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
+        $group_id = $item->group_id;
         $item->delete();
-    
-
-     return redirect(route('items.index', $id->group_id));
+        return redirect(route('items.index', $group_id));
     }
-    
-    
-
 }

@@ -14,4 +14,10 @@ class Group extends Model
     {
         return $this->belongsToMany(User::class)->withTimestamps();
     }
+    
+     public function items()
+    {
+        return $this->hasMany(Item::class)->paginate(20);
+    }
 }
+

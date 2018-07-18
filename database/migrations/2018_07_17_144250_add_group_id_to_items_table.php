@@ -16,7 +16,7 @@ class AddGroupIdToItemsTable extends Migration
         Schema::table('items', function (Blueprint $table) {
             $table->integer('group_id')->unsigned()->index();
             
-             $table->foreign('group_id')->references('id')->on('groups');
+             $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 

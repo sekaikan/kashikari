@@ -3,6 +3,7 @@
 @section('content')
 <div class="container mt-5">
     <div class="row">
+
         <div class= "col-6 float-left">
             <div class="ribbon_box3">
                 <img class="card-img" src="{{ $item->photo }}" alt="" class="colorfilter-image">
@@ -16,12 +17,15 @@
             </div>
         </div>    
         <div class="col-6 title-space">
+
             <h1>{{$item->name}}</h1>
             <p class="conte-space"> {!! nl2br(e($item->content)) !!}</p>
             <hr>
               <p class="card-text h5"><i class="fas fa-gift mr-2"></i>{{ $item->reward }}</p>
+
             <div class="row offset-8">
               @if (Auth::id() == $item->user->id) 
+
                        {!! Form::open(['route' => ['items.edit', $item->id], 'method' => 'get', 'class'=>'text-right']) !!}
                        {!! Form::button('<i class="fas fa-pen-fancy"></i><span style="margin-left:5px;">Edit</span>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
                        {!! Form::close() !!}
@@ -45,7 +49,7 @@
             </div>
         </div>
     </div>
-    
+
         @if(Auth::id() == $item->want_user_id)
          <div class="row">
                     <div class="col-12">
@@ -65,5 +69,6 @@
                 <a href="/group/{{$group->id}}" class="">back >></a>
         </div>
         @endif
+
 
 @endsection
