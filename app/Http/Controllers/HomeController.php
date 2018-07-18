@@ -28,8 +28,7 @@ class HomeController extends Controller
          foreach($follow_groups as $g) {
              array_push($follow_group_ids, $g->id);
          }
-//         var_dump($follow_group_ids);
-//         return;
+
          $unfollow_groups = \DB::table('groups')
 //         ->where('group_user.user_id','!=', $user->id)
          ->whereNotIn('groups.id', $follow_group_ids)
