@@ -79,5 +79,10 @@ class User extends Authenticatable
     public function is_following($groupId) {
         return $this->groups()->where('group_id', $groupId)->exists();
     }
+    
+    public function want_item()
+    {
+        return $this->belongsTo(Item::class);
+    }
 
 }

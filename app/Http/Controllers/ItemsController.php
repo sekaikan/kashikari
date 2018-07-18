@@ -37,17 +37,23 @@ class ItemsController extends Controller
         $group = Group::find($id);
         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
         
-        return view('items.create', ['item' => $item, 'group' => $group, 'posts' =>$posts]);
+        return view('items.create',[
+            'item' => $item, 
+            'group' => $group, 
+            'posts' =>$posts
+            ]);
     }
     
     
-     public function store(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'content' => 'required|max:191',
             'name' => 'required',
             'reward' => 'required',
             'status' => 'required|max:10',
+
+            'group_id'=> 'required',
 
         ]);
         
@@ -78,19 +84,23 @@ class ItemsController extends Controller
             'name' => $request->name,
             'reward' => $request->reward,
             'photo' => $photo,
+            'group_id' => $request->group_id,
         ]);
         
-          return redirect('/items');
+          return redirect(route('items.index', $request->group_id));
     }
     
-     public function show($id)
+    public function show($id)
     {
       $item = Item::find($id);
       $comments = $item->comments();
+      $group = Group::find(1);
+      
         
         return view('items.show',[
             'item' => $item, 
             'comments' => $comments,
+            'group' => $group,
         
         ]);
     }
@@ -98,11 +108,11 @@ class ItemsController extends Controller
      public function edit($id)
     {
         $item = Item::find($id);
-        
-        return view('items.edit', ['item' => $item, ]); 
+         $group = Group::find(1);
+        return view('items.edit', ['item' => $item, 'group' => $group,]); 
     }
     
-     public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
            'content' => 'required|max:191',
@@ -131,15 +141,17 @@ class ItemsController extends Controller
         $item->status = $request->status;
         $item->photo = $photos[0]['urls']['small'];
         $item->save();
-        return view('items.show', ['item' => $item, ]); 
+        $group = Group::find(1);
+        return view('items.show', ['item' => $item, 'group' => $group,]); 
     }
     
     public function destroy($id)
     {
         $item = Item::find($id);
-        $item -> delete();
-        
-    return redirect('/items');
+        $item->delete();
+    
+
+     return redirect(route('items.index', $id->group_id));
     }
     
     
