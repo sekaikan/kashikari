@@ -51,6 +51,8 @@ Route::group(['middleware' => ['auth']], function () {
       Route::get('edit', 'ItemsController@edit')->name('items.edit');
       Route::put('update', 'ItemsController@update')->name('items.update');
       Route::put('want', 'UserItemsController@update')->name('want');
+      Route::get('want', 'ItemsController@show')->name('want');
+      Route::get('/','ItemsController@show')->name('items.show');
    });
 
 //user_prefix
@@ -70,14 +72,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('items/index', 'ItemsController@index')->name('items.index');
     
    });
-    Route::group(['prefix' => 'items/{id}'], function (){
-      Route::delete('/', 'ItemsController@destroy')->name('items.destroy');
-      Route::get('edit', 'ItemsController@edit')->name('items.edit');
-      Route::put('update', 'ItemsController@update')->name('items.update');
-       Route::get('/','ItemsController@show')->name('items.show');
-      });
-
-   
 });
 
 

@@ -8,6 +8,8 @@ use App\User;
 
 use App\Item;
 
+use App\Comment;
+
 class CommentsController extends Controller
 {
     public function store(Request $request)
@@ -22,8 +24,31 @@ class CommentsController extends Controller
             'item_id' => $request->item_id,
             'parent_id' =>$request->parent_id,
         ]);
+        if($request->parent_id == NULL){
+            $item = Item::find($request->item_id);
+            $recipient = User::find($item->user_id);
+            $request->user()->notifications()->create([
+            'content' => $request->content,
+            'user_id' => $recipient->id,
+            'item_id' => $item->id,
+            'sender_id' => \Auth::id(),
+            'type' => 'toItem',
+            ]);    
+        }elseif($request->parent_id != NULL){
+            $comment = Comment::find($request->parent_id);
+            $item = Item::find($request->item_id);
+            $recipient = User::find($comment->user_id);
+            $request->user()->notifications()->create([
+            'content' => $comment->content,
+            'user_id' => $recipient->id,
+            'item_id' => $item->id,
+            'sender_id' => \Auth::id(),
+            'type' => 'toComment',
+            ]);  
+        }
         
-        return redirect() -> back();
+        
+        return redirect()->back();
     }
     
     public function destroy($id)
