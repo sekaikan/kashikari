@@ -19,5 +19,10 @@ class Group extends Model
     {
         return $this->hasMany(Item::class)->paginate(20);
     }
+    
+     public function posts()
+    {
+        return $this->hasMany(Post::class)->paginate(20);
+    }
 }
 
