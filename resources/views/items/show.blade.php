@@ -4,7 +4,7 @@
 <div class="container mt-5">
     <div class="row">
 
-        <div class= "col-6 float-left">
+        <div class= "pt-5 col-6 float-left">
             <div class="ribbon_box3">
                 <img class="card-img" src="{{ $item->photo }}" alt="" class="colorfilter-image">
                 <div class="ribbon_area">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>    
-        <div class="col-6 title-space">
+        <div class=" pt-5 col-6 title-space">
 
             <h1>{{$item->name}}</h1>
             <p class="conte-space"> {!! nl2br(e($item->content)) !!}</p>
