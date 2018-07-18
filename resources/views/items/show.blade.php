@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container mt-5">
+    @if(Auth::id() == $item->want_user_id)
+      <div class="alert alert-warning" role="alert">
+      <i class="fas fa-check mr-3"　style="color:red;"></i>Your request was completed! Let's chat now!!
+      </div>
+    @endif
     <div class="row">
         <div class= "col-6 float-left">
             <div class="ribbon_box3">

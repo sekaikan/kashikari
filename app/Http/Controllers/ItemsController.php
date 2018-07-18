@@ -14,10 +14,10 @@ use App\Group;
 
 class ItemsController extends Controller
 {
-    public function index($id)
+    public function index()
     {
         $items = Item::orderBy('updated_at', 'desc')->paginate(20);
-        $group = Group::find($id);
+        $group = Group::find(1);
         
         foreach ($items as $item) {
             $date = date_create($item->date);
@@ -31,10 +31,10 @@ class ItemsController extends Controller
         ]);
     }
     
-    public function lend($id)
+    public function create()
     {
         $item = new Item;
-        $group = Group::find($id);
+        $group = Group::find(1);
         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
         
         return view('items.create', ['item' => $item, 'group' => $group, 'posts' =>$posts]);

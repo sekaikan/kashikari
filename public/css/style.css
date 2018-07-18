@@ -64,43 +64,6 @@
      transform: translateY(6px);
 }
 
-/* about */
-.jumbotron .jumbotron-extend .about {
-     background:url(/images/group.jpg) center no-repeat; 
-     background-size: cover;
-     padding-top: 0px;
-	 background-position: 50% 50%;
-     height: 400px;
-}
-  
-.fa-border {
-    color: #D6D1CD;
-}
-
-.fa-hand-holding-heart {
-    color: #E5399D;
-}
-
-.fa-people-carry{
-    color: #3CAFC1;
-}
-
-.fa-comments{
-    color: #E2C73F;
-}
-        
-.box1 {
-    background: #e4fcff;/*背景色*/
-    border-top: solid 6px #1dc1d6;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
-}
-
-.box2 {
-    background: #F7E8A0;/*背景色*/
-    border-top: solid 6px #F7D736;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
-}
-
 
 #logo {
     position: absolute;
@@ -133,7 +96,7 @@ nav ul {
 
 
 body {
-    /*color: #3D3F3E;*/
+    color: #3D3F3E;
     background-color: #EFF2F1;
 }
 
@@ -202,12 +165,7 @@ div.row.item{
 
 .my-orange {color: #fecb81}
 
-/*.chatbox{
-    position:fixed;
-　　z-index:2;
-　　float:right;
-}
-
+/*
 .chatbox img {
     width:80px;
 　　height:80px;
@@ -288,4 +246,20 @@ div.row.item{
 
 .borrow-button{
     margin-top: 50px;
+}
+
+.icon.container {
+	width: 110px ;
+	height: 110px ;
+	line-height: 100px ;
+	text-align: center ;
+}
+
+.target {
+	transition: .5s ;
+	transform: rotateZ( 0deg ) ;
+}
+
+.container:hover .target {
+	transform: rotateZ( 360deg ) ;
 }
