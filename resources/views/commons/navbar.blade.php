@@ -85,8 +85,7 @@
                                 <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">My Page</a>
                                 <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">Profile Setting</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
+                                                     document.getElementById('logout-form').submit();">Logout
                                         </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
