@@ -72,6 +72,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('items/index', 'ItemsController@index')->name('items.index');
     Route::post('borrow/store','PostsController@store')->name('posts.store');
     Route::get('posts/index', 'PostsController@index')->name('posts.index');
+    Route::get('userlist','GroupsController@userlist')->name('group.userlist');
    });
 
 });
