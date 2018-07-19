@@ -289,3 +289,35 @@ div.row.item{
 .jumbotron-home {
   background-color:#1B435D;
 }
+
+.mycomment {
+    position: relative;
+    background-color: #B4CCE3;
+}
+.mycomment:after {
+    content: "";
+    position: absolute;
+    top: 3px; 
+    right: -19px;
+    border: 8px solid transparent;
+    border-left: 18px solid #B4CCE3;
+    -ms-transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
+
+.otherscomment {
+    position: relative;
+}
+
+.otherscomment:after {
+    content: "";
+    position: absolute;
+    top: 3px; 
+    left: -19px;
+    border: 8px solid transparent;
+    border-left: 18px solid white;
+    -ms-transform: rotate(-145deg);
+    -webkit-transform: rotate(-145deg);
+    transform: rotate(-145deg);
+}
