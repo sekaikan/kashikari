@@ -97,12 +97,14 @@ class GroupsController extends Controller
     
     public function userlist($id)
     {
+        $user = \Auth::user();
         $group = Group::find($id);
         $users = $group->users();
     
     return view('groups.show', [
             'group' => $group,
             'users' => $users,
+            'user' => $user,
         ]);
     }
 
