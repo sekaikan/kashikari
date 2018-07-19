@@ -18,7 +18,7 @@
                                 );
                         ?>
                         
-                        <img class="usericon" src="{{  secure_asset($image_rand[$key]) }}">
+                        <img class="usericon" src="{{  secure_asset($image_rand[$key % 5]) }}">
                         @endforeach
                     @endif
                     <a href="{{route('group.userlist', ['id' => $group->id]) }}" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
