@@ -8,9 +8,6 @@
 
 
 @section('content')
-<div class="container my-3">
-          @include('notifications.notifications')
-      </div>
  <div class="mainmenu status text-center">
        <ul class="nav nav-tabs justify-content-center">
           <li class="nav-item col-4">
