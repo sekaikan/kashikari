@@ -78,6 +78,7 @@
                     <i class=" ml-2 fas fa-search"></i>
                 </form>
             </div>
+
             <div class="bg-light px-1 py-1 mt-5">
                 <h4 class="card-title text-center">Create Group</h4>
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
@@ -93,3 +94,4 @@
 
 
 @endsection
+
