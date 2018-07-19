@@ -32,7 +32,7 @@
 
 @section('content')
     <div class="container">
-        <div class="mainmenu status text-center">
+        <div class="mainmenu sen status text-center">
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item active col-4 px-0">
                 <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
