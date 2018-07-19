@@ -72,7 +72,7 @@ class GroupsController extends Controller
             'group' => $group,
             'posts' => $posts,
             'user' => $user,
-            'groupusers' => $groupusers,
+            'groupusers' => $groupusers->take(5),
         ]);
         }else{
         return view('groups.show', [
