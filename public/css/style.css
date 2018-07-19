@@ -148,7 +148,6 @@ a {
     font-weight: bolder;   
 }
 
-
 /*.navbar {
     position: fixed;
     width: 100%;
@@ -269,4 +268,10 @@ div.row.item{
 
 .container:hover .target {
 	transform: rotateZ( 360deg ) ;
+}
+
+.usericon {
+    border-radius: 50%;
+    height:60px;
+    width:60px;
 }

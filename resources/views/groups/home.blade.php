@@ -6,29 +6,44 @@
             <div class="float-right mr-5">
                 @include('group_user.follow_button', ['user' => $user])
             </div>
+                <?php 
+                        $image_rand = array(
+                                "images/user6.jpg",
+                                "images/user2.jpg",
+                                "images/user3.jpg", 
+                                "images/user4.jpg", 
+                                "images/user5.jpg"
+                              );
+                        $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
+                ?>
+            <div class="col-4 mx-auto">
+                @if (isset($groupusers))
+                    @foreach($groupusers as $groupuser)
+                    <img class="usericon"  src="{{  secure_asset($image_rand) }}">
+                    @endforeach
+                @endif
+            </div>
             
     </div>
 @endsection
 
 @section('content')
-        <div class="container my-3">
-        </div>
+    <div class="container">
         <div class="mainmenu status text-center">
             <ul class="nav nav-tabs justify-content-center">
-                <li class="nav-item col-4">
+                <li class="nav-item col-4 px-0">
                 <a class="nav-link active" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
                 </li>
     
-                <li class="nav-item col-4">
+                <li class="nav-item col-4 px-0">
                 <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
                 </li>
     
-                <li class="nav-item col-4">
+                <li class="nav-item col-4 px-0">
                 <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
                 </li>
             </ul>
         </div>
-   
     <div class="container pt-5 bg-light">
         <div class="row">
             <div class="col-8 pl-5">
@@ -46,16 +61,14 @@
                 @endif
             </div>
         </div>
-    </div>
-    <div class="row fixed-bottom justify-content-end">
-        <div class="col-1">
-            <div class="icon container">
-            <a href= "{{ route ('chats.index') }}">
-                <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
-            </a>
-           </div>
+        <div class="row fixed-bottom justify-content-end">
+            <div class="col-1">
+                <div class="icon container">
+                <a href= "{{ route ('chats.index') }}">
+                    <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
+                </a>
+               </div>
+            </div>
         </div>
     </div>
-    
- 
 @endsection
