@@ -305,6 +305,13 @@ div.row.item{
     width:50px;
 }
 
+.usershowicon {
+    border-radius: 50%;
+    height:150px;
+    width:150px;
+}
+
+
 .lasticon{
     display:inline-block;
     border-radius: 50%;
