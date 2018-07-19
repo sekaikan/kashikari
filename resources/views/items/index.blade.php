@@ -7,26 +7,21 @@
 @endsection
 
 @section('content')
-    <div class="container">
-    <div class="row">
-        <div class="col-12">
-         @include('notifications.notifications')
-        </div>
-    </div>
-    </div>
- <div class="mainmenu status text-center mt-2">
+<div class="container">
+    <div class="mainmenu status text-center mt-2">
        <ul class="nav nav-tabs justify-content-center">
-          <li class="nav-item col-3">
+          <li class="nav-item col-4 px-0">
             <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
           </li>
-          <li class="nav-item col-3">
+          <li class="nav-item col-4 px-0">
             <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
           </li>
-          <li class="nav-item col-3">
+          <li class="nav-item col-4 px-0">
             <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
           </li>
        </ul>
     </div>
+</div>
     
     
 <div class="container item">
