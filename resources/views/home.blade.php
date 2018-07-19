@@ -41,8 +41,8 @@
                 </a>
             @endif
             </div>
-            
-                <h2 class="text-center my-3">Other Groups</h2>
+                <h2 class="othergroups text-center my-3">Other Groups</h2>
+                <p class="fukidashi"> You can join these groups!!</p>
                 <div class="row">
                     @foreach ($unfollow_groups as $group)
                     <div class="col-4">
@@ -70,30 +70,28 @@
                 </div>
             </div>
        
-        
-        <div class="col-3 mt-4">
-            <div class="card">
-                <h3 class="card-title text-center my-3">Create Group</h3>
-                <div class="card-body">
+        <div class="col-3 mt-5">
+            <div class="bg-light px-1 py-1 mt-3">
+                <h4 class="card-title text-center">Search Group</h4>
+                <form class="form-inline" action="{{url('/results/groupsearch/')}}">
+                    <input type="text" name="keyword" value='' class="form-control" placeholder="Find Groups">
+                    <i class=" ml-2 fas fa-search"></i>
+                </form>
+            </div>
+
+            <div class="bg-light px-1 py-1 mt-5">
+                <h4 class="card-title text-center">Create Group</h4>
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
                     <div class="form-group">
                         {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
                         {!! Form::submit('Create', ['class' => 'btn btn-outline-success']) !!}
                         {!! Form::close() !!}
                     </div>
-            　  </div>  
-                <h3 class="card-title text-center my-3">Search Group</h3>
-                <div class="card-body">
-                    <form class="form-inline" action="{{url('/results/groupsearch/')}}">
-                    <div class="form-group mr-2">
-                    <input type="text" name="keyword" value='' class="form-control" placeholder="Find Groups">
-                    </div>
-                    <input type="submit" value="Search" class="btn btn-outline-success">
-                    </form>
-                </div>
-            </div>            
+            </div>
         </div>
+      </div>
 </div>
 
 
 @endsection
+

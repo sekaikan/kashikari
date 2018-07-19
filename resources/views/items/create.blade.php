@@ -2,8 +2,30 @@
 
 
 @section('cover')
-    <div class="jumbotron bg-dark">
+     <div class="jumbotron jumbotron-home">
             <h1 class="text-center text-white mt-5">{!! $group->name !!}</h1>
+            
+            <div class="col-3 mx-auto">
+                <div class="mx-auto">
+                    @if (isset($groupusers))
+                        @foreach($groupusers as $key => $groupuser)
+                        <?php 
+                            $image_rand = array(
+                                    "images/user6.jpg",
+                                    "images/user2.jpg",
+                                    "images/user3.jpg", 
+                                    "images/user4.jpg", 
+                                    "images/user5.jpg"
+                                );
+                        ?>
+                        
+                        <img class="usericon" src="{{  secure_asset($image_rand[$key]) }}">
+                        @endforeach
+                    @endif
+                    <a href="{{route('group.userlist', ['id' => $group->id]) }}" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
+                </div>
+            </div>
+            
     </div>
 @endsection
 
@@ -12,6 +34,7 @@
 @section('content')
 <div class="container">
   <div class="mainmenu status text-center">
+
        <ul class="nav nav-tabs justify-content-center">
           <li class="nav-item col-4 px-0">
             <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
@@ -19,21 +42,22 @@
           <li class="nav-item col-4 px-0">
             <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
           </li>
-          <li class="nav-item col-4 px-0">
-            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-smile-wink"></i><br>Lend</a>
+
+          <li class="nav-item active col-4 px-0">
+            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
           </li>
        </ul>
     </div>
 
 
-<div class= "container-fluid bg-light">
+<div class= "container bg-light">
 <div class= "row offset-1 col-10">
     
 
-<div class=" col-7 mx-auto">
+<div class="col-7 mx-auto">
      {!! Form::model($item, array('route' => array('items.store', $group->id)))!!}
     <div class="row item">
-             <div class="col-md-10 offset-1">
+             <div class="">
                 <h2 class="text-center">Register Items</h2>
                 
                 <div class="form-group">
@@ -55,25 +79,27 @@
                             <!--<option value="closed">closed</option>-->
                       </select>
                 </div>
-               
-              </div>
-        
-            {{ Form::hidden('group_id', $group->id)}}
+                {{ Form::hidden('group_id', $group->id)}}
             {!! Form::submit('upload', ['class' => 'btn btn-primary  btn-block col-6  mx-auto']) !!}
               
             {!! Form::close() !!}
-            
+          </div>        
         </div>
-        </div>
+    </div>
         
         
-        <div class="my-4 offset-1 col-4">
+        <div class="col-5 mx-auto">
+    <div class="row item">
+    <div class="">
     <h2 class="text-center">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
-        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="mt-3 btn btn-outline-primary btn-block">More...</a>
+        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right btn btn-outline-primary mt-3">More...</a>
     @endif
 </div>
+</div>
+</div>
+
  
  
  </div>

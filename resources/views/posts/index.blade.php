@@ -1,8 +1,29 @@
 @extends('layouts.app')
 
 @section('cover')
-    <div class="jumbotron  bg-dark">
+     <div class="jumbotron jumbotron-home">
             <h1 class="text-center text-white mt-5">{!! $group->name !!}</h1>
+            <div class="col-3 mx-auto">
+                <div class="mx-auto">
+                    @if (isset($groupusers))
+                        @foreach($groupusers as $key => $groupuser)
+                        <?php 
+                            $image_rand = array(
+                                    "images/user6.jpg",
+                                    "images/user2.jpg",
+                                    "images/user3.jpg", 
+                                    "images/user4.jpg", 
+                                    "images/user5.jpg"
+                                );
+                        ?>
+                        
+                        <img class="usericon" src="{{  secure_asset($image_rand[$key]) }}">
+                        @endforeach
+                    @endif
+                    <a href="{{route('group.userlist', ['id' => $group->id]) }}" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
+                </div>
+            </div>
+            
     </div>
 @endsection
 
@@ -13,7 +34,7 @@
                 <li class="nav-item col-4 px-0">
                     <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
                 </li>
-                <li class="nav-item col-4 px-0">
+                <li class="nav-item active col-4 px-0">
                     <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
                 </li>
                 <li class="nav-item col-4 px-0">
@@ -21,6 +42,7 @@
                 </li>
             </ul>
         </div>
+
         <div class="container pt-5">
             <div class="row">
                 <div class= "offset-3 col-6">
@@ -38,6 +60,7 @@
                 <div class="offset-3 col-6">
                     @include('posts.posts')
                 </div>
+
             </div>
         <!--<a href="/group" class="">back >></a>-->
         </div>

@@ -1,11 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-dark text-center my-5 p-3">
+    <div class="jumbotron-home text-center my-5 p-3">
         <div class="row mt-5">
             
             <div class="col-2 offset-5 px-5">
-                <img src="{{ Gravatar::src($user->email, 300) . '&d=mm' }}" alt="" class="rounded-circle img-fluid" style="border-radius: 20px;"> 
+                <?php
+                $image_rand = array(
+                                     '/images/user2.jpg',
+                                    '/images/user3.jpg',
+                                    '/images/user4.jpg',
+                                    '/images/user5.jpg',
+                                    '/images/user6.jpg',
+                                    );
+                $image_path = $image_rand[mt_rand(0, count($image_rand)-1)];
+                ?>
+                <img class="usershowicon" src="{{ secure_asset($image_path) }}"> 
             </div>
         </div>
         <h2 class="font-weight-normal text-light">{{ $user->name }}</h2>

@@ -18,10 +18,12 @@ class ItemsController extends Controller
     {
         $group = Group::find($id);
         $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
+        $groupusers= $group->users()->get();
         
         return view('items.index', [
             'items' => $items,
             'group' => $group,
+            'groupusers' => $groupusers,
         ]);
     }
     
@@ -30,12 +32,13 @@ class ItemsController extends Controller
         $item = new Item;
         $group = Group::find($id);
         $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
-        //$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
+        $groupusers = $group->users()->get();
         
         return view('items.create',[
             'item' => $item, 
             'group' => $group, 
-            'posts' =>$posts
+            'posts' => $posts,
+            'groupusers' => $groupusers,
             ]);
     }
     
@@ -45,7 +48,7 @@ class ItemsController extends Controller
         $this->validate($request, [
             'content' => 'required|max:191',
             'name' => 'required',
-            'reward' => 'required',
+           
             'status' => 'required|max:10',
 
             'group_id'=> 'required',
@@ -89,11 +92,12 @@ class ItemsController extends Controller
     {
       $item = Item::find($id);
       $comments = $item->comments();
-      
+      $user = User::find($item->user_id);
         
         return view('items.show',[
             'item' => $item, 
             'comments' => $comments,
+            'user' => $user,
         
         ]);
     }
@@ -109,7 +113,7 @@ class ItemsController extends Controller
         $this->validate($request, [
            'content' => 'required|max:191',
             'name' => 'required',
-            'reward' => 'required',
+            
             'status' => 'required|max:10',
         ]);
         

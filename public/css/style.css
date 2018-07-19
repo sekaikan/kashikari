@@ -270,11 +270,47 @@ div.row.item{
 	transform: rotateZ( 360deg ) ;
 }
 
+
+.active{
+    background-color: #63B9C6;
+    color: white;
+    border-bottom: 1px solid #63B9C6;
+}
+.active i{
+    color:white;
+}
+
+.active a{
+   color: white;
+}
+
+.container.mainmenu{
+    border-bottom: 2px solid #63B9C6;
+}
+
+.filter{
+     background-color: #000;
+     display: inline-block;
+}
+
+.card-img-top.close{
+   opacity: 0.3;    
+   display: block;
+}
+
+/*usericon*/
 .usericon {
     border-radius: 50%;
     height:50px;
     width:50px;
 }
+
+.usershowicon {
+    border-radius: 50%;
+    height:150px;
+    width:150px;
+}
+
 
 .lasticon{
     display:inline-block;
@@ -321,3 +357,40 @@ div.row.item{
     -webkit-transform: rotate(-145deg);
     transform: rotate(-145deg);
 }
+
+/*fikidashi*/
+ .fukidashi {
+      display: none;
+      width: 200px;
+      position: absolute;
+      top: 270px;
+      left: 500px;
+      padding: 16px;
+      border-radius: 5px;
+      background: #33cc99;
+      color: #fff;
+      font-weight: bold;
+    }
+    .fukidashi:after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0;
+      bottom: -19px;
+      margin-left: 10px;
+      border: solid transparent;
+      border-color: rgba(51, 204, 153, 0);
+      border-top-color: #33cc99;
+      border-width: 10px;
+      pointer-events: none;
+      content: " ";
+    }
+    .othergroups:hover + .fukidashi {
+      display: block;
+    }
+
+.othergroups {
+    position:relative;
+}
+
+

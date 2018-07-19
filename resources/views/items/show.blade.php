@@ -3,7 +3,7 @@
 @section('content')
 <div class="container my-5">
     @if(Auth::id() == $item->want_user_id)
-      <div class="alert alert-warning mt-5 pt-5" role="alert">
+      <div class="alert alert-success mt-5 pt-5" role="alert">
       <i class="fas fa-check mr-3"　style="color:red;"></i>Your request was completed! Let's chat now!!
       </div>
     @endif
@@ -24,9 +24,10 @@
         <div class=" pt-5 col-6 title-space">
 
             <h1>{{$item->name}}</h1>
+            <p>by {{$user->name}}</p>
             <p class="conte-space"> {!! nl2br(e($item->content)) !!}</p>
             <hr>
-              <p class="card-text h5"><i class="fas fa-gift mr-2"></i>{{ $item->reward }}</p>
+              <p class="card-text h5"><i class="fas fa-gift mr-2"></i>{{ $item->reward }}<span style="margin-left:5px;"><span class="text-muted">in return</span></p>
 
             <div class="row offset-8">
               @if (Auth::id() == $item->user->id) 
@@ -40,16 +41,16 @@
               @endif
             </div>
             <div class="borrow-button">
-                @if(Auth::id() != $item->want_user_id )
+                @if(Auth::id() != $item->user->id && Auth::id() != $item->want_user_id )
                 {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
                     {!! Form::submit('Please lend it', ['class' => 'btn btn-danger btn-block btn-lg', 'id' => 'form-button']) !!}
                 {!! Form::close() !!}
-               @else
+                
+                @elseif(Auth::id() == $item->want_user_id )
                 {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
-                    {!! Form::submit('Request completed!!', ['class' => 'btn btn-success btn-block btn-lg', 'id' => 'form-button']) !!}
-                {!! Form::close() !!}
+                    <a href="#" class="btn btn-success btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
                 @endif
             </div>
         </div>

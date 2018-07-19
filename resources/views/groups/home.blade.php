@@ -47,6 +47,8 @@
                 </li>
             </ul>
         </div>
+
+
     <div class="container pt-5 bg-light">
         <div class="row">
             <div class="col-8 pl-5">
@@ -60,7 +62,7 @@
                 <h2 class="text-center">Ask for what you need</h2>
                 @include('posts.posts', ['posts' => $posts])
                 @if (count($posts) >0)
-                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="mt-3 btn btn-outline-primary btn-block">More...</a>
+                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right btn btn-outline-primary mt-3">More...</a>
                 @endif
             </div>
         </div>
@@ -74,4 +76,5 @@
             </div>
         </div>
     </div>
+
 @endsection
