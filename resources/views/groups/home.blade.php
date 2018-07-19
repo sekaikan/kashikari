@@ -34,8 +34,8 @@
     <div class="container">
         <div class="mainmenu status text-center">
             <ul class="nav nav-tabs justify-content-center">
-                <li class="nav-item col-4 px-0">
-                <a class="nav-link active" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
+                <li class="nav-item active col-4 px-0">
+                <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
                 </li>
     
                 <li class="nav-item col-4 px-0">

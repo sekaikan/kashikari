@@ -37,7 +37,7 @@
                 <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
             </li>
             <li class="nav-item active col-4 px-0">
-                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-sad-tear"></i><br>Borrow</a>
+                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
             </li>
             <li class="nav-item col-4 px-0">
                 <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
