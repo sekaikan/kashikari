@@ -24,7 +24,7 @@
         <div class=" pt-5 col-6 title-space">
 
             <h1>{{$item->name}}</h1>
-            <p>by {{$user->name}}</p>
+            <p>by {{$item->user->name}}</p>
             <p class="conte-space"> {!! nl2br(e($item->content)) !!}</p>
             <hr>
               <p class="card-text h5"><i class="fas fa-gift mr-2"></i>{{ $item->reward }}<span style="margin-left:5px;"><span class="text-muted">in return</span></p>
