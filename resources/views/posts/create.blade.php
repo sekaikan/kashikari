@@ -8,21 +8,24 @@
 
 
 @section('content')
- <div class="mainmenu status text-center">
-       <ul class="nav nav-tabs justify-content-center">
-          <li class="nav-item col-4">
-            <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
-          </li>
-         <li class="nav-item col-4">
-            <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-sad-tear"></i><br>Borrow</a>
-          </li>
-          <li class="nav-item col-4">
-            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
-          </li>
-       </ul>
-    </div>
+ <div class="container mainmenu status text-center">
+            <ul class="nav nav-tabs justify-content-center">
+                <li class="nav-item col-4">
+                <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
+                </li>
     
-<div class="bg-white py-5" id="form-bg" style= margin-top:0;>
+                <li class="nav-item active col-4 px-0">
+                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
+                </li>
+    
+                <li class="nav-item col-4">
+                <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
+                </li>
+            </ul>
+        </div>
+   
+    
+<div class="container bg-light py-5" id="form-bg" style= margin-top:0;>
     <div class="container">
         @if (Auth::id() == $user->id)
         {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
@@ -39,7 +42,7 @@
     </div>
 </div>
 
-  <div class="container-fluid bg-light">
+  <div class="container bg-light">
     <h2 class="text-center">Shared Items</h2>
      <div class ="row offset-2 col-8">
     @include('items.items', ['items' => $items])

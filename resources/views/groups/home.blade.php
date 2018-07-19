@@ -11,10 +11,10 @@
 @endsection
 
 @section('content')
-        <div class="mainmenu status text-center">
+        <div class="container mainmenu status text-center">
             <ul class="nav nav-tabs justify-content-center">
-                <li class="nav-item col-4">
-                <a class="nav-link active" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
+                <li class="nav-item active col-4 px-0">
+                <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
                 </li>
     
                 <li class="nav-item col-4">
@@ -27,33 +27,25 @@
             </ul>
         </div>
    
-    <div class="container-fluid pt-5 bg-light">
+    <div class="container pt-5 bg-light">
         <div class="row">
-            <div class="col-7 pl-5">
+            <div class="col-8 pl-5">
                 <h2 class="text-center">Shared Items</h2>
                 @include('items.items', ['items' => $items])
                 @if (count($items) >0)  
                     <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
                 @endif
             </div>
-            <div class="col-5">
+            <div class="col-4">
                 <h2 class="text-center">Ask for what you need</h2>
                 @include('posts.posts', ['posts' => $posts])
                 @if (count($posts) >0)
-                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right btn btn-outline-primary">More...</a>
+                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right btn btn-outline-primary mt-3">More...</a>
                 @endif
             </div>
         </div>
     </div>
-    <div class="row fixed-bottom justify-content-end">
-        <div class="col-1">
-            <div class="icon container">
-            <a href= "{{ route ('chats.index') }}">
-                <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
-            </a>
-           </div>
-        </div>
-    </div>
+    
     
  
 @endsection

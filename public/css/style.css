@@ -270,3 +270,34 @@ div.row.item{
 .container:hover .target {
 	transform: rotateZ( 360deg ) ;
 }
+
+.active{
+    background-color: #63B9C6;
+    color: white;
+    border-bottom: 1px solid #63B9C6;
+}
+.active i{
+    color:white;
+}
+
+.active a{
+   color: white;
+}
+
+.container.mainmenu{
+    border-bottom: 2px solid #63B9C6;
+}
+
+.filter{
+     background-color: #000;
+     display: inline-block;
+}
+
+.card-img-top.close{
+   opacity: 0.3;    
+   display: block;
+}
+
+
+
+ 

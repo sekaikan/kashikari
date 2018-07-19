@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->text('content');
             $table->string('status')->index();
-            $table->string('reward');
+            $table->string('reward')->nullable();
             $table->text('photo')->nullable();
             $table->integer('want_user_id')->unsigned()->index()->nullable();
             $table->timestamps();
