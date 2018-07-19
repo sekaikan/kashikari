@@ -44,24 +44,21 @@
                 </li>
             </ul>
         </div>
-    
-   
-        <div class="container-fluid pt-5 bg-light">
-            <div class="row">
-                <div class="col-7 pl-5">
-                    <h2 class="text-center">Shared Items</h2>
-                    @include('items.items', ['items' => $items])
-                    @if (count($items) >0)  
-                        <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
-                    @endif
-                </div>
-                <div class="col-5">
-                    <h2 class="text-center">Ask for what you need</h2>
-                    @include('posts.posts', ['posts' => $posts])
-                    @if (count($posts) >0)
-                        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right btn btn-outline-primary">More...</a>
-                    @endif
-                </div>
+    <div class="container pt-5 bg-light">
+        <div class="row">
+            <div class="col-8 pl-5">
+                <h2 class="text-center">Shared Items</h2>
+                @include('items.items', ['items' => $items])
+                @if (count($items) >0)  
+                    <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
+                @endif
+            </div>
+            <div class="col-4">
+                <h2 class="text-center">Ask for what you need</h2>
+                @include('posts.posts', ['posts' => $posts])
+                @if (count($posts) >0)
+                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="mt-3 btn btn-outline-primary btn-block">More...</a>
+                @endif
             </div>
         </div>
         <div class="row fixed-bottom justify-content-end">
@@ -74,6 +71,4 @@
             </div>
         </div>
     </div>
-    
- 
 @endsection
