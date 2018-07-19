@@ -94,6 +94,17 @@ class GroupsController extends Controller
         
     return redirect('/home');
     }
+    
+    public function userlist($id)
+    {
+        $group = Group::find($id);
+        $users = $group->users();
+    
+    return view('groups.show', [
+            'group' => $group,
+            'users' => $users,
+        ]);
+    }
 
 }
 
