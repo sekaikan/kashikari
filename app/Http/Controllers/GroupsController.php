@@ -65,14 +65,14 @@ class GroupsController extends Controller
         
         if($user->is_following($id)){
         $items =\DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
-        //$items = Item::orderBy('updated_at', 'desc')->paginate(8);
         $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
-        //$posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
+        $groupusers = $group->users()->get();
         return view('groups.home', [
             'items' => $items,
             'group' => $group,
             'posts' => $posts,
             'user' => $user,
+            'groupusers' => $groupusers,
         ]);
         }else{
         return view('groups.show', [
@@ -93,6 +93,19 @@ class GroupsController extends Controller
         $group -> delete();
         
     return redirect('/home');
+    }
+    
+    public function userlist($id)
+    {
+        $user = \Auth::user();
+        $group = Group::find($id);
+        $users = $group->users();
+    
+    return view('groups.show', [
+            'group' => $group,
+            'users' => $users,
+            'user' => $user,
+        ]);
     }
 
 }

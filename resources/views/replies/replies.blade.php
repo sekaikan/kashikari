@@ -18,33 +18,29 @@ foreach($replies as $reply) {
         @endfor
         <div class="col-md-{{ 12-($spacer % 12)}}">
             <?php $user = $reply->user; ?>
-            <div class="card p-4">
+            <div class="card shadow">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-1">
+                        <div class="col-md-2 col-2">
                            <img src="{{ Gravatar::src($user->email, 1000) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
                         </div>
-                        <div class="col-md-10">
-                            <div>
-                                {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">at {{ $reply->created_at }}</span>
-                            </div>
+                        <div class="col-md-8 col-8 px-0">
+                            {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}<small> <span class="text-muted">at {{ $reply->created_at }}</span>
+                            </small>
                         </div>
-                        <div class="col-md-1">
-                            <div>
-                                @if (Auth::id() == $reply->user_id)
-                                    {!! Form::open(['route' => ['replies.destroy', $reply->id], 'method' => 'delete']) !!}
-                                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
-                                    {!! Form::close() !!}
-                                @endif
-                            </div>
+                        <div class="col-md-2 col-2 text-right">
+                            @if (Auth::id() == $reply->user_id)
+                                {!! Form::open(['route' => ['replies.destroy', $reply->id], 'method' => 'delete']) !!}
+                                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                                {!! Form::close() !!}
+                            @endif
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-10 offset-1">
+                        <div class="col-md-7 offset-md-2 col-7 offset-2 px-0">
                             <p class="card-text">{!! nl2br(e($reply->content)) !!}</p>
-                            <p class="card-text">{!! nl2br(e($reply->status)) !!}</p>
                         </div>
-                        <div class="col-1">
+                        <div class="col-md-3 col-3 text-right align-self-end">
                             <a data-toggle="collapse" href="#collapsePost{{$reply->id}}" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fas fa-reply"></i>
                             </a>
@@ -53,8 +49,6 @@ foreach($replies as $reply) {
                             <div class="collapse" id="collapsePost{{$reply->id}}">
                                 <hr>
                                 <p>You are replying to {{ App\User::find($reply->user_id)->name }}.</p>
-                                
-                                @if (Auth::id() == $user->id)
                                 {!! Form::open(['route' => 'replies.store']) !!}
                                     <div class="form-group" id="review-form-group">
                                         {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Reply...', 'rows'=>'2']) !!}
@@ -62,8 +56,7 @@ foreach($replies as $reply) {
                                         {{ Form::hidden('reply_id', $reply->id) }}
                                         {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
                                     </div>
-                                    {!! Form::close() !!}
-                                @endif
+                                {!! Form::close() !!}
                             </div>
                         </div>
                     </div>

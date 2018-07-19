@@ -1,10 +1,20 @@
 <?php $notifications = Auth::user()->notifications()->orderBy('created_at', 'desc')->paginate(5); ?>
 <div class="card">
     <div class="card-header">
-        Notifications 
+        <div class="row">
+            <div class="col-11">
+                 Notification
         @if($notifications->count()>0)
         <span class="badge badge-pill badge-danger">{{ Auth::user()->notifications()->count() }}</span>
         @endif
+            </div>
+            <div class="col-1 text-right">
+                 {!! Form::open(['route' => ['notifications.purge', 'user_id'=>Auth::id()], 'method' => 'delete', 'class'=>'text-right']) !!}
+                                    {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                            {!! Form::close() !!}
+            </div>
+            
+        </div>
     </div>
     @if($notifications->count()==0)
     <div class="card-body">

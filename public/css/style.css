@@ -148,7 +148,6 @@ a {
     font-weight: bolder;   
 }
 
-
 /*.navbar {
     position: fixed;
     width: 100%;
@@ -271,6 +270,7 @@ div.row.item{
 	transform: rotateZ( 360deg ) ;
 }
 
+
 .active{
     background-color: #63B9C6;
     color: white;
@@ -298,6 +298,59 @@ div.row.item{
    display: block;
 }
 
+/*usericon*/
+.usericon {
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+}
 
+.lasticon{
+    display:inline-block;
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    background:#383c3c;
+    text-align:center;
+    line-height:50px;
+}
 
- 
+.jumbotron-home {
+  background-color:#1B435D;
+}
+
+/*fikidashi*/
+ .fukidashi {
+      display: none;
+      width: 200px;
+      position: absolute;
+      top: 270px;
+      left: 500px;
+      padding: 16px;
+      border-radius: 5px;
+      background: #33cc99;
+      color: #fff;
+      font-weight: bold;
+    }
+    .fukidashi:after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0;
+      bottom: -19px;
+      margin-left: 10px;
+      border: solid transparent;
+      border-color: rgba(51, 204, 153, 0);
+      border-top-color: #33cc99;
+      border-width: 10px;
+      pointer-events: none;
+      content: " ";
+    }
+    .othergroups:hover + .fukidashi {
+      display: block;
+    }
+
+.othergroups {
+    position:relative;
+}
+

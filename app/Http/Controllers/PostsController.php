@@ -27,11 +27,13 @@ class PostsController extends Controller
             $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
             //$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
             $user = \Auth::user();
+            $groupusers= $group->users()->get();
             $data = [
                 'users' => $users,
                 'posts' => $posts,
                 'group' => $group,
                 'user' => $user,
+                'groupusers' =>$groupusers,
                 
             ];
             
@@ -43,14 +45,12 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'content' => 'required|max:191',
-            'status' =>  'required|max:191',
             'group_id' => 'required',
             
         ]);
 
         $request->user()->posts()->create([
             'content' => $request->content,
-            'status'  => $request->status,
             'group_id' => $request->group_id,
         ]);
 
@@ -64,14 +64,12 @@ class PostsController extends Controller
         $group = Group::find($id);
         $user = \Auth::user();
         $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
-        //$items = Item::orderBy('updated_at', 'desc')->paginate(20);
-        // $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
-        //$posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
+        $groupusers= $group->users()->get();
         return view('posts.create', [
         'user' => $user, 
         'group' => $group, 
         'items' => $items,
-        //'posts' => $posts,
+        'groupusers' => $groupusers,
         'post' => $post,
         
       ]);
