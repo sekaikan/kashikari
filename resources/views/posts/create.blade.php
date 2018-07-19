@@ -36,7 +36,7 @@
             <li class="nav-item col-4 px-0">
                 <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
             </li>
-            <li class="nav-item col-4 px-0">
+            <li class="nav-item active col-4 px-0">
                 <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link active"><i class="fas fa-sad-tear"></i><br>Borrow</a>
             </li>
             <li class="nav-item col-4 px-0">

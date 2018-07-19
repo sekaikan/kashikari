@@ -48,7 +48,7 @@ class ItemsController extends Controller
         $this->validate($request, [
             'content' => 'required|max:191',
             'name' => 'required',
-            'reward' => 'required',
+           
             'status' => 'required|max:10',
 
             'group_id'=> 'required',
@@ -92,11 +92,12 @@ class ItemsController extends Controller
     {
       $item = Item::find($id);
       $comments = $item->comments();
-      
+      $user = User::find($item->user_id);
         
         return view('items.show',[
             'item' => $item, 
             'comments' => $comments,
+            'user' => $user,
         
         ]);
     }
@@ -112,7 +113,7 @@ class ItemsController extends Controller
         $this->validate($request, [
            'content' => 'required|max:191',
             'name' => 'required',
-            'reward' => 'required',
+            
             'status' => 'required|max:10',
         ]);
         
