@@ -3,7 +3,7 @@
 @section('content')
 <div class="jumbotron-home text-center my-5 p-3">
     <div class="row mt-5">
-        <div class="col-2 offset-5 px-5">
+        <div class="col-4 offset-4 px-5">
             <h1 class="font-weight-normal text-light">{{ $group->name }}</h1>
         <?php
                 $image_rand = array(
