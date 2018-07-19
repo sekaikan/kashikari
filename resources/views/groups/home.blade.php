@@ -1,27 +1,30 @@
 @extends('layouts.app')
 
 @section('cover')
-    <div class="jumbotron jumbotron-fluid bg-dark">
+    <div class="jumbotron jumbotron-home">
             <h1 class="text-center text-white mt-5">{!! $group->name !!}</h1>
             <div class="float-right mr-5">
                 @include('group_user.follow_button', ['user' => $user])
             </div>
-                <?php 
-                        $image_rand = array(
-                                "images/user6.jpg",
-                                "images/user2.jpg",
-                                "images/user3.jpg", 
-                                "images/user4.jpg", 
-                                "images/user5.jpg"
-                              );
-                        $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
-                ?>
-            <div class="col-4 mx-auto">
-                @if (isset($groupusers))
-                    @foreach($groupusers as $groupuser)
-                    <img class="usericon"  src="{{  secure_asset($image_rand) }}">
-                    @endforeach
-                @endif
+            <div class="col-3 mx-auto">
+                <div class="mx-auto">
+                    @if (isset($groupusers))
+                        @foreach($groupusers as $key => $groupuser)
+                        <?php 
+                            $image_rand = array(
+                                    "images/user6.jpg",
+                                    "images/user2.jpg",
+                                    "images/user3.jpg", 
+                                    "images/user4.jpg", 
+                                    "images/user5.jpg"
+                                );
+                        ?>
+                        
+                        <img class="usericon" src="{{  secure_asset($image_rand[$key]) }}">
+                        @endforeach
+                    @endif
+                    <a href="#" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
+                </div>
             </div>
             
     </div>
