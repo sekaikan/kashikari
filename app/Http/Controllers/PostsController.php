@@ -45,14 +45,12 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'content' => 'required|max:191',
-            'status' =>  'required|max:191',
             'group_id' => 'required',
             
         ]);
 
         $request->user()->posts()->create([
             'content' => $request->content,
-            'status'  => $request->status,
             'group_id' => $request->group_id,
         ]);
 

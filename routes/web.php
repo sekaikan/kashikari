@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 // notifications
    Route::delete('/', 'NotificationsController@destroy')->name('notifications.destroy');
+   Route::delete('/', 'NotificationsController@purge')->name('notifications.purge');
+   
 
   
 //borrow
