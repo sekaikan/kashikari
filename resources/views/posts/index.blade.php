@@ -21,20 +21,24 @@
                 </li>
             </ul>
         </div>
-        <div class="container-fluid pt-5 bg-light">
-            <div class= "offset-2 col-8">
-                @if (Auth::id() == $user->id)
-                {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
-                    <div class="form-group" id="review-form-group">
-                        {{ Form::select('status', array('open' => 'Open', 'closed' => 'Solved'), 'open', ['class'=>'form-control']) }}
-                        {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need ?', 'rows'=>'3']) !!}
-                        {{ Form::hidden('group_id', $group->id)}}
-                        {!! Form::submit('submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
-                    </div>
-                    {!! Form::close() !!}
-                @endif
+        <div class="container pt-5">
+            <div class="row">
+                <div class= "offset-3 col-6">
+                    @if (Auth::id() == $user->id)
+                    {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
+                        <div class="form-group" id="review-form-group">
+                            {{ Form::select('status', array('open' => 'Open', 'closed' => 'Solved'), 'open', ['class'=>'form-control']) }}
+                            {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need ?', 'rows'=>'3']) !!}
+                            {{ Form::hidden('group_id', $group->id)}}
+                            {!! Form::submit('submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                        </div>
+                        {!! Form::close() !!}
+                    @endif
+                </div>
+                <div class="offset-3 col-6">
+                    @include('posts.posts')
+                </div>
             </div>
-          @include('posts.posts')
         <!--<a href="/group" class="">back >></a>-->
         </div>
     </div>
