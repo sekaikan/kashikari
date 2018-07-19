@@ -71,7 +71,7 @@
     <h2 class="text-center">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
-        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right btn btn-outline-primary">More...</a>
+        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="mt-3 btn btn-outline-primary btn-block">More...</a>
     @endif
 </div>
  
