@@ -25,7 +25,7 @@ foreach($replies as $reply) {
                            <img src="{{ Gravatar::src($user->email, 1000) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
                         </div>
                         <div class="col-md-8 col-8 px-0">
-                            {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}<small> <span class="text-muted">at {{ $post->created_at }}</span>
+                            {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}<small> <span class="text-muted">at {{ $reply->created_at }}</span>
                             </small>
                         </div>
                         <div class="col-md-2 col-2 text-right">
