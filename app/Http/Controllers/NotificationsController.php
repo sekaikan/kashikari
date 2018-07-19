@@ -20,4 +20,12 @@ class NotificationsController extends Controller
 
         return redirect()->back();
     }
+    
+    public function purge(Request $request)
+    {
+        
+        \DB::table('notifications')->where('user_id', $request->user_id)->delete();
+        
+        return redirect()->back();
+    }
 }
