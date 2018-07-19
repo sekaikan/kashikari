@@ -3,19 +3,16 @@
 @section('content')
 <div class="container pt-5">
     <div class="row">
-    
-    <div class="card col-8 mt-5 mx-auto">
-      <h1 class="card-header text-center">{!! $group->name !!}</h1>
-               <?php $image_rand = array(
+        <div class="card col-8 mt-5 mx-auto">
+            <h1 class="card-header text-center">{!! $group->name !!}</h1>
+            <?php $image_rand = array(
                                       "images/image1.jpg",
                                       "images/image2.jpg",
                                       "images/image3.jpg", 
                                       "images/home1.jpg", 
                                     );
-                       
-                     $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
+                     $image_rand = $image_rand[mt_rand(0, count($image_rand) - 1)];
                 ?>
-
        <img class="card-img-top" src="{{ secure_asset($image_rand) }}">
        
      <div class="card-body">
