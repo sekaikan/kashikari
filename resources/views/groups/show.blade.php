@@ -21,13 +21,11 @@
                         @include('group_user.follow_button', ['user' => $user])
                     </div>
                     <h3 class="card-title">Members</h3>
-                    @if($group->users() != NULL)
-                        @if (count($group->users()) > 0)
+                    @if($group->users()->get() != NULL)
                         <?php $users = $group->users()->get(); ?>
                         @foreach($users as $user)
                         <h6><a href="{{ route('users.show', $user->id) }}" class="card-link">{{ $user->name }}</a></h6>
                         @endforeach
-                        @endif
                     @endif
                 </div>
         </div>
