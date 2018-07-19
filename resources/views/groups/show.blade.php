@@ -17,6 +17,15 @@
                 <img class="usershowicon" src="{{ secure_asset($image_path) }}">
         </div>
     </div>
+    <div class="row fixed-bottom justify-content-end">
+            <div class="col-1">
+                <div class="icon container">
+                <a href= "{{ route ('chats.index') }}">
+                    <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
+                </a>
+               </div>
+            </div>
+        </div>
 </div>
 <div class="container ">
     <div class="col-8 mx-auto">    
