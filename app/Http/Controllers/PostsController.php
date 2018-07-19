@@ -33,7 +33,7 @@ class PostsController extends Controller
                 'posts' => $posts,
                 'group' => $group,
                 'user' => $user,
-                'groupusers' =>$groupusers,
+                'groupusers' =>$groupusers->take(5),
                 
             ];
             
@@ -69,7 +69,7 @@ class PostsController extends Controller
         'user' => $user, 
         'group' => $group, 
         'items' => $items,
-        'groupusers' => $groupusers,
+        'groupusers' => $groupusers->take(5),
         'post' => $post,
         
       ]);
