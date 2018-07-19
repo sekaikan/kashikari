@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 // notifications
    Route::delete('/', 'NotificationsController@destroy')->name('notifications.destroy');
-   Route::delete('/', 'NotificationsController@purge')->name('notifications.purge');
+   Route::delete('/notifications/purge', 'NotificationsController@purge')->name('notifications.purge');
    
 
   
