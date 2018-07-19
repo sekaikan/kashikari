@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container pt-5">
-    <div class="row">
-        <div class="card col-8 mt-5 mx-auto">
-            <h1 class="card-header text-center">{!! $group->name !!}</h1>
-            <?php
+<div class="jumbotron-home text-center my-5 p-3">
+    <div class="row mt-5">
+        <div class="col-2 offset-5 px-5">
+            <h1 class="font-weight-normal text-light">{{ $group->name }}</h1>
+        <?php
                 $image_rand = array(
                                     '/images/image1.jpg',
                                     '/images/image2.jpg',
@@ -14,21 +14,24 @@
                                     );
                 $image_path = $image_rand[mt_rand(0, count($image_rand)-1)];
                 ?>
-                <img class="card-img-top" src="{{ secure_asset($image_path) }}">
-
-                <div class="card-body">
-                    <div class="card-title float-right">
-                        @include('group_user.follow_button', ['user' => $user])
-                    </div>
-                    <h3 class="card-title">Members</h3>
-                    @if($group->users()->get() != NULL)
-                        <?php $users = $group->users()->get(); ?>
-                        @foreach($users as $user)
-                        <h6><a href="{{ route('users.show', $user->id) }}" class="card-link">{{ $user->name }}</a></h6>
-                        @endforeach
-                    @endif
-                </div>
+                <img class="usershowicon" src="{{ secure_asset($image_path) }}">
         </div>
+    </div>
+</div>
+<div class="container ">
+    <div class="col-8 mx-auto">    
+            <div class="float-right">
+                @include('group_user.follow_button', ['user' => $user])
+            </div>
+            <div class="">
+            <h2>Members</h2>
+                @if($group->users()->get() != NULL)
+                    <?php $users = $group->users()->get(); ?>
+                    @foreach($users as $user)
+                    <h5><a href="{{ route('users.show', $user->id) }}" class="">{{ $user->name }}</a></h5>
+                    @endforeach
+                @endif
+            </div>
     </div>
 </div>
 @endsection
