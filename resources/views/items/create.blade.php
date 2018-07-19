@@ -2,8 +2,30 @@
 
 
 @section('cover')
-    <div class="jumbotron bg-dark">
+     <div class="jumbotron jumbotron-home">
             <h1 class="text-center text-white mt-5">{!! $group->name !!}</h1>
+            
+            <div class="col-3 mx-auto">
+                <div class="mx-auto">
+                    @if (isset($groupusers))
+                        @foreach($groupusers as $key => $groupuser)
+                        <?php 
+                            $image_rand = array(
+                                    "images/user6.jpg",
+                                    "images/user2.jpg",
+                                    "images/user3.jpg", 
+                                    "images/user4.jpg", 
+                                    "images/user5.jpg"
+                                );
+                        ?>
+                        
+                        <img class="usericon" src="{{  secure_asset($image_rand[$key]) }}">
+                        @endforeach
+                    @endif
+                    <a href="{{route('group.userlist', ['id' => $group->id]) }}" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
+                </div>
+            </div>
+            
     </div>
 @endsection
 
