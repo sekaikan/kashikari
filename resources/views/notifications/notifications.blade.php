@@ -22,11 +22,19 @@
     </div>
     @else
         <ul class="list-group list-group-flush">
-            @foreach ($notifications as $notification)
+             @foreach ($notifications as $notification)
+                 <?php $image_rand2 = array(
+                                "images/user2.jpg",
+                                "images/user3.jpg",
+                                "images/user4.jpg", 
+                                "images/user5.jpg", 
+                              );
+                        $image_rand2 = $image_rand2[mt_rand(0, count($image_rand2)-1)];
+                 ?>
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-1">
-                            <img src="/images/user1.jpg" class="img-fluid rounded-circle"></img>
+                            <img src="{{ secure_asset($image_rand2)}}" class="img-fluid rounded-circle"></img>
                         </div>
                         <div class="col-10">
                             <?php $date = new DateTime($notification->created_at);?>
@@ -47,7 +55,7 @@
                             </p>
                             @endif
                             
-                            <p class="card-text text-muted"><small>{{ $date->format("g:i a, F j, Y")}}</small></p>
+                            <p class="card-text text-muted"><small>{{ $date->format("G:i, F j, Y")}}</small></p>
                         </div>
                         <div class="col-1">
                             {!! Form::open(['route' => ['notifications.destroy', 'notification_id'=>$notification->id], 'method' => 'delete', 'class'=>'text-right']) !!}
