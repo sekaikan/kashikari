@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::resource('group', 'GroupsController');
 
 //chats
-   Route::resource('chats', 'ChatsController', ['only' =>['index','store','destroy']]);
+   Route::resource('chats', 'ChatsController', ['only' =>['destroy']]);
 
 //results
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
@@ -75,6 +75,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('borrow/store','PostsController@store')->name('posts.store');
     Route::get('posts/index', 'PostsController@index')->name('posts.index');
     Route::get('userlist','GroupsController@userlist')->name('group.userlist');
+    Route::get('chats/index', 'ChatsController@index')->name('chats.index');
+    Route::post('chats/store','ChatsController@store')->name('chats.store');
    });
 
 });

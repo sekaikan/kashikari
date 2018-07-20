@@ -8,16 +8,20 @@ use App\Chat;
 
 use App\User;
 
+use App\Group;
+
 class ChatsController extends Controller
 {
-    public function index()
+    public function index($id)
     {
+        $group = Group::find($id);
         $chats = Chat::with('user')->orderBy('created_at', 'desc')->paginate(100);
         //$chats = \DB::table('chats')->orderBy('created_at', 'desc')->paginate(100);
         $users = User::all();
         return view('chats.index', [
             'chats' => $chats,
             'users' => $users,
+            'group' => $group,
         ]);
     }
     
@@ -25,15 +29,16 @@ class ChatsController extends Controller
     {
         $this->validate($request, [
             'content' => 'required|max:30000',
+            'group_id'=> 'required',
             
         ]);
         
         $request->user()->chats()->create([
             'content' => $request->content,
-            
+            'group_id' => $request->group_id,
         ]);
         
-         return redirect() -> back();
+         return redirect(route('chats.index', $request->group_id));
     }
     
     public function destroy($id)
