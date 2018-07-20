@@ -116,24 +116,25 @@ $rand = mt_rand(0,3);
     </nav>
     <div class="jumbotron jumbotron-extend">
         <div id="logo">
-            <h1 class="display-1 font-weight-bold text-left">KASHIKARI</h1>
-            <p class="display-3 font-weight-bold text-left">You can Borrow</p>
-            <p class="display-3 font-weight-bold text-left">Almost Everything!</p>
-            <p class="lead text-left mt-3">'18 NEW GRADS CODING TRAINING</p>
+            <p class="display-3 font-weight-bold text-left">Share your items,</p>
+            <p class="display-3 font-weight-bold text-left">Show your kindness.</p>
+            <div class="text-left mt-5 mb-3">
+                <a class="button1 shadow-lg" href="{{ route('register') }}">Try it free! *</a>
+            </div>
+            <p class="small text-light">* Subscribers can try it free for one month. Plan automatically renews after trial.</p>
             <div class="text-center">
                 <a href="#top" id="scroll"><span></span></a>
             </div>
         </div>
     </div>
     <div class="container-fluid" id="top">
-        <div class="colored content p-5">
+        <div class="uncolored content p-5">
             <h2 class="display-2 text-secondary font-weight-bold mb-5">ABOUT</h2>
                 <div class="row">
                     <div class="col-6">
                         <h3 class="display-4 font-weight-bold">KASHIKARI</h3>
-                        <p class="my-2">Kasu & Kariru</p>
-                        <p>Platform where you can exchange goods.</p>
-                        <p>You can also form the community to include user who has a similar taste.</p>
+                        <p class="font-weight-bold text-muted my-3">Platform where you can exchange goods.</p>
+                        <p class="font-weight-bold text-muted my-3">You can also form the community to include user who has a similar taste.</p>
                     </div>
                     <div class="col-6">
                         <img src="/images/borrow.jpg" class="img-thumbnail" alt="borrow">
@@ -142,7 +143,7 @@ $rand = mt_rand(0,3);
                 </div>
             
         </div>
-        <div class="uncolored content p-5">
+        <div class="colored content p-5">
             <h2 class="display-2 text-secondary font-weight-bold mb-5">WHAT YOU CAN DO</h2>
                 <div class="row">
                     <div class="col-4 text-center">
@@ -162,7 +163,7 @@ $rand = mt_rand(0,3);
                     </div>
                 </div>
         </div>
-        <div class="colored content p-5">
+        <div class="uncolored content p-5">
             <h2 class="display-2 text-secondary font-weight-bold mb-5">SHARED ITEMS</h2>
             <div class="row ml-3">
                   <div class="card-deck">
@@ -237,7 +238,7 @@ $rand = mt_rand(0,3);
                 </div>
             </div>
         </div>
-        <div class="uncolored content p-5">
+        <div class="colored content p-5">
             <h2 class="display-2 text-secondary font-weight-bold mb-5">VOICE</h2>
                 <div class="row my-3">
                     <div class="col-4 box1">
@@ -279,17 +280,32 @@ $rand = mt_rand(0,3);
                         </p>    
                     </div>
                 </div>
-            
-        <div class="text-center my-5">
-            <a class="button1 shadow-lg" href="{{ route('register') }}">Sign Up Now</a>
         </div>
+        <div class="uncolored content p-5">
+            <h2 class="display-2 text-secondary font-weight-bold mb-5">HOW TO START</h2>
+            <div class="row text-center">
+                <div class="col-7">
+                    <img src="images/capture.jpg" class="mx-auto rounded">
+                </div>
+                <diV class="col-5 my-auto">
+                    <p class="font-weight-bold text-muted my-3">You can try KASHIKARI free for one month.</p> 
+                    <p class="font-weight-bold text-muted my-3">Plan automatically renews after trial.</p>
+                    <p class="font-weight-bold text-muted my-3">Share you items, borrow anything, and communicate with you group members.</p>
+                </div>
+            </div>
+            <div class="text-center my-5">
+                <a class="button1 shadow-lg" href="{{ route('register') }}">Sign Up Now</a>
+            </div>
+        </div>
+            
+    
         </div>
         
         
     </div>
     
 <footer class="bg-light p-5">
-    <div class="text-center text-muted">©2018 KASHIKARI</div>
+    <div class="text-center text-muted">©2018 KASHIKARI '18 NEW GRADS CODING TRAINING</div>
 </footer> 
 
 
