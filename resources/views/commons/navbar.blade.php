@@ -86,6 +86,10 @@
                                ">
                         <i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
                         @endif
+                        
+                        @if(strstr($url,'group'))
+                            <a class="nav-link" href="{{route('chats.index',['id' => $group->id])}}"><i class="far fa-comments"></i></a>
+                        @endif
 
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggler ml-3" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
