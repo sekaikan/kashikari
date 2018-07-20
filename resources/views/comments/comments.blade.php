@@ -51,7 +51,7 @@ foreach($comments as $comment) {
                                         <hr>
                                         <p>You are replying to {{ App\User::find($comment->user_id)->name }}.</p>
                                         
-                                        @if (Auth::id() == $user->id)
+                                        @if (Auth::check())
                                         {!! Form::open(['route' => 'comments.store']) !!}
                                             <div class="form-group" id="review-form-group">
                                                 {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Reply...', 'rows'=>'2']) !!}

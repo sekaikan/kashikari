@@ -59,7 +59,7 @@
                                 </form>
                         </div>
                     @endif
-                        <?php $notifications = \DB::table('notifications')->where('recipient_id', \Auth::id())->orderBy('created_at', 'asc')->paginate(5); ?>
+                        <?php $notifications = \DB::table('notifications')->where('recipient_id', \Auth::id())->orderBy('created_at', 'desc')->paginate(5); ?>
                        @if($notifications->count()==0)
                        <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
                        <i class='far fa-thumbs-up'></i> You have no new notifications.

@@ -58,7 +58,7 @@
 <a href="/group/{{$item->group_id}}" class="">&laquo;back</a>
         @if(Auth::id() == $item->want_user_id)
          <div class="row">
-                    <div class="col-12">
+                    <div class="col-6 offset-3">
                         {!! Form::open(['route' => 'comments.store', 'method' => 'post']) !!}
                        <div class="form-group mt-5">
                            {{ Form::hidden('item_id', $item->id)}}
