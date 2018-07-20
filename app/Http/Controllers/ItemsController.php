@@ -48,9 +48,6 @@ class ItemsController extends Controller
         $this->validate($request, [
             'content' => 'required|max:191',
             'name' => 'required',
-           
-            'status' => 'required|max:10',
-
             'group_id'=> 'required',
 
         ]);
@@ -78,7 +75,7 @@ class ItemsController extends Controller
         
         $request->user()->items()->create([
             'content' => $request->content,
-            'status' => $request->status,
+            'status' => "open",
             'name' => $request->name,
             'reward' => $request->reward,
             'photo' => $photo,

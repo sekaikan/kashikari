@@ -175,15 +175,6 @@ div.row.item{
 
 .my-orange {color: #fecb81}
 
-/*
-.chatbox img {
-    width:80px;
-　　height:80px;
-　　right: 0;
-　　
-}
-*/
-
 
 .navbar-brand {
     
@@ -219,13 +210,13 @@ div.row.item{
     text-align: center;
     font-size: 18px;
     line-height: 16px;
-    background: #F99F48;
+    background: #fcca7e;
     color: #fff;
     letter-spacing: 0.05em;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    box-shadow: 0 0 0 2px rgb(294, 159, 72);
+    box-shadow: 0 0 0 2px rgb(252, 202, 126);
     border-top: dashed 1px rgba(255, 255, 255, 0.65);
     border-bottom: dashed 1px rgba(255, 255, 255, 0.65);
 }
@@ -368,40 +359,6 @@ div.row.item{
     transform: rotate(-145deg);
 }
 
-/*fikidashi*/
- .fukidashi {
-      display: none;
-      width: 200px;
-      position: absolute;
-      top: 270px;
-      left: 500px;
-      padding: 16px;
-      border-radius: 5px;
-      background: #6088C6;
-      color: #fff;
-      font-weight: bold;
-    }
-    .fukidashi:after {
-      position: absolute;
-      width: 0;
-      height: 0;
-      left: 0;
-      bottom: -19px;
-      margin-left: 10px;
-      border: solid transparent;
-      border-color: rgba(51, 204, 153, 0);
-      border-top-color: #6088C6;
-      border-width: 10px;
-      pointer-events: none;
-      content: " ";
-    }
-    .othergroups:hover + .fukidashi {
-      display: block;
-    }
-
-.othergroups {
-    position:relative;
-}
 
 /*About us */
 .fa-border {
@@ -430,4 +387,77 @@ box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
 background: #F7E8A0;/*背景色*/
 border-top: solid 6px #F7D736;
 box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+
+/*chat*/
+#bms_send_message{
+    width: calc(100% - 75px);
+    line-height: 16px;
+    height: 48px;
+    padding: 14px 6px 0px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: left;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2) inset;
+}
+
+#bms_send_btn {
+    width: 72px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 3em;
+    float: right;
+    color: #fff;
+    font-weight: bold;
+    background: #6088C6;
+    text-align: center;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#bms_send_btn:hover {
+    background-color:#fff;
+    color: #6088C6;
+    border: 1px solid #6088C6;
+    cursor: pointer;
+}
+
+
+nav-item.sample {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	box-shadow: 1px 1px 1px #ccc;
+	z-index: auto;
+}
+
+.sample .box {
+	position:absolute;
+	width: 300px; /* 吹き出しの幅 */
+	height: 60px; /* 吹き出しの高さ */
+	top: -76px; /* 吹き出しと三角形の高さをプラスした値 */
+	left: 0;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #FFF;
+	display: none;
+}
+.sample .box:after { /* 三角形を作成 */
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 0;
+	top: 60px; /* 吹き出しの高さと同じ値 */
+	left: 32px;
+	border: 16px solid transparent;
+	border-top: 16px solid #FFF;
+}
+.sample .text {
+	font-size: 16px;
+	position: absolute;
+    padding: 20px 40px;
+	color: #000;
+}
+.sample:hover .box {
+	z-index: 2;
+	display: block;
 }

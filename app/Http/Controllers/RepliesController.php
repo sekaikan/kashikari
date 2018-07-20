@@ -49,18 +49,17 @@ class RepliesController extends Controller
             $recipient = User::find(Reply::find($request->reply_id)->user_id);
             $request->user()->notifications()->create([
             'content' => $request->content,
-            'user_id' => $recipient->id,
             'post_id' => $request->post_id,
-            'recipient_id' => \Auth::id(),
+            'recipient_id' => $recipient->id,
             ]);
-        }else
+        }
+        else
         {
-            $recipient = User::find(Reply::find($request->post_id)->user_id);
+            $recipient = User::find(Post::find($request->post_id)->user_id);
             $request->user()->notifications()->create([
             'content' => $request->content,
-            'user_id' => $recipient->id,
             'post_id' => $request->post_id,
-            'recipient_id' => \Auth::id(),
+            'recipient_id' => $recipient->id,
             ]);
         }
 

@@ -14,7 +14,7 @@ class NotificationsController extends Controller
     {
         $notifications = Notification::find($request->notification_id);
 
-        if (\Auth::id() === $notifications->user_id) {
+        if (\Auth::id() === $notifications->recipient_id) {
             $notifications->delete();
         }
 
@@ -23,8 +23,7 @@ class NotificationsController extends Controller
     
     public function purge(Request $request)
     {
-        
-        \DB::table('notifications')->where('user_id', $request->user_id)->delete();
+        \DB::table('notifications')->where('recipient_id', $request->user_id)->delete();
         
         return redirect()->back();
     }

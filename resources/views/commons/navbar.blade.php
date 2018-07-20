@@ -22,7 +22,8 @@
                     <a class="nav-link" href="{{route('about')}}">About Us</a>
                     @if (Auth::check())
                         <?php $url = $_SERVER['REQUEST_URI'];?>
-                        @if(strstr($url,'groupsearch') || strstr($url,'home'))
+                        @if(strstr($url,'about'))
+                        @elseif(strstr($url,'groupsearch') || strstr($url,'home'))
                         <div class="nav-link">
                             <a data-toggle="collapse" href="#navbar-search" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fas fa-search"></i>
@@ -59,11 +60,10 @@
                                 </form>
                         </div>
                     @endif
-                        <?php $notifications = \DB::table('notifications')->where('recipient_id', \Auth::id())->orderBy('created_at', 'asc')->paginate(5); ?>
+                        <?php $notifications = \DB::table('notifications')->where('recipient_id', \Auth::id())->orderBy('created_at', 'desc')->paginate(5); ?>
                        @if($notifications->count()==0)
-                       <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
-                       <i class='far fa-thumbs-up'></i> You have no new notifications.
-                       "><i class="far fa-bell"></i></a>
+                       <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" 
+                       data-content="<i class='far fa-thumbs-up'></i> You have no new notifications."><i class="far fa-bell"></i></a>
                        @else
                                <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
                                 @foreach($notifications as $notification)
@@ -87,7 +87,7 @@
                         <i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
                         @endif
                         
-                        @if(strstr($url,'group'))
+                        @if(strstr($url,'group') && (Auth::user()->is_following($group->id)))
                             <a class="nav-link" href="{{route('chats.index',['id' => $group->id])}}"><i class="far fa-comments"></i></a>
                         @endif
 
@@ -112,7 +112,7 @@
                     </li>
 
                     @else
-                    <li class="nav-link"><a href="{{ route('register') }}">Sign Up</a></li>
+                    <li class="nav-link"><a href="{{ route('register') }}">SignUp</a></li>
                     <li class="nav-link"><a href="{{ route('login') }}">Login</a></li>
                     @endif
                 </ul>

@@ -18,7 +18,7 @@ class CommentsController extends Controller
             'content' => 'required|max:30000',
             'item_id'=> 'required',
         ]);
-           
+
         $request->user()->comments()->create([
             'content' => $request->content,
             'item_id' => $request->item_id,
