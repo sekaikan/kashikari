@@ -44,7 +44,7 @@
      color: #FFF;
      text-decoration: none;
      text-align: center;
-     background-color: #3CAFC1; 
+     background-color: #6088C6; 
      border-radius: 5px;
      -webkit-transition: all 0.5s;
      transition: all 0.5s;
@@ -53,8 +53,8 @@
 .button1:hover{
      background-color: #fff;
      text-decoration: none;
-     color:#3CAFC1;
-     border: 2px solid #3CAFC1;
+     color:#6088C6;
+     border: 2px solid #6088C6;
 } 
 
 .button1:active {
@@ -102,7 +102,7 @@ body {
 }
 
 a {
-    color:#3CAFC1;
+    color:#6088C6;
 }
 
 .navbar-extend {
@@ -119,18 +119,28 @@ a {
     text-decoration: none;
 }
 
-.btn-black {
-    color: #EFF2F1;
-    background-color: #3D3F3E;
-}
 .btn-blue {
-    color:#EFF2F1;
-    background-color: #3CAFC1;
+    color: #fff;
+    background-color: #6088C6;
 }
 
+
 .btn-blue:hover{
-    color:#EFF2F1;
-    background-color: #3CAFC1;
+    color:#6088C6;
+    background-color: #fff;
+    border: 1px solid #6088C6;
+}
+
+.btn-orange {
+    color: #fff;
+    background-color: #F99F48;
+}
+
+
+.btn-orange:hover{
+    color:#F99F48;
+    background-color: #fff;
+    border: 1px solid #F99F48;
 }
 
 /*home*/
@@ -141,7 +151,7 @@ a {
 .mainmenu i{
     font-size: xx-large;
     display: inline-block;
-    color: #3CAFC1;
+    color: #6088C6;
 }
 
 .mainmenu i:hover{
@@ -209,13 +219,13 @@ div.row.item{
     text-align: center;
     font-size: 18px;
     line-height: 16px;
-    background: #E5399D;
+    background: #F99F48;
     color: #fff;
     letter-spacing: 0.05em;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    box-shadow: 0 0 0 2px rgb(229, 57, 157);
+    box-shadow: 0 0 0 2px rgb(294, 159, 72);
     border-top: dashed 1px rgba(255, 255, 255, 0.65);
     border-bottom: dashed 1px rgba(255, 255, 255, 0.65);
 }
@@ -230,13 +240,13 @@ div.row.item{
     text-align: center;
     font-size: 18px;
     line-height: 16px;
-    background: #63B9C6;
+    background: #AEC4E5;
     color: #fff;
     letter-spacing: 0.05em;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    box-shadow: 0 0 0 2px rgb(99, 185, 198);
+    box-shadow: 0 0 0 2px rgb(174, 196, 229);
     border-top: dashed 1px rgba(255, 255, 255, 0.65);
     border-bottom: dashed 1px rgba(255, 255, 255, 0.65);
 }
@@ -272,9 +282,9 @@ div.row.item{
 
 
 .active{
-    background-color: #63B9C6;
+    background-color: #6088C6;
     color: white;
-    border-bottom: 1px solid #63B9C6;
+    border-bottom: 1px solid #6088C6;
 }
 .active i{
     color:white;
@@ -285,7 +295,7 @@ div.row.item{
 }
 
 .mainmenu.sen{
-    border-bottom: 2px solid #63B9C6;
+    border-bottom: 2px solid #6088C6;
 }
 
 .filter{
@@ -367,7 +377,7 @@ div.row.item{
       left: 500px;
       padding: 16px;
       border-radius: 5px;
-      background: #33cc99;
+      background: #6088C6;
       color: #fff;
       font-weight: bold;
     }
@@ -380,7 +390,7 @@ div.row.item{
       margin-left: 10px;
       border: solid transparent;
       border-color: rgba(51, 204, 153, 0);
-      border-top-color: #33cc99;
+      border-top-color: #6088C6;
       border-width: 10px;
       pointer-events: none;
       content: " ";

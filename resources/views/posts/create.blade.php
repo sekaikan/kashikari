@@ -37,10 +37,10 @@
                 <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
             </li>
             <li class="nav-item active col-4 px-0">
-                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
+                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow</a>
             </li>
             <li class="nav-item col-4 px-0">
-                <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
+                <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend</a>
             </li>
         </ul>
     </div>
@@ -54,7 +54,7 @@
                     {{ Form::hidden('group_id', $group->id)}}
                     {!! Form::textarea('content', '', ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need ?', 'rows'=>'3']) !!}
     
-                    {!! Form::submit('submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                    {!! Form::submit('submit', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
                 </div>
                 {!! Form::close() !!}
             @endif
@@ -69,7 +69,7 @@
             @include('items.items', ['items' => $items])
         </div>
         @if (count($items) >0)    
-            <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
+            <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-6"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">Item List</span></a>
         @endif
     </div>
 </div>

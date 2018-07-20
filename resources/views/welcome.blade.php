@@ -279,7 +279,7 @@ $rand = mt_rand(0,3);
                         </p>    
                     </div>
                 </div>
-            <p></p>
+            
         <div class="text-center my-5">
             <a class="button1 shadow-lg" href="{{ route('register') }}">Sign Up Now</a>
         </div>

@@ -30,7 +30,7 @@
                             <p class="card-text">{!! nl2br(e($post->content)) !!}</p>
                         </div>
                         <!--div class="col-md-3 col-3 text-right align-self-end">
-                            {!! link_to_route('posts.show','Reply', ['id' => $post->id], ['class'=>'btn btn-primary btn-sm']) !!}
+                            {!! link_to_route('posts.show','Reply', ['id' => $post->id], ['class'=>'btn btn-blue btn-sm']) !!}
                         </div-->
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <div class="form-group mt-5" id="review-form-group">
                         {!! Form::textarea('content', '', ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Reply...', 'rows'=>2]) !!}
                         {{ Form::hidden('post_id', $post->id) }}
-                        {!! Form::submit('Reply', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                        {!! Form::submit('Reply', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
                     </div>
                     {!! Form::close() !!}
                 @endif

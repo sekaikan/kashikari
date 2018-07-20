@@ -40,11 +40,11 @@
             <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
           </li>
           <li class="nav-item col-4 px-0">
-            <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
+            <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow</a>
           </li>
 
           <li class="nav-item active col-4 px-0">
-            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
+            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend</a>
           </li>
        </ul>
     </div>
@@ -80,21 +80,20 @@
                       </select>
                 </div>
                 {{ Form::hidden('group_id', $group->id)}}
-            {!! Form::submit('upload', ['class' => 'btn btn-primary btn-block mt-2']) !!}
-              
+
+            {!! Form::submit('upload', ['class' => 'btn btn-blue  btn-block  mx-auto my-3']) !!}
             {!! Form::close() !!}
           </div>        
         </div>
     </div>
-        
-        
         <div class="col-5 mx-auto">
     <div class="row item">
     <div class="">
     <h2 class="text-center">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
-        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="btn btn-outline-primary btn-block mt-2">More...</a>
+
+        <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
     @endif
 </div>
 </div>

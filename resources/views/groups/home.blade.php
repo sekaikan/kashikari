@@ -3,9 +3,7 @@
 @section('cover')
     <div class="jumbotron jumbotron-home">
             <h1 class="text-center text-white mt-5">{!! $group->name !!}</h1>
-            <div class="float-right mr-5">
-                @include('group_user.follow_button', ['user' => $user])
-            </div>
+            
             <div class="col-3 mx-auto">
                 <div class="mx-auto">
                     @if (isset($groupusers))
@@ -39,11 +37,11 @@
                 </li>
     
                 <li class="nav-item col-4 px-0">
-                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
+                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow</a>
                 </li>
     
                 <li class="nav-item col-4 px-0">
-                <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
+                <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend</a>
                 </li>
             </ul>
         </div>
@@ -54,15 +52,17 @@
             <div class="col-8 pl-5">
                 <h2 class="text-center">Shared Items</h2>
                 @include('items.items', ['items' => $items])
-                @if (count($items) >0)  
-                    <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-3 col-6 btn btn-outline-primary mt-3">Item List</a>
+                @if (count($items) >0)
+                    <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">Item List</span></a>
                 @endif
             </div>
             <div class="col-4">
                 <h2 class="text-center">Ask for what you need</h2>
                 @include('posts.posts', ['posts' => $posts])
                 @if (count($posts) >0)
-                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="btn btn-outline-primary btn-block mt-2">More...</a>
+
+                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
+
                 @endif
             </div>
         </div>

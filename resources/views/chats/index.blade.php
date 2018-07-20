@@ -9,7 +9,7 @@
                 <div class="form-group">
                     {{ Form::hidden('group_id', $group->id)}}
                     {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'What\'s up?', 'rows' =>'3']) !!}
-                    {!! Form::submit('send', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                    {!! Form::submit('send', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
                 </div>
             {!! Form::close() !!}
         </div>

@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group">
-                                <button type="submit" class="btn btn-black btn-block mb-3">
+                                <button type="submit" class="btn btn-blue btn-block mb-3">
                                     Login
                                 </button>
                                 <a class="" href="{{ route('password.request') }}">
