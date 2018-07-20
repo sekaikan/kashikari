@@ -84,5 +84,18 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Item::class);
     }
+    
+    public function usericon()
+    {
+        $image_rand = array(
+                        "images/user6.jpg",
+                        "images/user2.jpg",
+                        "images/user3.jpg", 
+                        "images/user4.jpg", 
+                        "images/user5.jpg"
+                    );
+        $image_path = $image_rand[mt_rand(0, count($image_rand)-1)];
+
+    }
 
 }

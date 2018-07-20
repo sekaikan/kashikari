@@ -3,7 +3,7 @@
 @section('content')
 <div class="jumbotron-home text-center my-5 p-3">
     <div class="row mt-5">
-        <div class="col-4 offset-4 px-5">
+        <div class="col-4 offset-4">
             <h1 class="font-weight-normal text-light">{{ $group->name }}</h1>
         <?php
                 $image_rand = array(
@@ -16,16 +16,24 @@
                 ?>
                 <img class="usershowicon" src="{{ secure_asset($image_path) }}">
         </div>
+         <?php $url = $_SERVER['REQUEST_URI'];?>
+        @if(strstr($url,'userlist'))
+            <div  class="mr-5 col-2">
+                {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+                {!! Form::button('Delete <i class="fas fa-trash"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
+                {!! Form::close() !!}
+            </div>
+        @endif
     </div>
     <div class="row fixed-bottom justify-content-end">
-            <div class="col-1">
-                <div class="icon container">
-                <a href= "{{ route ('chats.index') }}">
+        <div class="col-1">
+            <div class="icon container">
+                <a href= "{{ route ('chats.index', ['id' => $group->id]) }}">
                     <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
                 </a>
-               </div>
-            </div>
+           </div>
         </div>
+    </div>
 </div>
 <div class="container ">
     <div class="col-8 mx-auto">    

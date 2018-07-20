@@ -24,5 +24,10 @@ class Group extends Model
     {
         return $this->hasMany(Post::class)->paginate(20);
     }
+    
+    public function chats()
+    {
+        return $this->hasMany(Chat::class)->paginate(20);
+    }
 }
 

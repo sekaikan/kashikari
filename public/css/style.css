@@ -403,4 +403,31 @@ div.row.item{
     position:relative;
 }
 
+/*About us */
+.fa-border {
+    color: #D6D1CD;
+}
 
+.fa-hand-holding-heart {
+    color: #E5399D;
+}
+
+.fa-people-carry{
+    color: #3CAFC1;
+}
+
+.fa-comments{
+    color: #E2C73F;
+}
+
+.box1 {
+background: #e4fcff;/*背景色*/
+border-top: solid 6px #1dc1d6;
+box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+
+.box2 {
+background: #F7E8A0;/*背景色*/
+border-top: solid 6px #F7D736;
+box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
