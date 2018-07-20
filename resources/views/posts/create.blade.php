@@ -46,7 +46,9 @@
     </div>
     <div class="bg-white py-5" id="form-bg" style= margin-top:0;>
         <div class="container">
-            @if (Auth::id() == $user->id)
+            <div class="row">
+                <div class= "offset-3 col-6">
+                     @if (Auth::id() == $user->id)
             {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
                 <div class="form-group" id="review-form-group">
                     {{ Form::hidden('group_id', $group->id)}}
@@ -56,6 +58,9 @@
                 </div>
                 {!! Form::close() !!}
             @endif
+                    
+                
+            </div>
         </div>
     </div>
     <div class="container-fluid bg-light">
