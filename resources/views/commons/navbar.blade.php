@@ -59,7 +59,7 @@
                                 </form>
                         </div>
                     @endif
-                       <?php $notifications = Auth::user()->notifications()->paginate(5); ?>
+                        <?php $notifications = \DB::table('notifications')->where('recipient_id', \Auth::id())->orderBy('created_at', 'asc')->paginate(5); ?>
                        @if($notifications->count()==0)
                        <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
                        <i class='far fa-thumbs-up'></i> You have no new notifications.
@@ -69,22 +69,22 @@
                                 @foreach($notifications as $notification)
                                    @if($notification->post_id != NULL && $notification->item_id == NULL)
                                        <a class='text-muted' href='{{url('posts/'.$notification->post_id)}}'>
-                                           <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a reply.<br>
+                                           <strong>{{ App\User::find($notification->user_id)->name }}</strong> sent you a reply.<br>
                                            {{ $notification->content }}
                                  @elseif(($notification->post_id == NULL && $notification->item_id != NULL) && ($notification->type == 'toItem' || $notification->type == 'toComment') )
                                         <a class='text-muted' href='{{url('items/'.$notification->item_id)}}'>
-                                           <strong>{{ App\User::find($notification->sender_id)->name }}</strong> Commented.<br>
+                                           <strong>{{ App\User::find($notification->user_id)->name }}</strong> Commented.<br>
                                            {{ $notification->content }}
                                 @elseif($notification->post_id == NULL && $notification->item_id != NULL)
                                         <a class='text-muted' href='{{url('items/'.$notification->item_id)}}'>
-                                           <strong>{{ App\User::find($notification->sender_id)->name }}</strong> sent you a requset.<br>
+                                           <strong>{{ App\User::find($notification->user_id)->name }}</strong> sent you a requset.<br>
                                            {{ $notification->content }}
                                 @endif
                                        </a>
                                        <hr>
                                @endforeach
                                ">
-                        <i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ Auth::user()->notifications()->count() }}</span></a>
+                        <i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
                         @endif
 
                     <li class="nav-item dropdown">
