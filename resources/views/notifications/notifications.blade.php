@@ -31,17 +31,17 @@
                         <div class="col-10">
                             <?php $date = new DateTime($notification->created_at);?>
                             @if($notification->post_id != NULL && $notification->item_id == NULL)
-                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->recipient_id)->name }}</span> sent you a reply.</small>
+                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->user_id)->name }}</span> sent you a reply.</small>
                             <p class="card-text text-muted">
                                 <a href="{{url('posts/'.$notification->post_id)}}" class="text-muted">{{ $notification->content }}</a>
                             </p>
                             @elseif(($notification->post_id == NULL && $notification->item_id != NULL) && ($notification->type == 'toItem' || $notification->type == 'toComment') )
-                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->recipient_id)->name }}</span> commented.</small>
+                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->user_id)->name }}</span> commented.</small>
                             <p class="card-text text-muted">
                                 <a href="{{url('items/'.$notification->item_id)}}" class="text-muted">{{ $notification->content }}</a>
                             </p>
                             @elseif($notification->post_id == NULL && $notification->item_id != NULL )
-                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->recipient_id)->name }}</span> sent you a request.</small>
+                            <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->user_id)->name }}</span> sent you a request.</small>
                             <p class="card-text text-muted">
                                 <a href="{{url('items/'.$notification->item_id)}}" class="text-muted">{{ $notification->content }}</a>
                             </p>
