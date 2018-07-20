@@ -14,7 +14,7 @@
                     {!! Form::label('content', 'Self introduction') !!}
                     {!! Form::text('content', $user->content, ['class' => 'form-control']) !!}
                 </div>
-                {!! Form::submit('Upload', ['class' => 'btn btn-block btn-primary']) !!}
+                {!! Form::submit('Upload', ['class' => 'btn btn-block btn-blue mt-5']) !!}
             
             {!! Form::close() !!}
         </div>
