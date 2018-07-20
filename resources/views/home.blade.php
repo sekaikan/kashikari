@@ -42,8 +42,7 @@
                 </a>
             @endif
             </div>
-                <h2 class="othergroups my-3">Other Groups</h2>
-                <p class="fukidashi"> You can join these groups!!</p>
+                <h2 class="my-3">Other Groups</h2>
                 <div class="row">
                     @foreach ($unfollow_groups as $group)
                     <div class="col-4">
@@ -72,7 +71,7 @@
             </div>
        
         <div class="col-3 mt-5">
-            <div class="bg-light px-1 py-1 mt-4">
+            <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Search Group</h4>
                 <form class="form-inline" action="{{url('/results/groupsearch/')}}">
                     <input type="text" name="keyword" value='' class="form-control" placeholder="Find Groups">
@@ -84,7 +83,7 @@
              @include('notifications.notification2')
             </div>--}}
 
-            <div class="bg-light px-1 py-1 mt-3">
+            <div class="bg-light px-2 py-2 mt-3">
                 <h4 class="card-title text-center">Create Group</h4>
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
                     <div class="form-group">

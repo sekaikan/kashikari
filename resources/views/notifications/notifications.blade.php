@@ -1,26 +1,33 @@
 <?php $notifications = \DB::table('notifications')->where('recipient_id', \Auth::id())->orderBy('created_at', 'asc')->paginate(5); ?>
+
 <div class="card">
     <div class="card-header">
         <div class="row">
             <div class="col-11">
-                 Notification
-        @if($notifications->count()>0)
-        <span class="badge badge-pill badge-danger">{{ Auth::user()->notifications()->count() }}</span>
-        @endif
+                <i class="far fa-bell"></i> Notification
+                @if($notifications->count()>0)
+                    <a data-toggle="collapse" href="#collapsePost" aria-expanded="false" aria-controls="collapseExample">
+                        <span class="badge badge-pill badge-danger">
+                        {{ Auth::user()->notifications()->count() }}
+                        </span>
+                    </a>
+                @endif
             </div>
-            <div class="col-1 text-right">
-                 {!! Form::open(['route' => ['notifications.purge', 'user_id'=>Auth::id()], 'method' => 'delete', 'class'=>'text-right']) !!}
-                                    {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
-                            {!! Form::close() !!}
-            </div>
-            
+                <a class="text-dark" data-toggle="collapse" href="#collapsePost" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-angle-down"></i>
+                </a>
         </div>
     </div>
     @if($notifications->count()==0)
-    <div class="card-body">
-        <p class="card-text text-muted"><i class="far fa-thumbs-up"></i> You have no new notifications.</p>
-    </div>
+        <div class="card-body collapse" id="collapsePost">
+            <p class="card-text text-muted"><i class="far fa-thumbs-up"></i> You have no new notifications.</p>
+        </div>
     @else
+
+        <div class="card-body collapse" id="collapsePost">
+                {!! Form::open(['route' => ['notifications.purge', 'user_id'=>Auth::id()], 'method' => 'delete', 'class'=>'text-right']) !!}
+                {!! Form::button('<i class="fas fa-trash-alt"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                {!! Form::close() !!}
         <ul class="list-group list-group-flush">
              @foreach ($notifications as $notification)
                  <?php $image_rand2 = array(
@@ -61,13 +68,23 @@
                             {!! Form::open(['route' => ['notifications.destroy', 'notification_id'=>$notification->id], 'method' => 'delete', 'class'=>'text-right']) !!}
                                 @if(Auth::id() == $notification->user_id)
                                     {!! Form::button('<i class="fas fa-times"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+
                                 @endif
-                            {!! Form::close() !!}
+                                
+                                <p class="card-text text-muted"><small>{{ $date->format("G:i, F j, Y")}}</small></p>
+                            </div>
+                            <div class="col-1">
+                                {!! Form::open(['route' => ['notifications.destroy', 'notification_id'=>$notification->id], 'method' => 'delete', 'class'=>'text-right']) !!}
+                                    @if(Auth::id() == $notification->user_id)
+                                        {!! Form::button('<i class="fas fa-times"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
+                                    @endif
+                                {!! Form::close() !!}
+                            </div>
                         </div>
-                    </div>
-                </li>
-            @endforeach
-            {!! $notifications->render() !!}
-        </ul>
+                    </li>
+                @endforeach
+                {!! $notifications->render() !!}
+            </ul>
+        </div>
     @endif
 </div>
