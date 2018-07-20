@@ -11,7 +11,7 @@
         </div>
 
         
-        <div class="col-9 mt-4">
+        <div class="col-9 mt-2">
             <h2 class="my-3">My Groups</h2>
             <div class="row">
             @if (count($follow_groups) > 0)
@@ -70,7 +70,7 @@
                 </div>
             </div>
        
-        <div class="col-3 mt-5">
+        <div class="col-3 mt-4">
             <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Search Group</h4>
                 <form class="form-inline" action="{{url('/results/groupsearch/')}}">
@@ -83,7 +83,7 @@
              @include('notifications.notification2')
             </div>--}}
 
-            <div class="bg-light px-2 py-2 mt-3">
+            <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Create Group</h4>
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
                     <div class="form-group">
