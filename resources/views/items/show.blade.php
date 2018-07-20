@@ -54,6 +54,7 @@
                 {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
                     <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
+                 {!! Form::close() !!}
                 @endif
             </div>
         </div>
