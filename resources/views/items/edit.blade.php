@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -29,10 +30,10 @@
                             <option value="closed">closed</option>
                       </select>
                 </div>
-                
+                {!! Form::submit('upload', ['class' => 'btn btn-blue btn-block']) !!}
+                {!! Form::close() !!}
               </div>
-            {!! Form::submit('upload', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
-            {!! Form::close() !!}
+            
         </div>
 </div>
 @endsection

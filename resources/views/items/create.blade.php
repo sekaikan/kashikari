@@ -61,23 +61,16 @@
                 <h2 class="text-center">Register Items</h2>
                 
                 <div class="form-group">
-                    {!! Form::label('name', 'Item name') !!}
+                    {!! Form::label('name', 'Item name (*Required)') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('content', 'Description') !!}
-                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5']) !!}
+                    {!! Form::label('content', 'Description (*Required)') !!}
+                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my Camera']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('reward', 'Reward') !!}
                     {!! Form::text('reward', null, ['class' => 'form-control', 'placeholder' => 'ex: $100 or a cup of coffee']) !!}
-                </div>
-                <div class="form-group">
-                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status</label>
-                      <select name="status" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                            <option value="open" selected>Open</option>
-                            <!--<option value="closed">closed</option>-->
-                      </select>
                 </div>
                 {{ Form::hidden('group_id', $group->id)}}
 

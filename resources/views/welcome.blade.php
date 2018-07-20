@@ -81,7 +81,7 @@ $rand = mt_rand(0,3);
         color: #3CAFC1;
     }
     
-    .fa-comments{
+    .fa-comments.test{
         color: #E2C73F;
     }
     
@@ -156,7 +156,7 @@ $rand = mt_rand(0,3);
                         <p class="text-center my-3">Post items you don't need.<br>Find people who need something.</p>
                     </div>
                     <div class="col-4 text-center">
-                        <i class="fas fa-10x fa-comments fa-border"></i>
+                        <i class="fas fa-10x fa-comments test fa-border"></i>
                         <p class="font-weight-bold text-center my-3">COMMUNICATE</p>
                         <p class="text-center my-3">Create or join group.<br>Chat each other and users who have a similar taste.</p>
                     </div>

@@ -9,7 +9,7 @@
                  <div class="form-group">
                     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
                 </div>
-            {!! Form::submit('Create', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+            {!! Form::submit('Create', ['class' => 'btn btn-blue btn-lg btn-block']) !!}
             {!! Form::close() !!}
         </div>
     </div>
