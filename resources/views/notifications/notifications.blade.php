@@ -66,7 +66,7 @@
                         </div>
                         <div class="col-2">
                             {!! Form::open(['route' => ['notifications.destroy', 'notification_id'=>$notification->id], 'method' => 'delete', 'class'=>'text-right']) !!}
-                            @if(Auth::isd() == $notification->recipient_id)
+                            @if(Auth::id() == $notification->recipient_id)
                             {!! Form::button('<i class="fas fa-times"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
                             @endif
                             </div>
