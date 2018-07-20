@@ -44,13 +44,13 @@
                 @if(Auth::id() != $item->user->id && Auth::id() != $item->want_user_id )
                 {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
-                    {!! Form::submit('Please lend it', ['class' => 'btn btn-danger btn-block btn-lg', 'id' => 'form-button']) !!}
+                    {!! Form::submit('Please lend it', ['class' => 'btn btn-orange btn-block btn-lg', 'id' => 'form-button']) !!}
                 {!! Form::close() !!}
                 
                 @elseif(Auth::id() == $item->want_user_id )
                 {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
-                    <a href="#" class="btn btn-success btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
+                    <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
                 @endif
             </div>
         </div>
@@ -63,7 +63,7 @@
                        <div class="form-group mt-5">
                            {{ Form::hidden('item_id', $item->id)}}
                            {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'Message...', 'rows' =>'3']) !!}
-                           {!! Form::submit('Send', ['class' => 'btn btn-primary btn-block ', 'id' => 'form-button']) !!}
+                           {!! Form::submit('Send', ['class' => 'btn btn-blue btn-block ', 'id' => 'form-button']) !!}
                         </div>
                         {!! Form::close() !!}
                     </div>
