@@ -66,7 +66,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('content', 'Description') !!}
-                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5']) !!}
+                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my camera.']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('reward', 'Reward') !!}
