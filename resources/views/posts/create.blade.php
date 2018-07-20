@@ -18,7 +18,7 @@
                                     );
                             ?>
                             
-                            <img class="usericon" src="{{  secure_asset($image_rand[$key]) }}">
+                            <img class="usericon" src="{{  secure_asset($image_rand[$key % 5]) }}">
                             @endforeach
                         @endif
                         <a href="{{route('group.userlist', ['id' => $group->id]) }}" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
@@ -46,7 +46,9 @@
     </div>
     <div class="bg-white py-5" id="form-bg" style= margin-top:0;>
         <div class="container">
-            @if (Auth::id() == $user->id)
+            <div class="row">
+                <div class= "offset-3 col-6">
+                     @if (Auth::id() == $user->id)
             {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
                 <div class="form-group" id="review-form-group">
                     {{ Form::hidden('group_id', $group->id)}}
@@ -56,15 +58,18 @@
                 </div>
                 {!! Form::close() !!}
             @endif
+                    
+                
+            </div>
         </div>
     </div>
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-white">
         <h2 class="text-center">Shared Items</h2>
         <div class ="row offset-2 col-8">
             @include('items.items', ['items' => $items])
         </div>
         @if (count($items) >0)    
-            <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-6"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">Item List</span></a>
+            <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3 ml-4"></i><span class="h6">Item List</span></a>
         @endif
     </div>
 </div>

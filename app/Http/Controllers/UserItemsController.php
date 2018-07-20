@@ -30,9 +30,9 @@ class UserItemsController extends Controller
         $recipient = User::find(Item::find($id)->user_id);
             $request->user()->notifications()->create([
             'content' => $item->name,
-            'user_id' => $recipient->id,
+            'user_id' => \Auth::id(),
             'item_id' => $item->id,
-            'sender_id' => \Auth::id(),
+            'recipient_id' => $recipient->id,
             ]);
             
     return view('items.show', ['item' => $item, 'group' => $group,]); 

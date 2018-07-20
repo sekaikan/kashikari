@@ -18,7 +18,7 @@
                                 );
                         ?>
                         
-                        <img class="usericon" src="{{  secure_asset($image_rand[$key]) }}">
+                        <img class="usericon" src="{{  secure_asset($image_rand[$key % 5]) }}">
                         @endforeach
                     @endif
                     <a href="{{route('group.userlist', ['id' => $group->id]) }}" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
@@ -60,7 +60,9 @@
                 <h2 class="text-center">Ask for what you need</h2>
                 @include('posts.posts', ['posts' => $posts])
                 @if (count($posts) >0)
+
                     <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
+
                 @endif
             </div>
         </div>

@@ -167,63 +167,71 @@ $rand = mt_rand(0,3);
             <div class="row ml-3">
                   <div class="card-deck">
                         <div class="card shadow">
-                            <img class="card-img-top" src="/images/vr.jpg" alt="items photo">
+                            <div class="ribbon_box3">
+                                <img class="card-img-top" src="/images/vr.jpg" alt="items photo">
+                                <div class="ribbon_area">
+                                   <span class="ribbon16">Open</span>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title">VR
-                                    <span class="badge badge-pill badge-success">Open</span>
-                                </h5>
                                 <p class="">
                                     <span class="text-muted">by Takumi</span>
                                 </p>
                                 <p class="card-text text-justify">You can experience VR!</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $50</p>
-                                <button class="borrow btn btn-primary btn-block">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block">Borrow it</button>
                             </div>
                         </div>
                         <div class="card shadow">
-                            <img class="card-img-top" src="/images/dress.jpg" alt="items photo">
+                            <div class="ribbon_box3">
+                                <img class="card-img-top" src="/images/dress.jpg" alt="items photo">
+                                <div class="ribbon_area">
+                                   <span class="ribbon16">Open</span>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title">Dress
-                                    <span class="badge badge-pill badge-success">Open</span>
-                                </h5>
                                 <p class="">
                                     <span class="text-muted">by Beth</span>
                                 </p>
                                 <p class="card-text text-justify">You can wear it at the formal party.</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i>$30</p>
-                                <button class="borrow btn btn-primary btn-block">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block">Borrow it</button>
                             </div>
                         </div>
                         <div class="card shadow">
-                            <img class="card-img-top" src="/images/soccerball.jpg" alt="items photo">
+                            <div class="ribbon_box3 filter">
+                                <img class="card-img-top close" src="/images/soccerball.jpg" alt="items photo">
+                                <div class="ribbon_area">
+                                   <span class="ribbon17">closed</span>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title">Soccer Ball
-                                    <span class="badge badge-pill badge-success">Open</span>
-                                </h5>
                                 <p class="">
                                     <span class="text-muted">by Manato.F</span>
                                 </p>
                                 <p class="card-text text-justify">10px with basket</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $5</p>
-                                <button class="borrow btn btn-primary btn-block">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block">Borrow it</button>
                             </div>
                         </div>
                         <div class="card shadow">
-                            <img class="card-img-top" src="/images/table.jpg" alt="items photo">
+                            <div class="ribbon_box3">
+                                <img class="card-img-top" src="/images/table.jpg" alt="items photo">
+                                <div class="ribbon_area">
+                                   <span class="ribbon16">Open</span>
+                                </div>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title">Dining Table
-                                    <span class="badge badge-pill badge-danger">Booked</span>
-                                </h5>
                                 <p class="">
                                     <span class="text-muted">by Saaya</span>
                                 </p>
                                 <p class="card-text text-justify">1 table and 2 chairs. You can use it both inside and outside.</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $30</p>
-                                <button class="borrow btn btn-primary btn-block">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block">Borrow it</button>
                             </div>
                         </div>
                 </div>

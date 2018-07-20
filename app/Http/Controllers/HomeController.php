@@ -21,7 +21,7 @@ class HomeController extends Controller
 
     public function index()
     {
-
+         
          $user = \Auth::user();
          $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
          $follow_group_ids = array();
@@ -40,6 +40,7 @@ class HomeController extends Controller
             'user' => $user,
             'follow_groups' => $follow_groups,
             'groups' =>$groups,
+            
             ]);
     }
     

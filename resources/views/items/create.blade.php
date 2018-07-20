@@ -80,20 +80,19 @@
                       </select>
                 </div>
                 {{ Form::hidden('group_id', $group->id)}}
+
             {!! Form::submit('upload', ['class' => 'btn btn-blue  btn-block  mx-auto my-3']) !!}
-              
             {!! Form::close() !!}
           </div>        
         </div>
     </div>
-        
-        
         <div class="col-5 mx-auto">
     <div class="row item">
     <div class="">
     <h2 class="text-center">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
+
         <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
     @endif
 </div>
