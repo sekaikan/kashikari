@@ -69,6 +69,7 @@
                             @if(Auth::id() == $notification->recipient_id)
                             {!! Form::button('<i class="fas fa-times"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
                             @endif
+                            {!! Form::close() !!}
                             </div>
                         </div>
                     </li>

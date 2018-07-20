@@ -14,7 +14,7 @@ class NotificationsController extends Controller
     {
         $notifications = Notification::find($request->notification_id);
 
-        if (\Auth::id() === $notifications->user_id) {
+        if (\Auth::id() === $notifications->recipient_id) {
             $notifications->delete();
         }
 
