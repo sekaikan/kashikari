@@ -50,14 +50,14 @@
     <div class="container pt-5 bg-light">
         <div class="row">
             <div class="col-8 pl-5">
-                <h2 class="text-center">Shared Items</h2>
+                <h2 class="text-center text-muted">Shared Items</h2>
                 @include('items.items', ['items' => $items])
                 @if (count($items) >0)
                     <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">Item List</span></a>
                 @endif
             </div>
             <div class="col-4">
-                <h2 class="text-center">Posted Messages</h2>
+                <h2 class="text-center text-muted">Posted Messages</h2>
                 @include('posts.posts', ['posts' => $posts])
                 @if (count($posts) >0)
 

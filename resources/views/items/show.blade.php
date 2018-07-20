@@ -44,18 +44,23 @@
               @endif
             </div>
             <div class="borrow-button">
-                @if(Auth::id() != $item->user->id && Auth::id() != $item->want_user_id )
+                @if(Auth::id() != $item->user->id && $item->want_user_id==NULL )
                 {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
-                    {!! Form::submit('Please lend it', ['class' => 'btn btn-orange btn-block btn-lg', 'id' => 'form-button']) !!}
+                    {!! Form::submit('Request to rent', ['class' => 'btn btn-orange btn-block btn-lg', 'id' => 'form-button']) !!}
                 {!! Form::close() !!}
                 
                 @elseif(Auth::id() == $item->want_user_id )
                {{-- {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
                     <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
-                 {!! Form::close() !!} --}}
-                  <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
+                 {!! Form::close() !!}
+                 
+                @elseif(Auth::id() != $item->user->id && Auth::id() != $item->want_user_id )
+                {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
+                    {{ Form::hidden('want_user_id', \Auth::id()) }}
+                    <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Already rented</a>
+                 {!! Form::close() !!}
                 @endif
             </div>
         </div>
