@@ -57,7 +57,7 @@
                 @endif
             </div>
             <div class="col-4">
-                <h2 class="text-center text-muted">Ask for what you need</h2>
+                <h2 class="text-center text-muted">Posted Messages</h2>
                 @include('posts.posts', ['posts' => $posts])
                 @if (count($posts) >0)
 

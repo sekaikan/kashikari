@@ -23,8 +23,7 @@ class NotificationsController extends Controller
     
     public function purge(Request $request)
     {
-        
-        \DB::table('notifications')->where('user_id', $request->user_id)->delete();
+        \DB::table('notifications')->where('recipient_id', $request->user_id)->delete();
         
         return redirect()->back();
     }
