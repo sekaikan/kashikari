@@ -22,7 +22,8 @@
                     <a class="nav-link" href="{{route('about')}}">About Us</a>
                     @if (Auth::check())
                         <?php $url = $_SERVER['REQUEST_URI'];?>
-                        @if(strstr($url,'groupsearch') || strstr($url,'home'))
+                        @if(strstr($url,'about'))
+                        @elseif(strstr($url,'groupsearch') || strstr($url,'home'))
                         <div class="nav-link">
                             <a data-toggle="collapse" href="#navbar-search" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fas fa-search"></i>
