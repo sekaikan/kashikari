@@ -35,10 +35,10 @@
                     <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
                 </li>
                 <li class="nav-item active col-4 px-0">
-                    <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-sad-tear"></i><br>Borrow</a>
+                    <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow</a>
                 </li>
                 <li class="nav-item col-4 px-0">
-                    <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-smile-wink"></i><br>Lend</a>
+                    <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend</a>
                 </li>
             </ul>
         </div>
@@ -52,7 +52,7 @@
                             {{ Form::select('status', array('open' => 'Open', 'closed' => 'Solved'), 'open', ['class'=>'form-control']) }}
                             {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need ?', 'rows'=>'3']) !!}
                             {{ Form::hidden('group_id', $group->id)}}
-                            {!! Form::submit('submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                            {!! Form::submit('submit', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
                         </div>
                         {!! Form::close() !!}
                     @endif

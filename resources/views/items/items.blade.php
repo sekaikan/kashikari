@@ -35,7 +35,7 @@
                 @else
                 <p class="card-text"><i class="fas fa-gift text-secondary"></i>  Ask me!!</p>
                 @endif
-                {!! link_to_route('items.show', "Details", ['id' => $item->id], ['class'=>'btn btn-primary btn-block']) !!}
+                {!! link_to_route('items.show', "Details", ['id' => $item->id], ['class'=>'btn btn-blue btn-block']) !!}
             </div>
        </div>    
 @endforeach

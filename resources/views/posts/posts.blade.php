@@ -24,7 +24,7 @@
                     <p class="card-text">{!! nl2br(e($post->content)) !!}</p>
                 </div>
                 <div class="col-md-3 col-3 text-right align-self-end">
-                    {!! link_to_route('posts.show','Reply', ['id' => $post->id], ['class'=>'btn btn-primary btn-sm']) !!}
+                    {!! link_to_route('posts.show','', ['id' => $post->id], ['class'=>'fas fa-reply']) !!}
                 </div>
             </div>
         </div>

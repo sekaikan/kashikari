@@ -30,7 +30,7 @@
                         ?>
                         <img class="card-img-top" src="{{ $image_rand }}">
                         <div class="card-body">
-                            {!! link_to_route('group.show',  'Go!' , ['id' => $group->id],['class'=>'btn btn-success btn-block']) !!}
+                            {!! link_to_route('group.show',  'Go!' , ['id' => $group->id],['class'=>'btn btn-orange btn-block']) !!}
                         </div>
                     </div>
                 </div>   
@@ -62,7 +62,7 @@
                               
                             <img class="card-img-top" src="{{ $image_rand }}">
                             <div class="card-body"> 
-                                {!! link_to_route('group.show',  'Details' , ['id' => $group->id],['class'=>'btn btn-success  btn-block']) !!}
+                                {!! link_to_route('group.show',  'Details' , ['id' => $group->id],['class'=>'btn btn-blue  btn-block']) !!}
                             </div>
                         </div>
                     </div>   
@@ -84,7 +84,7 @@
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
                     <div class="form-group">
                         {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
-                        {!! Form::submit('Create', ['class' => 'btn btn-outline-success']) !!}
+                        {!! Form::submit('Create', ['class' => 'btn btn-blue']) !!}
                         {!! Form::close() !!}
                     </div>
             </div>
