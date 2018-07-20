@@ -23,7 +23,7 @@ foreach($comments as $comment) {
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-2 col-2">
-                                   <img src="{{ Gravatar::src($user->email, 1000) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
+                                   <img src="{{ Gravatar::src($user->email, 80) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
                                 </div>
                                 <div class="col-md-8 col-8 px-0">
                                     {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}<small> <span class="text-muted">at {{ $comment->created_at }}</span>
@@ -39,7 +39,7 @@ foreach($comments as $comment) {
                             </div>
                             <div class="row">
                                 <div class="col-md-7 offset-md-2 col-7 offset-2 px-0">
-                                    <p class="card-text">{!! nl2br(e($comment->content)) !!}</p>
+                                    <p class="card-text ">{!! nl2br(e($comment->content)) !!}</p>
                                 </div>
                                 <div class="col-md-3 col-3 text-right align-self-end">
                                     <a data-toggle="collapse" href="#collapsePost{{$comment->id}}" aria-expanded="false" aria-controls="collapseExample">
@@ -75,3 +75,4 @@ foreach($comments as $comment) {
     }
     ?>
 @endwhile
+

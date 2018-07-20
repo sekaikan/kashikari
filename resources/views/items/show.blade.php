@@ -74,7 +74,10 @@
                 </div>
                 <?php $comments = $item->comments()->where('parent_id', NULL); ?>
                     @if (count($comments) >0)
-                          @include('comments.comments', ['comments' => $comments])
+                    <div class="offset-2 col-8">
+                        
+                         @include('comments.comments', ['comments' => $comments])
+                    </div>
                     @endif
                 
         </div>
