@@ -20,7 +20,7 @@
     <div class="row fixed-bottom justify-content-end">
             <div class="col-1">
                 <div class="icon container">
-                <a href= "{{ route ('chats.index') }}">
+                <a href= "{{ route ('chats.index', ['id' => $group->id]) }}">
                     <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
                 </a>
                </div>
