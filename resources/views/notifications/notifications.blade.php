@@ -43,7 +43,7 @@
                         <div class="col-1">
                             <img src="{{ secure_asset($image_rand2)}}" class="img-fluid rounded-circle"></img>
                         </div>
-                        <div class="col-10">
+                        <div class="col-9">
                             <?php $date = new DateTime($notification->created_at);?>
                             @if($notification->post_id != NULL && $notification->item_id == NULL)
                             <small class="card-title"><span class="font-weight-bold">{{ App\User::find($notification->user_id)->name }}</span> sent you a reply.</small>
@@ -64,21 +64,12 @@
                             
                             <p class="card-text text-muted"><small>{{ $date->format("G:i, F j, Y")}}</small></p>
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             {!! Form::open(['route' => ['notifications.destroy', 'notification_id'=>$notification->id], 'method' => 'delete', 'class'=>'text-right']) !!}
                                 @if(Auth::id() == $notification->user_id)
                                     {!! Form::button('<i class="fas fa-times"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
 
                                 @endif
-                                
-                                <p class="card-text text-muted"><small>{{ $date->format("G:i, F j, Y")}}</small></p>
-                            </div>
-                            <div class="col-1">
-                                {!! Form::open(['route' => ['notifications.destroy', 'notification_id'=>$notification->id], 'method' => 'delete', 'class'=>'text-right']) !!}
-                                    @if(Auth::id() == $notification->user_id)
-                                        {!! Form::button('<i class="fas fa-times"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
-                                    @endif
-                                {!! Form::close() !!}
                             </div>
                         </div>
                     </li>
