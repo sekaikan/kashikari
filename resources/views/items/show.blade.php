@@ -60,7 +60,7 @@
         </div>
     </div>
 <a href="/group/{{$item->group_id}}" class="">&laquo;back to home</a>
-        @if(Auth::id() == $item->want_user_id)
+        @if(Auth::id() == $item->want_user_id || Auth::id() == $item->user->id)
          <div class="row">
                     <div class="col-6 offset-3">
                         {!! Form::open(['route' => 'comments.store', 'method' => 'post']) !!}
