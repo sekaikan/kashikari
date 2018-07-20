@@ -51,7 +51,7 @@ class RepliesController extends Controller
             'content' => $request->content,
             'user_id' => $recipient->id,
             'post_id' => $request->post_id,
-            'sender_id' => \Auth::id(),
+            'recipient_id' => \Auth::id(),
             ]);
         }else
         {
@@ -60,7 +60,7 @@ class RepliesController extends Controller
             'content' => $request->content,
             'user_id' => $recipient->id,
             'post_id' => $request->post_id,
-            'sender_id' => \Auth::id(),
+            'recipient_id' => \Auth::id(),
             ]);
         }
 

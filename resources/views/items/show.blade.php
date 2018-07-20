@@ -4,7 +4,7 @@
 <div class="container my-5">
     @if(Auth::id() == $item->want_user_id)
       <div class="alert alert-success mt-5 pt-5" role="alert">
-      <i class="fas fa-check mr-3"　style="color:red;"></i>Your request was completed! Let's chat now!!
+          <i class="fas fa-check mr-3"　style="color:red;"></i>Your request was completed! Let's chat now!!
       </div>
     @endif
     <div class="row">
@@ -59,10 +59,10 @@
         @if(Auth::id() == $item->want_user_id)
          <div class="row">
                     <div class="col-12">
-                        {!! Form::open(['route' => 'comments.store']) !!}
+                        {!! Form::open(['route' => 'comments.store', 'method' => 'post']) !!}
                        <div class="form-group mt-5">
                            {{ Form::hidden('item_id', $item->id)}}
-                           {!! Form::textarea('content', NULL, ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'Message...', 'rows' =>'3']) !!}
+                           {!! Form::textarea('content', '', ['class' => 'form-control', 'id' => 'form-content', 'placeholder' => 'Message...', 'rows' =>'3']) !!}
                            {!! Form::submit('Send', ['class' => 'btn btn-primary btn-block ', 'id' => 'form-button']) !!}
                         </div>
                         {!! Form::close() !!}

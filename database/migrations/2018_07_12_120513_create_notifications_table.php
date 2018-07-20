@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateNotificationsTable extends Migration
 {
-    /**
+    /*
      * Run the migrations.
      *
      * @return void
@@ -17,9 +17,9 @@ class CreateNotificationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('post_id')->unsigned()->index()->nullable();
-             $table->integer('item_id')->unsigned()->index()->nullable();
-              $table->string('type')->index()->nullable();
-            $table->integer('sender_id')->unsigned()->index();
+            $table->integer('item_id')->unsigned()->index()->nullable();
+            $table->string('type')->index()->nullable();
+            $table->integer('recipient_id')->unsigned()->index();
             $table->string('content');
             $table->timestamps();
             

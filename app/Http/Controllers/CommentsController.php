@@ -18,7 +18,8 @@ class CommentsController extends Controller
             'content' => 'required|max:30000',
             'item_id'=> 'required',
         ]);
-        
+        var_dump('here!!');
+        exit;        
         $request->user()->comments()->create([
             'content' => $request->content,
             'item_id' => $request->item_id,
@@ -31,7 +32,7 @@ class CommentsController extends Controller
             'content' => $request->content,
             'user_id' => $recipient->id,
             'item_id' => $item->id,
-            'sender_id' => \Auth::id(),
+            'recipient_id' => \Auth::id(),
             'type' => 'toItem',
             ]);    
         }elseif($request->parent_id != NULL){
@@ -40,9 +41,9 @@ class CommentsController extends Controller
             $recipient = User::find($comment->user_id);
             $request->user()->notifications()->create([
             'content' => $comment->content,
-            'user_id' => $recipient->id,
+            'recipient_id' => $recipient->id,
             'item_id' => $item->id,
-            'sender_id' => \Auth::id(),
+            'user_id' => \Auth::id(),
             'type' => 'toComment',
             ]);  
         }
