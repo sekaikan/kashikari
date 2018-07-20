@@ -90,8 +90,10 @@ class PostsController extends Controller
     {
       
         $post = Post::find($id);
+        $group = Group::find($id);
         
-        return view('posts.show', ['post' =>$post]);
+        
+        return view('posts.show', ['post' =>$post, 'group'=>$group]);
     }
     
 }
