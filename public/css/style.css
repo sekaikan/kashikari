@@ -421,3 +421,43 @@ box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
     border: 1px solid #6088C6;
     cursor: pointer;
 }
+
+
+nav-item.sample {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	box-shadow: 1px 1px 1px #ccc;
+	z-index: auto;
+}
+
+.sample .box {
+	position:absolute;
+	width: 300px; /* 吹き出しの幅 */
+	height: 60px; /* 吹き出しの高さ */
+	top: -76px; /* 吹き出しと三角形の高さをプラスした値 */
+	left: 0;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #FFF;
+	display: none;
+}
+.sample .box:after { /* 三角形を作成 */
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 0;
+	top: 60px; /* 吹き出しの高さと同じ値 */
+	left: 32px;
+	border: 16px solid transparent;
+	border-top: 16px solid #FFF;
+}
+.sample .text {
+	font-size: 16px;
+	position: absolute;
+    padding: 20px 40px;
+	color: #000;
+}
+.sample:hover .box {
+	z-index: 2;
+	display: block;
+}
