@@ -57,7 +57,7 @@
                 @endif
             </div>
             <div class="col-4">
-                <h2 class="text-center">Recent Posts</h2>
+                <h2 class="text-center">Posted Messages</h2>
                 @include('posts.posts', ['posts' => $posts])
                 @if (count($posts) >0)
 
