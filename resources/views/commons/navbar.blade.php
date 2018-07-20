@@ -87,7 +87,7 @@
                         <i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
                         @endif
                         
-                        @if(strstr($url,'group'))
+                        @if(strstr($url,'group') && (Auth::user()->is_following($group->id)))
                             <a class="nav-link" href="{{route('chats.index',['id' => $group->id])}}"><i class="far fa-comments"></i></a>
                         @endif
 
