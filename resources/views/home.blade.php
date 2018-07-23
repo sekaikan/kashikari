@@ -89,7 +89,7 @@
         <div class="col-3 mt-4">
             <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Search Group</h4>
-                <form class="form-inline" action="{{url('/results/groupsearch/')}}">
+                <form class="form-inline" action="{{url('/results/search/')}}">
                     <input type="text" name="keyword" value='' class="form-control" placeholder="Find Groups">
                     <i class=" ml-2 fas fa-search"></i>
                 </form>
