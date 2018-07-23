@@ -22,7 +22,7 @@ class CreateCommentsTable extends Migration
             $table->timestamps();
             
             
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             //$table->foreign('parent_id')->references('id')->on('comments')->onDelete('cascade');
         });
