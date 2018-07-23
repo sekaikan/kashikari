@@ -29,11 +29,11 @@ $rand = mt_rand(0,3);
     }
     
     /*scroll down button*/
-    a#scroll {
+    #scroll {
       text-decoration: none;
       
     }
-    a#scroll span {
+    #scroll span {
       
       position: absolute;
       width: 24px;
@@ -123,7 +123,7 @@ $rand = mt_rand(0,3);
             </div>
             <p class="small text-light">* Subscribers can try it free for one month. Plan automatically renews after trial.</p>
             <div class="text-center">
-                <a href="#top" id="scroll"><span></span></a>
+                <div id="scroll"><span></span></div>
             </div>
         </div>
     </div>
