@@ -82,7 +82,7 @@ class ItemsController extends Controller
             'group_id' => $request->group_id,
         ]);
         
-          return redirect(route('items.index', $request->group_id));
+        return redirect(route('items.index', $request->group_id));
     }
     
     public function show($id)
