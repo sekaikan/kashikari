@@ -72,10 +72,8 @@ class RegisterController extends Controller
         $scopes = ['public'];
         \Crew\Unsplash\HttpClient::$connection->getConnectionUrl($scopes);
         $filters = [
-            'query' => 'cute',
+            'query' => 'cute animal',
             'orientation' => 'squarish',
-            'h' => 1000,
-            'w' => 1000,
         ];
         $photo = \Crew\Unsplash\Photo::random($filters);
 

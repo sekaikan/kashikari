@@ -4,7 +4,7 @@
     <div class="jumbotron-home text-center my-5 p-3">
         <div class="row mt-5">
             
-            <div class="col-2 offset-5 px-5">
+            <div class="col-2 offset-5 px-0">
                 <img class="usershowicon" src="{{ $user->photo }}"> 
             </div>
         </div>
