@@ -54,7 +54,7 @@
         </div>
     </div>
     <div class="container-fluid bg-white">
-        <h2 class="text-center">Shared Items</h2>
+        <h2 class="text-center offset-1 col-10 under">Shared Items</h2>
         <div class ="row offset-2 col-8">
             @include('items.items', ['items' => $items])
         </div>
