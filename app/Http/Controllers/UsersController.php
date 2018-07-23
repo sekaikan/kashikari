@@ -10,6 +10,7 @@ use App\Group;
 
 use App\Item;
 
+
 class UsersController extends Controller
 {
     public function show($id)
@@ -50,7 +51,10 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        $user->delete();
-        return redirect('/'); 
+        if(\Auth::id() == $user->id){
+            \Auth::logout();
+            $user->delete();
+        }
+        return view('thankyou');
     }
 }
