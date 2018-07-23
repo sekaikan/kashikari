@@ -83,6 +83,10 @@
                     </div>  
                     @endforeach
                 </div>
+                @else
+                    <a href="group/create" class="col-4 my-4  text-center">
+                        <i class="fas fa-plus fa-9x" style="color: #c0c0c0;"></i>
+                    </a>
                 @endif
             </div>
        
