@@ -7,7 +7,7 @@
           <i class="fas fa-check mr-3"></i>Your request was completed! Let's chat now!!
       </div>
     @endif
-    <div class="row">
+    <div class="row bg-white pb-4">
 
         <div class= "pt-5 col-6 float-left">
             <div class="ribbon_box3">

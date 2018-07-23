@@ -18,8 +18,9 @@
             </div>
         @endif
     </div>
-    <h1 class='text-center my-5'>Your Item List</h1>
+    
     <div class="container">
+        <h1 class='text-center my-5 under'>Your Item List</h1>
         @include('items.items')
     </div>
 

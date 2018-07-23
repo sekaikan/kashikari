@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('content', 'Description (*Required)') !!}
-                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my Camera']) !!}
+                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my Camera&#13;&#10;      period: 8/1-8/8']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('reward', 'Reward') !!}
@@ -73,7 +73,12 @@
     <div class="row item">
     <div class="">
     <h2 class="text-center under">Posted messages</h2>
-    @include('posts.posts', ['posts' => $posts])
+    @if(count($posts) == 0 )
+    <h4 class= "text-muted text-center mt-4">No Posts</h4>
+    @else
+      @include('posts.posts', ['posts' => $posts])
+    @endif
+    
     @if (count($posts) >0)
 
         <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
