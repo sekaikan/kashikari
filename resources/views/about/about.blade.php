@@ -113,50 +113,47 @@
             </div>
         </div>
     </div>
-    <div class="uncolored content p-5">
+    <div class="colored content p-5">
         <h2 class="display-2 text-secondary font-weight-bold mb-5">VOICE</h2>
         <div class="row my-3">
             <div class="col-4 box1">
                 <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
                 <p class="m-3">
-                    This is my second rental with Antonio - great equipment, great price and brilliant service!
-                </p>
+                    I borrowed laptop on KASHIKARI for the first time. They have a variety of products to borrow and users are very kind.
+                </p>    
             </div>
             <div class="col-4 box2">
-                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>ERIKA</h3>
                 <p class="m-3">
-                    Excellent communication, absolutely lovely people, amazing gimbal and an incredibly smooth process!
-                </p>
+                    This page is wonderful! I could find easily what I want to need and communicate with users.
+                </p>    
             </div>
             <div class="col-4 box1">
-                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>TAKUMI</h3>
                 <p class="m-3">
-                    Brilliant guy and very easy to deal with. Great kit and really easy to collect and return equipment.
-                </p>
+                    This is my second rental on KASHIKARI - great equipment, great price and brilliant service!
+                </p> 
             </div>
         </div>
         <div class="row my-3">
             <div class="col-4 box2">
-                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>MANATEE</h3>
                 <p class="m-3">
-                    This is my second rental with Antonio - great equipment, great price and brilliant service!
-                </p>
+                    Excellent communication, absolutely lovely users, amazing gimbal and an incredibly smooth process!
+                </p>    
             </div>
             <div class="col-4 box1">
-                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>SAAYA</h3>
                 <p class="m-3">
-                    This is my second rental with Antonio - great equipment, great price and brilliant service!
-                </p>
+                    It is easy to find what I want to borrow. I will use KASHIKARI for next time!!
+                </p>    
             </div>
             <div class="col-4 box2">
-                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>MAHO</h3>
                 <p class="m-3">
-                    This is my second rental with Antonio - great equipment, great price and brilliant service!
-                </p>
+                    I borrowed coffee machine in coffee lovers group! I can not only borrow goods but also meet great people.
+                </p>    
             </div>
-        </div>
-        <div class="text-center my-5">
-            <a class="button1 shadow-lg" href="{{ route('register') }}">Sign Up Now</a>
         </div>
     </div>
     <div class="colored content p-5">
