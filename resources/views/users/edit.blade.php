@@ -14,6 +14,8 @@
                     {!! Form::label('content', 'Self introduction') !!}
                     {!! Form::text('content', $user->content, ['class' => 'form-control']) !!}
                 </div>
+                <p>Your profile image will be set automatically via <a href="///unsplash.com">Unsplash</a> API.</p>
+                <p>Current image: <a href="{{ $user->photo_link }}">Photo</a> by <a href="https://unsplash.com/{{ '@' . $user->photo_username }}?utm_source=kashikari&utm_medium=referral">{{ $user->photo_fullname }}</a></p>
                 {!! Form::submit('Upload', ['class' => 'btn btn-block btn-blue mt-5']) !!}
             
             {!! Form::close() !!}

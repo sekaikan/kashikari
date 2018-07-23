@@ -55,7 +55,7 @@ class ItemsController extends Controller
         \Crew\Unsplash\HttpClient::init([
             'applicationId'	=> env('UNSPLASH_KEY'),
             'secret' => env('UNSPLASH_SECRET'),
-            'callbackUrl'	=> 'https://your-application.com/oauth/callback',
+            'callbackUrl' => 'https://your-application.com/oauth/callback',
             'utmSource' => 'kashikari'
         ]);
         
@@ -68,10 +68,13 @@ class ItemsController extends Controller
             $search = 'gift';
             $orientation = 'landscape';
             $photos = \Crew\Unsplash\Search::photos($search, $orientation);
-            $photo = $photo = $photos[0]['urls']['small'];
+            $photo = $photos[0]['urls']['small'];
         } else {
             $photo = $photos[0]['urls']['small'];
         }
+        
+        $tmp = \Crew\Unsplash\Photo::find($photos[0]['id']);
+        $tmp->download();
         
         $request->user()->items()->create([
             'content' => $request->content,
@@ -79,6 +82,9 @@ class ItemsController extends Controller
             'name' => $request->name,
             'reward' => $request->reward,
             'photo' => $photo,
+            'photo_link' => $photos[0]['links']['html'],
+            'photo_username' => $photos[0]['user']['username'],
+            'photo_fullname' => $photos[0]['user']['name'],
             'group_id' => $request->group_id,
         ]);
         
@@ -131,8 +137,10 @@ class ItemsController extends Controller
             $orientation = 'landscape';
             $photos = \Crew\Unsplash\Search::photos($search, $orientation);
             $photo = $photo = $photos[0]['urls']['small'];
+            $photo->download();
         } else {
             $photo = $photos[0]['urls']['small'];
+            $photo->download();
         }
 
         $item = Item::find($id);

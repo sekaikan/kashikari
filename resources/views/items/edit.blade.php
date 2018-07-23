@@ -30,10 +30,13 @@
                             <option value="closed">closed</option>
                       </select>
                 </div>
+                <ul class="my-4">
+                    <li class="text-muted small">Item image is set automatically via <a href="///unsplash.com">Unsplash</a> API.</li>
+                    <li class="text-muted small">Current image: <a href="{{ $item->photo_link }}">Photo</a> by <a href="https://unsplash.com/{{ '@' . $item->photo_username }}?utm_source=kashikari&utm_medium=referral">{{ $item->photo_fullname }}</a></li>
+                </ul>
                 {!! Form::submit('upload', ['class' => 'btn btn-blue btn-block']) !!}
                 {!! Form::close() !!}
               </div>
-            
         </div>
 </div>
 @endsection

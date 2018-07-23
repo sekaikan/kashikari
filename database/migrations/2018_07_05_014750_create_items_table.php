@@ -21,6 +21,9 @@ class CreateItemsTable extends Migration
             $table->string('reward')->nullable();
             $table->string('status')->index()->nullable();
             $table->text('photo')->nullable();
+            $table->text('photo_link')->nullable();
+            $table->string('photo_username')->nullable();
+            $table->string('photo_fullname')->nullable();
             $table->integer('want_user_id')->unsigned()->index()->nullable();
             $table->timestamps();
             
