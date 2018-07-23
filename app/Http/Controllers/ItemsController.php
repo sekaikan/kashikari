@@ -137,11 +137,12 @@ class ItemsController extends Controller
             $orientation = 'landscape';
             $photos = \Crew\Unsplash\Search::photos($search, $orientation);
             $photo = $photo = $photos[0]['urls']['small'];
-            $photo->download();
         } else {
             $photo = $photos[0]['urls']['small'];
-            $photo->download();
         }
+        
+        $tmp = \Crew\Unsplash\Photo::find($photos[0]['id']);
+        $tmp->download();
 
         $item = Item::find($id);
         $item->name = $request->name;
@@ -149,6 +150,9 @@ class ItemsController extends Controller
         $item->reward = $request->reward;
         $item->status = $request->status;
         $item->photo = $photo;
+        $item->photo_link = $photos[0]['links']['html'];
+        $item->photo_username = $photos[0]['user']['username'];
+        $item->photo_fullname = $photos[0]['user']['name'];
         $item->save();
         $group = Group::find(1);
         return view('items.show', ['item' => $item, 'group' => $group,]); 
