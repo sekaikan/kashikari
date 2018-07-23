@@ -461,3 +461,28 @@ nav-item.sample {
 	z-index: 2;
 	display: block;
 }
+
+.under{
+position: relative;
+display: block;
+padding: 0 1.4em;
+
+}
+
+.under:before, .under:after{
+content: '';
+position: absolute;
+top: 50%;
+display: inline-block;
+width: 15%;
+height: 1px;
+background-color: #6088C6;
+
+}
+
+.under:before {left:0;}
+.under:after {right: 0;}
+
+
+
+
