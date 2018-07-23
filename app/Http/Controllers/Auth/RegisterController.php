@@ -76,19 +76,14 @@ class RegisterController extends Controller
             'orientation' => 'squarish',
         ];
         $photo = \Crew\Unsplash\Photo::random($filters);
+        $photo->download();
 
-        if (isset($photos[0]['urls']['small'])==FALSE) {
-            $search = 'gift';
-            $orientation = 'landscape';
-            $photos = \Crew\Unsplash\Search::photos($search, $orientation);
-            $photo = $photo->{"urls"}{'regular'};
-        } else {
-            $photo = $photo->{"urls"}{'regular'};
-        }
-        
         return User::create([
             'name' => $data['name'],
-            'photo' => $photo,
+            'photo' => $photo->{"urls"}{'regular'},
+            'photo_link' => $photo->{'links'}{'html'},
+            'photo_username' => $photo->{'user'}{'username'},
+            'photo_fullname' => $photo->{'user'}{'name'},
             //'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

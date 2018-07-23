@@ -9,20 +9,19 @@
     @endif
     <div class="row">
 
-        <div class= "pt-5 col-6 float-left">
+        <div class= "pt-5 col-6">
             <div class="ribbon_box3">
                 <img class="card-img" src="{{ $item->photo }}" alt="" class="colorfilter-image">
                 <div class="ribbon_area">
-                      @if($item->status == 'open')
-                   <span class="ribbon16">{{ $item->status }}</span>
-                      @else
-                   <span class="ribbon17">{{ $item->status }}</span>
-                      @endif
+                    @if($item->status == 'open')
+                       <span class="ribbon16">{{ $item->status }}</span>
+                    @else
+                        <span class="ribbon17">{{ $item->status }}</span>
+                    @endif
                 </div>
             </div>
-        </div>    
+        </div>
         <div class=" pt-5 col-6 title-space">
-
             <h1>{{$item->name}}</h1>
             <p>by {{$item->user->name}}</p>
             <p class="conte-space"> {!! nl2br(e($item->content)) !!}</p>
@@ -32,16 +31,19 @@
                 @else
                 <p class="card-text h5"><i class="fas fa-gift mr-2"></i>  Ask me !</p>
                 @endif
-            <div class="row offset-8">
-              @if (Auth::id() == $item->user->id) 
-
+            <div class="row">
+                <div class="offset-6 col-3">
+                    @if (Auth::id() == $item->user->id) 
                        {!! Form::open(['route' => ['items.edit', $item->id], 'method' => 'get', 'class'=>'text-right']) !!}
                        {!! Form::button('<i class="fas fa-pen-fancy"></i><span style="margin-left:5px;">Edit</span>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
                        {!! Form::close() !!}
+                </div>
+                <div class="col-3">
                        {!! Form::open(['route' => ['items.destroy', $item->id], 'method' => 'delete', 'class'=>'text-right']) !!}
                        {!! Form::button('<i class="far fa-trash-alt"></i><span style="margin-left:5px;">Delete</span>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
                        {!! Form::close() !!}
-              @endif
+                    @endif
+                </div>
             </div>
             <div class="borrow-button">
                 @if(Auth::id() != $item->user->id && $item->want_user_id==NULL )
@@ -51,19 +53,15 @@
                 {!! Form::close() !!}
                 
                 @elseif(Auth::id() == $item->want_user_id )
-              
                     <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
                 
-                 
                 @elseif(Auth::id() != $item->user->id && Auth::id() != $item->want_user_id )
-             
                     <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Already rented</a>
-                 
                 @endif
             </div>
         </div>
     </div>
-<a href="/group/{{$item->group_id}}" class="">&laquo;back to home</a>
+        <a href="/group/{{$item->group_id}}" class="">&laquo;back to home</a>
         @if(Auth::id() == $item->want_user_id || Auth::id() == $item->user->id)
          <div class="row">
                     <div class="col-6 offset-3">

@@ -36,7 +36,7 @@ class GroupsController extends Controller
     {
         $group = new Group;
         
-         return view('groups.create', ['group' => $group,]);
+        return view('groups.create', ['group' => $group,]);
     }
     
     public function store(request $request)
