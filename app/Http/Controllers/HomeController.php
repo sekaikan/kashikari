@@ -23,6 +23,7 @@ class HomeController extends Controller
     {
          
          $user = \Auth::user();
+         $newgrad = Group::find(1);
          $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
          $follow_group_ids = array();
          foreach($follow_groups as $g) {
@@ -40,6 +41,7 @@ class HomeController extends Controller
             'user' => $user,
             'follow_groups' => $follow_groups,
             'groups' =>$groups,
+            'newgrad' =>$newgrad,
             
             ]);
     }

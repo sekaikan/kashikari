@@ -11,12 +11,12 @@
         </div>
 
         
-        <div class="col-9 mt-2">
-            <h2 class="my-3">My Groups</h2>
+        <div class="col-9 my-2">
+            <h2 class="mt-3">My Groups</h2>
             <div class="row">
             @if (count($follow_groups) > 0)
                 @foreach ($follow_groups as $group)
-                <div class="col-4">
+                <div class="col-4 mt-3">
                     <div class="card bg-dark text-white">
                         <?php $image_rand = array(
                             "images/image1.jpg",
@@ -36,15 +36,34 @@
                 </div>   
                 @endforeach
             @else
+                 <div class="col-4">
+                        <div class="card bg-dark text-white">
+                             <?php $image_rand = array(
+                                "images/image1.jpg",
+                                "images/image2.jpg",
+                                "images/image3.jpg", 
+                                "images/home1.jpg", 
+                              );
+                              $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
+                              ?>
+                              
+                            <img class="card-img-top card-img-home" src="{{ $image_rand }}">
+                            <div class="card-img-overlay group-name"> 
+                                {!! $newgrad->name !!}
+                                <p></p>
+                                 {!! link_to_route('group.show',  'Details' , ['id' => $newgrad->id],['class'=>'btn btn-blue  btn-block']) !!}
+                            </div>
+                        </div>
+                    </div>   
                 <a href="group/create" class="col-4 my-4  text-center">
                     <i class="fas fa-plus fa-9x" style="color: #c0c0c0;"></i>
                 </a>
             @endif
             </div>
-                <h2 class="my-3">Other Groups</h2>
+                <h2 class="mt-3">Other Groups</h2>
                 <div class="row">
                     @foreach ($unfollow_groups as $group)
-                    <div class="col-4">
+                    <div class="col-4 mt-3">
                         <div class="card bg-dark text-white">
                              <?php $image_rand = array(
                                 "images/image1.jpg",
@@ -62,7 +81,7 @@
                                  {!! link_to_route('group.show',  'Details' , ['id' => $group->id],['class'=>'btn btn-blue  btn-block']) !!}
                             </div>
                         </div>
-                    </div>   
+                    </div>  
                     @endforeach
                 </div>
             </div>
