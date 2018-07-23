@@ -9,12 +9,10 @@
         <div class="col-12 mt-5">
              @include('notifications.notifications')
         </div>
-
-        
         <div class="col-9 my-2">
             <h2 class="mt-3">My Groups</h2>
             <div class="row">
-            @if (count($follow_groups) > 0)
+            @if ($follow_groups != NULL)
                 @foreach ($follow_groups as $group)
                 <div class="col-4 mt-3">
                     <div class="card bg-dark text-white">
@@ -62,6 +60,7 @@
             </div>
                 <h2 class="mt-3">Other Groups</h2>
                 <div class="row">
+                @if($unfollow_groups != NULL)
                     @foreach ($unfollow_groups as $group)
                     <div class="col-4 mt-3">
                         <div class="card bg-dark text-white">
@@ -84,6 +83,7 @@
                     </div>  
                     @endforeach
                 </div>
+                @endif
             </div>
        
         <div class="col-3 mt-4">
