@@ -8,17 +8,7 @@
                 <div class="mx-auto">
                     @if (isset($groupusers))
                         @foreach($groupusers as $key => $groupuser)
-                        <?php 
-                            $image_rand = array(
-                                    "images/user6.jpg",
-                                    "images/user2.jpg",
-                                    "images/user3.jpg", 
-                                    "images/user4.jpg", 
-                                    "images/user5.jpg"
-                                );
-                        ?>
-                        
-                        <img class="usericon" src="{{  secure_asset($image_rand[$key % 5]) }}">
+                        <img class="usericon" src="{{ $groupuser->photo }}">
                         @endforeach
                     @endif
                     <a href="{{route('group.userlist', ['id' => $group->id]) }}" class="lasticon"><i class="fas fa-ellipsis-h text-light"></i></a> 
@@ -49,22 +39,34 @@
 		<p class="text">you can lend items!</p>
 	</div></a>
                 </li>
-            </ul>
+           </ul>
         </div>
 
 
     <div class="container pt-5 bg-light">
         <div class="row">
-            <div class="col-8 pl-5">
-                <h2 class="text-center text-muted">Shared Items</h2>
-                @include('items.items', ['items' => $items])
+            <div class="col-7 pl-4">
+                
+                <h2 class="text-center text-muted under">Shared Items</h2>
+                @if(count($items) == 0)
+                <a href="{{ route('items.lend', ['id' => $group->id]) }}"><p class="text-center"><i class="far fa-plus-square fa-4x text-muted my-5"></i></p></a>
+                @else
+                 @include('items.items', ['items' => $items])
+                @endif
+                
                 @if (count($items) >0)
                     <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">Item List</span></a>
                 @endif
             </div>
-            <div class="col-4">
-                <h2 class="text-center text-muted">Posted Messages</h2>
+            <div class="col-5">
+                <h2 class="text-center text-muted under">Posted Messages</h2>
+                @if(count($posts) == 0)
+                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" ><p class="text-center"><i class="far fa-plus-square fa-4x text-muted my-5"></i></p></a>
+                @else
+              
                 @include('posts.posts', ['posts' => $posts])
+                @endif
+                
                 @if (count($posts) >0)
 
                     <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>

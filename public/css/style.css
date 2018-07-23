@@ -256,21 +256,16 @@ div.row.item{
 }
 
 .icon.container {
-	width: 110px ;
-	height: 110px ;
-	line-height: 100px ;
-	text-align: center ;
+	font-size: 3em;
 }
 
-.target {
-	transition: .5s ;
-	transform: rotateZ( 0deg ) ;
+i.far.fa-circle.fa-stack-2x {
+    color:#fcca7e; 
 }
 
-.container:hover .target {
-	transform: rotateZ( 360deg ) ;
+i.far.fa-comments.fa-stack-1x.faa-wrench.animated-hover{
+    color: #fcca7e;
 }
-
 
 .active{
     background-color: #6088C6;
@@ -464,6 +459,7 @@ nav-item.sample {
 
 
 
+
 /*home*/
 .card-img-home {
     opacity:0.5;
@@ -476,3 +472,28 @@ nav-item.sample {
     font-size:150%;
 
 }
+
+.under{
+position: relative;
+display: block;
+padding: 0 1.4em;
+
+}
+
+.under:before, .under:after{
+content: '';
+position: absolute;
+top: 50%;
+display: inline-block;
+width: 15%;
+height: 1px;
+background-color: #6088C6;
+
+}
+
+.under:before {left:0;}
+.under:after {right: 0;}
+
+
+
+

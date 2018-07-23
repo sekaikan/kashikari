@@ -93,7 +93,7 @@
 
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggler ml-3" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    <i class="fas fa-user-circle"></i>
+                                    <img src="{{ Auth::user()->photo }}" class="img-fluid rounded-circle" style="height: 2em; width:2em;">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                         <ul class="dropdown-menu">

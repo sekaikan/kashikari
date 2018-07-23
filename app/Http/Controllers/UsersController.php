@@ -46,4 +46,11 @@ class UsersController extends Controller
 
         return redirect(route('users.show', \Auth::user()->id));
     }
+    
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/'); 
+    }
 }

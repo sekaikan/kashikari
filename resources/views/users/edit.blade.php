@@ -19,5 +19,8 @@
             {!! Form::close() !!}
         </div>
     </div>
+    @if(Auth::user()->id == $user->id)
+        @include('users.delete_button')
+    @endif
 </div>
 @endsection
