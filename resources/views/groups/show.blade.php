@@ -26,11 +26,16 @@
         @endif
     </div>
     <div class="row fixed-bottom justify-content-end">
-        <div class="col-1">
+        <div class="col-1 mr-4 mb-3">
             <div class="icon container">
+                @if(strstr($url,'group') && (Auth::user()->is_following($group->id)))
                 <a href= "{{ route ('chats.index', ['id' => $group->id]) }}">
-                    <img src ="/images/chat.png" class="rounded-circle img-fluid  target">
+                    <span class="fa-stack">
+                    <i class="far fa-circle fa-stack-2x"></i>
+                    <i class="far fa-comments fa-stack-1x faa-wrench animated-hover"></i>
+                    </span>
                 </a>
+                @endif
            </div>
         </div>
     </div>
