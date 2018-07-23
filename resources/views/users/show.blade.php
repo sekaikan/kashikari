@@ -20,6 +20,11 @@
     </div>
     
     <div class="container">
+        @if(Auth::user()->id == $user->id)
+         <div class="col-12 mt-5">
+             @include('notifications.notifications')
+        </div>
+        @endif
         <h1 class='text-center my-5 under'>Your Item List</h1>
         @include('items.items')
     </div>
