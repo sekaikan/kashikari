@@ -17,10 +17,7 @@
             @if (count($follow_groups) > 0)
                 @foreach ($follow_groups as $group)
                 <div class="col-4">
-                    <div class="card">
-                        <div class="card-header"> 
-                            {!! $group->name !!}
-                        </div>
+                    <div class="card bg-dark text-white">
                         <?php $image_rand = array(
                             "images/image1.jpg",
                             "images/image2.jpg",
@@ -29,16 +26,18 @@
                           );
                         $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
                         ?>
-                        <img class="card-img-top" src="{{ $image_rand }}">
-                        <div class="card-body">
+                        <img class="card-img card-img-home" src="{{ $image_rand }}">
+                        <div class="card-img-overlay group-name"> 
+                            {!! $group->name !!}
+                            <p></p>
                             {!! link_to_route('group.show',  'Go!' , ['id' => $group->id],['class'=>'btn btn-orange btn-block']) !!}
                         </div>
                     </div>
                 </div>   
                 @endforeach
             @else
-                <a href="group/create" class="my-5 ml-5 text-left">
-                    <i class="far fa-plus-square fa-9x text-left text-muted"></i>
+                <a href="group/create" class="col-4 my-4  text-center">
+                    <i class="fas fa-plus fa-9x" style="color: #c0c0c0;"></i>
                 </a>
             @endif
             </div>
@@ -46,12 +45,8 @@
                 <div class="row">
                     @foreach ($unfollow_groups as $group)
                     <div class="col-4">
-                        <div class="card">
-                            <div class="card-header"> 
-                                {!! $group->name !!}
-                            </div>
-          
-                              <?php $image_rand = array(
+                        <div class="card bg-dark text-white">
+                             <?php $image_rand = array(
                                 "images/image1.jpg",
                                 "images/image2.jpg",
                                 "images/image3.jpg", 
@@ -60,9 +55,11 @@
                               $image_rand = $image_rand[mt_rand(0, count($image_rand)-1)];
                               ?>
                               
-                            <img class="card-img-top" src="{{ $image_rand }}">
-                            <div class="card-body"> 
-                                {!! link_to_route('group.show',  'Details' , ['id' => $group->id],['class'=>'btn btn-blue  btn-block']) !!}
+                            <img class="card-img-top card-img-home" src="{{ $image_rand }}">
+                            <div class="card-img-overlay group-name"> 
+                                {!! $group->name !!}
+                                <p></p>
+                                 {!! link_to_route('group.show',  'Details' , ['id' => $group->id],['class'=>'btn btn-blue  btn-block']) !!}
                             </div>
                         </div>
                     </div>   
