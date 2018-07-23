@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-2 col-2">
-                           <img src="{{ Gravatar::src($post->user->email, 1000) . '&d=mm' }}" alt="" class="rounded-circle img-fluid">
+                           <img class="usericon" src="{{ $post->user->photo }}">
                         </div>
                         <div class="col-md-8 col-8 px-0">
                             {!! link_to_route('users.show', $post->user->name, ['id' => $post->user->id]) !!}<small> <span class="text-muted">at {{ $post->created_at }}</span>
