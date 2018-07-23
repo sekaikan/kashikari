@@ -21,7 +21,6 @@
     <h1 class='text-center my-5'>Your Item List</h1>
     <div class="container">
         @include('items.items')
-        
     </div>
 
 @endsection

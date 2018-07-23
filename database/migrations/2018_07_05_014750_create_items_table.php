@@ -24,7 +24,7 @@ class CreateItemsTable extends Migration
             $table->integer('want_user_id')->unsigned()->index()->nullable();
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('want_user_id')->references('id')->on('users');
         });
     }
