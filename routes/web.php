@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 //results
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
-   Route::get('results/groupsearch', 'ResultsController@groupsearch');
+   Route::get('results/groupsearch', 'ResultsController@groupsearch')->name('groups.search');
 
 // notifications
    Route::delete('/', 'NotificationsController@destroy')->name('notifications.destroy');

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container my-5">
-    <div class ="row pt-5">
+     <div class ="row pt-5">
         <div class="col-md-6 offset-md-3">
              <h2 class="text-center">Create New Group</h2>
              {!! Form::model($group, ['route' => 'group.store']) !!}

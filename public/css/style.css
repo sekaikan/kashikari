@@ -457,6 +457,22 @@ nav-item.sample {
 	display: block;
 }
 
+
+
+
+/*home*/
+.card-img-home {
+    opacity:0.5;
+　　display: block;
+}
+
+.group-name{
+    text-align: center;
+    padding-top:15%;
+    font-size:150%;
+
+}
+
 .under{
 position: relative;
 display: block;
