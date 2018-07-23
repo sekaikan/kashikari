@@ -58,7 +58,7 @@
      {!! Form::model($item, array('route' => array('items.store', $group->id)))!!}
     <div class="row item">
              <div class="">
-                <h2 class="text-center">Register Items</h2>
+                <h2 class="text-center under">Register Items</h2>
                 
                 <div class="form-group">
                     {!! Form::label('name', 'Item name (*Required)') !!}
@@ -82,7 +82,7 @@
         <div class="col-5 mx-auto">
     <div class="row item">
     <div class="">
-    <h2 class="text-center">Posted messages</h2>
+    <h2 class="text-center under">Posted messages</h2>
     @include('posts.posts', ['posts' => $posts])
     @if (count($posts) >0)
 
