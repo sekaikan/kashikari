@@ -49,7 +49,7 @@
                 @include('replies.replies')
         </div>
     </div>
-   <a href="/group/{{$group->id}}/posts/index" class="btn btn-link">&laquo; Back</a>
+   <a href="/group/{{$post->group_id}}/posts/index" class="btn btn-link">&laquo; Back</a>
 </div>
 
 @endsection
