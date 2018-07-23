@@ -62,8 +62,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        \Crew\Unsplash\HttpClient::init([
+            'applicationId' => env('UNSPLASH_KEY'),
+            'secret' => env('UNSPLASH_SECRET'),
+            'callbackUrl' => 'https://your-application.com/oauth/callback',
+            'utmSource' => 'kashikari'
+        ]);
+        
+        $scopes = ['public'];
+        \Crew\Unsplash\HttpClient::$connection->getConnectionUrl($scopes);
+        $filters = [
+            'query' => 'cute',
+            'orientation' => 'squarish',
+            'h' => 1000,
+            'w' => 1000,
+        ];
+        $photo = \Crew\Unsplash\Photo::random($filters);
+
+        if (isset($photos[0]['urls']['small'])==FALSE) {
+            $search = 'gift';
+            $orientation = 'landscape';
+            $photos = \Crew\Unsplash\Search::photos($search, $orientation);
+            $photo = $photo->{"urls"}{'regular'};
+        } else {
+            $photo = $photo->{"urls"}{'regular'};
+        }
+        
         return User::create([
             'name' => $data['name'],
+            'photo' => $photo,
             //'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);

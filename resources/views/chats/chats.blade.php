@@ -22,20 +22,10 @@
                     </div>
                 </div>
             @else
-                <?php 
-                $image_rand = array(
-                        "images/user6.jpg",
-                        "images/user2.jpg",
-                        "images/user3.jpg", 
-                        "images/user4.jpg", 
-                        "images/user5.jpg"
-                    );
-                $image_path = $image_rand[mt_rand(0, count($image_rand)-1)];
-                ?>
                 <div class="col-6">
                     <div class="row">
                         <div class="col-2">
-                            <a href="{{route('users.show', ['id'=> $chat->user->id])}}"><img class="usericon" src="{{  secure_asset($image_path) }}">
+                            <a href="{{route('users.show', ['id'=> $chat->user->id])}}"><img class="usericon" src="{{ $chat->user->photo }}">
                             <p class="text-muted">{{ $chat->user->name }}</p>
                         </div>
                         <div class="col-10 bg-white p-3 rounded otherscomment">

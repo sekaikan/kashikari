@@ -5,17 +5,7 @@
         <div class="row mt-5">
             
             <div class="col-2 offset-5 px-5">
-                <?php
-                $image_rand = array(
-                                     '/images/user2.jpg',
-                                    '/images/user3.jpg',
-                                    '/images/user4.jpg',
-                                    '/images/user5.jpg',
-                                    '/images/user6.jpg',
-                                    );
-                $image_path = $image_rand[mt_rand(0, count($image_rand)-1)];
-                ?>
-                <img class="usershowicon" src="{{ secure_asset($image_path) }}"> 
+                <img class="usershowicon" src="{{ $user->photo }}"> 
             </div>
         </div>
         <h2 class="font-weight-normal text-light">{{ $user->name }}</h2>
