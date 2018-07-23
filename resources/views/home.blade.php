@@ -12,7 +12,7 @@
         <div class="col-9 my-2">
             <h2 class="mt-3">My Groups</h2>
             <div class="row">
-            @if ($follow_groups != NULL)
+            @if ($follow_groups->count() != 0)
                 @foreach ($follow_groups as $group)
                 <div class="col-4 mt-3">
                     <div class="card bg-dark text-white">
@@ -60,7 +60,7 @@
             </div>
                 <h2 class="mt-3">Other Groups</h2>
                 <div class="row">
-                @if($unfollow_groups != NULL)
+                @if($unfollow_groups->count() != 0)
                     @foreach ($unfollow_groups as $group)
                     <div class="col-4 mt-3">
                         <div class="card bg-dark text-white">
