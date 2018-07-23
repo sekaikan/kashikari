@@ -30,18 +30,10 @@
                 {!! Form::close() !!}
         <ul class="list-group list-group-flush">
              @foreach ($notifications as $notification)
-                 <?php $image_rand2 = array(
-                                "images/user2.jpg",
-                                "images/user3.jpg",
-                                "images/user4.jpg", 
-                                "images/user5.jpg", 
-                              );
-                        $image_rand2 = $image_rand2[mt_rand(0, count($image_rand2)-1)];
-                 ?>
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-1">
-                            <img src="{{ secure_asset($image_rand2)}}" class="img-fluid rounded-circle"></img>
+                            <img src="{{ App\User::find($notification->user_id)->photo }}" class="img-fluid rounded-circle"></img>
                         </div>
                         <div class="col-9">
                             <?php $date = new DateTime($notification->created_at);?>
