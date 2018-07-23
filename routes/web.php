@@ -1,11 +1,16 @@
 <?php
 
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 //about
 Route::get('/about', 'HomeController@about')->name('about');
 
+//thank you page
+Route::get('/thankyou', function()
+{
+    return 'thankyou';
+});
 
 Route::group(['middleware' => ['auth']], function () {
 //Home
