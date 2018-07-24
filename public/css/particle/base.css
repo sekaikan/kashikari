@@ -6,22 +6,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	box-sizing: border-box;
 }
 
-body {
-	--color-text: #fff;
-    --color-bg: #000000;
-    --color-link: #f4bf3f;
-    --color-link-hover: #fff;
-    --color-info: #6355b7;
-    --color-scroll: #000000;
-	font-family: "Montserrat", Helvetica, Arial, sans-serif;
-	min-height: 100vh;
-	color: #57585c;
-	color: var(--color-text);
-	background-color: #fff;
-	background-color: var(--color-bg);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
+
 
 /* Page Loader */
 .js .loading::before {
