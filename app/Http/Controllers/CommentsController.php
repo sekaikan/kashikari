@@ -29,9 +29,9 @@ class CommentsController extends Controller
             $recipient = User::find($item->user_id);
             $request->user()->notifications()->create([
             'content' => $request->content,
-            'user_id' => $recipient->id,
+            'recipient_id' => $recipient->id,
             'item_id' => $item->id,
-            'recipient_id' => \Auth::id(),
+            'user_id' => \Auth::id(),
             'type' => 'toItem',
             ]);    
         }elseif($request->parent_id != NULL){
@@ -39,7 +39,7 @@ class CommentsController extends Controller
             $item = Item::find($request->item_id);
             $recipient = User::find($comment->user_id);
             $request->user()->notifications()->create([
-            'content' => $comment->content,
+            'content' => $request->content,
             'recipient_id' => $recipient->id,
             'item_id' => $item->id,
             'user_id' => \Auth::id(),

@@ -29,11 +29,11 @@ $rand = mt_rand(0,3);
     }
     
     /*scroll down button*/
-    a#scroll {
+    #scroll {
       text-decoration: none;
       
     }
-    a#scroll span {
+    #scroll span {
       
       position: absolute;
       width: 24px;
@@ -86,14 +86,14 @@ $rand = mt_rand(0,3);
     }
     
     .box1 {
-    background: #e4fcff;/*背景色*/
-    border-top: solid 6px #1dc1d6;
+    background: #fcca7e;/*背景色*/
+    border-top: solid 6px #F99F48;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
     }
     
     .box2 {
-    background: #F7E8A0;/*背景色*/
-    border-top: solid 6px #F7D736;
+    background: #AEC4E5;/*背景色*/
+    border-top: solid 6px #1dc1d6;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
     }
 
@@ -117,13 +117,17 @@ $rand = mt_rand(0,3);
     <div class="jumbotron jumbotron-extend">
         <div id="logo">
             <p class="display-3 font-weight-bold text-left">Share your items,</p>
-            <p class="display-3 font-weight-bold text-left">Show your kindness.</p>
+            <p class="display-3 font-weight-bold text-left">Share your happiness.</p>
             <div class="text-left mt-5 mb-3">
                 <a class="button1 shadow-lg" href="{{ route('register') }}">Try it free! *</a>
             </div>
             <p class="small text-light">* Subscribers can try it free for one month. Plan automatically renews after trial.</p>
             <div class="text-center">
-                <a href="#" id="scroll"><span></span></a>
+
+             
+
+                <div id="scroll"><span></span></div>
+
             </div>
         </div>
     </div>
@@ -244,39 +248,39 @@ $rand = mt_rand(0,3);
                     <div class="col-4 box1">
                         <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
                         <p class="m-3">
-                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                            I borrowed laptop on KASHIKARI for the first time. They have a variety of products to borrow and users are very kind.
                         </p>    
                     </div>
                     <div class="col-4 box2">
-                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>ERIKA</h3>
                         <p class="m-3">
-                            Excellent communication, absolutely lovely people, amazing gimbal and an incredibly smooth process!
+                            This page is wonderful! I could find easily what I want to need and communicate with users.
                         </p>    
                     </div>
                     <div class="col-4 box1">
-                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>TAKUMI</h3>
                         <p class="m-3">
-                            Brilliant guy and very easy to deal with. Great kit and really easy to collect and return equipment.
+                            This is my second rental on KASHIKARI - great equipment, great price and brilliant service!
                         </p> 
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col-4 box2">
-                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>MANATEE</h3>
                         <p class="m-3">
-                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                            Excellent communication, absolutely lovely users, amazing gimbal and an incredibly smooth process!
                         </p>    
                     </div>
                     <div class="col-4 box1">
-                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>SAAYA</h3>
                         <p class="m-3">
-                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                            It is easy to find what I want to borrow. I will use KASHIKARI for next time!!
                         </p>    
                     </div>
                     <div class="col-4 box2">
-                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
+                        <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>MAHO</h3>
                         <p class="m-3">
-                            This is my second rental with Antonio - great equipment, great price and brilliant service!
+                            I borrowed coffee machine in coffee lovers group! I can not only borrow goods but also meet great people.
                         </p>    
                     </div>
                 </div>
@@ -295,6 +299,19 @@ $rand = mt_rand(0,3);
             </div>
             <div class="text-center my-5">
                 <a class="button1 shadow-lg" href="{{ route('register') }}">Sign Up Now</a>
+            </div>
+        </div>
+        <div class="colored content p-5">
+            <h2 class="display-2 text-secondary font-weight-bold mb-5">LICENSE</h2>
+            <div class="row my-3">
+                <div class="col-10 offset-1">
+                    <p>Kashikari is developed with...</p>
+                    <ul>
+                        <li><a href="///laravel.com">Laravel</a></li>
+                        <li><a href="///getbootstrap.com">Bootstrap</a></li>
+                        <li><a href="///unsplash.com">Unsplash</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
             

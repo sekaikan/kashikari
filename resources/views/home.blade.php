@@ -9,9 +9,9 @@
         <div class="col-12 mt-5">
              @include('notifications.notifications')
         </div>
-        <div class="col-9 my-2">
-            <h2 class="mt-3">My Groups</h2>
-            <div class="row">
+        <div class="col-9  my-2">
+            <h2 class="mt-3 under text-center">My Groups</h2>
+            <div class="row"> 
             @if ($follow_groups->count() != 0)
                 @foreach ($follow_groups as $group)
                 <div class="col-4 mt-3">
@@ -62,7 +62,7 @@
                 </a>
             @endif
             </div>
-                <h2 class="mt-3">Other Groups</h2>
+                <h2 class="mt-3 under text-center">Other Groups</h2>
                 <div class="row">
                 @if($unfollow_groups->count() != 0)
                     @foreach ($unfollow_groups as $group)
@@ -88,39 +88,47 @@
                         </div>
                     </div>  
                     @endforeach
-                </div>
                 @else
+                     <div class="col-4 mt-3">
+                        <div class="card">
+                            <img class="card-img-top" src="images/white.jpg">
+                            <div class="card-img-overlay group-name"> 
+                                No other groups<br>
+                                Please Create <i class="far fa-smile"></i>
+                            </div>
+                        </div>
+                    </div>  
                     <a href="group/create" class="col-4 my-4  text-center">
                         <i class="fas fa-plus fa-9x" style="color: #c0c0c0;"></i>
                     </a>
                 @endif
+                </div>
             </div>
        
         <div class="col-3 mt-4">
             <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Search Group</h4>
-                <form class="form-inline" action="{{url('/results/search/')}}">
-                    <input type="text" name="keyword" value='' class="form-control" placeholder="Find Groups">
-                    <i class=" ml-2 fas fa-search"></i>
-                </form>
+                 {!! Form::open(array('method' => 'Get', 'route' => 'groups.search')) !!}
+                <div class="form-group text-right">
+                    {!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder'=>'Find Groups']) !!}
+                    {!! Form::submit('Search', ['class' => 'btn btn-blue']) !!}
+                    {!! Form::close() !!}
+                </div>
             </div>
-            
-            {{--<div class="bg-light px-1 py-1  mt-3">
-             @include('notifications.notification2')
-            </div>--}}
 
             <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Create Group</h4>
+
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
                     <div class="form-group text-right">
                         {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
                         {!! Form::submit('Create', ['class' => 'btn btn-blue mt-2']) !!}
                         {!! Form::close() !!}
                     </div>
+
             </div>
-            
         </div>
-      </div>
+    </div>
 </div>
 
 

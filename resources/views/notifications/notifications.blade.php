@@ -8,7 +8,7 @@
                 @if($notifications->count()>0)
                     <a data-toggle="collapse" href="#collapsePost" aria-expanded="false" aria-controls="collapseExample">
                         <span class="badge badge-pill badge-danger">
-                        {{ Auth::user()->notifications()->count() }}
+                        {{ $notifications->count() }}
                         </span>
                     </a>
                 @endif

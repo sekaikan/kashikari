@@ -25,7 +25,7 @@
                 <div class="col-6">
                     <div class="row">
                         <div class="col-2">
-                            <a href="{{route('users.show', ['id'=> $chat->user->id])}}"><img class="usericon" src="{{ $chat->user->photo }}">
+                            <a href="{{route('users.show', ['id'=> $chat->user->id])}}"><img class="usericon" src="{{ $chat->user->photo }}"></a>
                             <p class="text-muted">{{ $chat->user->name }}</p>
                         </div>
                         <div class="col-10 bg-white p-3 rounded otherscomment">
