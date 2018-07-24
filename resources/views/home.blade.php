@@ -118,12 +118,14 @@
 
             <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Create Group</h4>
-                {!! Form::model($groups, ['route' => 'group.store']) !!}
-                <div class="form-group text-right">
-                    {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
-                    {!! Form::submit('Create', ['class' => 'btn btn-blue']) !!}
-                    {!! Form::close() !!}
-                </div>
+
+                  {!! Form::model($groups, ['route' => 'group.store']) !!}
+                    <div class="form-group text-right">
+                        {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
+                        {!! Form::submit('Create', ['class' => 'btn btn-blue mt-2']) !!}
+                        {!! Form::close() !!}
+                    </div>
+
             </div>
         </div>
     </div>

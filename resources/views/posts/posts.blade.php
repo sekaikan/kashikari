@@ -5,7 +5,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-2 col-2">
-                     <img class="usericon" src="{{ $user->photo }}">
+                     <img class="usericon ssize" src="{{ $user->photo }}">
                 </div>
                 <div class="col-md-8 col-8 px-0">
                     {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}<small> <span class="text-muted">at {{ $post->created_at }}</span>
