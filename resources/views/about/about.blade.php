@@ -3,9 +3,9 @@
 
 @section('content')
 
-<div class="container-fluid my-5">
+<div class="container my-5">
     <div class="colored content p-5">
-        <h2 class="display-2 text-secondary font-weight-bold mb-5">ABOUT</h2>
+        <h2 class="display-2 text-secondary font-weight-bold mb-5 text-center">ABOUT US</h2>
         <div class="row">
             <div class="col-6">
                 <h3 class="display-4 font-weight-bold">KASHIKARI</h3>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="uncolored content p-5">
-        <h2 class="display-2 text-secondary font-weight-bold mb-5">WHAT YOU CAN DO</h2>
+        <h3 class="display-4 font-weight-bold">WHAT YOU CAN DO</h3>
         <div class="row">
             <div class="col-4 text-center">
                 <i class="fas fa-10x fa-hand-holding-heart fa-border"></i>
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="colored content p-5">
-        <h2 class="display-2 text-secondary font-weight-bold mb-5">SHARED ITEMS</h2>
+        <h3 class="display-4 font-weight-bold">SHARED ITEMS</h3>
         <div class="row ml-3">
             <div class="card-deck">
                 <div class="card shadow">
@@ -115,6 +115,7 @@
     </div>
     <div class="uncolored content p-5">
         <h2 class="display-2 text-secondary font-weight-bold mb-5">VOICE</h2>
+        <h3 class="display-4 font-weight-bold">VOICE</h3>
         <div class="row my-3">
             <div class="col-4 box1">
                 <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
@@ -157,7 +158,7 @@
         </div>
     </div>
     <div class="colored content p-5">
-        <h2 class="display-2 text-secondary font-weight-bold mb-5">LICENSE</h2>
+        <h3 class="display-4 font-weight-bold">LICENSE</h3>
         <div class="row my-3">
             <div class="col-10 offset-1">
                 <p>Kashikari is developed with...</p>

@@ -9,7 +9,7 @@
                         <div class="card-body">
                             <h2 class="text-center text-muted">Sign Up</h2>
                             <div class="text-center">
-                                <i class="fas fa-5x fa-user-circle text-muted my-3"></i>    
+                                <i class="fas fa-5x fa-user-circle text-muted my-3"></i>   
                             </div>
                             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                             {{ csrf_field() }}

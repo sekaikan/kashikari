@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <h2 class="text-center text-muted">Login</h2>
                         <div class="text-center">
-                            <i class="fas fa-5x fa-user-circle text-muted my-3"></i>    
+                            <i class="fas fa-5x fa-user-circle text-muted my-3"></i>   
                         </div>
                         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
@@ -66,6 +66,17 @@
                             </div>
                         </form>
                     </div>
+                        </div>
+
+                        <div class="form-group">
+                                <button type="submit" class="btn btn-blue btn-block mb-3">
+                                    Login
+                                </button>
+                               {{-- <a class="" href="{{ route('password.request') }}">
+                                    Forgot Your Password?
+                                </a>--}}
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -46,14 +46,18 @@
                 </div>
             </div>
             <div class="borrow-button">
-                @if(Auth::id() != $item->user->id && $item->want_user_id==NULL )
+                @if(Auth::id() != $item->user->id && $item->want_user_id==NULL && $item->status == "open" )
                 {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
                     {{ Form::hidden('want_user_id', \Auth::id()) }}
                     {!! Form::submit('Request to rent', ['class' => 'btn btn-orange btn-block btn-lg', 'id' => 'form-button']) !!}
                 {!! Form::close() !!}
                 
-                @elseif(Auth::id() == $item->want_user_id )
-                    <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a>
+                @elseif(Auth::id() == $item->want_user_id && $item->status == "closed")
+                {!! Form::open(['route' => ['want', $item->id], 'method' => 'put']) !!}
+                    {{ Form::hidden('want_user_id', \Auth::id()) }}
+                    {!! Form::submit('Please wait for reply (Click to cancel).', ['class' => 'btn btn-blue btn-block btn-lg', 'id' => 'form-button']) !!}
+                {!! Form::close() !!}
+                    <!--a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a-->
                 
                 @elseif(Auth::id() != $item->user->id && Auth::id() != $item->want_user_id )
                     <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Already rented</a>

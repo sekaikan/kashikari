@@ -1,5 +1,5 @@
 @if ($items)
-<div class="row">
+<div class="row mt-4">
     <div class="card-columns">
 @foreach ($items as $item)
     <?php $user = App\User::find($item->user_id) ?>
@@ -27,8 +27,14 @@
                     <h5 class="card-title"><a href="/items/{{$item->id}}" class="text-dark">{!! $item->name !!}</a>
                     </h5>
                     
-                    <p class="card-text"><a href="/users/{{$user->id}}" class="text-dark">by {!! $user->name !!}</a>
+                    <p class="card-text">by <a href="/users/{{$user->id}}" class="text-dark"> {!! $user->name !!}</a>
                     </p>
+                    <?php $url = $_SERVER['REQUEST_URI'];?>
+                    @if(strstr($url,'users'))
+                        <?php $group = $item->group()->get();?>
+                        <p class="card-text"> @ <a href="/group/{{$item->group_id}}" class="text-dark">{!! $group->first()->name !!}</a>
+                        </p>
+                    @endif
                 <hr>
                 @if($item->reward != NULL)
                 <p class="card-text"><i class="fas fa-gift text-secondary"></i>  {{ $item->reward }}</p>

@@ -73,13 +73,13 @@
     <div class="row item">
     <div class="">
     <h2 class="text-center under">Posted messages</h2>
-    @if(count($posts) == 0)
+    @if($posts->count() == 0)
           <h4 class= "text-muted text-center mt-4">No Posts</h4>
     @else
     @include('posts.posts', ['posts' => $posts])
     @endif
     
-    @if (count($posts) >0)
+    @if ($posts->count() >0)
 
         <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
     @endif

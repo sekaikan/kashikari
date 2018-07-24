@@ -7,10 +7,12 @@
             <h1 class="font-weight-normal text-light">{{ $group->name }}</h1>
         <?php
                 $image_rand = array(
-                                    '/images/image1.jpg',
-                                    '/images/image2.jpg',
-                                    '/images/image3.jpg',
-                                    '/images/home1.jpg'
+                            "images/image1.jpg",
+                            "images/image2.jpg",
+                            "images/image3.jpg", 
+                            "images/image5.jpg",
+                            "images/team1.jpg",
+                            "images/team2.jpg",
                                     );
                 $image_path = $image_rand[mt_rand(0, count($image_rand)-1)];
                 ?>
@@ -18,11 +20,7 @@
         </div>
          <?php $url = $_SERVER['REQUEST_URI'];?>
         @if(strstr($url,'userlist'))
-            <div  class="mr-5 col-2">
-                {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
-                {!! Form::button('Delete <i class="fas fa-trash"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
-                {!! Form::close() !!}
-            </div>
+        @include('groups.delete_button')
         @endif
     </div>
     <div class="row fixed-bottom justify-content-end">

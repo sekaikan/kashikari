@@ -1,7 +1,7 @@
+<div class="mt-4">
 @foreach ($posts as $post)
-
 <?php $user = App\User::find($post->user_id)?>
-    <div class="card shadow">
+    <div class="card shadow mt-1">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-2 col-2">
@@ -30,6 +30,7 @@
         </div>
     </div>
 @endforeach
+</div>
 
 {!! $posts->render() !!}
 

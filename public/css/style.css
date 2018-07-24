@@ -500,7 +500,5 @@ background-color: #6088C6;
 .under:before {left:0;}
 .under:after {right: 0;}
 
-/*login*/
-.jumbotron .login{
-    background: url(images/login.jpg);
-}
+/*footer*/
+

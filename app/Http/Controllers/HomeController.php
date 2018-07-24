@@ -13,17 +13,12 @@ use App\Notification;
 class HomeController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
 
     public function index()
     {
          
          $user = \Auth::user();
-         $newgrad = Group::firstOrCreate(['name' => '18 New Grads']);
+         $newgrad = Group::firstOrCreate(['name' => '\'18 New Grads']);
          $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
          $follow_group_ids = array();
          foreach($follow_groups as $g) {
