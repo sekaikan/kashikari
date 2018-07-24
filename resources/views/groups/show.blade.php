@@ -18,11 +18,7 @@
         </div>
          <?php $url = $_SERVER['REQUEST_URI'];?>
         @if(strstr($url,'userlist'))
-            <div  class="mr-5 col-2">
-                {!! Form::open(['route' => ['group.destroy', $group->id], 'method' => 'delete', 'class'=>'text-right']) !!}
-                {!! Form::button('Delete <i class="fas fa-trash"></i>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary btn-lg']) !!}
-                {!! Form::close() !!}
-            </div>
+        @include('groups.delete_button')
         @endif
     </div>
     <div class="row fixed-bottom justify-content-end">
