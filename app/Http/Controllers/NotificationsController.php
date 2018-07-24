@@ -27,4 +27,23 @@ class NotificationsController extends Controller
         
         return redirect()->back();
     }
+    
+        
+    public function open_delete(Request $request)
+    {
+        $notification = Notification::find($request->notification_id);
+
+        if (\Auth::id() === $notification->recipient_id) {
+            $notification->delete();
+        }
+        if ($request->type == 'toPost') {
+            return redirect(route('posts.show', ['id'=> $request->post_id]));
+        }
+        elseif($request->type == 'toItem'){
+            return redirect(route('items.show', ['id'=> $request->item_id]));
+        }else{
+            
+        }
+
+    }
 }
