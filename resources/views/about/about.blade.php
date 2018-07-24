@@ -114,7 +114,6 @@
         </div>
     </div>
     <div class="uncolored content p-5">
-        <h2 class="display-2 text-secondary font-weight-bold mb-5">VOICE</h2>
         <h3 class="display-4 font-weight-bold">VOICE</h3>
         <div class="row my-3">
             <div class="col-4 box1">
