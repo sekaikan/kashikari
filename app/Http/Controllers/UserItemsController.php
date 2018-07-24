@@ -31,7 +31,16 @@ class UserItemsController extends Controller
             
             $comment = Comment::where('item_id',$id);
         
-            $comment -> delete();  
+            $comment -> delete(); 
+            
+             $recipient = User::find(Item::find($id)->user_id);
+            $request->user()->notifications()->create([
+            'content' => $item->name,
+            'user_id' => \Auth::id(),
+            'item_id' => $item->id,
+            'type' => 'cancel',
+            'recipient_id' => $recipient->id,
+            ]);
         }else{
             $item = Item::find($id);
             $item->status = 'closed';
