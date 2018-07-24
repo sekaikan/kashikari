@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
 //results
    Route::resource('results', 'ResultsController', ['only' =>['index']]);
    Route::get('results/search', 'ResultsController@groupsearch')->name('groups.search');
+   
 
 // notifications
    Route::delete('/', 'NotificationsController@destroy')->name('notifications.destroy');
