@@ -55,7 +55,7 @@
     </div>
     <div class="container-fluid bg-white">
         <h2 class="text-center offset-1 col-10 under">Shared Items</h2>
-        @if(count($items) == 0)
+        @if($items->count() == 0)
           <h4 class= "text-muted text-center mt-4">No Items</h4>
         @else
         <div class ="row offset-2 col-8">
@@ -63,7 +63,7 @@
         </div>
         @endif
         
-        @if (count($items) >0)    
+        @if ($items->count() >0)    
             <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3 ml-4"></i><span class="h6">Item List</span></a>
         @endif
     </div>
