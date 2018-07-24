@@ -7,7 +7,7 @@
                 <a class="navbar-brand navbar-left" href="/">Kashikari</a>
                 @endif
                 <?php $url = $_SERVER['REQUEST_URI'];?>
-                @if(strstr($url,'groupsearch'))
+                @if(strstr($url,'search') || strstr($url,'create'))
                 
                 @elseif(strstr($url,'group'))
                   <span class="navbar-brand">|</span>
