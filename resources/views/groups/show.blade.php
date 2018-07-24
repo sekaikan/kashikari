@@ -7,10 +7,12 @@
             <h1 class="font-weight-normal text-light">{{ $group->name }}</h1>
         <?php
                 $image_rand = array(
-                                    '/images/image1.jpg',
-                                    '/images/image2.jpg',
-                                    '/images/image3.jpg',
-                                    '/images/home1.jpg'
+                            "images/image1.jpg",
+                            "images/image2.jpg",
+                            "images/image3.jpg", 
+                            "images/image5.jpg",
+                            "images/team1.jpg",
+                            "images/team2.jpg",
                                     );
                 $image_path = $image_rand[mt_rand(0, count($image_rand)-1)];
                 ?>
