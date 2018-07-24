@@ -55,28 +55,13 @@
                                     </div>
                                 </div>
                             </div>
-    
                             <div class="form-group">
                                     <button type="submit" class="btn btn-blue btn-block mb-3">
                                         Login
                                     </button>
-                                    <a class="" href="{{ route('password.request') }}">
-                                        Forgot Your Password?
-                                    </a>
                             </div>
                         </form>
                     </div>
-                        </div>
-
-                        <div class="form-group">
-                                <button type="submit" class="btn btn-blue btn-block mb-3">
-                                    Login
-                                </button>
-                               {{-- <a class="" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>--}}
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
