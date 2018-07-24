@@ -113,7 +113,7 @@
             </div>
         </div>
     </div>
-    <div class="colored content p-5">
+    <div class="uncolored content p-5">
         <h2 class="display-2 text-secondary font-weight-bold mb-5">VOICE</h2>
         <div class="row my-3">
             <div class="col-4 box1">
