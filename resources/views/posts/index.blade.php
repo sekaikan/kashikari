@@ -47,7 +47,10 @@
                     @endif
                 </div>
                 <div class="offset-3 col-6">
-                    @include('posts.posts')
+                    <div>
+                        <h2 class="text-center under mt-3">Posted Messages</h2>
+                         @include('posts.posts', ['posts' => $posts])
+                    </div>
                 </div>
 
             </div>

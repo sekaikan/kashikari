@@ -49,7 +49,7 @@
                 
                 <h2 class="text-center text-muted under">Shared Items</h2>
                 @if(count($items) == 0)
-                <a href="{{ route('items.lend', ['id' => $group->id]) }}"><p class="text-center"><i class="far fa-plus-square fa-4x text-muted my-5"></i></p></a>
+                <a href="{{ route('items.lend', ['id' => $group->id]) }}"><p class="text-center"><i class="fas fa-plus fa-4x text-muted my-5"></i></p></a>
                 @else
                  @include('items.items', ['items' => $items])
                 @endif
@@ -61,7 +61,7 @@
             <div class="col-5">
                 <h2 class="text-center text-muted under">Posted Messages</h2>
                 @if(count($posts) == 0)
-                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" ><p class="text-center"><i class="far fa-plus-square fa-4x text-muted my-5"></i></p></a>
+                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" ><p class="text-center"><i class="fas fa-plus fa-4x text-muted my-5"></i></p></a>
                 @else
               
                 @include('posts.posts', ['posts' => $posts])

@@ -37,9 +37,9 @@
     
     
 <div class="container item">
-    
-    
-    @include('items.items', ['items' => $items])
-    
+    <div>
+        <h2 class="text-center under mx-auto col-8">Shared Items</h2>
+         @include('items.items', ['items' => $items])
+    </div>
 </div>
 @endsection

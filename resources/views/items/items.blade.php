@@ -1,5 +1,5 @@
 @if ($items)
-<div class="row">
+<div class="row mt-4">
     <div class="card-columns">
 @foreach ($items as $item)
     <?php $user = App\User::find($item->user_id) ?>
