@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="mx-auto my-5 text-center">
-        <a href="{{ route('welcome') }}"><i class="fas fa-home fa-3x"></i></a>
+        <a href="{{ route('welcome') }}"><i class="fas fa-home fa-3x"></i></br>Home</a>
     </div>
 </div>
 @endsection
