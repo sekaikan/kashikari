@@ -380,13 +380,13 @@ i.far.fa-comments.fa-stack-1x.faa-wrench.animated-hover{
 
 .box1 {
 background: #fcca7e;/*背景色*/
-border-top: solid 6px #1dc1d6;
+border-top: solid 6px #F99F48;
 box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
 }
 
 .box2 {
 background: #AEC4E5;/*背景色*/
-border-top: solid 6px #F99F48;
+border-top: solid 6px #1dc1d6;
 box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
 }
 
@@ -500,6 +500,5 @@ background-color: #6088C6;
 .under:before {left:0;}
 .under:after {right: 0;}
 
-
 /*footer*/
- 
+
