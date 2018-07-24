@@ -111,7 +111,7 @@
                  {!! Form::open(array('method' => 'Get', 'route' => 'groups.search')) !!}
                 <div class="form-group text-right">
                     {!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder'=>'Find Groups']) !!}
-                    {!! Form::submit('Search', ['class' => 'btn btn-blue']) !!}
+                    {!! Form::submit('Search', ['class' => 'btn btn-blue mt-3']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>
@@ -122,7 +122,7 @@
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
                     <div class="form-group text-right">
                         {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
-                        {!! Form::submit('Create', ['class' => 'btn btn-blue mt-2']) !!}
+                        {!! Form::submit('Create', ['class' => 'btn btn-blue mt-3']) !!}
                         {!! Form::close() !!}
                     </div>
 
