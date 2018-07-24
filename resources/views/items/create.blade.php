@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('content', 'Description (*Required)') !!}
-                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my Camera&#13;&#10;      period: 8/1-8/8']) !!}
+                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my Camera']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('reward', 'Reward') !!}
@@ -73,10 +73,10 @@
     <div class="row item">
     <div class="">
     <h2 class="text-center under">Posted messages</h2>
-    @if(count($posts) == 0 )
-    <h4 class= "text-muted text-center mt-4">No Posts</h4>
+    @if(count($posts) == 0)
+          <h4 class= "text-muted text-center mt-4">No Posts</h4>
     @else
-      @include('posts.posts', ['posts' => $posts])
+    @include('posts.posts', ['posts' => $posts])
     @endif
     
     @if (count($posts) >0)

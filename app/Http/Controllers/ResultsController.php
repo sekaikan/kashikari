@@ -32,7 +32,7 @@ class ResultsController extends Controller
       ->with('message','Results');
     }
     
-     public function groupsearch(Request $request)
+     public function search(Request $request)
     {
     
       #キーワード受け取り

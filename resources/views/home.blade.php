@@ -111,19 +111,21 @@
                  {!! Form::open(array('method' => 'Get', 'route' => 'groups.search')) !!}
                 <div class="form-group text-right">
                     {!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder'=>'Find Groups']) !!}
-                    {!! Form::submit('Search', ['class' => 'btn btn-blue']) !!}
+                    {!! Form::submit('Search', ['class' => 'btn btn-blue mt-3']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>
 
             <div class="bg-light px-2 py-2 mt-4">
                 <h4 class="card-title text-center">Create Group</h4>
-                {!! Form::model($groups, ['route' => 'group.store']) !!}
-                <div class="form-group text-right">
-                    {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
-                    {!! Form::submit('Create', ['class' => 'btn btn-blue']) !!}
-                    {!! Form::close() !!}
-                </div>
+
+                  {!! Form::model($groups, ['route' => 'group.store']) !!}
+                    <div class="form-group text-right">
+                        {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
+                        {!! Form::submit('Create', ['class' => 'btn btn-blue mt-3']) !!}
+                        {!! Form::close() !!}
+                    </div>
+
             </div>
         </div>
     </div>
