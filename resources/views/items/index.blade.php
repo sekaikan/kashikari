@@ -36,10 +36,12 @@
 </div>
     
     
-<div class="container item">
+<div class="container item mt-0 bg-light py-5">
     <div>
         <h2 class="text-center under mx-auto col-8">Shared Items</h2>
-         @include('items.items', ['items' => $items])
+        <div class="container">
+             @include('items.items', ['items' => $items])
+        </div>
     </div>
 </div>
 @endsection

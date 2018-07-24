@@ -33,7 +33,7 @@
             </ul>
         </div>
 
-        <div class="container pt-5">
+        <div class="container pt-5 bg-light">
             <div class="row">
                 <div class= "offset-3 col-6">
                     @if (Auth::id() == $user->id)
@@ -47,7 +47,7 @@
                     @endif
                 </div>
                 <div class="offset-3 col-6">
-                    <div>
+                    <div class="pb-5">
                         <h2 class="text-center under mt-3">Posted Messages</h2>
                          @include('posts.posts', ['posts' => $posts])
                     </div>
