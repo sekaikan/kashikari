@@ -123,7 +123,7 @@ $rand = mt_rand(0,3);
             </div>
             <p class="small text-light">* Subscribers can try it free for one month. Plan automatically renews after trial.</p>
             <div class="text-center">
-                <a href="#top" id="scroll"><span></span></a>
+                <a href="#" id="scroll"><span></span></a>
             </div>
         </div>
     </div>

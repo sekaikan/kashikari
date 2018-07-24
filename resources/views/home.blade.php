@@ -114,7 +114,7 @@
                   {!! Form::model($groups, ['route' => 'group.store']) !!}
                     <div class="form-group text-right">
                         {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
-                        {!! Form::submit('Create', ['class' => 'btn btn-blue']) !!}
+                        {!! Form::submit('Create', ['class' => 'btn btn-blue mt-2']) !!}
                         {!! Form::close() !!}
                     </div>
             </div>
