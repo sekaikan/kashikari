@@ -19,12 +19,12 @@
 
 @section('content')
     <div class="container">
-        <div class="mainmenu status text-center">
+        <div class="mainmenu status sen text-center">
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item col-4 px-0">
                     <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
                 </li>
-                <li class="nav-item active col-4 px-0">
+                <li class="nav-item col-4 px-0">
                     <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow</a>
                 </li>
                 <li class="nav-item col-4 px-0">
