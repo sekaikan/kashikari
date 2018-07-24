@@ -12,6 +12,8 @@ use App\User;
 
 use App\Group;
 
+use App\Comment;
+
 class ItemsController extends Controller
 {
     public function index($id)
@@ -96,7 +98,7 @@ class ItemsController extends Controller
       $item = Item::find($id);
       $comments = $item->comments();
       $user = User::find($item->user_id);
-        
+      
         return view('items.show',[
             'item' => $item, 
             'comments' => $comments,
@@ -153,8 +155,14 @@ class ItemsController extends Controller
         $item->photo_link = $photos[0]['links']['html'];
         $item->photo_username = $photos[0]['user']['username'];
         $item->photo_fullname = $photos[0]['user']['name'];
+        $item->want_user_id = NULL;
         $item->save();
-        $group = Group::find(1);
+        $group = Group::find($id);
+       
+       
+        $comment = Comment::where('item_id',$id);
+        $comment -> delete();  
+        
         return view('items.show', ['item' => $item, 'group' => $group,]); 
     }
     
