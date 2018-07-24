@@ -20,6 +20,7 @@
     </div>
     
     <div class="container pt-3 bg-light">
+
          <div class="row">
               <div class="col-8">
                     <h1 class='text-center under'>Your Items</h1>
@@ -44,6 +45,7 @@
                     </div>
               </div>
         </div>
+
     </div>
 
 @endsection

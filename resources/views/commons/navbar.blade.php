@@ -67,7 +67,10 @@
                        @else
                                <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
                                 @foreach($notifications as $notification)
-                                 @if($notification->post_id != NULL && $notification->item_id == NULL)
+                                 @if($notification->type=='cancel')
+                                        <a class='text-muted' href='{{url('/notifications/open_delete?notification_id='.$notification->id.'&item_id='.$notification->item_id.'&type=toItem')}}'>
+                                           <strong>{{ App\User::find($notification->user_id)->name }}</strong> cenceled request for {{ $notification->content }}.
+                                 @elseif($notification->post_id != NULL && $notification->item_id == NULL)
                                        <a class='text-muted' href='{{url('/notifications/open_delete?notification_id='.$notification->id.'&post_id='.$notification->post_id.'&type=toPost')}}'>
                                            <strong>{{ App\User::find($notification->user_id)->name }}</strong> sent you a reply.<br>
                                            {{ $notification->content }}
