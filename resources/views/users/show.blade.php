@@ -23,7 +23,7 @@
      <div class="row">
       <div class="col-8">
         <h1 class='text-center under'>Your Item List</h1>
-        <div class="my-3">
+        <div class="my-3 px-3">
         @if(count($items) == 0)
           <h4 class= "text-muted text-center mt-4">No Items</h4>
         @else
@@ -33,11 +33,13 @@
       </div>
       <div class="col-4">
            <h1 class="under text-center">Your Groups</h1>
-            @if($follow_groups != NULL)
-                @foreach($follow_groups as $group)
-                   <h5 class="ml-5"><a href="{{ route('group.show', $group->id) }}" class="">{{ $group->name }}</a></h5>
-                @endforeach
-            @endif
+           <div class="mt-4">
+                @if($follow_groups != NULL)
+                    @foreach($follow_groups as $group)
+                       <h5 class="ml-5"><a href="{{ route('group.show', $group->id) }}" class="">{{ $group->name }}</a></h5>
+                    @endforeach
+                @endif
+            </div>
       </div>
     </div>
          
