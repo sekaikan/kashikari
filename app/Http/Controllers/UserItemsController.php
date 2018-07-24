@@ -24,8 +24,6 @@ class UserItemsController extends Controller
         $item->status = 'closed';
         $item->want_user_id = $request->want_user_id;
         $item->save();
-        $group = Group::find(1);
-
         
         $recipient = User::find(Item::find($id)->user_id);
             $request->user()->notifications()->create([
@@ -35,8 +33,10 @@ class UserItemsController extends Controller
             'recipient_id' => $recipient->id,
             ]);
             
-    return view('items.show', ['item' => $item, 'group' => $group,]); 
+    return view('items.show', ['item' => $item,]); 
     }
+    
+  
     public function show($id)
     {
         

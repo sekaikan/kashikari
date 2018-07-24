@@ -7,7 +7,7 @@
                 <a class="navbar-brand navbar-left" href="/">Kashikari</a>
                 @endif
                 <?php $url = $_SERVER['REQUEST_URI'];?>
-                @if(strstr($url,'groupsearch'))
+                @if(strstr($url,'search') || strstr($url,'create'))
                 
                 @elseif(strstr($url,'group'))
                   <span class="navbar-brand">|</span>
@@ -23,14 +23,14 @@
                     @if (Auth::check())
                         <?php $url = $_SERVER['REQUEST_URI'];?>
                         @if(strstr($url,'about'))
-                        @elseif(strstr($url,'groupsearch') || strstr($url,'home'))
+                        @elseif(strstr($url,'search') || strstr($url,'home'))
                         <div class="nav-link">
                             <a data-toggle="collapse" href="#navbar-search" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fas fa-search"></i>
                             </a>
                         </div>
                         <div class="collapse width" id="navbar-search">
-                                <form class="form-inline" action="{{url('/results/groupsearch')}}">
+                                <form class="form-inline" action="{{url('/results/search')}}">
                                     <div class="form-group mr-2">
                                         <input type="text" name="keyword" value="" class="form-control bg-transparent" placeholder="Find Groups">
                                     </div>
@@ -39,7 +39,7 @@
                         </div>
                         <!-- Split dropleft button -->
                         {{--
-                        <form class="form-inline" action="{{url('/results/groupsearch')}}">
+                        <form class="form-inline" action="{{url('/results/search')}}">
                             <div class="form-group mr-2">
                                 <input type="text" name="keyword" value="" class="form-control" placeholder="Find Groups">
                             </div>

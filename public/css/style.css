@@ -301,6 +301,12 @@ i.far.fa-comments.fa-stack-1x.faa-wrench.animated-hover{
     width:50px;
 }
 
+.usericon.ssize {
+    border-radius: 50%;
+    height:40px;
+    width:40px;
+}
+
 .usershowicon {
     border-radius: 50%;
     height:150px;
@@ -476,7 +482,7 @@ nav-item.sample {
 .under{
 position: relative;
 display: block;
-padding: 0 1.4em;
+padding: 0 55px;
 
 }
 
