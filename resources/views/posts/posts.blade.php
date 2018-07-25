@@ -12,13 +12,14 @@
                     <small> 
                         <span class="text-muted"> at {{ $post->created_at }}</span>
                     </small>
+                    
                     <div class="float-right">
-                    <?php $url = $_SERVER['REQUEST_URI'];?>
-                    @if(strstr($url,'users'))
-                        <?php $group = $post->group()->get();?>
-                        <p class="card-text"> @ <a href="/group/{{$post->group_id}}" class="">{!! $group->first()->name !!}</a>
-                        </p>
-                    @endif
+                        <?php $url = $_SERVER['REQUEST_URI'];?>
+                        @if(strstr($url,'users'))
+                            <?php $group = $post->group()->get();?>
+                            <p class="card-text"> @ <a href="/group/{{$post->group_id}}" class="">{!! $group->first()->name !!}</a>
+                            </p>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-2 col-2 text-right">
