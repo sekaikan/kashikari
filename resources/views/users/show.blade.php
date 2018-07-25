@@ -9,14 +9,12 @@
                 <h2>{!! $user->name !!}</h2>
                 <p class="lead mt-3 text-light text-center"><i class="fas fa-quote-left fa-xs text-white-50 mr-3"></i>{{ $user->content }}<i class="fas fa-quote-right fa-xs text-white-50 ml-3"></i></p>
             </div>
-            <div class="container">
             <div class="text-center mt-4 pb-5">
                 <ul class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
                     <li class="nav-item active"  ><a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link">ITEMS <span class="badge badge-warning badge-pill">{{$items->count()}}</span></a></li>
-                    <li class="nav-item" ><a href="{{ route('users.posts', ['id' => $user->id]) }}" class="nav-link"> POSTS <span class="badge badge-warning badge-pill">{{$posts->count()}}</span></a></li>
-                    <li class="nav-item" ><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link"> GROUPS <span class="badge badge-warning badge-pill">{{$follow_groups->count()}}</span></a></li>
+                    <li class="nav-item bg-dark" ><a href="{{ route('users.posts', ['id' => $user->id]) }}" class="nav-link" style="color: white;"> POSTS <span class="badge badge-warning badge-pill">{{$posts->count()}}</span></a></li>
+                    <li class="nav-item bg-dark" ><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link" style="color: white;"> GROUPS <span class="badge badge-warning badge-pill">{{$follow_groups->count()}}</span></a></li>
                 </ul>
-            </div>
             </div>
              @if(Auth::user()->id == $user->id)
             <div class="offset-6 mt-5 pt-5  mb-2">
