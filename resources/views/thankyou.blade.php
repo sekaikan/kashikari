@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container my-5">
+<div class="container pt-5 my-5">
     <div class="row">
         <div class="mx-auto">
             <h2 class="text-center my-3">Your account was deleted successfully</h2>
