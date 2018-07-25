@@ -18,6 +18,9 @@
             ?>
             <img class="usershowicon" src="{{ secure_asset($image_path) }}">
         </div> 
+        <div class="col-10 offset-1 py-4">
+            @include('group_user.follow_button', ['user' => $user])
+        </div>
         <?php $url = $_SERVER['REQUEST_URI'];?>
         <div class="offset-8">
         @if(strstr($url,'userlist'))
@@ -27,12 +30,9 @@
         
         <div class="mb-4 mt-3 bg-light mx-5 pl-3 py-4">  
             <div class="row px-5">
-                    <div class="col-8">
+                    <div class="col-12">
                     <?php $users = $group->users()->get(); ?>
                     <h2>Members <span class="badge badge-pill badge-warning">{{$users->count()}}</span></h2>
-                    </div>
-                    <div class="col-4 pl-5">
-                    @include('group_user.follow_button', ['user' => $user])
                     </div>
                     @if($group->users()->get() != NULL)
                         <div class="row text-center mt-4 col-12">

@@ -116,7 +116,7 @@
                                   
                                 <img class="card-img-top card-img-home" src="{{ $image_rand }}">
                                 @if($is_new)
-                                <div class="card-img-overlay group-name tutorial" data-container="body" data-toggle="popover" data-placement="right" data-content="<strong>Here are your groups.</strong>">
+                                <div class="card-img-overlay group-name tutorial" data-container="body" data-toggle="popover" data-placement="right" data-content="<span class='h3'><strong>Join a group first!</strong></span>">
                                 @else
                                 <div class="card-img-overlay group-name">
                                 @endif
