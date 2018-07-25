@@ -33,7 +33,7 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-1">
-                            <img src="{{ App\User::find($notification->user_id)->photo }}" class="img-fluid rounded-circle"></img>
+                            <img src="{{ App\User::find($notification->user_id)->photo }}" class="usericon"></img>
                         </div>
                         <div class="col-9">
                             <?php $date = new DateTime($notification->created_at);?>

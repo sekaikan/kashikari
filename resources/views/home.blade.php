@@ -35,7 +35,7 @@
                 <p class="lead mt-3 text-light text-center"><i class="fas fa-quote-left fa-xs text-white-50 mr-3"></i>{{ $user->content }}<i class="fas fa-quote-right fa-xs text-white-50 ml-3"></i></p>
             </div>
             <div class=" px-3 py-2 mt-4">
-                <h5 class="card-title text-center">Search Group</h5>
+                <h5 class="card-title text-center">Search Groups</h5>
                 {!! Form::open(array('method' => 'Get', 'route' => 'groups.search')) !!}
                 <div class="form-group text-right">
                     @if($is_new)
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class=" px-3 py-2 mt-4">
-                <h5 class="card-title text-center">Create Group</h5>
+                <h5 class="card-title text-center">Create a Group</h5>
                 {!! Form::model($groups, ['route' => 'group.store']) !!}
                 <div class="form-group text-right">
                     @if($is_new)
