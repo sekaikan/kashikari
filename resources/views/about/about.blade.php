@@ -8,10 +8,10 @@
         <h2 class="display-2 text-secondary font-weight-bold mb-5 text-center">ABOUT US</h2>
         <div class="row">
             <div class="col-6">
-                <h3 class="display-4 font-weight-bold">KASHIKARI</h3>
-                <p class="my-2">Kasu & Kariru</p>
-                <p>Platform where you can exchange goods.</p>
-                <p>You can also form the community to include user who has a similar taste.</p>
+                <h3 class="display-4 font-weight-bold">What is KASHIKARI for?</h3>
+                <h3 class="display-5 font-weight-bold text-muted my-5">" Increase of reliable sharing "</h3>
+                <p class="font-weight-bold text-muted my-3">Kashikari is the platform where you can exchange goods.</p>
+                <p class="font-weight-bold text-muted my-3">You can also form the community to include user who has a similar taste.</p>
             </div>
             <div class="col-6">
                 <img src="/images/borrow.jpg" class="img-thumbnail" alt="borrow">
