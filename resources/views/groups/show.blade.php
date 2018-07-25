@@ -29,7 +29,7 @@
                         @foreach($users as $user)
                             <div class="col-4">
                                 <img class="usergroupicon" src="{{ $user->photo }}"> 
-                                <h5><a href="{{ route('users.show', $user->id) }}" class="">{{ $user->name }}</a></h5>
+                                <h5><a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a></h5>
                             </div>
                         @endforeach
                         </div>
