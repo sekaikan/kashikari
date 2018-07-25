@@ -188,7 +188,7 @@ $rand = mt_rand(0,3);
                                 <p class="card-text text-justify">You can experience VR!</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $50</p>
-                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Details</button>
                             </div>
                         </div>
                         <div class="card shadow">
@@ -205,7 +205,7 @@ $rand = mt_rand(0,3);
                                 <p class="card-text text-justify">You can wear it at the formal party.</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i>$30</p>
-                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Details</button>
                             </div>
                         </div>
                         <div class="card shadow">
@@ -222,7 +222,7 @@ $rand = mt_rand(0,3);
                                 <p class="card-text text-justify">10px with basket</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $5</p>
-                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Details</button>
                             </div>
                         </div>
                         <div class="card shadow">
@@ -239,7 +239,7 @@ $rand = mt_rand(0,3);
                                 <p class="card-text text-justify">1 table and 2 chairs. You can use it both inside and outside.</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $30</p>
-                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Borrow it</button>
+                                <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Details</button>
                             </div>
                         </div>
                 </div>
@@ -247,7 +247,7 @@ $rand = mt_rand(0,3);
         </div>
         <div class="colored content p-5">
             <h2 class="display-2 text-secondary font-weight-bold mb-5">VOICE</h2>
-                <div class="row my-3">
+                <div class="row my-3 text-muted">
                     <div class="col-4 box1">
                         <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>JUN</h3>
                         <p class="m-3">
@@ -267,7 +267,7 @@ $rand = mt_rand(0,3);
                         </p> 
                     </div>
                 </div>
-                <div class="row my-3">
+                <div class="row my-3 text-muted">
                     <div class="col-4 box2">
                         <h3 class="font-weight-bold m-3"><i class="fas fa-user-circle fa-2x text-muted mr-3"></i>MANATEE</h3>
                         <p class="m-3">
