@@ -80,7 +80,7 @@
                                        <hr>
                                @endforeach
                                ">
-                        <i class="far fa-bell text-light"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
+                        <i class="far fa-bell text-light"></i><span class="badge badge-pill badge-warning">{{ $notifications->count() }}</span></a>
                         @endif
                         
                         @if(strstr($url,'group') && (Auth::user()->is_following($group->id)))
