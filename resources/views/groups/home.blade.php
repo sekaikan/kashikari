@@ -94,7 +94,7 @@
                 @endif
                 
                 @if (count($items) >0)
-                    <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">Item List</span></a>
+                    <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
                 @endif
             </div>
             <div class="col-5">
@@ -107,7 +107,6 @@
                 @endif
                 
                 @if (count($posts) >0)
-
                     <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
 
                 @endif

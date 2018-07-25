@@ -19,18 +19,23 @@
             <img class="usershowicon" src="{{ secure_asset($image_path) }}">
         </div> 
         <?php $url = $_SERVER['REQUEST_URI'];?>
-        <div class="my-4 bg-light mx-5 pl-5 py-5">  
+        <div class="my-4 bg-light mx-5 pl-3 py-5">  
             <div class="row px-5">
-                <div class="col-7 ">
+                <div class="col-8">
                     <h2>Members</h2>
                     @if($group->users()->get() != NULL)
                         <?php $users = $group->users()->get(); ?>
+                        <div class="row text-center">
                         @foreach($users as $user)
-                        <h5><a href="{{ route('users.show', $user->id) }}" class="">{{ $user->name }}</a></h5>
+                            <div class="col-4">
+                                <img class="usergroupicon" src="{{ $user->photo }}"> 
+                                <h5><a href="{{ route('users.show', $user->id) }}" class="">{{ $user->name }}</a></h5>
+                            </div>
                         @endforeach
+                        </div>
                     @endif
                 </div>
-                <div class="col-5 mt-4">
+                <div class="col-4 mt-4 pl-5">
                     @include('group_user.follow_button', ['user' => $user])
                     @if(strstr($url,'userlist'))
                     @include('groups.delete_button')
