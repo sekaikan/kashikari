@@ -34,15 +34,15 @@
             </li>
         </ul>
     </div>
-    <div class="bg-white py-5" id="form-bg" style= margin-top:0;>
+    <div class="bg-light py-5" id="form-bg" style= margin-top:0;>
         <div class="container">
             <div class="row">
                 <div class= "offset-3 col-6">
                      @if (Auth::id() == $user->id)
-            {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
+            {!! Form::open(array('route' => array('posts.store', $group->id),'id' => 'content-content')) !!}
                 <div class="form-group" id="review-form-group">
                     {{ Form::hidden('group_id', $group->id)}}
-                    {!! Form::textarea('content', '', ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need ?', 'rows'=>'3']) !!}
+                    {!! Form::textarea('content', '', ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need?', 'rows'=>'3']) !!}
     
                     {!! Form::submit('submit', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
                 </div>
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-white">
+    <div class="container-fluid bg-light">
         <h2 class="text-center offset-1 col-10 under">Shared Items</h2>
         @if($items->count() == 0)
           <h4 class= "text-muted text-center mt-4">No Items</h4>
@@ -64,7 +64,7 @@
         @endif
         
         @if ($items->count() >0)    
-            <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3 ml-4"></i><span class="h6">Item List</span></a>
+            <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3 ml-4"></i><span class="h6">More...</span></a>
         @endif
     </div>
 </div>

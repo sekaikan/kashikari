@@ -31,20 +31,13 @@
                         </div>
                         <div class="collapse width" id="navbar-search">
                                 <form class="form-inline" action="{{url('/results/search')}}">
-                                    <div class="form-group mr-2">
+                                    <div class="form-group mr-2 bg-light">
                                         <input type="text" name="keyword" value="" class="form-control bg-transparent" placeholder="Find Groups">
                                     </div>
                                     <!--input type="submit" value="Search" class="btn btn-outline-success"-->
                                 </form>
                         </div>
-                        <!-- Split dropleft button -->
-                        {{--
-                        <form class="form-inline" action="{{url('/results/search')}}">
-                            <div class="form-group mr-2">
-                                <input type="text" name="keyword" value="" class="form-control" placeholder="Find Groups">
-                            </div>
-                            <input type="submit" value="Search" class="btn btn-outline-success">
-                        </form> --}}
+                        
                     @else
                         <div class="nav-link">
                             <a data-toggle="collapse" href="#navbar-search" aria-expanded="false" aria-controls="collapseExample">
@@ -53,7 +46,7 @@
                         </div>
                         <div class="collapse width" id="navbar-search">
                                 <form class="form-inline" action="{{url('/results/')}}">
-                                    <div class="form-group mr-2">
+                                    <div class="form-group mr-2 bg-light">
                                         <input type="text" name="keyword" value="" class="form-control bg-transparent" placeholder="Find Items">
                                     </div>
                                     <!--input type="submit" value="Search" class="btn btn-outline-success"-->
@@ -87,7 +80,7 @@
                                        <hr>
                                @endforeach
                                ">
-                        <i class="far fa-bell text-light"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
+                        <i class="far fa-bell text-light"></i><span class="badge badge-pill badge-warning">{{ $notifications->count() }}</span></a>
                         @endif
                         
                         @if(strstr($url,'group') && (Auth::user()->is_following($group->id)))

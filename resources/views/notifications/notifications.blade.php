@@ -7,7 +7,7 @@
                 <i class="far fa-bell"></i> Notification
                 @if($notifications->count()>0)
                     <a data-toggle="collapse" href="#collapsePost" aria-expanded="false" aria-controls="collapseExample">
-                        <span class="badge badge-pill badge-danger">
+                        <span class="badge badge-pill badge-warning">
                         {{ $notifications->count() }}
                         </span>
                     </a>
