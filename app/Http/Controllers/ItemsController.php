@@ -25,7 +25,7 @@ class ItemsController extends Controller
         return view('items.index', [
             'items' => $items,
             'group' => $group,
-            'groupusers' => $groupusers->take(4),
+            'groupusers' => $groupusers->take(5),
         ]);
     }
     
@@ -40,7 +40,7 @@ class ItemsController extends Controller
             'item' => $item, 
             'group' => $group, 
             'posts' => $posts,
-            'groupusers' => $groupusers->take(4),
+            'groupusers' => $groupusers->take(5),
             ]);
     }
     
