@@ -17,7 +17,7 @@
                 </ul>
             </div>
              @if(Auth::user()->id == $user->id)
-             <div class="offset-6 mt-5 pt-5">
+             <div class="offset-6 mt-5 pt-5  mb-2">
                 <a href="{{ route('users.edit', Auth::user()->id) }}" class="mr-3 text-muted"><i class="far fa-edit text-muted"></i>Profile Setting</a>
                 <a href="{{ route('logout') }}"onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="text-muted"><i class="fas fa-sign-out-alt text-muted"></i>Logout</a>
