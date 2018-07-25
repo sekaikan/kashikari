@@ -93,5 +93,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 
+Route::get('error/{code}', function ($code) {
+  abort($code);
+});
 
 Auth::routes();
