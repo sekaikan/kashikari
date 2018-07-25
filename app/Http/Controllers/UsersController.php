@@ -30,7 +30,7 @@ class UsersController extends Controller
     public function posts($id){
         $user = User::find($id);
          $items = Item::where('user_id', $id)->paginate(3);
-        $posts = Post::where('user_id', $id)->paginate(3);
+        $posts = Post::where('user_id', $id)->paginate(4);
         $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
         return view('users.posts', [
             'user' => $user,

@@ -9,15 +9,17 @@
                 <h2>{!! $user->name !!}</h2>
                 <p class="lead mt-3 text-light text-center"><i class="fas fa-quote-left fa-xs text-white-50 mr-3"></i>{{ $user->content }}<i class="fas fa-quote-right fa-xs text-white-50 ml-3"></i></p>
             </div>
+
             <div class="text-center mt-4 pb-5">
                 <ul class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
                     <li class="nav-item" class=""><a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link">ITEMS <span class="badge badge-warning">{{$items->count()}}</span></a></li>
                     <li class="nav-item" class=""><a href="{{ route('users.posts', ['id' => $user->id]) }}"  class="nav-link"> POSTS <span class="badge badge-warning">{{$posts->count()}}</span></a></li>
-                    <li class="nav-item" class=""><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link active"> GROUPS <span class="badge badge-warning">{{$follow_groups->count()}}</span></a></li>
+                    <li class="nav-item" class="active"><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link"> GROUPS <span class="badge badge-warning">{{$follow_groups->count()}}</span></a></li>
                 </ul>
+
             </div>
              @if(Auth::user()->id == $user->id)
-             <div class="offset-6 mt-5 pt-5">
+             <div class="offset-6 mt-5 pt-5 mb-2">
                 <a href="{{ route('users.edit', Auth::user()->id) }}" class="mr-3 text-muted"><i class="far fa-edit text-muted"></i>Profile Setting</a>
                 <a href="{{ route('logout') }}"onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="text-muted"><i class="fas fa-sign-out-alt text-muted"></i>Logout</a>
@@ -26,9 +28,9 @@
             
         </div>
         <div class="col-9 mt-4 mb-2 pb-3 bg-white">
-            <div class="shadow my-4 py-3 bg-light">
+            <div class="shadow my-3 py-3 bg-light">
                 <h1 class="text-center">My Groups</h1>
-               <div class="mt-3 mb-5">
+               <div class="mt-3 mb-2"> 
                     @if($follow_groups->count()==0 )
                             <h4 class="text-muted text-center mt-4">No Groups</h4>
                     @else
