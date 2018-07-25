@@ -8,8 +8,18 @@
                      <img class="usericon ssize" src="{{ $user->photo }}">
                 </div>
                 <div class="col-md-8 col-8 px-0">
-                    {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}<small> <span class="text-muted">at {{ $post->created_at }}</span>
+                    {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}
+                    <small> 
+                        <span class="text-muted"> at {{ $post->created_at }}</span>
                     </small>
+                    <div class="float-right">
+                    <?php $url = $_SERVER['REQUEST_URI'];?>
+                    @if(strstr($url,'users'))
+                        <?php $group = $post->group()->get();?>
+                        <p class="card-text"> @ <a href="/group/{{$post->group_id}}" class="">{!! $group->first()->name !!}</a>
+                        </p>
+                    @endif
+                    </div>
                 </div>
                 <div class="col-md-2 col-2 text-right">
                         @if (Auth::id() == $post->user_id)
@@ -32,5 +42,5 @@
 @endforeach
 </div>
 
-{!! $posts->render() !!}
+
 

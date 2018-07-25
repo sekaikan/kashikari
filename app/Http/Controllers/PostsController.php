@@ -24,7 +24,7 @@ class PostsController extends Controller
         if (\Auth::check()) {
             $users = User::all();
             $group = Group::find($id);
-            $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
+            $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(7);
             //$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
             $user = \Auth::user();
             $groupusers= $group->users()->get();
@@ -63,7 +63,7 @@ class PostsController extends Controller
         $post = new Post;
         $group = Group::find($id);
         $user = \Auth::user();
-        $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(20);
+        $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(9);
         $groupusers= $group->users()->get();
         return view('posts.create', [
         'user' => $user, 

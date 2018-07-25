@@ -47,5 +47,4 @@
 @endforeach
     </div>
 </div>
-{!! $items->render() !!}
 @endif

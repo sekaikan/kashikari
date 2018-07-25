@@ -32,12 +32,15 @@
                       <h4 class= "text-muted text-center my-5">No Items</h4>
                     @else
                         @include('items.items', ['items' => $items])
+                        {!! $items->render() !!}
                     @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection
 
         

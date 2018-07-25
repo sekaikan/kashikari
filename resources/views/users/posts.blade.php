@@ -32,13 +32,13 @@
                       <h4 class= "text-muted text-center my-5">No Posts</h4>
                     @else
                         @include('posts.posts', ['posts' => $posts])
+                        {!! $posts->render() !!}
                     @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
 
         
