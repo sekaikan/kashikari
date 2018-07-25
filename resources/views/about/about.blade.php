@@ -80,7 +80,7 @@
                     <div class="ribbon_box3 filter">
                         <img class="card-img-top close" src="/images/soccerball.jpg" alt="items photo">
                         <div class="ribbon_area">
-                           <span class="ribbon17">closed</span>
+                           <span class="ribbon17">Closed</span>
                         </div>
                     </div>
                     <div class="card-body">
