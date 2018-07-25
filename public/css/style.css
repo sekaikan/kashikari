@@ -301,6 +301,12 @@ i.far.fa-comments.fa-stack-1x.faa-wrench.animated-hover{
     width:50px;
 }
 
+.usergroupicon {
+    border-radius: 50%;
+    height:80px;
+    width:80px;
+}
+
 .usericon.ssize {
     border-radius: 50%;
     height:40px;
@@ -312,7 +318,6 @@ i.far.fa-comments.fa-stack-1x.faa-wrench.animated-hover{
     height:130px;
     width:130px;
 }
-
 
 .lasticon{
     display:inline-block;
@@ -441,7 +446,7 @@ nav-item.sample {
 .sample .text {
 	font-size: 16px;
 	position: absolute;
-    padding: 20px 40px;
+    padding: 1em 2em;
 	color: #000;
 }
 .sample:hover .box {

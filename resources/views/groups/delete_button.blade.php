@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
- <div  class="mr-5 col-2">
+ <div  class="">
    <button type="button" class='btn btn-link text-secondary btn-lg' data-toggle="modal" data-target="#exampleModal">
       Delete <i class="fas fa-trash"></i>
    </button>
