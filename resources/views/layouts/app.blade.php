@@ -17,6 +17,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div id="busy"></div>
     @include('commons.navbar')
 
         @yield('cover')
@@ -40,8 +41,11 @@
             
             $('.tutorial-close').on('click', function (e) {
                 $('.tutorial').popover('hide');
+                $('.tutorial-close').hide();
+                $('#busy').css('visibility', 'hidden');
             });
         })
+        
     </script>
 </body>
 </html>

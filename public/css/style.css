@@ -441,7 +441,7 @@ nav-item.sample {
 .sample .text {
 	font-size: 16px;
 	position: absolute;
-    padding: 20px 40px;
+    padding: 1em 2em;
 	color: #000;
 }
 .sample:hover .box {
