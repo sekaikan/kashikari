@@ -27,8 +27,8 @@
         @endif
             
         </div>
-        <div class="col-9 mt-4 mb-2 pb-3 bg-white">
-            <div class="shadow my-3 py-3 bg-light">
+        <div class="col-9  mt-4 mb-2 pb-3 bg-white">
+            <div class="shadow my-3 px-2 py-2  bg-light">
                 <h1 class="text-center">My Groups</h1>
                <div class="mt-3 mb-2"> 
                     @if($follow_groups->count()==0 )
