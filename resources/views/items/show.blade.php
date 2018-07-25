@@ -32,7 +32,7 @@
                 <p class="card-text h5"><i class="fas fa-gift mr-2"></i>  Ask me !</p>
                 @endif
             <div class="row">
-                <div class="offset-6 col-3">
+                <div class="offset-6 col-2">
                     @if (Auth::id() == $item->user->id) 
                        {!! Form::open(['route' => ['items.edit', $item->id], 'method' => 'get', 'class'=>'text-right']) !!}
                        {!! Form::button('<i class="fas fa-pen-fancy"></i><span style="margin-left:5px;">Edit</span>', ['type'=> 'submit', 'class' => 'btn btn-link text-secondary']) !!}
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-        <a href="/group/{{$item->group_id}}" class="">&laquo;back to home</a>
+        <a href="/group/{{$item->group_id}}" class=""><i class="fas fa-angle-double-left fa-fw"></i>back to home</a>
         @if(Auth::id() == $item->want_user_id || Auth::id() == $item->user->id)
          <div class="row">
                     <div class="col-6 offset-3">
