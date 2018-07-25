@@ -37,7 +37,7 @@
             <div class="row">
                 <div class= "offset-3 col-6">
                     @if (Auth::id() == $user->id)
-                    {!! Form::open(array('route' => array('posts.store', $group->id))) !!}
+                    {!! Form::open(array('route' => array('posts.store', $group->id),'id' => 'content-content')) !!}
                         <div class="form-group" id="review-form-group">
                             {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need ?', 'rows'=>'3']) !!}
                             {{ Form::hidden('group_id', $group->id)}}

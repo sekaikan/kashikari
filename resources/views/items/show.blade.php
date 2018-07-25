@@ -60,7 +60,7 @@
                     <!--a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Please wait for reply</a-->
                 
                 @elseif(Auth::id() != $item->user->id && Auth::id() != $item->want_user_id )
-                    <a href="#" class="btn btn-blue btn-block btn-lg" role="button" aria-pressed="true">Already rented</a>
+                    <button class="btn btn-blue btn-block pt-2" style="pointer-events: none;"><h5>Already rented</h5></button>
                 @endif
             </div>
         </div>

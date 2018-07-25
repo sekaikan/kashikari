@@ -37,9 +37,11 @@
                     @if($group->users()->get() != NULL)
                         <div class="row text-center mt-4 col-12">
                         @foreach($users as $user)
+
                             <div class="col-3 mt-1">
                                 <a href="{{ route('users.show', $user->id) }}"><img class="usergroupicon shadow" src="{{ $user->photo }}"></a> 
-                                <h5 class="mt-1"><a href="{{ route('users.show', $user->id) }}" class="">{{ $user->name }}</a></h5>
+                                <h5 class="mt-1"><a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a></h5>
+
                             </div>
                         @endforeach
                         </div>
