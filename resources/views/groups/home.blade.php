@@ -28,7 +28,7 @@
     
                 <li class="nav-item sample col-4 px-0">
                 <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow
-                <div class="box">
+    <div class="box">
 		<p class="text">you can request items!</p>
 	</div></a>
                 </li>

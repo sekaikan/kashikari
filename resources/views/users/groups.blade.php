@@ -11,33 +11,38 @@
             </div>
             <div class="text-center mt-4 pb-5">
                 <ul class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
-                    <li class="nav-item" ><a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link active">ITEMS <span class="badge badge-light">1</span></a></li>
-                    <li class="nav-item" ><a href="{{ route('users.posts', ['id' => $user->id]) }}" class="nav-link"> POSTS <span class="badge badge-light">2</span></a></li>
-                    <li class="nav-item" ><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link"> GROUPS <span class="badge badge-light">3</span></a></li>
+                    <li class="nav-item" class=""><a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link">ITEMS <span class="badge badge-light">1</span></a></li>
+                    <li class="nav-item" class=""><a href="{{ route('users.posts', ['id' => $user->id]) }}"  class="nav-link"> POSTS <span class="badge badge-light">2</span></a></li>
+                    <li class="nav-item" class=""><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link active"> GROUPS <span class="badge badge-light">3</span></a></li>
                 </ul>
             </div>
              @if(Auth::user()->id == $user->id)
-            <div class="offset-6 mt-5 pt-5">
+             <div class="offset-6 mt-5 pt-5">
                 <a href="{{ route('users.edit', Auth::user()->id) }}" class="mr-3 text-muted"><i class="far fa-edit text-muted"></i>Profile Setting</a>
                 <a href="{{ route('logout') }}"onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();" class="text-muted"><i class="fas fa-sign-out-alt text-muted"></i>Logout</a>
             </div>
         @endif
+            
         </div>
-        <div class="col-9 mt-4 mb-2 bg-white">
-            <div class="shadow my-4 px-2 py-3 bg-light">
-                <h1 class='text-center'>My Items</h1>
-                <div class="my-3 mx-3">
-                    @if($items->count() == 0)
-                      <h4 class= "text-muted text-center my-5">No Items</h4>
+        <div class="col-9 mt-4 mb-2 pb-3 bg-white">
+            <div class="shadow my-4 py-3 bg-light">
+                <h1 class="text-center">My Groups</h1>
+               <div class="mt-3 mb-5">
+                    @if($follow_groups->count()==0 )
+                            <h4 class="text-muted text-center mt-4">No Groups</h4>
                     @else
-                        @include('items.items', ['items' => $items])
+                        @foreach($follow_groups as $group)
+                               <h5 class="text-center"><a href="{{ route('group.show', $group->id) }}" class="">{{ $group->name }}</a></h5>
+                         @endforeach
                     @endif
-                </div>
+                </div>  
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection
 
         
