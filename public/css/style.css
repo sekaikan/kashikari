@@ -126,8 +126,8 @@ a {
 
 
 .btn-blue:hover{
-    color:#6088C6;
-    background-color: #fff;
+    color:#fff;
+    background-color: #AEC4E5;
     border: 1px solid #6088C6;
 }
 
@@ -138,8 +138,8 @@ a {
 
 
 .btn-orange:hover{
-    color:#F99F48;
-    background-color: #fff;
+    color: #fff;
+    background-color: #fcca7e;
     border: 1px solid #F99F48;
 }
 
@@ -409,8 +409,8 @@ box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
     border-radius: 4px;
 }
 #bms_send_btn:hover {
-    background-color:#fff;
-    color: #6088C6;
+    background-color:#AEC4E5;
+    color: #fff;
     border: 1px solid #6088C6;
 }
 
