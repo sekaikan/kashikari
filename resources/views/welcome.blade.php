@@ -138,12 +138,12 @@ $rand = mt_rand(0,3);
         <div class="uncolored content p-5">
             <h2 class="display-2 text-secondary font-weight-bold mb-5">ABOUT</h2>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-7">
                         <h3 class="display-4 font-weight-bold">KASHIKARI</h3>
                         <p class="font-weight-bold text-muted my-3">Platform where you can exchange goods.</p>
                         <p class="font-weight-bold text-muted my-3">You can also form the community to include user who has a similar taste.</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-5">
                         <img src="/images/borrow.jpg" class="img-thumbnail" alt="borrow">
                         
                     </div>
@@ -185,7 +185,7 @@ $rand = mt_rand(0,3);
                                 <p class="">
                                     <span class="text-muted">by Takumi</span>
                                 </p>
-                                <p class="card-text text-justify">You can experience VR!</p>
+                                <p class="card-text text-justify">You can experience VR! It's amaizing!</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $50</p>
                                 <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Details</button>
