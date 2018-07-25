@@ -19,7 +19,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $items = Item::where('user_id', $id)->paginate(3);
         $posts = Post::where('user_id', $id)->paginate(4);
-        $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
+        $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(15);
         return view('users.show', [
             'user' => $user,
             'items' => $items,
@@ -31,7 +31,7 @@ class UsersController extends Controller
         $user = User::find($id);
          $items = Item::where('user_id', $id)->paginate(3);
         $posts = Post::where('user_id', $id)->paginate(4);
-        $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
+        $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(15);
         return view('users.posts', [
             'user' => $user,
             'items' => $items,
@@ -44,7 +44,7 @@ class UsersController extends Controller
         $user = User::find($id);
          $items = Item::where('user_id', $id)->paginate(3);
         $posts = Post::where('user_id', $id)->paginate(4);
-        $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(20);
+        $follow_groups = \DB::table('groups')->join('group_user', 'groups.id', '=', 'group_user.group_id')->select('groups.*')->where('group_user.user_id', $user->id)->distinct()->paginate(15);
         return view('users.groups', [
             'user' => $user,
             'items' => $items,
