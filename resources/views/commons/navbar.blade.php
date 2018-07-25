@@ -1,17 +1,17 @@
-    <nav class="navbar navbar-expand-lg navbar-extend fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-extend fixed-top" style="background-color:#24292E;" >
         <div class="container">
             <div class="navbar-header">
                 @if (Auth::check())
-                <a class="navbar-brand navbar-left" href="/home">Kashikari</a>
+                <a class="navbar-brand navbar-left text-light" href="/home">Kashikari</a>
                 @else
-                <a class="navbar-brand navbar-left" href="/">Kashikari</a>
+                <a class="navbar-brand navbar-left  text-light" href="/">Kashikari</a>
                 @endif
                 <?php $url = $_SERVER['REQUEST_URI'];?>
                 @if(strstr($url,'search') || strstr($url,'create'))
                 
                 @elseif(strstr($url,'group'))
-                  <span class="navbar-brand">|</span>
-                  <a class="navbar-brand navbar-left" href="{{route('group.show', ['id' => $group->id])}}">{!! $group->name !!}</a>
+                  <span class="navbar-brand text-muted">|</span>
+                  <a class="navbar-brand navbar-left  text-light" href="{{route('group.show', ['id' => $group->id])}}">{!! $group->name !!}</a>
                 @endif
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,41 +19,34 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <a class="nav-link" href="{{route('about')}}">About Us</a>
+                    <a class="nav-link  text-light" href="{{route('about')}}">About Us</a>
                     @if (Auth::check())
                         <?php $url = $_SERVER['REQUEST_URI'];?>
                         @if(strstr($url,'about'))
                         @elseif(strstr($url,'search') || strstr($url,'home'))
                         <div class="nav-link">
                             <a data-toggle="collapse" href="#navbar-search" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="fas fa-search"></i>
+                                <i class="fas fa-search  text-light"></i>
                             </a>
                         </div>
                         <div class="collapse width" id="navbar-search">
                                 <form class="form-inline" action="{{url('/results/search')}}">
-                                    <div class="form-group mr-2">
+                                    <div class="form-group mr-2 bg-light">
                                         <input type="text" name="keyword" value="" class="form-control bg-transparent" placeholder="Find Groups">
                                     </div>
                                     <!--input type="submit" value="Search" class="btn btn-outline-success"-->
                                 </form>
                         </div>
-                        <!-- Split dropleft button -->
-                        {{--
-                        <form class="form-inline" action="{{url('/results/search')}}">
-                            <div class="form-group mr-2">
-                                <input type="text" name="keyword" value="" class="form-control" placeholder="Find Groups">
-                            </div>
-                            <input type="submit" value="Search" class="btn btn-outline-success">
-                        </form> --}}
+                        
                     @else
                         <div class="nav-link">
                             <a data-toggle="collapse" href="#navbar-search" aria-expanded="false" aria-controls="collapseExample">
-                                <i class="fas fa-search"></i>
+                                <i class="fas fa-search  text-light"></i>
                             </a>
                         </div>
                         <div class="collapse width" id="navbar-search">
                                 <form class="form-inline" action="{{url('/results/')}}">
-                                    <div class="form-group mr-2">
+                                    <div class="form-group mr-2 bg-light">
                                         <input type="text" name="keyword" value="" class="form-control bg-transparent" placeholder="Find Items">
                                     </div>
                                     <!--input type="submit" value="Search" class="btn btn-outline-success"-->
@@ -63,7 +56,7 @@
                         <?php $notifications = \DB::table('notifications')->where('recipient_id', \Auth::id())->orderBy('created_at', 'desc')->paginate(5); ?>
                        @if($notifications->count()==0)
                        <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" 
-                       data-content="<i class='far fa-thumbs-up'></i> You have no new notifications."><i class="far fa-bell"></i></a>
+                       data-content="<i class='far fa-thumbs-up'></i> You have no new notifications."><i class="far fa-bell  text-light"></i></a>
                        @else
                                <a tabindex="0" class="navbar-item btn btn-link text-dark" role="button" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-html="true" title="Notifications" data-content="
                                 @foreach($notifications as $notification)
@@ -87,15 +80,15 @@
                                        <hr>
                                @endforeach
                                ">
-                        <i class="far fa-bell"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
+                        <i class="far fa-bell text-light"></i><span class="badge badge-pill badge-danger">{{ $notifications->count() }}</span></a>
                         @endif
                         
                         @if(strstr($url,'group') && (Auth::user()->is_following($group->id)))
-                            <a class="nav-link" href="{{route('chats.index',['id' => $group->id])}}"><i class="far fa-comments"></i></a>
+                            <a class="nav-link" href="{{route('chats.index',['id' => $group->id])}}"><i class="far fa-comments  text-light"></i></a>
                         @endif
 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggler ml-3" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                        <a href="#" class="nav-link dropdown-toggler ml-3  text-light" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     <img src="{{ Auth::user()->photo }}" class="img-fluid rounded-circle" style="height: 2em; width:2em;">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -115,8 +108,8 @@
                     </li>
 
                     @else
-                    <li class="nav-link"><a href="{{ route('register') }}">SignUp</a></li>
-                    <li class="nav-link"><a href="{{ route('login') }}">Login</a></li>
+                    <li class="nav-link"><a href="{{ route('register') }}"class="text-light">SignUp</a></li>
+                    <li class="nav-link"><a href="{{ route('login') }}" class="text-light">Login</a></li>
                     @endif
                 </ul>
             </div>

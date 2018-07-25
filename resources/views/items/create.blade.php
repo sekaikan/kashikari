@@ -52,11 +52,11 @@
                 
                 <div class="form-group">
                     {!! Form::label('name', 'Item name (*Required)') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control','placeholder' => 'In English']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('content', 'Description (*Required)') !!}
-                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my Camera&#13;&#10;      Period: 8/1-8/8']) !!}
+                    {!! Form::textarea('content', null, ['class' => 'form-control', 'rows' => '5','placeholder' => 'ex: This is my Camera, period: 8/1-8/8']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('reward', 'Reward') !!}

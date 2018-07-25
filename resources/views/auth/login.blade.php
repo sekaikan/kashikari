@@ -7,7 +7,7 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="text-center text-muted">Login</h2>
+                          <h2 class="text-center text-muted">Login</h2>
                         <div class="text-center">
                             <i class="fas fa-5x fa-user-circle text-muted my-3"></i>   
                         </div>

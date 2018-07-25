@@ -32,6 +32,7 @@
             <div class="text-center mt-4">
                 <img class="usershowicon" src="{{ $user->photo }}"> 
                 <h2>{!! $user->name !!}</h2>
+                <p class="lead mt-3 text-light text-center"><i class="fas fa-quote-left fa-xs text-white-50 mr-3"></i>{{ $user->content }}<i class="fas fa-quote-right fa-xs text-white-50 ml-3"></i></p>
             </div>
             <div class=" px-3 py-2 mt-4">
                 <h5 class="card-title text-center">Search Group</h5>
@@ -46,7 +47,7 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-            <div class=" px-2 py-2 mt-3">
+            <div class=" px-3 py-2 mt-4">
                 <h5 class="card-title text-center">Create Group</h5>
                 {!! Form::model($groups, ['route' => 'group.store']) !!}
                 <div class="form-group text-right">
@@ -125,8 +126,8 @@
                                 </div>
                             </div>
                         </div>   
-                    <a href="group/create" class="col-4 my-4  text-center">
-                        <i class="fas fa-plus fa-9x" style="color: #c0c0c0;"></i>
+                    <a href="group/create" class="col-4 mt-5  text-center">
+                        <i class="fas fa-plus fa-4x" style="color: #c0c0c0;"></i>
                     </a>
                 @endif
                 </div>
@@ -168,8 +169,8 @@
                             </div>
                         </div>
                     </div>  
-                    <a href="group/create" class="col-4 my-4  text-center">
-                        <i class="fas fa-plus fa-9x" style="color: #c0c0c0;"></i>
+                    <a href="group/create" class="col-4 mt-5  text-center">
+                        <i class="fas fa-plus fa-4x" style="color: #c0c0c0;"></i>
                     </a>
                 @endif
                 </div>

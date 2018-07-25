@@ -41,7 +41,7 @@
                         <div class="form-group" id="review-form-group">
                             {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need ?', 'rows'=>'3']) !!}
                             {{ Form::hidden('group_id', $group->id)}}
-                            {!! Form::submit('submit', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
+                            {!! Form::submit('submit',['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
                         </div>
                         {!! Form::close() !!}
                     @endif

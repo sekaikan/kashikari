@@ -86,6 +86,7 @@ class RegisterController extends Controller
             'photo_fullname' => $photo->{'user'}{'name'},
             //'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'content' => 'Nice to meet you!',
         ]);
     }
 }
