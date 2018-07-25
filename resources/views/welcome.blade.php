@@ -132,6 +132,7 @@ $rand = mt_rand(0,3);
             <div class="text-center">
                 <div id="scroll"><span></span></div>
             </div>
+              <h4 class="text-light mt-5 ml-4 pt-3 text-center">Scroll</h4>
         </div>
     </div>
     <div class="container-fluid" id="top">
