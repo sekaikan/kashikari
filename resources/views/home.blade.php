@@ -82,7 +82,7 @@
                             </div>
                         </div>   
                     <a href="group/create" class="col-4 my-4  text-center">
-                        <i class="fas fa-plus fa-7x" style="color: #c0c0c0;"></i>
+                        <i class="fas fa-plus fa-4x" style="color: #c0c0c0;"></i>
                     </a>
                 @endif
                 </div>
@@ -125,7 +125,7 @@
                         </div>
                     </div>  
                     <a href="group/create" class="col-4 my-4  text-center">
-                        <i class="fas fa-plus fa-7x" style="color: #c0c0c0;"></i>
+                        <i class="fas fa-plus fa-4x" style="color: #c0c0c0;"></i>
                     </a>
                 @endif
                 </div>
