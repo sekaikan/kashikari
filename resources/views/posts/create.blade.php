@@ -34,7 +34,7 @@
             </li>
         </ul>
     </div>
-    <div class="bg-white py-5" id="form-bg" style= margin-top:0;>
+    <div class="bg-light py-5" id="form-bg" style= margin-top:0;>
         <div class="container">
             <div class="row">
                 <div class= "offset-3 col-6">
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-white">
+    <div class="container-fluid bg-light">
         <h2 class="text-center offset-1 col-10 under">Shared Items</h2>
         @if($items->count() == 0)
           <h4 class= "text-muted text-center mt-4">No Items</h4>
