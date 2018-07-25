@@ -14,7 +14,7 @@
                 <h5 class="card-title text-center">Search Group</h5>
                  {!! Form::open(array('method' => 'Get', 'route' => 'groups.search')) !!}
                 <div class="form-group text-right">
-                    {!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder'=>'Find Groups']) !!}
+                    {!! Form::text('keyword', null, ['class' => 'form-control tutorial', 'placeholder'=>'Find Groups', 'data-container'=>'body','data-toggle'=>'popover','data-placement'=>'bottom','data-content'=>'Tutorial text.']) !!}
                     {!! Form::submit('Search', ['class' => 'btn btn-blue mt-3']) !!}
                     {!! Form::close() !!}
                 </div>
@@ -23,15 +23,19 @@
                 <h5 class="card-title text-center">Create Group</h5>
                 {!! Form::model($groups, ['route' => 'group.store']) !!}
                 <div class="form-group text-right">
-                    {!! Form::text('name', '', ['class' => 'form-control', 'placeholder'=>'Group Name']) !!}
+                    {!! Form::text('name', '', ['class' => 'form-control tutorial', 'placeholder'=>'Group Name', 'data-container'=>'body','data-toggle'=>'popover','data-placement'=>'bottom','data-content'=>'Tutorial text.']) !!}
                     {!! Form::submit('Create', ['class' => 'btn btn-blue mt-3']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>
         </div>
         <div class="col-9  mt-4 mb-2 pb-3 bg-white">
-            <div class="mt-3 text-dark">
+            <div class="mt-3 text-dark tutorial" data-container="body" data-toggle="popover" data-placement="left" data-content="2. Here goes tutorial text.">
              @include('notifications.notifications')
+            </div>
+            
+            <div>
+                <a class="btn btn-danger tutorial-close text-light">Close all<i class="fas fa-times"></i></a></span>
             </div>
             <div class="shadow mt-3 px-2 py-2 bg-light">
                 <h2 class="text-center">My Groups</h2>
@@ -74,7 +78,7 @@
                                   ?>
                                   
                                 <img class="card-img-top card-img-home" src="{{ $image_rand }}">
-                                <div class="card-img-overlay group-name"> 
+                                <div class="card-img-overlay group-name tutorial" data-container="body" data-toggle="popover" data-placement="right" data-content="2. Here goes tutorial text."> 
                                     {!! $newgrad->name !!}
                                     <p></p>
                                      {!! link_to_route('group.show',  'Details' , ['id' => $newgrad->id],['class'=>'btn btn-blue  btn-block']) !!}

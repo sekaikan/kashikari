@@ -23,26 +23,25 @@
         <div class="mainmenu sen status text-center">
             <ul class="nav nav-tabs justify-content-center">
                 <li class="nav-item active col-4 px-0">
-                <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
+                    <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home
+                    </a>
                 </li>
-    
                 <li class="nav-item sample col-4 px-0">
-                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow
-                <div class="box">
-		<p class="text">you can request items!</p>
-	</div></a>
+                    <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow
+                        <div class="box">
+                        <p class="text">you can request items!</p>
+                        </div>
+                    </a>
                 </li>
-    
                 <li class="nav-item sample col-4 px-0">
-                <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend
-                <div class="box">
-		<p class="text">you can lend items!</p>
-	</div></a>
+                    <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend
+                        <div class="box">
+                            <p class="text">you can lend items!</p>
+                        </div>
+                    </a>
                 </li>
            </ul>
         </div>
-
-
     <div class="container pt-5 bg-light">
         <div class="row">
             <div class="col-7 pl-4">

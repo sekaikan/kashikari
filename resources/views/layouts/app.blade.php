@@ -31,12 +31,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
     <script>
-   $(function () {
-     $('[data-toggle="popover"]').popover(
-         {
-             html: true,
-         })
-   })
-   </script>
+        $(function () {
+            $('[data-toggle="popover"]').popover(
+                {
+                    html: true,
+                })
+            $('.tutorial').popover('show')
+            
+            $('.tutorial-close').on('click', function (e) {
+                $('.tutorial').popover('hide');
+            });
+        })
+    </script>
 </body>
 </html>
