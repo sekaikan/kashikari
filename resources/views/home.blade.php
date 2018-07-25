@@ -19,7 +19,7 @@
                     {!! Form::close() !!}
                 </div>
             </div>
-            <div class=" px-2 py-2 mt-3">
+            <div class=" px-3 py-2 mt-4">
                 <h5 class="card-title text-center">Create Group</h5>
                 {!! Form::model($groups, ['route' => 'group.store']) !!}
                 <div class="form-group text-right">
