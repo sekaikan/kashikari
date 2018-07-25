@@ -22,7 +22,7 @@
             @include('group_user.follow_button', ['user' => $user])
         </div>
         <?php $url = $_SERVER['REQUEST_URI'];?>
-        <div class="offset-8">
+        <div class="offset-8 col-2">
         @if(strstr($url,'userlist'))
             @include('groups.delete_button')
         @endif
