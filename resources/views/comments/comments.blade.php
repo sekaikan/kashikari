@@ -57,7 +57,7 @@ foreach($comments as $comment) {
                                                 {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'Reply...', 'rows'=>'2']) !!}
                                                 {{ Form::hidden('parent_id', $comment->id) }}
                                                 {{ Form::hidden('item_id', $item->id) }}
-                                                {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-block', 'id' => 'form-button']) !!}
+                                                {!! Form::submit('Submit', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}
                                             </div>
                                             {!! Form::close() !!}
                                         @endif

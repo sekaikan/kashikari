@@ -7,7 +7,7 @@
         $datetime2 = new DateTime(date('Y-m-d H:i:s'));
         $datetime2 = $datetime2->getTimestamp();
         $interval = $datetime2 - $datetime1;
-        $is_new = $interval < 40;
+        $is_new = $interval < 60;
     ?>
     @if($is_new)
     <style type="text/css">
@@ -92,7 +92,6 @@
                 @else
                  @include('items.items', ['items' => $items])
                 @endif
-                
                 @if (count($items) >0)
                     <a href="{{ route ('items.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
                 @endif
@@ -107,7 +106,7 @@
                 @endif
                 
                 @if (count($posts) >0)
-                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="float-right"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
+                    <a href="{{ route ('posts.index', ['id' => $group->id]) }}" class="offset-5"><i class="fas fa-2x fa-fw fa-chevron-circle-down my-3"></i><span class="h6">More...</span></a>
 
                 @endif
             </div>

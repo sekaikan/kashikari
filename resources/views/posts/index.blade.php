@@ -50,6 +50,8 @@
                     <div class="pb-5">
                         <h2 class="text-center under mt-3">Posted Messages</h2>
                          @include('posts.posts', ['posts' => $posts])
+                         {!! $posts->render() !!}
+
                     </div>
                 </div>
 
@@ -59,4 +61,3 @@
     </div>
 @endsection
 
-{!!$posts->render() !!}

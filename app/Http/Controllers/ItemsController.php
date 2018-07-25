@@ -19,13 +19,13 @@ class ItemsController extends Controller
     public function index($id)
     {
         $group = Group::find($id);
-        $items = \DB::table('items')->where('items.group_id', $group->id)->orderBy('status', 'desc')->orderBy('created_at', 'desc')->paginate(20);
+        $items = \DB::table('items')->where('items.group_id', $group->id)->orderBy('status', 'desc')->orderBy('created_at', 'desc')->paginate(9);
         $groupusers= $group->users()->get();
         
         return view('items.index', [
             'items' => $items,
             'group' => $group,
-            'groupusers' => $groupusers->take(4),
+            'groupusers' => $groupusers->take(5),
         ]);
     }
     
@@ -33,14 +33,14 @@ class ItemsController extends Controller
     {
         $item = new Item;
         $group = Group::find($id);
-        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(20);
+        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(7);
         $groupusers = $group->users()->get();
         
         return view('items.create',[
             'item' => $item, 
             'group' => $group, 
             'posts' => $posts,
-            'groupusers' => $groupusers->take(4),
+            'groupusers' => $groupusers->take(5),
             ]);
     }
     
