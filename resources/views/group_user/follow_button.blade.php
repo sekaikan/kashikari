@@ -2,7 +2,7 @@
        {!! Form::hidden('group_id', $group->id)!!}
     @if (Auth::user()->is_following($group->id))
         {!! Form::open(['route' => ['user.unfollow', $group->id], 'method' => 'delete', 'class'=>'']) !!}
-        {!! Form::button('<h4>Leave <ion-icon name="log-out"></ion-icon></h4>', ['type'=> 'submit', 'class' => 'btn btn-blue']) !!}
+        {!! Form::button('<h4>Leave <ion-icon name="log-out"></ion-icon></h4>', ['type'=> 'submit', 'class' => 'shadow btn btn-block btn-blue']) !!}
         {!! Form::close() !!}
     @else
         {!! Form::open(['route' => ['user.follow', $group->id], 'class'=>'']) !!}
