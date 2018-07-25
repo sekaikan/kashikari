@@ -32,5 +32,5 @@
 @endforeach
 </div>
 
-{!! $posts->render() !!}
+
 

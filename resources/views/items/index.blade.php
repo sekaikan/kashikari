@@ -41,6 +41,8 @@
         <h2 class="text-center under mx-auto col-8">Shared Items</h2>
         <div class="container">
              @include('items.items', ['items' => $items])
+             {!! $items->render() !!}
+
         </div>
     </div>
 </div>
