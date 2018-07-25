@@ -219,7 +219,7 @@ $rand = mt_rand(0,3);
                                 <p class="">
                                     <span class="text-muted">by Manato.F</span>
                                 </p>
-                                <p class="card-text text-justify">10px with basket</p>
+                                <p class="card-text text-justify">10 balls with basket. Enjoy Soccer!</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $5</p>
                                 <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Details</button>
@@ -236,7 +236,7 @@ $rand = mt_rand(0,3);
                                 <p class="">
                                     <span class="text-muted">by Saaya</span>
                                 </p>
-                                <p class="card-text text-justify">1 table and 2 chairs. You can use it both inside and outside.</p>
+                                <p class="card-text text-justify">Including 1 table and the pair of chairs.</p>
                                 <hr>
                                 <p class="card-text"><i class="fas fa-gift text-secondary"></i> $30</p>
                                 <button class="borrow btn btn-blue btn-block" style="pointer-events: none;">Details</button>
