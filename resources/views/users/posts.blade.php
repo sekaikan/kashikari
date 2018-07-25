@@ -12,7 +12,7 @@
             <div class="text-center mt-4 pb-5">
                 <ul class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
                     <li class="nav-item" class=""><a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link">ITEMS <span class="badge badge-light">1</span></a></li>
-                    <li class="nav-item" class=""><a href="{{ route('users.posts', ['id' => $user->id]) }}" class="nav-link active"> POSTS <span class="badge badge-light">2</span></a></li>
+                    <li class="nav-item active" class=""><a href="{{ route('users.posts', ['id' => $user->id]) }}" class="nav-link"> POSTS <span class="badge badge-light">2</span></a></li>
                     <li class="nav-item" class=""><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link"> GROUPS <span class="badge badge-light">3</span></a></li>
                 </ul>
             </div>
@@ -25,9 +25,9 @@
         @endif
         </div>
         <div class="col-9  mt-4 mb-2 pb-3 bg-white">
-            <div class="shadow my-4 px-2 py-3  bg-light">
+            <div class="shadow my-3 px-2 py-2  bg-light">
                 <h1 class='text-center'>My Posts</h1>
-                <div class="mt-3 mb-5">
+                <div class="mt-3">
                     @if($posts->count() == 0)
                       <h4 class= "text-muted text-center my-5">No Posts</h4>
                     @else

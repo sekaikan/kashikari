@@ -13,7 +13,7 @@
                 <ul class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
                     <li class="nav-item" class=""><a href="{{ route('users.show', ['id' => $user->id]) }}" class="nav-link">ITEMS <span class="badge badge-light">1</span></a></li>
                     <li class="nav-item" class=""><a href="{{ route('users.posts', ['id' => $user->id]) }}"  class="nav-link"> POSTS <span class="badge badge-light">2</span></a></li>
-                    <li class="nav-item" class=""><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link active"> GROUPS <span class="badge badge-light">3</span></a></li>
+                    <li class="nav-item active" class=""><a href="{{ route('users.follows', ['id' => $user->id]) }}" class="nav-link"> GROUPS <span class="badge badge-light">3</span></a></li>
                 </ul>
             </div>
              @if(Auth::user()->id == $user->id)
@@ -26,9 +26,9 @@
             
         </div>
         <div class="col-9 mt-4 mb-2 pb-3 bg-white">
-            <div class="shadow my-4 py-3 bg-light">
+            <div class="shadow my-3 py-3 bg-light">
                 <h1 class="text-center">My Groups</h1>
-               <div class="mt-3 mb-5">
+               <div class="mt-3 mb-2"> 
                     @if($follow_groups->count()==0 )
                             <h4 class="text-muted text-center mt-4">No Groups</h4>
                     @else
