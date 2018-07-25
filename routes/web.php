@@ -17,7 +17,11 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('/home','HomeController@index')->name('home');
    
 //users
-   Route::resource('users', 'UsersController', ['only' => ['show']]);
+    Route::group(['prefix' => 'users/{id}'], function (){
+      Route::get('/', 'UsersController@show')->name('users.show');
+      Route::get('/posts', 'UsersController@posts')->name('users.posts');
+      Route::get('/follows', 'UsersController@groups')->name('users.follows');
+    });
 
 //comments
    Route::resource('comments', 'CommentsController', ['only' =>['store','destroy']]);
