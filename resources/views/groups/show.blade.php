@@ -19,28 +19,31 @@
             <img class="usershowicon" src="{{ secure_asset($image_path) }}">
         </div> 
         <?php $url = $_SERVER['REQUEST_URI'];?>
-        <div class="my-4 bg-light mx-5 pl-3 py-5">  
+        <div class="offset-8">
+        @if(strstr($url,'userlist'))
+            @include('groups.delete_button')
+        @endif
+        </div>
+        
+        <div class="mb-4 mt-3 bg-light mx-5 pl-3 py-4">  
             <div class="row px-5">
-                <div class="col-8">
-                    <h2>Members</h2>
+                    <div class="col-8">
+                    <?php $users = $group->users()->get(); ?>
+                    <h2>Members <span class="badge badge-pill badge-warning">{{$users->count()}}</span></h2>
+                    </div>
+                    <div class="col-4 pl-5">
+                    @include('group_user.follow_button', ['user' => $user])
+                    </div>
                     @if($group->users()->get() != NULL)
-                        <?php $users = $group->users()->get(); ?>
-                        <div class="row text-center">
+                        <div class="row text-center mt-4 col-12">
                         @foreach($users as $user)
-                            <div class="col-4">
-                                <img class="usergroupicon" src="{{ $user->photo }}"> 
-                                <h5><a href="{{ route('users.show', $user->id) }}" class="">{{ $user->name }}</a></h5>
+                            <div class="col-3 mt-1">
+                                <a href="{{ route('users.show', $user->id) }}"><img class="usergroupicon shadow" src="{{ $user->photo }}"></a> 
+                                <h5 class="mt-1"><a href="{{ route('users.show', $user->id) }}" class="">{{ $user->name }}</a></h5>
                             </div>
                         @endforeach
                         </div>
                     @endif
-                </div>
-                <div class="col-4 mt-4 pl-5">
-                    @include('group_user.follow_button', ['user' => $user])
-                    @if(strstr($url,'userlist'))
-                    @include('groups.delete_button')
-                    @endif
-                </div>
             </div>
         </div>
         <div class="row fixed-bottom justify-content-end">
