@@ -6,7 +6,7 @@
         {!! Form::close() !!}
     @else
         {!! Form::open(['route' => ['user.follow', $group->id], 'class'=>'']) !!}
-        {!! Form::button('<h4>Join <ion-icon name="log-in"></ion-icon></h4>', ['type'=> 'submit', 'class' => 'btn btn-orange']) !!}
+        {!! Form::button('<h4>Join <ion-icon name="log-in"></ion-icon></h4>', ['type'=> 'submit', 'class' => 'shadow btn btn-block btn-orange']) !!}
         {!! Form::close() !!}
     @endif
 </div>
