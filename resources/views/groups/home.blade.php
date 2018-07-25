@@ -7,7 +7,7 @@
         $datetime2 = new DateTime(date('Y-m-d H:i:s'));
         $datetime2 = $datetime2->getTimestamp();
         $interval = $datetime2 - $datetime1;
-        $is_new = $interval < 40;
+        $is_new = $interval < 60;
     ?>
     @if($is_new)
     <style type="text/css">
