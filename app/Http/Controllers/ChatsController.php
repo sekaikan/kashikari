@@ -18,9 +18,11 @@ class ChatsController extends Controller
         //$chats = Chat::with('user')->orderBy('created_at', 'desc')->paginate(20);
         $chats = \DB::table('chats')->where('chats.group_id', $group->id)->orderBy('created_at', 'desc')->paginate(9);
         //$chats = \DB::table('chats')->orderBy('created_at', 'desc')->paginate(100);
+        $groupusers= $group->users()->get();
         return view('chats.index', [
             'chats' => $chats,
             'group' => $group,
+            'groupusers' => $groupusers->take(5),
         ]);
     }
     
