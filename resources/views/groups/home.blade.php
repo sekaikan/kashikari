@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col-7 pl-4">
                 
-                <h2 class="text-center text-muted under">Shared Items</h2>
+                <h2 class="text-center under">Shared Items</h2>
                 @if(count($items) == 0)
                 <a href="{{ route('items.lend', ['id' => $group->id]) }}"><p class="text-center"><i class="fas fa-plus fa-4x text-muted my-5"></i></p></a>
                 @else
@@ -101,7 +101,7 @@
                 @endif
             </div>
             <div class="col-5">
-                <h2 class="text-center text-muted under">Posted Messages</h2>
+                <h2 class="text-center under">Posted Messages</h2>
                 @if(count($posts) == 0)
                 <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" ><p class="text-center"><i class="fas fa-plus fa-4x text-muted my-5"></i></p></a>
                 @else

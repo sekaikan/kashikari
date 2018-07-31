@@ -39,8 +39,8 @@
     </div>
 
     
-<div class="container bg-light">
-    <h2 class="text-center pt-5">Group Chat</h2>
+<div class="container bg-light pt-5">
+    <h2 class="text-center under">Group Chat</h2>
         {!! Form::open(array('route' => array('chats.store', $group->id),'class'=>'col-4 offset-4')) !!}
             <div class="row">
             {{ Form::hidden('group_id', $group->id)}}
