@@ -29,7 +29,7 @@
                             <a href="{{route('users.show', ['id'=> $user->id])}}"><img class="usericon" src="{{ $user->photo }}"></a>
                             <p class="text-muted">{{ $user->name }}</p>
                         </div>
-                        <div class="col-10 bg-white p-3 rounded otherscomment">
+                        <div class="col-10 p-3 rounded otherscomment">
                             <div class="says">
                                 <p class="text-lead">{{ $chat->content }}</p>
                             </div>

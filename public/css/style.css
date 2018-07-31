@@ -351,6 +351,7 @@ i.far.fa-comments.fa-stack-1x.faa-wrench.animated-hover{
 
 .otherscomment {
     position: relative;
+    background-color: #ffefd5;
 }
 
 .otherscomment:after {
@@ -359,11 +360,12 @@ i.far.fa-comments.fa-stack-1x.faa-wrench.animated-hover{
     top: 3px; 
     left: -19px;
     border: 8px solid transparent;
-    border-left: 18px solid white;
+    border-left: 18px solid #ffefd5;
     -ms-transform: rotate(-145deg);
     -webkit-transform: rotate(-145deg);
     transform: rotate(-145deg);
 }
+
 
 
 /*About us */
