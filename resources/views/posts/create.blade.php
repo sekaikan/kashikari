@@ -21,18 +21,21 @@
 
 @section('content')
 <div class="container">
-    <div class="mainmenu sen status text-center">
-        <ul class="nav nav-tabs justify-content-center">
-            <li class="nav-item col-4 px-0">
-                <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
-            </li>
-            <li class="nav-item active col-4 px-0">
-                <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow</a>
-            </li>
-            <li class="nav-item col-4 px-0">
-                <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend</a>
-            </li>
-        </ul>
+    <div class="mainmenu sen status text-center mt-2">
+       <ul class="nav nav-tabs justify-content-center">
+          <li class="nav-item col-3 px-0">
+            <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home</a>
+          </li>
+          <li class="nav-item col-3 px-0 active">
+            <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow</a>
+          </li>
+          <li class="nav-item col-3 px-0">
+            <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend</a>
+          </li>
+          <li class="nav-item col-3 px-0">
+            <a href="{{ route('chats.index', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-comments"></i><br>Chats</a>
+          </li>
+       </ul>
     </div>
     <div class="bg-light py-5" id="form-bg" style= margin-top:0;>
         <div class="container">

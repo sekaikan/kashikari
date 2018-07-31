@@ -63,7 +63,7 @@ class PostsController extends Controller
         $post = new Post;
         $group = Group::find($id);
         $user = \Auth::user();
-        $items = \DB::table('items')->where('items.group_id', $group->id)->distinct()->paginate(9);
+        $items = \DB::table('items')->where('items.group_id', $group->id)->orderBy('status', 'desc')->orderBy('created_at', 'desc')->paginate(9);
         $groupusers= $group->users()->get();
         return view('posts.create', [
         'user' => $user, 

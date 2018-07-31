@@ -54,14 +54,14 @@
     <div class="container">
         <div class="mainmenu sen status text-center">
             <ul class="nav nav-tabs justify-content-center">
-                <li class="nav-item active col-4 px-0">
+                <li class="nav-item active col-3 px-0">
                     <a class="nav-link" href="/group/{{$group->id}}"><i class="fas fa-home"></i><br>Home
                     </a>
                 </li>
                 @if($is_new)
-                <li class="nav-item sample col-4 px-0 tutorial"  data-container="body" data-toggle="popover" data-placement="bottom" data-content="<strong>Tell your friends what you need.</strong>">
+                <li class="nav-item sample col-3 px-0 tutorial"  data-container="body" data-toggle="popover" data-placement="bottom" data-content="<strong>Tell your friends what you need.</strong>">
                 @else
-                <li class="nav-item sample col-4 px-0">
+                <li class="nav-item sample col-3 px-0">
                 @endif
                     <a href="{{ route('posts.borrow', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-hand-holding-heart"></i><br>Borrow
                         <div class="box">
@@ -70,9 +70,9 @@
                     </a>
                 </li>
                 @if($is_new)
-                <li class="nav-item sample col-4 px-0 tutorial"  data-container="body" data-toggle="popover" data-placement="bottom" data-content="<strong>Register your items to lend.</strong>">
+                <li class="nav-item sample col-3 px-0 tutorial"  data-container="body" data-toggle="popover" data-placement="bottom" data-content="<strong>Register your items to lend.</strong>">
                 @else
-                <li class="nav-item sample col-4 px-0">
+                <li class="nav-item sample col-3 px-0">
                 @endif
                     <a href="{{ route('items.lend', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-people-carry"></i><br>Lend
                         <div class="box">
@@ -80,8 +80,12 @@
                         </div>
                     </a>
                 </li>
+                <li class="nav-item col-3 px-0">
+                    <a href="{{ route('chats.index', ['id' => $group->id]) }}" class="nav-link"><i class="fas fa-comments"></i><br>Chats</a>
+                </li>
            </ul>
         </div>
+</div>
     <div class="container pt-5 bg-light">
         <div class="row">
             <div class="col-7 pl-4">
