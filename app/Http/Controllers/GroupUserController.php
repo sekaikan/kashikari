@@ -15,6 +15,9 @@ class GroupUserController extends Controller
     public function destroy($id)
     {
         \Auth::user()->unfollow($id);
+        \Auth::user()->items()->where('group_id',$id)->delete();
+        \Auth::user()->chats()->where('group_id',$id)->delete();
+        \Auth::user()->posts()->where('group_id',$id)->delete();
         return redirect("/home");
 
     }
