@@ -115,8 +115,8 @@ $rand = mt_rand(0,3);
                 @auth 
                     <li class="nav-item"><a class="nav-link" href="{{ url('/home') }}">Home</a></li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">SignUp</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                 @endauth
             </ul>
             @endif
