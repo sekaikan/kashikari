@@ -23,7 +23,7 @@ class GroupsController extends Controller
        // $items = Item::orderBy('updated_at', 'desc')->paginate(8);
         $items =\DB::table('items')->where('items.group_id', $group->id)->orderBy('status', 'desc')->orderBy('created_at', 'desc')->paginate(6);
         //$posts = $user->posts()->orderBy('created_at', 'desc')->paginate(5);
-        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(7);
+        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->orderBy('status', 'asc')->orderBy('created_at', 'desc')->paginate(7);
         return view('groups.home', [
             'items' => $items,
             'group' => $group,
