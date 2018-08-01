@@ -26,6 +26,7 @@
 @section('content')
     <link rel="stylesheet" type="text/css" href="/css/particle/particles.css" />
     <link rel="stylesheet" type="text/css" href="/css/particle/base.css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 <?php
 $image = array ('image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg');
 $rand = mt_rand(0,3);
