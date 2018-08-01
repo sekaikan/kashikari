@@ -45,6 +45,10 @@
             {!! Form::open(array('route' => array('posts.store', $group->id),'id' => 'content-content')) !!}
                 <div class="form-group" id="review-form-group">
                     {{ Form::hidden('group_id', $group->id)}}
+                       <select name="status" class="custom-select" id="inlineFormCustomSelectPref">
+                             <option value="Emergency" selected>Emergency</option>
+                             <option value="Not Emergency">Not Emergency</option>
+                       </select>
                     {!! Form::textarea('content', '', ['class' => 'form-control', 'id'=>'form-content', 'placeholder'=>'What do you need?', 'rows'=>'3']) !!}
     
                     {!! Form::submit('submit', ['class' => 'btn btn-blue btn-block', 'id' => 'form-button']) !!}

@@ -1,8 +1,5 @@
-<?php
-$image = array ('image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg');
-$rand = mt_rand(0,3);
-?>
- 
+
+{{-- 
 <!doctype html>
 <html lang="en">
 
@@ -16,14 +13,23 @@ $rand = mt_rand(0,3);
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   
-    <link rel="stylesheet" type="text/css" href="/css/particle/particles.css" />
-    <link rel="stylesheet" type="text/css" href="/css/particle/base.css" />
+
     <script>
     	document.documentElement.className="js";
     	var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 	
-
   <title>kashikari</title>
+  --}}
+
+
+@extends('layouts.app')
+@section('content')
+    <link rel="stylesheet" type="text/css" href="/css/particle/particles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/particle/base.css" />
+<?php
+$image = array ('image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg');
+$rand = mt_rand(0,3);
+?>
   <style type="text/css">
     body{
       background: linear-gradient(-45deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(images/{{$image[$rand]}});
@@ -106,22 +112,8 @@ $rand = mt_rand(0,3);
 
     
   </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-home position-relative">
-    <a class="navbar-brand" href="#"><span class="display-4">KASHIKARI</span></a>
-            @if (Route::has('login'))
-            <ul class="navbar-nav position-absolute">
-                @auth 
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/home') }}">Home</a></li>
-                @else
-                    <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">SignUp</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                @endauth
-            </ul>
-            @endif
-    </nav>
-    <div class="jumbotron jumbotron-extend">
+
+    <div class="jumbotron jumbotron-extend mt-5">
         <div id="logo">
             <p class="display-3 font-weight-bold text-left">Share your items,</p>
             <p class="display-3 font-weight-bold text-left">Share your happiness.</p>
@@ -342,44 +334,6 @@ $rand = mt_rand(0,3);
                 </div>
             </div>
         </div>
-            
-<footer class="bg-light p-5">
-    <div class="text-center text-muted">©2018 KASHIKARI '18 NEW GRADS CODING TRAINING</div>
-</footer> 
+@endsection
 
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-  <script src='/js/particle/anime.min.js'></script>
-  <script src='/js/particle/particles.js'></script>
-  <script src='/js/particle/demo.js'></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <script>
-    $(function() {
-      //'#'から始まるhrefを持つaタグ、target属性を持つaタグを除く
-      $('a:not([href^="#"]):not([target])').on('click', function(e){
-        //クリック時の挙動を停止
-        e.preventDefault(); 
-        //href属性の属性情報を取得
-        url = $(this).attr('href');
-        if (url !== '') {
-          //bodyタグへ任意のクラスを追加
-          $('body').addClass('class_name');
-          //setTimeOutを用いて500s後にurl遷移を実行
-          setTimeout(function(){
-            window.location = url;
-          }, 550);
-        }
-        return false;
-      });
-    });
-  </script>
-
-</body>
-
-
-
-</html>

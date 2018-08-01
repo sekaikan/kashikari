@@ -21,9 +21,11 @@
             <?php $url = $_SERVER['REQUEST_URI'];?>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    @if(strstr($url,'home'))
-                    @else
-                    <a class="nav-link  text-light" href="{{route('home')}}">GroupList</a>
+                    @if (Auth::check())
+                        @if(strstr($url,'home'))
+                        @else
+                        <a class="nav-link  text-light" href="{{route('home')}}">GroupList</a>
+                        @endif
                     @endif
                     <a class="nav-link  text-light" href="{{route('about')}}">About Us</a>
                     @if (Auth::check())
@@ -86,10 +88,6 @@
                                @endforeach
                                ">
                         <i class="far fa-bell text-light"></i><span class="badge badge-pill badge-warning">{{ $notifications->count() }}</span></a>
-                        @endif
-                        
-                        @if(strstr($url,'group') && (Auth::user()->is_following($group->id)))
-                            <a class="nav-link" href="{{route('chats.index',['id' => $group->id])}}"><i class="far fa-comments  text-light"></i></a>
                         @endif
 
                     <li class="nav-item dropdown">

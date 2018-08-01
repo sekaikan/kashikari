@@ -8,6 +8,9 @@
                      <img class="usericon ssize" src="{{ $user->photo }}">
                 </div>
                 <div class="col-md-8 col-8 px-0">
+                    @if($post->status==="Emergency")
+                        <i class="fas fa-exclamation-triangle"></i>
+                    @endif
                     {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}
                     <small> 
                         <span class="text-muted"> at {{ $post->created_at }}</span>

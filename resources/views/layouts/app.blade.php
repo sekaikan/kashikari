@@ -68,6 +68,32 @@ $(document).on("keypress", "#form-content", function(e) {
         })
         
     </script>
+<script src='/js/particle/anime.min.js'></script>
+  <script src='/js/particle/particles.js'></script>
+  <script src='/js/particle/demo.js'></script>
+  <script>
+    	document.documentElement.className="js";
+    	var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+  <script>
+    $(function() {
+      //'#'から始まるhrefを持つaタグ、target属性を持つaタグを除く
+      $('a:not([href^="#"]):not([target])').on('click', function(e){
+        //クリック時の挙動を停止
+        e.preventDefault(); 
+        //href属性の属性情報を取得
+        url = $(this).attr('href');
+        if (url !== '') {
+          //bodyタグへ任意のクラスを追加
+          $('body').addClass('class_name');
+          //setTimeOutを用いて500s後にurl遷移を実行
+          setTimeout(function(){
+            window.location = url;
+          }, 550);
+        }
+        return false;
+      });
+    });
+  </script>
 
 </body>
 </html>

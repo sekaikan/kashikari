@@ -39,10 +39,11 @@
     </div>
 
     
-<div class="container bg-light pt-5">
-    <h2 class="text-center under">Group Chat</h2>
+<div class="container bg-light pt-5 px-5">
+    
+    <h2 class="text-center under mx-5">Group Chat</h2>
         {!! Form::open(array('route' => array('chats.store', $group->id),'class'=>'col-4 offset-4')) !!}
-            <div class="row">
+            <div class="row mt-5">
             {{ Form::hidden('group_id', $group->id)}}
             {!! Form::text('content', NULL, ['class' => 'form-control col-10', 'id' => 'bms_send_message', 'placeholder' => 'What\'s up?']) !!}
             {{ Form::submit('&#xf1d8;', ['class' => 'btn far col-2','id'=>'bms_send_btn']) }}

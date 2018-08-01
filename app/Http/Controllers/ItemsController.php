@@ -33,7 +33,7 @@ class ItemsController extends Controller
     {
         $item = new Item;
         $group = Group::find($id);
-        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(7);
+        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->orderBy('status', 'asc')->orderBy('created_at', 'desc')->paginate(7);
         $groupusers = $group->users()->get();
         
         return view('items.create',[

@@ -24,7 +24,7 @@ class PostsController extends Controller
         if (\Auth::check()) {
             $users = User::all();
             $group = Group::find($id);
-            $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(7);
+            $posts = \DB::table('posts')->where('posts.group_id', $group->id)->orderBy('status', 'asc')->orderBy('created_at', 'desc')->paginate(7);
             //$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
             $user = \Auth::user();
             $groupusers= $group->users()->get();
@@ -46,12 +46,14 @@ class PostsController extends Controller
         $this->validate($request, [
             'content' => 'required|max:191',
             'group_id' => 'required',
+            'status' => 'required',
             
         ]);
 
         $request->user()->posts()->create([
             'content' => $request->content,
             'group_id' => $request->group_id,
+            'status' => $request->status,
         ]);
 
          return redirect(route('posts.index', $request->group_id));

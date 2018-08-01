@@ -65,7 +65,7 @@ class GroupsController extends Controller
         
         if($user->is_following($id)){
         $items =\DB::table('items')->where('items.group_id', $group->id)->orderBy('status', 'desc')->orderBy('created_at', 'desc')->paginate(6);
-        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->distinct()->paginate(7);
+        $posts = \DB::table('posts')->where('posts.group_id', $group->id)->orderBy('status', 'asc')->orderBy('created_at', 'desc')->paginate(7);
         $groupusers = $group->users()->get();
         return view('groups.home', [
             'items' => $items,
