@@ -99,7 +99,7 @@
                             <li>
                                 <a class="dropdown-item" href="{{ route('users.show', Auth::user()->id) }}">My Page</a>
                                 <a class="dropdown-item" href="{{ route('users.edit', Auth::user()->id) }}">Profile Setting</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="dropdown-item" href="{{ route('logout',Auth::user()->id) }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout
                                         </a>
 
