@@ -68,7 +68,7 @@
         <a href="/group/{{$item->group_id}}" class=""><i class="fas fa-angle-double-left fa-fw"></i>back to home</a>
         @if(Auth::id() == $item->want_user_id || Auth::id() == $item->user->id)
          <div class="row">
-                    <div class="col-6 offset-3">
+                    <div class="col-10 offset-1">
                         {!! Form::open(['route' => 'comments.store', 'method' => 'post']) !!}
                        <div class="form-group mt-5">
                            {{ Form::hidden('item_id', $item->id)}}
@@ -81,11 +81,9 @@
                 <?php $comments = $item->comments()->where('parent_id', NULL); ?>
                     @if (count($comments) >0)
                     <div class="offset-2 col-8">
-                        
                          @include('comments.comments', ['comments' => $comments])
                     </div>
                     @endif
-                
         </div>
         @endif
 

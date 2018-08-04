@@ -35,10 +35,9 @@
                 </li>
             </ul>
         </div>
-
         <div class="container pt-5 bg-light">
             <div class="row">
-                <div class= "offset-3 col-6">
+                <div class= "offset-2 col-8 col-lg-6 offset-lg-3">
                     @if (Auth::id() == $user->id)
                     {!! Form::open(array('route' => array('posts.store', $group->id),'id' => 'content-content')) !!}
                         <div class="form-group" id="review-form-group">
@@ -53,15 +52,13 @@
                         {!! Form::close() !!}
                     @endif
                 </div>
-                <div class="offset-3 col-6">
+                <div class="offset-2 col-8 col-lg-6 offset-lg-3">
                     <div class="pb-5">
                         <h2 class="text-center under mt-3">Posted Messages</h2>
                          @include('posts.posts', ['posts' => $posts])
                          {!! $posts->render() !!}
-
                     </div>
                 </div>
-
             </div>
         <!--<a href="/group" class="">back >></a>-->
         </div>

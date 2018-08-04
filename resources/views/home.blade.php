@@ -160,7 +160,7 @@
                     </div>  
                     @endforeach
                 @else
-                     <div class="col-6 col-lg-4 mt-2">
+                    <div class="col-6 col-lg-4 mt-2">
                         <div class="card">
                             <img class="card-img-top" src="images/white.jpg">
                             <div class="card-img-overlay group-name"> 
