@@ -71,7 +71,7 @@
     </div>
         <div class="col-12 col-lg-5 mx-auto">
     <div class="row item">
-    <div class="">
+    <div class="mx-auto">
     <h2 class="text-center under">Posted messages</h2>
     @if($posts->count() == 0)
           <h4 class= "text-muted text-center mt-4">No Posts</h4>
