@@ -40,7 +40,7 @@
     <div class="bg-light py-5" id="form-bg" style= margin-top:0;>
         <div class="container">
             <div class="row">
-                <div class= "offset-3 col-6">
+                <div class= "mx-auto col-lg-6 col-8 ">
                      @if (Auth::id() == $user->id)
             {!! Form::open(array('route' => array('posts.store', $group->id),'id' => 'content-content')) !!}
                 <div class="form-group" id="review-form-group">

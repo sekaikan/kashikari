@@ -4,7 +4,6 @@
 @section('cover')
      <div class="jumbotron jumbotron-home">
             <h1 class="text-center text-white mt-5">{!! $group->name !!}</h1>
-            
             <div class="col-3 mx-auto">
                 <div class="mx-auto">
                     @if (isset($groupusers))
@@ -45,10 +44,10 @@
 <div class= "row offset-1 col-10">
     
 
-<div class="col-7 mx-auto">
+<div class="col-12 col-lg-7">
      {!! Form::model($item, array('route' => array('items.store', $group->id)))!!}
     <div class="row item">
-             <div class="">
+             <div class="mx-auto">
                 <h2 class="text-center under">Register Items</h2>
                 
                 <div class="form-group">
@@ -70,7 +69,7 @@
           </div>        
         </div>
     </div>
-        <div class="col-5 mx-auto">
+        <div class="col-12 col-lg-5 mx-auto">
     <div class="row item">
     <div class="">
     <h2 class="text-center under">Posted messages</h2>

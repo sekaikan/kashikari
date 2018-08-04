@@ -79,7 +79,7 @@
                 <div class="row"> 
                 @if ($follow_groups->count() != 0)
                     @foreach ($follow_groups as $group)
-                    <div class="col-4 mt-2">
+                    <div class="col-6 col-lg-4 mt-2">
                         <div class="card bg-dark text-white">
                             <?php $image_rand = array(
                                 "images/image1.jpg",
@@ -101,7 +101,7 @@
                     </div>   
                     @endforeach
                 @else
-                     <div class="col-4 mt-2">
+                     <div class="col-6 col-lg-4 mt-2">
                             <div class="card bg-dark text-white">
                                  <?php $image_rand = array(
                                     "images/image1.jpg",
@@ -137,7 +137,7 @@
                 <div class="row">
                 @if($unfollow_groups->count() != 0)
                     @foreach ($unfollow_groups as $group)
-                    <div class="col-4 mt-2">
+                    <div class="col-6 col-lg-4  mt-2">
                         <div class="card bg-dark text-white">
                              <?php $image_rand = array(
                                 "images/image1.jpg",
@@ -160,7 +160,7 @@
                     </div>  
                     @endforeach
                 @else
-                     <div class="col-4 mt-2">
+                     <div class="col-6 col-lg-4 mt-2">
                         <div class="card">
                             <img class="card-img-top" src="images/white.jpg">
                             <div class="card-img-overlay group-name"> 
@@ -169,7 +169,7 @@
                             </div>
                         </div>
                     </div>  
-                    <a href="group/create" class="col-4 mt-5  text-center">
+                    <a href="group/create" class="col-6 col-lg-4 mt-5  text-center">
                         <i class="fas fa-plus fa-4x" style="color: #c0c0c0;"></i>
                     </a>
                 @endif
